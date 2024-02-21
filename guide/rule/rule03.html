@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../../assets/css/ui.styles.css" />
 	<link rel="stylesheet" type="text/css" href="../../assets/css/guide.styles.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="../../assets/js/guide.js"></script>
+    <script src="../../assets/js/guide/guide.common.js"></script>
 
     <link href="../codeview/styles/shCoreDefaultWhite.css" rel="stylesheet" />
     <script src="../codeview/scripts/shCore.js?cb=undefined"></script>
@@ -172,7 +172,7 @@
 
                     </div>
                     <!-- //section1 -->
-    
+
                     <!-- section2 -->
                     <div class="g-h2-head">
                         <h2 class="g-h2">CSS</h2>
@@ -187,7 +187,7 @@
                                 <pre class="brush:css">
                                     @charset "utf-8";
                                     /*-------------------------------------------------------------------
-                                        파일정의: 
+                                        파일정의:
                                         속성순서: 레이아웃 > 크기/간격 > 박스모양 > 폰트/정렬 > 기타
                                     -------------------------------------------------------------------*/
                                 </pre>
@@ -195,7 +195,7 @@
                             <ul class="g-desc-guide">
                                 <li>작업정보는 위 사항을 필수정보로 제공한다.</li>
                             </ul>
-    
+
                             <h4 class="g-h4">작은 따옴표('') 사용 범위</h4>
                             <p class="g-desc">폰트의 선언, filter, content에 작은 따옴표('')를 사용한다.</p>
                             <div class="g-code">
@@ -206,7 +206,7 @@
                                     .class-name {background:url(img.gif) no-repeat}
                                 </pre>
                             </div>
-    
+
                             <h4 class="g-h4">세미콜론(;)</h4>
                             <p class="g-desc">마지막 선언된 속성에도 세미콜론(;)을 사용한다.</p>
                             <div class="g-code">
@@ -214,7 +214,7 @@
                                     .class-name {margin-left:0; padding-left:10px;}
                                 </pre>
                             </div>
-    
+
                             <h4 class="g-h4">공백의 사용</h4>
                             <p class="g-desc">선택자 간, 중괄호간 한칸의 공백을 사용한다, 중괄호 안쪽 좌우에는 공백은 사용하지 않는다.</p>
                             <div class="g-code">
@@ -238,7 +238,7 @@
                             <div class="g-code">
                                 <pre class="brush:css">
                                     h4.class-name {font-siz//1.25em; letter-spacing:-1px; margin:0.5em 0 0 0;}
-    
+
                                     .class-name,
                                     .class-name .child-class {background:url(../img/img.gif) no-repeat;}
                                 </pre>
@@ -257,7 +257,7 @@
                                 <pre class="brush:css">
                                     /* title */
                                     .title-type1 {margin:30px 0 10px 0;}
-    
+
                                     /* description */
                                     .desc1 {padding:2px 0 0 15px; font-siz//0.917em;}
                                 </pre>
