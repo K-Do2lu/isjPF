@@ -1,5 +1,31 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+/*-------------------------------------------------------------------
+	파일이름 : Variables
+	분류순서 : @Colors, @Sizes
+
+	파일이름 : Nixin
+	분류순서 : @Texts, @Responsives
+
+	변수규칙 : 반복-구분-단위 (상세규칙은 작업자가 판단)
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Color (Brand, State, Items, Grayscale)
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Size (System, Layout, Components)
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Text (Fontset,
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Responsive
+	- Device : Basic (Extra Large ~ Mini)
+	- PC : 1920 ~ 1280 (1920 ~ 1601 / 1600 ~ 1280)
+	- TA : 1279 ~  768 (1279 ~ 1025 / 1024 ~  768)
+	- MO :  767 ~  320 ( 767 ~  421 /  420 ~  320)
+	- 기준디바이스 : iPad Mini (768/1024), iPadPro (1024/1366)
+-------------------------------------------------------------------*/
 .g-wrapper {
   --gap-side: 20px;
   --color-primary: #d14;
@@ -261,7 +287,7 @@
   }
 }
 .g-ia-wrapper .g-section {
-  min-width: 768px;
+  min-width: 1024px;
 }
 
 .g-ia-wrapper .g-h1 {
@@ -300,11 +326,13 @@
 }
 
 .g-ia-item {
-  display: flex;
-  padding: 8px 20px 8px 16px;
   background-color: #f8f8f8;
+}
+
+.g-ia-item td {
+  padding: 8px 20px 8px 16px;
   line-height: 22px;
-  position: relative;
+  border-top: 2px solid #fff;
 }
 
 .g-ia-item:hover,
@@ -329,78 +357,51 @@
   margin-top: 2px;
 }
 
-.g-ia-item .g-ia-primary {
-  display: flex;
-  flex: 1 1 auto;
+.g-ia-item a:hover,
+.g-ia-item a:active,
+.g-ia-item a:focus {
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
-.g-ia-item .g-ia-primary .g-ia-num {
-  flex: none;
-  width: 30px;
+.g-ia-item .g-ia-num {
   margin-right: 10px;
   text-align: center;
 }
 
-.g-ia-item .g-ia-primary .g-ia-menu {
+.g-ia-item .g-ia-menu {
   flex: 1 1 auto;
   margin-right: auto;
   font-weight: 500;
 }
 
-.g-ia-item .g-ia-primary .g-ia-menu .url {
-  font-size: 12px;
-  color: #666;
-  font-weight: 400;
+.g-ia-item .g-ia-memo p span + span {
   margin-left: 10px;
-}
-
-.g-ia-item .g-ia-primary .g-ia-menu:hover,
-.g-ia-item .g-ia-primary .g-ia-menu:active,
-.g-ia-item .g-ia-primary .g-ia-menu:focus {
-  text-decoration: underline;
-  text-underline-position: under;
-}
-
-.g-ia-item .g-ia-primary .g-ia-user {
-  display: none;
-}
-
-.g-ia-item .g-ia-primary .g-ia-date {
-  display: none;
-}
-
-.g-ia-item .g-ia-support {
-  max-width: 300px;
-  color: #666;
-  font-size: 12px;
-  margin-left: 20px;
-}
-
-.g-ia-item .g-ia-support .g-ia-history {
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.g-ia-item .g-ia-support .g-ia-history .memo {
-  order: 1;
-}
-
-.g-ia-item .g-ia-support .g-ia-history .date {
-  order: 2;
-}
-
-.g-ia-item .g-ia-support .g-ia-history .name {
-  order: 3;
-  flex: none;
-  margin-left: 0px;
-  text-align: center;
-  font-weight: 500;
-  color: #000;
 }
 
 .g-ia-item .g-ia-toggle {
   display: none;
+}
+
+.g-ia-item .g-ia-num {
+  width: 50px;
+}
+
+.g-ia-item .g-ia-menu {
+  width: auto;
+}
+
+.g-ia-item .g-ia-type {
+  width: 80px;
+  display: none;
+}
+
+.g-ia-item .g-ia-url {
+  width: 280px;
+}
+
+.g-ia-item .g-ia-memo {
+  width: 350px;
 }
 
 .g-code {

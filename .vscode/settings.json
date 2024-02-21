@@ -17,5 +17,6 @@
             "savePathReplacementPairs": null
         }
     ],
-    "liveSassCompile.settings.generateMap": true
+    "liveSassCompile.settings.generateMap": true,
+    "files.trimTrailingWhitespace": true
 }

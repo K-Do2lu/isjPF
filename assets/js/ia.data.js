@@ -5,34 +5,47 @@ const ia = [
 		cateItems: [
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'prototype/layout.html',
 				menu: '레이아웃',
+				url: 'prototype/layout.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'prototype/board_list.html',
 				menu: '목록화면',
+				url: 'prototype/board_list.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'prototype/board_form.html',
 				menu: '등록화면',
+				url: 'prototype/board_form.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'prototype/board_view.html',
 				menu: '상세화면',
+				url: 'prototype/board_view.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: '모달공통',
+				url: 'prototype/modals.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 		]
@@ -42,79 +55,87 @@ const ia = [
 		cateItems: [
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'main/main.html',
 				menu: '메인',
+				url: 'main/main.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'main/searchBar.html',
 				menu: '메인 - 검색창',
+				url: 'main/searchBar.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'about/history.html',
 				menu: 'About - 이순종 교수님 이력',
+				url: 'about/history.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: 'about/contact.html',
 				menu: 'About - 1:1문의',
+				url: 'about/contact.html',
+				type: '',
 				memos: [
-					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
+					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
 		]
 	},
 
-	/*
+
 	{
-		cateTitle: 'Sample',
+		cateTitle: 'Samples',
 		cateItems: [
 			{
-				state: 'default',
+				state: 'default', // default, done, hold, issue
+				menu: 'Depth1 - Depth2 - Content (Cases)',
 				url: '#',
-				menu: 'Depth2 > Depth3 > Content (Cases)',
+				type: '',
 				memos: [
-					{user: '홍길동', date: '2023-11-20', desc: '완료'},
-					{user: '이순신', date: '2023-11-23', desc: '완료버튼 클래스 수정'}
+					'홍길동 : 2023-11-20 예정',
 				],
 			},
 			{
-				state: 'done',
+				state: 'done', // default, done, hold, issue
+				menu: 'Depth1 - Depth2 - Content (Nodata)',
 				url: '#',
-				menu: 'Depth2 > Depth3 > Content (Empty)',
+				type: '',
 				memos: [
-					{user: '홍길동', date: '2023-11-20', desc: '완료'}
+					'홍길동 : 2023-11-20 완료',
+					'이순신 : 2023-11-23 완료버튼 클래스 수정',
 				],
 			},
 			{
-				state: 'hold',
+				state: 'hold', // default, done, hold, issue
+				menu: 'Depth1 - Depth2 - Content (입력 전)',
 				url: '#',
-				menu: 'Depth2 > Depth3 > Content (입력전)',
+				type: 'popup',
 				memos: [
-					{user: '홍길동', date: '2023-11-20', desc: '업무범위 제외됨'},
+					'홍길동 : 2023-11-20 업무범위 제외됨',
 				],
 			},
 			{
-				state: 'issue',
+				state: 'issue', // default, done, hold, issue
+				menu: 'Depth1 - Depth2 - Content (입력 후)',
 				url: '#',
-				menu: 'Depth2 > Depth3 > Content (입력후)',
+				type: '',
 				memos: [
-					{user: '홍길동', date: '2023-11-20', desc: '디자인 검토 필요'},
+					'홍길동 : 2023-11-20 디자인 검토 필요',
 				],
 			},
 		]
 	},
-	*/
+
 ]
 
 let ia_html = '';
@@ -132,52 +153,35 @@ for (let i = 0; i < ia.length; i++){
 	+'	</button>'
 	+'</div>'
 	+'<div class="g-h2-body">'
-	+'	<ul class="g-ia-list">';
+	+'	<table class="g-ia-table">';
 	// 카테고리 목록
 	for (let j = 0; j < ia[i].cateItems.length; j++){
 		ia_html = ia_html + ''
-		+'		<li class="g-ia-item is-'+ia[i].cateItems[j].state+'">'
-		+'			<div class="g-ia-primary">'
-		+'				<div class="g-ia-num">'+(j+1)+'</div>'
-		+'				<div class="g-ia-menu">'
-		+'					<a href="'+url_base+ia[i].cateItems[j].url+'" target="_blank">'+ ia[i].cateItems[j].menu +'&nbsp;<span class="url">'+ia[i].cateItems[j].url+'</span></a>'
-		+'				</div>'
-		+'				<div class="g-ia-user" title="최근 작업자">'
-		// 작업내역 목록 - 작업자
-		for (let k = 0; k < ia[i].cateItems[j].memos.length; k++){
-			ia_html = ia_html + ''
-			+'					<p>'+ia[i].cateItems[j].memos[k].user+'</p>'
-		}
-		ia_html = ia_html + ''
-		+'				</div>'
-		+'				<div class="g-ia-date" title="최근 날짜">'
-		// 작업내역 목록 - 날짜
-		for (let l = 0; l < ia[i].cateItems[j].memos.length; l++){
-			ia_html = ia_html + ''
-			+'					<p>'+ia[i].cateItems[j].memos[l].date+'</p>'
-		}
-		ia_html = ia_html + ''
-		+'				</div>'
-		+'			</a>'
-		+'			<div class="g-ia-support">'
+		+'		<tr class="g-ia-item is-'+ia[i].cateItems[j].state+'">'
+		+'			<td class="g-ia-num">'+(j+1)+'</td>'
+		+'			<td class="g-ia-menu">'
+		+'				<a href="'+url_base+ia[i].cateItems[j].url+'" target="_blank">'+ ia[i].cateItems[j].menu +'</a>'
+		+'			</td>'
+		+'			<td class="g-ia-type">'
+		+'				<p>'+ia[i].cateItems[j].type+'</p>'
+		+'			</td>'
+		+'			<td class="g-ia-url">'
+		+'				<a href="'+url_base+ia[i].cateItems[j].url+'" target="_blank">'+ia[i].cateItems[j].url+'</a>'
+		+'			</td>'
+		+'			<td class="g-ia-memo">'
 		// 작업내역 목록 - 비고설명
 		for (let m = 0; m < ia[i].cateItems[j].memos.length; m++){
 			ia_html = ia_html + ''
-			+'				<div class="g-ia-history">'
-			+'					<p class="memo">'+ia[i].cateItems[j].memos[m].desc+'</p>'
-			+'					<p class="date">'+ia[i].cateItems[j].memos[m].date+'</p>'
-			+'					<p class="name">'+ia[i].cateItems[j].memos[m].user+'</p>'
-			+'				</div>'
+			+'			<p>'
+			+'			<span class="name">'+ia[i].cateItems[j].memos[m]+'</span>'
+			+'			</p>'
 		}
 		ia_html = ia_html + ''
-		+'			</div>'
-		+'			<button type="button" class="btn g-ia-toggle" onclick="guideIAToggle(this)">'
-		+'				<span class="material-symbols-outlined">expand_more</span>'
-		+'			</button>'
-		+'		</li>'
+		+'			</td>'
+		+'		</tr>'
 	}
 	ia_html = ia_html + ''
 	+'		<!-- //Sample -->'
-	+'	</ul>'
+	+'	</table>'
 	+'</div>';
 }
