@@ -7,22 +7,22 @@
 //-------------------------------------------------------------------
 // Brand Color
 $ColorPrimary: red;
-$ColorSecondary: rgb(27, 32, 50);
-$ColorHighlight: #000;
+// $ColorSecondary: rgb(27, 32, 50);
+// $ColorHighlight: #000;
 
 // State Color
-$ColorPositive: #000;
-$ColorNegative: #000;
+// $ColorPositive: #000;
+// $ColorNegative: #000;
 
 // Item Color
-$ColorName1: #000;
-$ColorName2: #000;
+// $ColorName1: #000;
+// $ColorName2: #000;
 
 // Grayscale
-$GrayTextButton: #000;
-$GrayTextLabel: #000;
-$GrayBorderHeader: #000;
-$GrayBorderContent: #000;
+// $GrayTextButton: #000;
+// $GrayTextLabel: #000;
+// $GrayBorderHeader: #000;
+// $GrayBorderContent: #000;
 
 //-------------------------------------------------------------------
 //	@Size (Width-, Height-, Gap-)
@@ -77,6 +77,7 @@ $GapBody: 20px;
 //  MO :  767 ~  320 ( 767 ~  421 /  420 ~  320)
 //  기준디바이스 : iPad Mini (768/1024), iPadPro (1024/1366)
 //-------------------------------------------------------------------
+// Devices Variables
 // Basic Devices
 @mixin pc() {
 	@media (min-width:1280px) {
@@ -105,43 +106,38 @@ $GapBody: 20px;
 }
 
 // Extra Devices
-@mixin pcLarge(){
-	@media (min-width:1601px) {
+@mixin pc_xl(){
+	@media (min-width:1600px) {
 		@content;
 	}
 }
-@mixin pcMini(){
-	@media (min-width:1280px) and (min-width:1600px) {
+@mixin pc_xs(){
+	@media (min-width:1280px) and (max-width:1599px) {
 		@content;
 	}
 }
-@mixin tabletLarge(){
-	@media (min-width:768px) and (min-width:1023px) {
+@mixin tablet_xl(){
+	@media (min-width:1024px) and (max-width:1279px) {
 		@content;
 	}
 }
-@mixin tabletMini(){
-	@media (min-width:1024px) and (min-width:1279px) {
+@mixin tablet_xs(){
+	@media (min-width:768px) and (max-width:1023px) {
 		@content;
 	}
 }
-@mixin mobileLarge(){
-	@media (max-width:421px) and (max-width:767px) {
+@mixin mobile_xl(){
+	@media (min-width:421px) and (max-width:767px) {
 		@content;
 	}
 }
-@mixin mobileMini(){
+@mixin mobile_xs(){
 	@media (max-width:420px) {
 		@content;
 	}
 }
-@mixin mobilePortrait(){
-	@media (max-width:767px) and (orientation:Portrait) {
-		@content;
-	}
-}
-@mixin mobileLandscape(){
-	@media (max-height:1024px) and (orientation:Landscape) {
+@mixin media_width($width){
+	@media (max-width:$width) {
 		@content;
 	}
 }
