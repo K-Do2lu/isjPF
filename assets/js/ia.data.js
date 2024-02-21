@@ -1,11 +1,11 @@
-const url_base = "../../html/";
+const url_base = "../../pages/";
 const ia = [
 	{
 		cateTitle: 'Prototype',
 		cateItems: [
 			{
 				state: 'default', // default, done, hold, issue
-				url: '_prototype/layout.html',
+				url: 'prototype/layout.html',
 				menu: '레이아웃',
 				memos: [
 					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
@@ -13,7 +13,7 @@ const ia = [
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: '_prototype/board_list.html',
+				url: 'prototype/board_list.html',
 				menu: '목록화면',
 				memos: [
 					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
@@ -21,7 +21,7 @@ const ia = [
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: '_prototype/board_form.html',
+				url: 'prototype/board_form.html',
 				menu: '등록화면',
 				memos: [
 					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
@@ -29,7 +29,7 @@ const ia = [
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				url: '_prototype/board_view.html',
+				url: 'prototype/board_view.html',
 				menu: '상세화면',
 				memos: [
 					{user: '김도연', date: 'YYYY-MM-DD', desc: '완료'},
