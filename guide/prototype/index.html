@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Web Style Guide</title>
+    <!-- https://fonts.google.com/icons -->
+	<link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/ui.styles.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/guide.styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../assets/js/guide.js"></script>
+</head>
+<body>
+    <div class="g-wrapper">
+        <header class="g-header">
+            <script>
+                $('.g-header').load('../_include/_header.html', function(){
+                    guideGnbSet(this, 3, 0);
+                });
+            </script>
+        </header>
+        <main role="main" class="g-main">
+			<div class="g-section">
+				<div class="g-h1-head">
+					<h1 class="g-h1">1. Heading</h1>
+					<button type="button" class="btn g-sec-toggle" onclick="guideSecToggle(this)">
+						<span class="material-symbols-outlined">expand_circle_down</span>
+					</button>
+				</div>
+				<div class="g-h1-body">
+					<div class="g-h2-head">
+						<h2 class="g-h2">2. Heading</h2>
+						<button type="button" class="btn g-sec-toggle" onclick="guideSecToggle(this)">
+							<span class="material-symbols-outlined">expand_circle_down</span>
+						</button>
+					</div>
+					<div class="g-h2-body">
+						<div class="g-h3-head">
+							<h3 class="g-h3">3. Heading</h3>
+							<button type="button" class="btn g-sec-toggle" onclick="guideSecToggle(this)">
+								<span class="material-symbols-outlined">expand_circle_down</span>
+							</button>
+						</div>
+						<div class="g-h3-body">
+							<div class="g-sec-desc">
+								<p class="g-desc">Descriptions</p>
+								<ul class="g-desc-list">
+									<li>Description List</li>
+									<li>Description List</li>
+									<li>Description List</li>
+								</ul>
+							</div>
+							<div class="g-sec-preview">
+								<p>UI Preview</p>
+							</div>
+
+							<h4 class="g-h4">4. Heading</h4>
+							<div class="g-sec-desc">
+								<p class="g-desc">Descriptions</p>
+							</div>
+							<div class="g-sec-preview">
+								<p>UI Preview</p>
+							</div>
+
+							<h4 class="g-h4">4. Heading</h4>
+							<div class="g-sec-preview">
+								<p>UI Preview</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </main>
+    </div>
+</body>
+</html>

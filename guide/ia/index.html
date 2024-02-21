@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Web Style Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<meta name="format-detection" content="telephone=no" />
+    <!-- https://fonts.google.com/icons -->
+	<link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/ui.styles.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/guide.styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../assets/js/guide.js"></script>
+    <script src="../../assets/js/ia.data.js"></script>
+</head>
+<body>
+    <div class="g-wrapper g-ia-wrapper">
+        <header class="g-header">
+            <script>
+                $('.g-header').load('../_include/_header.html', function(){
+                    guideGnbSet(this, 0, 0);
+                });
+            </script>
+        </header>
+        <main role="main" class="g-main">
+			<div class="g-section">
+				<div class="g-h1-head">
+					<h1 class="g-h1">Service</h1>
+					<span class="g-label-done">완료</span>
+					<span class="g-label-hold">보류</span>
+					<span class="g-label-issue">이슈</span>
+					<button type="button" class="btn g-sec-toggle" onclick="guideSecToggle(this)">
+						<span class="material-symbols-outlined">expand_circle_down</span>
+					</button>
+				</div>
+				<div class="g-h1-body">
+
+					<div class="g-h2-head">
+						<h2 class="g-h2">Category</h2>
+						<button type="button" class="btn g-sec-toggle" onclick="guideSecToggle(this)">
+							<span class="material-symbols-outlined">expand_circle_down</span>
+						</button>
+					</div>
+					<div class="g-h2-body">
+						<!-- 스크립트로 들어오지만 원본확인 목적 -->
+						<!--
+						<ul class="g-ia-list">
+							<li class="g-ia-item">
+								<a class="g-ia-primary" href="#">
+									<div class="g-ia-num">번호</div>
+									<div class="g-ia-menu">
+										<p>화면경로</p>
+									</div>
+									<div class="g-ia-user" title="최근 작업자">
+										<p>이름</p>
+									</div>
+									<div class="g-ia-date" title="최근 날짜">
+										<p>YYYY-MM-DD</p>
+									</div>
+								</a>
+								<div class="g-ia-support">
+									<div class="g-ia-history">
+										<p class="name">이름</p>
+										<p class="memo">2023-11-20 최초 완료일</p>
+									</div>
+								</div>
+								<button type="button" class="btn g-ia-toggle" onclick="guideIAToggle(this)">
+									<span class="material-symbols-outlined">expand_more</span>
+								</button>
+							</li>
+						</ul>
+						-->
+					</div>
+				</div>
+			</div>
+        </main>
+    </div>
+	<script>
+		const ia_body = document.querySelector('.g-h1-body');
+		console.log(document.querySelector('.g-h1-body'))
+		ia_body.innerHTML = ia_html;
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<div class="g-gnb">
+    <div class="g-logo">
+        <a href="../ia/" class="g-logo-link">Project</a>
+    </div>
+    <nav class="g-menu">
+        <a href="../ia/" class="g-menu-btn">
+            <span class="material-symbols-outlined">dvr</span>
+            <span class="text">페이지</span>
+        </a>
+        <a href="../rule/" class="g-menu-btn" data-menu="#guideGnbRule" onclick="guideGnbOpen('#guideGnbSub', '#guideGnbRule', this); return false;">
+            <span class="material-symbols-outlined">rule</span>
+            <span class="text">작업규칙</span>
+        </a>
+        <a href="../wsg/" class="g-menu-btn" data-menu="#guideGnbWsg" onclick="guideGnbOpen('#guideGnbSub', '#guideGnbWsg', this); return false;">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="text">컴포넌트</span>
+        </a>
+        <a href="../prototype/" class="g-menu-btn">
+            <span class="material-symbols-outlined">view_compact_alt</span>
+            <span class="text">템플릿</span>
+        </a>
+    </nav>
+</div>
+<div id="guideGnbSub" class="g-gnb-sub">
+    <nav id="guideGnbRule" class="g-menu-sub">
+        <a href="../rule/index.html" class="g-menu-btn">기본규칙</a>
+        <a href="../rule/rule02.html" class="g-menu-btn">표준규칙</a>
+        <a href="../rule/rule03.html" class="g-menu-btn">코드규칙</a>
+        <a href="../rule/rule04.html" class="g-menu-btn">네임규칙</a>
+        <a href="../rule/rule05.html" class="g-menu-btn">설계규칙</a>
+        <a href="../rule/rule06.html" class="g-menu-btn">서식명칭</a>
+    </nav>
+    <nav id="guideGnbWsg" class="g-menu-sub">
+        <a href="../wsg/index.html" class="g-menu-btn">WSG1</a>
+        <a href="../wsg/index.html" class="g-menu-btn">WSG2</a>
+        <a href="../wsg/index.html" class="g-menu-btn">WSG3</a>
+        <a href="../wsg/index.html" class="g-menu-btn">WSG4</a>
+    </nav>
+	<div class="g-gnb-sub-close">
+		<button type="button" class="btn">
+			<span class="material-symbols-outlined" onclick="guideGnbClose('#guideGnbSub')">close</span>
+		</button>
+	</div>
+</div>
