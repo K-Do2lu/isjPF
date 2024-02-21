@@ -1,4 +1,18 @@
 const ia = [
+	{
+		cateTitle: 'Pagelist',
+		cateItems: [
+			{
+				state: 'default', // default, done, hold, issue
+				url: '#',
+				menu: 'Depth1 > Depth2 > Content (Cases)',
+				memos: [
+					{user: '작업자', date: 'YYYY-MM-DD', desc: '완료'},
+				],
+			},
+		]
+	},
+
 	/*
 	{
 		cateTitle: 'Sample',
@@ -39,19 +53,6 @@ const ia = [
 		]
 	},
 	*/
-	{
-		cateTitle: 'Category',
-		cateItems: [
-			{
-				state: 'default', // default, done, hold, issue
-				url: '#',
-				menu: 'Depth1 > Depth2 > Content (Cases)',
-				memos: [
-					{user: '작업자', date: 'YYYY-MM-DD', desc: '완료'},
-				],
-			},
-		]
-	},
 ]
 
 let ia_html = '';
@@ -60,9 +61,13 @@ for (let i = 0; i < ia.length; i++){
 	ia_html = ia_html + ''
 	+'<div class="g-h2-head">'
 	+'	<h2 class="g-h2">'+ ia[i].cateTitle +' ('+ ia[i].cateItems.length +')</h2>'
-	+'	<button type="button" class="btn g-sec-toggle" onclick="guideSecToggle(this)">'
-	+'		<span class="material-symbols-outlined">expand_circle_down</span>'
-	+'	</button>'
+	+'	<span class="g-label-done">완료</span>'
+	+'	<span class="g-label-hold">보류</span>'
+	+'	<span class="g-label-issue">이슈</span>'
+
+	// +'	<button type="button" class="btn g-sec-toggle" onclick="guideSecToggle(this)">'
+	// +'		<span class="material-symbols-outlined">expand_circle_down</span>'
+	// +'	</button>'
 	+'</div>'
 	+'<div class="g-h2-body">'
 	+'	<ul class="g-ia-list">';
