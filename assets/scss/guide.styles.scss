@@ -82,10 +82,12 @@
 
 // IA
 .g-ia-wrapper .g-section {min-width: 768px;}
+.g-ia-wrapper .g-h1 {margin-right: auto;}
+.g-ia-wrapper .g-h2 {margin-right: auto;}
 .g-label-done {display: flex; margin-right: 4px; padding: 4px 10px 6px; font-size: 12px; background-color: rgb(240, 255, 250); line-height: 18px;}
 .g-label-hold {display: flex; margin-right: 4px; padding: 4px 10px 6px; font-size: 12px; background-color: rgb(220, 220, 220); line-height: 18px;}
 .g-label-issue {display: flex; margin-right: 4px; padding: 4px 10px 6px; font-size: 12px; background-color: rgb(255, 240, 240); line-height: 18px;}
-.g-ia-item {display: flex; padding: 7px 16px 9px 16px; background-color: #f8f8f8; line-height: 22px; position: relative;}
+.g-ia-item {display: flex; padding: 8px 20px 8px 16px; background-color: #f8f8f8; line-height: 22px; position: relative;}
 .g-ia-item:hover,
 .g-ia-item:active,
 .g-ia-item:focus {background-color: aliceblue;}
@@ -94,11 +96,12 @@
 .g-ia-item.is-issue {background-color: rgb(255, 240, 240);}
 .g-ia-item + .g-ia-item {margin-top:2px}
 .g-ia-item .g-ia-primary {display: flex; flex:1 1 auto;}
-.g-ia-item .g-ia-primary:hover,
-.g-ia-item .g-ia-primary:active,
-.g-ia-item .g-ia-primary:focus {text-decoration: underline; text-underline-position: under;}
 .g-ia-item .g-ia-primary .g-ia-num {flex:none; width: 30px; margin-right: 10px; text-align: center;}
 .g-ia-item .g-ia-primary .g-ia-menu {flex:1 1 auto; margin-right: auto; font-weight: 500;}
+.g-ia-item .g-ia-primary .g-ia-menu .url {font-size: 12px; color: #666; font-weight: 400; margin-left: 10px;}
+.g-ia-item .g-ia-primary .g-ia-menu:hover,
+.g-ia-item .g-ia-primary .g-ia-menu:active,
+.g-ia-item .g-ia-primary .g-ia-menu:focus {text-decoration: underline; text-underline-position: under;}
 .g-ia-item .g-ia-primary .g-ia-user {display: none;}
 .g-ia-item .g-ia-primary .g-ia-date {display: none;}
 .g-ia-item .g-ia-support {max-width: 300px; color: #666; font-size: 12px; margin-left: 20px;}

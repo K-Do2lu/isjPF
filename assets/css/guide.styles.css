@@ -264,6 +264,14 @@
   min-width: 768px;
 }
 
+.g-ia-wrapper .g-h1 {
+  margin-right: auto;
+}
+
+.g-ia-wrapper .g-h2 {
+  margin-right: auto;
+}
+
 .g-label-done {
   display: flex;
   margin-right: 4px;
@@ -293,7 +301,7 @@
 
 .g-ia-item {
   display: flex;
-  padding: 7px 16px 9px 16px;
+  padding: 8px 20px 8px 16px;
   background-color: #f8f8f8;
   line-height: 22px;
   position: relative;
@@ -326,13 +334,6 @@
   flex: 1 1 auto;
 }
 
-.g-ia-item .g-ia-primary:hover,
-.g-ia-item .g-ia-primary:active,
-.g-ia-item .g-ia-primary:focus {
-  text-decoration: underline;
-  text-underline-position: under;
-}
-
 .g-ia-item .g-ia-primary .g-ia-num {
   flex: none;
   width: 30px;
@@ -344,6 +345,20 @@
   flex: 1 1 auto;
   margin-right: auto;
   font-weight: 500;
+}
+
+.g-ia-item .g-ia-primary .g-ia-menu .url {
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.g-ia-item .g-ia-primary .g-ia-menu:hover,
+.g-ia-item .g-ia-primary .g-ia-menu:active,
+.g-ia-item .g-ia-primary .g-ia-menu:focus {
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
 .g-ia-item .g-ia-primary .g-ia-user {
