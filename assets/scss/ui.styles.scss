@@ -17,3 +17,29 @@
 
 // @Contents
 @import "./cont.common";
+
+// header
+header{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    padding: $header-padding;
+    .logo-mo{
+    }
+    nav{
+        justify-self: end;
+        ul{
+            display: flex;
+            gap: 1.5rem;
+            color: #ccc;
+            li{
+                &:first-child{
+                    font-weight: 700;
+                    color: $color-primary;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+

@@ -26,6 +26,16 @@
 	- MO :  767 ~  320 ( 767 ~  421 /  420 ~  320)
 	- 기준디바이스 : iPad Mini (768/1024), iPadPro (1024/1366)
 -------------------------------------------------------------------*/
+/* iPhone X 이상의 모바일 기기에 대한 Safe Area 고려 */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  /* 여기에 해당하는 CSS 추가 */
+  body {
+    padding-top: constant(safe-area-inset-top); /* iOS 11.2+ */
+    padding-top: env(safe-area-inset-top); /* iOS 11.2+ */
+    padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.2+ */
+    padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2+ */
+  }
+}
 .g-wrapper {
   --gap-side: 20px;
   --color-primary: #d14;
@@ -148,7 +158,7 @@
 }
 
 .g-menu-sub .g-menu-btn.is-selected {
-  color: red;
+  color: #111;
 }
 
 .g-gnb-sub-close {
@@ -191,7 +201,7 @@
   margin: 20px 0 10px 0;
   font-size: 16px;
   font-weight: 400;
-  color: red;
+  color: #111;
 }
 
 .g-h1-head,

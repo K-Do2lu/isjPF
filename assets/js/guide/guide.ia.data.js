@@ -55,8 +55,8 @@ const ia = [
 		cateItems: [
 			{
 				state: 'default', // default, done, hold, issue
-				menu: '메인',
-				url: 'main/main.html',
+				menu: 'home',
+				url: 'home.html',
 				type: '',
 				memos: [
 					'김도연 : YYYY-MM-DD 예정',
@@ -64,8 +64,8 @@ const ia = [
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				menu: '메인 - 검색창',
-				url: 'main/searchBar.html',
+				menu: 'about',
+				url: 'about.html',
 				type: '',
 				memos: [
 					'김도연 : YYYY-MM-DD 예정',
@@ -73,8 +73,8 @@ const ia = [
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				menu: 'About - 이순종 교수님 이력',
-				url: 'about/history.html',
+				menu: 'work',
+				url: 'work.html',
 				type: '',
 				memos: [
 					'김도연 : YYYY-MM-DD 예정',
@@ -82,8 +82,44 @@ const ia = [
 			},
 			{
 				state: 'default', // default, done, hold, issue
-				menu: 'About - 1:1문의',
-				url: 'about/contact.html',
+				menu: 'work - detail (자세히보기)',
+				url: 'work_detail.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'event',
+				url: 'event.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'event - detail (자세히보기)',
+				url: 'event_detail.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'media',
+				url: 'media.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'media - detail (자세히보기)',
+				url: 'media_detail.html',
 				type: '',
 				memos: [
 					'김도연 : YYYY-MM-DD 예정',

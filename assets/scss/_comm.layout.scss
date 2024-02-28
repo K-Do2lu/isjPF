@@ -5,7 +5,35 @@
 /*-------------------------------------------------------------------
     @공통
 -------------------------------------------------------------------*/
-
+// 토글 메뉴
+.menus{
+    ul{
+        li{
+          ul.menu-inner{
+            display: none;
+          }
+          &.active{
+            ul.menu-inner{
+                display: block;
+              }
+          }
+        }
+    }
+}
+// 최상단 이동 버튼
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 70%;
+  }
 /*-------------------------------------------------------------------
     @서브공통
 -------------------------------------------------------------------*/
