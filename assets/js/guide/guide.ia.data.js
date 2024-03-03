@@ -125,6 +125,60 @@ const ia = [
 					'김도연 : YYYY-MM-DD 예정',
 				],
 			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'login',
+				url: 'login.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'login_list',
+				url: 'login_list.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'login_list_detail',
+				url: 'login_list_detail.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'login_save_list(임시저쟝 리스트)',
+				url: 'login_save_list.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'login_save_detail(임시저쟝 자세히 보기)',
+				url: 'login_save_detail.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
+			{
+				state: 'default', // default, done, hold, issue
+				menu: 'login_upload',
+				url: 'login_upload.html',
+				type: '',
+				memos: [
+					'김도연 : YYYY-MM-DD 예정',
+				],
+			},
 		]
 	},
 

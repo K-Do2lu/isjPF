@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Style Guide</title>
     <!-- https://fonts.google.com/icons -->
-	<link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="../../assets/css/ui.styles.css" />
-	<link rel="stylesheet" type="text/css" href="../../assets/css/guide.styles.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../assets/css/ui.styles.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../assets/css/guide.styles.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="../../assets/js/guide/guide.common.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="g-wrapper">
-        <header class="g-header">
-            <script>
-                $('.g-header').load('../_include/_header.html', function(){
-                    guideGnbSet(this, 2, 0);
-                });
-            </script>
-        </header>
-        <main role="main" class="g-main">
-        </main>
+      <header class="g-header">
+        <script>
+          $(".g-header").load("../_include/_header.html", function () {
+            guideGnbSet(this, 2, 0);
+          });
+        </script>
+      </header>
+      <main role="main" class="g-main">
+        <div>
+          <!-- btn -->
+          <button type="button" class="p-btn">btn</button>
+          <button type="button" class="p-btn fill">btn</button>
+          <button type="button" class="p-btn includeIcon">
+            btn<img src="#" alt="icon" />
+          </button>
+          <!-- btn chips -->
+          <button type="button" class="p-btn-chips">
+            chips<img src="#" alt="icon" />
+          </button>
+        </div>
+
+        <div>
+          <!-- tag -->
+          <span class="tag">태그</span>
+          <span class="tag year">2024</span>
+        </div>
+
+        <div>
+          <label for="" class="essential">라벨</label>
+          <input type="text" id="" name="" placeholder="placeholder" />
+          <label for="" class="essential">라벨</label>
+          <input type="text" id="" name="" disabled />
+        </div>
+      </main>
     </div>
-</body>
+  </body>
 </html>

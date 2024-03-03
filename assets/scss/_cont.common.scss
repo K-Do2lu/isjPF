@@ -1,44 +1,278 @@
 /*-------------------------------------------------------------------
-    파일이름 : 공통컨텐츠
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @name
+    @Default
 /*-----------------------------------------------------------------*/
-
-/*-------------------------------------------------------------------
-    @name
-/*-----------------------------------------------------------------*/
-
-/*-------------------------------------------------------------------
-    @px to rem
-/*-----------------------------------------------------------------*/
-// html font-size: 16px인 전제하
-@mixin to_rem($property, $value){
-    #{$property}: ($value / 16) + rem;
-}
-// @include to_rem(font-size, 30) -> font-size: 1.5rem;
-@mixin to_vw($value, $target-width){
-    font-size: calc((#{$value} * 100vw) / #{$target-width});
-}
-// @include dynamic-font-size(1vw, 1200px);
-/*-------------------------------------------------------------------
-    @이미지 비율 유지
-/*-----------------------------------------------------------------*/
-@function img-ratio($img-height, $img-width){
-    @return ($img-height / $img-width) * 100%;
-}
-@mixin img-parent{
-    position: relative;
-    width: 100%;
-    height:0;
-    // padding-bottom: include;
-    overflow: hidden;
-}
-@mixin img {
+// Checkbox, Radio
+.radio,
+.switch,
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  font-size: inherit;
+  line-height: inherit;
+  > input {
+    cursor: pointer;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0 !important;
+    outline: none;
+  }
+  > label {
+    position: relative;
+    display: block;
+  }
+  > label::before,
+  > label::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+}
+/*-------------------------------------------------------------------
+    @모달
+/*-----------------------------------------------------------------*/
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.modal-window {
+  min-width: 20rem;
+  max-width: 35rem;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px 0px #00000014;
+}
+/*-------------------------------------------------------------------
+    @토글 메뉴
+/*-----------------------------------------------------------------*/
+.menus {
+  ul {
+    li {
+      ul.menu-inner {
+        display: none;
+      }
+      &.active {
+        ul.menu-inner {
+          display: block;
+        }
+      }
+    }
+  }
+}
+/*-------------------------------------------------------------------
+    @최상단 이동 버튼
+/*-----------------------------------------------------------------*/
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 70%;
+}
+
+/*-------------------------------------------------------------------
+    @Icon
+/*-----------------------------------------------------------------*/
+@mixin icon-bg($name) {
+  background: url(/assets/img/#{name}.png);
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  .arrow-up {
+    @include icon-bg("이름");
+  }
+  .arrow-right {
+    @include icon-bg("이름");
+  }
+  .check {
+    @include icon-bg("이름");
+  }
+  .search {
+    @include icon-bg("이름");
+  }
+  .cross {
+    @include icon-bg("이름");
+  }
+  .menu {
+    @include icon-bg("이름");
+  }
+  .checked {
+    @include icon-bg("이름");
+  }
+  .passive {
+    @include icon-bg("이름");
+  }
+  .active {
+    @include icon-bg("이름");
+  }
+}
+
+/*-------------------------------------------------------------------
+    @common - Button | border(default)/fill/include icon
+/*-----------------------------------------------------------------*/
+$p-12-0: 0.75rem;
+$p-14-0: 0.875rem;
+// btn - border(default)
+.p-btn {
+  width: auto;
+  padding: clamp(0.75rem, 2vw, 0.875rem) 1.25rem;
+  border: 1px solid #111;
+  box-sizing: border-box;
+  font-family: "Wanted Sans";
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: 700;
+  color: #111;
+  &:disabled {
+    border-color: #bbb;
+    color: #bbb;
+    > img {
+      filter: grayscale(100%);
+    }
+  }
+  &:hover {
+    background: #111;
+    color: #fff;
+  }
+  // btn - fill
+  &.fill {
+    border: none;
+    background: #111;
+    color: #fff;
+    &:hover {
+      background: #444;
+    }
+    &:disabled {
+      background: #bbb;
+      color: #fff;
+    }
+  }
+  // btn - include icon
+  &.includeIcon {
+    > img {
+      display: inline-block;
+      margin-left: 0.625rem;
+    }
+  }
+}
+// btn - circle(Fab)
+.p-btn-cir {
+  width: clamp(3.25rem, 2vw, 3.25rem);
+  height: clamp(3.25rem, 2vw, 3.25rem);
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid #111;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(1px);
+  &.top {
+    background: #fff;
+  }
+  &.mail {
+    background: rgba(17, 17, 17, 0.6);
+  }
+}
+// btn - chips
+.p-btn-chips {
+  padding: 0.5rem clamp(0.875rem, 2vw, 1rem);
+  background: #fff;
+  border-radius: 6.25rem;
+  color: #111;
+  > img {
+    display: none;
+  }
+  &:hover {
+    border: 1px solid #111;
+    box-sizing: border-box;
+  }
+  &.active {
+    display: inline-flex;
+    gap: 4px;
+    border: 1px solid #111;
+    img {
+      display: block;
+    }
+  }
+}
+/*-------------------------------------------------------------------
+    @Tag
+/*-----------------------------------------------------------------*/
+.tag {
+  padding: 0.1875rem 0.5rem;
+  display: inline-block;
+  border-radius: 2.5rem;
+  background: #fff;
+  color: #111;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-align: center;
+}
+.tag {
+  // 년도
+  &.year {
+    border-radius: 0;
+    background: #111;
+    color: #fff;
+  }
+}
+/*-------------------------------------------------------------------
+    @Form | input, checkbox, radio ...
+/*-----------------------------------------------------------------*/
+// Form - input
+label {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+  &.essential {
+    position: relative;
+    padding-right: 0.625rem;
+    &::after {
+      position: absolute;
+      right: 0;
+      content: "*";
+      display: inline-block;
+      color: #fb3b3b;
+    }
+  }
+}
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #bbb;
+  font-size: 1rem;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+  color: #111;
+  outline: none;
+  &::placeholder {
+    color: #999;
+  }
+  &:focus {
+    border-bottom-color: #111;
+  }
+  &:disabled {
+    background: #fff;
+    border-bottom-color: #dedede;
+    color: #ccc;
+  }
 }

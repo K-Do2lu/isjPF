@@ -1,31 +1,75 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
-    <meta charset="UTF-8"/>
-    <title>이순종 포트폴리오</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-	<meta name="format-detection" content="telephone=no" />
-	<link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
-	<link rel="stylesheet" type="text/css" href="../../assets/css/ui.styles.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="../../assets/js/ui/ui.librarys.js"></script>
-    <script src="../../assets/js/ui/ui.common.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>이순종 포트폴리오</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- https://fonts.google.com/icons -->
+        <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
+        <!-- 공통 js -->
+        <script src="../assets/js/ui/ui.common.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <!-- Swiper.js 라이브러리 포함 -->
+        <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+
+         <!-- 공통 css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/ui.styles.css" />
+    </head>
 <body>
     <div class="wrapper">
-        <header class="header">
-            <script>
-                $('.header').load('../_include/_header.html', function(){
-                    gnbSet(this, 0, 0);
-                });
-            </script>
-        </header>
-        <main role="main" class="container">
-			container area
+
+        <main role="main" class="cont">
+			<div class="cont-side">side</div>
+            <div class="cont-inner">
+                <header class="header">
+                    <script>
+                        $('.header').load('../_include/_header.html', function(){
+                            gnbSet(this, 0, 0);
+                        });
+                    </script>
+                </header>
+                <div class="inner-detail">
+                    <!-- top -->
+                    <div class="detail-top">
+                        <h1 class="tit">Keyword.</h1>
+                        <div class="keword">
+                            <button type="button" class="p-btn-chips active">국가 ∙ 도시 디자인</button>
+                            <button type="button" class="p-btn-chips">디자인 정책 ∙ 전략</button>
+                            <button type="button" class="p-btn-chips">산업 ∙ 기술</button>
+                            <button type="button" class="p-btn-chips">아이덴티티</button>
+                            <button type="button" class="p-btn-chips">조형 ∙ 미학</button>
+                            <button type="button" class="p-btn-chips">창조성 ∙ 디자인 기획</button>
+                            <button type="button" class="p-btn-chips">혁신 ∙ Good Design</button>
+                            <button type="button" class="p-btn-chips">문화 ∙ 한국성</button>
+                            <button type="button" class="p-btn-chips">모빌리티</button>
+                            <button type="button" class="p-btn-chips">디자인 미래 ∙ 예측</button>
+                            <button type="button" class="p-btn-chips">지역 ∙ 사회 ∙ 환경 ∙ 지속가능</button>
+                            <button type="button" class="p-btn-chips">예술 ∙ 디자인 일반</button>
+                        </div>
+                    </div>
+                    <!-- bottom -->
+                    <div class="detail-bottom">
+                        <!-- list -->
+                        <div class="list">
+                            <div class="list-img">
+                                <img src="#" alt="썸네일">
+                            </div>
+                            <div class="list-info">
+                                <p class="info-tit">
+                                    <span class="tag">지역 ∙ 사회 ∙ 환경 ∙ 지속가능</span>
+                                    <h2>FLLAB 다용도 음식 트레이</h2>
+                                </p>
+                                <p class="info-txt">123</p>
+                                <button type="button" class="p-btn">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
-		<footer class="footer">
-			footer area
-		</footer>
+
     </div>
 </body>
 </html>

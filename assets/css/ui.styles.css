@@ -184,56 +184,6 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /*-------------------------------------------------------------------
-    파일이름 : 레이아웃
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @공통
--------------------------------------------------------------------*/
-.menus ul li ul.menu-inner {
-  display: none;
-}
-.menus ul li.active ul.menu-inner {
-  display: block;
-}
-
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  opacity: 70%;
-}
-
-/*-------------------------------------------------------------------
-    @서브공통
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @서브메인
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @메인
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    파일이름 : 유틸리티
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
 	파일이름 : Variables
 	분류순서 : @Colors, @Sizes
 
@@ -250,6 +200,12 @@ input::-webkit-calendar-picker-indicator {
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
 	@Text (Fontset,
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Font reponsive | html font-size: 16px인 전제하
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Img reponsive | img ratio
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
 	@Responsive
@@ -270,38 +226,19 @@ input::-webkit-calendar-picker-indicator {
   }
 }
 /*-------------------------------------------------------------------
-    파일이름 : Buttons
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Variables
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
     @Default
 /*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Common
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Styles
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    파일이름 : Forms
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Variables
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Default
-/*-----------------------------------------------------------------*/
-.radio, .switch, .checkbox {
+.radio,
+.switch,
+.checkbox {
   position: relative;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
 }
-.radio > input, .switch > input, .checkbox > input {
+.radio > input,
+.switch > input,
+.checkbox > input {
   cursor: pointer;
   position: absolute;
   top: 0px;
@@ -309,13 +246,17 @@ input::-webkit-calendar-picker-indicator {
   opacity: 0 !important;
   outline: none;
 }
-.radio > label, .switch > label, .checkbox > label {
+.radio > label,
+.switch > label,
+.checkbox > label {
   position: relative;
   display: block;
 }
 .radio > label::before,
-.radio > label::after, .switch > label::before,
-.switch > label::after, .checkbox > label::before,
+.radio > label::after,
+.switch > label::before,
+.switch > label::after,
+.checkbox > label::before,
 .checkbox > label::after {
   content: "";
   display: block;
@@ -323,42 +264,7 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /*-------------------------------------------------------------------
-    @Common
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Styles
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    파일이름 : Icons
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Variables
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Default
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Common
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Styles
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    파일이름 : Modals
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Variables
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Default
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Common
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @Styles
+    @모달
 /*-----------------------------------------------------------------*/
 .modal-overlay {
   display: none;
@@ -383,37 +289,239 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /*-------------------------------------------------------------------
-    파일이름 : 공통컨텐츠
-    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @name
+    @토글 메뉴
 /*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @name
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @px to rem
-/*-----------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-    @이미지 비율 유지
-/*-----------------------------------------------------------------*/
-header {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-content: space-between;
-  padding: clamp(1.25rem, 2vw, 2.5rem);
+.menus ul li ul.menu-inner {
+  display: none;
 }
-header nav {
-  justify-self: end;
+.menus ul li.active ul.menu-inner {
+  display: block;
 }
-header nav ul {
-  display: flex;
-  gap: 1.5rem;
-  color: #ccc;
+
+/*-------------------------------------------------------------------
+    @최상단 이동 버튼
+/*-----------------------------------------------------------------*/
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 70%;
 }
-header nav ul li:first-child {
+
+/*-------------------------------------------------------------------
+    @Icon
+/*-----------------------------------------------------------------*/
+.icon {
+  width: 24px;
+  height: 24px;
+}
+.icon .arrow-up {
+  background: url(/assets/img/name.png);
+}
+.icon .arrow-right {
+  background: url(/assets/img/name.png);
+}
+.icon .check {
+  background: url(/assets/img/name.png);
+}
+.icon .search {
+  background: url(/assets/img/name.png);
+}
+.icon .cross {
+  background: url(/assets/img/name.png);
+}
+.icon .menu {
+  background: url(/assets/img/name.png);
+}
+.icon .checked {
+  background: url(/assets/img/name.png);
+}
+.icon .passive {
+  background: url(/assets/img/name.png);
+}
+.icon .active {
+  background: url(/assets/img/name.png);
+}
+
+/*-------------------------------------------------------------------
+    @common - Button | border(default)/fill/include icon
+/*-----------------------------------------------------------------*/
+.p-btn {
+  width: auto;
+  padding: clamp(0.75rem, 2vw, 0.875rem) 1.25rem;
+  border: 1px solid #111;
+  box-sizing: border-box;
+  font-family: "Wanted Sans";
+  font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 700;
   color: #111;
-  text-decoration: underline;
+}
+.p-btn:disabled {
+  border-color: #bbb;
+  color: #bbb;
+}
+.p-btn:disabled > img {
+  filter: grayscale(100%);
+}
+.p-btn:hover {
+  background: #111;
+  color: #fff;
+}
+.p-btn.fill {
+  border: none;
+  background: #111;
+  color: #fff;
+}
+.p-btn.fill:hover {
+  background: #444;
+}
+.p-btn.fill:disabled {
+  background: #bbb;
+  color: #fff;
+}
+.p-btn.includeIcon > img {
+  display: inline-block;
+  margin-left: 0.625rem;
+}
+
+.p-btn-cir {
+  width: clamp(3.25rem, 2vw, 3.25rem);
+  height: clamp(3.25rem, 2vw, 3.25rem);
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid #111;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(1px);
+}
+.p-btn-cir.top {
+  background: #fff;
+}
+.p-btn-cir.mail {
+  background: rgba(17, 17, 17, 0.6);
+}
+
+.p-btn-chips {
+  padding: 0.5rem clamp(0.875rem, 2vw, 1rem);
+  background: #fff;
+  border-radius: 6.25rem;
+  color: #111;
+}
+.p-btn-chips > img {
+  display: none;
+}
+.p-btn-chips:hover {
+  border: 1px solid #111;
+  box-sizing: border-box;
+}
+.p-btn-chips.active {
+  display: inline-flex;
+  gap: 4px;
+  border: 1px solid #111;
+}
+.p-btn-chips.active img {
+  display: block;
+}
+
+/*-------------------------------------------------------------------
+    @Tag
+/*-----------------------------------------------------------------*/
+.tag {
+  padding: 0.1875rem 0.5rem;
+  display: inline-block;
+  border-radius: 2.5rem;
+  background: #fff;
+  color: #111;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+  text-align: center;
+}
+
+.tag.year {
+  border-radius: 0;
+  background: #111;
+  color: #fff;
+}
+
+/*-------------------------------------------------------------------
+    @Form | input, checkbox, radio ...
+/*-----------------------------------------------------------------*/
+label {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+}
+label.essential {
+  position: relative;
+  padding-right: 0.625rem;
+}
+label.essential::after {
+  position: absolute;
+  right: 0;
+  content: "*";
+  display: inline-block;
+  color: #fb3b3b;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #bbb;
+  font-size: 1rem;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+  color: #111;
+  outline: none;
+}
+input[type=text]::placeholder {
+  color: #999;
+}
+input[type=text]:focus {
+  border-bottom-color: #111;
+}
+input[type=text]:disabled {
+  background: #fff;
+  border-bottom-color: #dedede;
+  color: #ccc;
+}
+
+header {
+  height: 88px;
+  background: #eee;
+}
+
+.cont {
+  display: flex;
+}
+.cont .cont-side {
+  height: 100vh;
+  flex: 0 0 20rem;
+  background: #eee;
+}
+.cont .cont-inner {
+  display: flex;
+  flex-direction: column;
+  background: #ccc;
+}
+.cont .cont-inner .inner-detail {
+  max-height: calc(100vh - 88px);
+  flex: 1 1 auto;
+  overflow-y: auto;
+  background: #ddd;
+}
+.cont .cont-inner .inner-detail .detail-top {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
 }/*# sourceMappingURL=ui.styles.css.map */

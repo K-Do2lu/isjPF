@@ -1,65 +1,70 @@
 <!DOCTYPE html>
 <html lang="kr">
-<head>
-    <meta charset="UTF-8"/>
+  <head>
+    <meta charset="UTF-8" />
     <title>이순종 포트폴리오 - Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-	<meta name="format-detection" content="telephone=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no" />
     <!-- https://fonts.google.com/icons -->
-	<link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
+    <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
     <!-- 공통 js -->
     <script src="../assets/js/ui/ui.common.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Swiper.js 라이브러리 포함 -->
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 
-     <!-- 공통 css -->
-	<link rel="stylesheet" type="text/css" href="/assets/css/ui.styles.css" />
-</head>
-<body>
+    <!-- 공통 css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/ui.styles.css" />
+  </head>
+  <body>
     <div class="wrap">
-        <header class="header">
-            <script>
-                $('.header').load('./_include/_header.html', function(){
-                    guideGnbSet(this, 0, 0);
-                });
-            </script>
-        </header>
-        <main role="main">
+      <header class="header">
+        <script>
+          $(".header").load("./_include/_header.html", function () {
+            guideGnbSet(this, 0, 0);
+          });
+        </script>
+      </header>
+      <main role="main">
+        <button onclick="scrollToTop()" id="scrollToTopBtn">
+          최상단으로 이동
+        </button>
 
-            <button onclick="scrollToTop()" id="scrollToTopBtn">최상단으로 이동</button>
+        <h1>123</h1>
+        <h2>123</h2>
+        <!-- 토글 메뉴 -->
+        <!-- div -> nav로 변경 -->
 
-            <h1>123</h1>
-            <h2>123</h2>
-            <!-- 토글 메뉴 -->
-            <!-- div -> nav로 변경 -->
+        <div class="menus">
+          <ul>
+            <li class="menu" onclick="toggleMenu(event)">
+              <a href="#" class="menu-tit">메뉴 타이틀1</a>
+              <ul class="menu-inner">
+                <li><a href="#">서브메뉴 1-1</a></li>
+                <li><a href="#">서브메뉴 1-2</a></li>
+              </ul>
+            </li>
 
+            <li class="menu" onclick="toggleMenu(event)">
+              <a href="#" class="menu-tit">메뉴 타이틀2</a>
 
-            <div class="menus">
-                <ul>
-                    <li class="menu" onclick="toggleMenu(event)">
-                        <a href="#" class="menu-tit">메뉴 타이틀1</a>
-                        <ul class="menu-inner">
-                            <li><a href="#">서브메뉴 1-1</a></li>
-                            <li><a href="#">서브메뉴 1-2</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu" onclick="toggleMenu(event)">
-                        <a href="#" class="menu-tit">메뉴 타이틀2</a>
-
-                        <ul class="menu-inner">
-                            <li><a href="#">서브메뉴 2-1</a></li>
-                            <li><a href="#">서브메뉴 2-2</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- // 토글 메뉴 -->
-
-
-        </main>
+              <ul class="menu-inner">
+                <li><a href="#">서브메뉴 2-1</a></li>
+                <li><a href="#">서브메뉴 2-2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- // 토글 메뉴 -->
+      </main>
     </div>
-</body>
+  </body>
 </html>

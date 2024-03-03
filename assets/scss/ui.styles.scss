@@ -5,41 +5,46 @@
 //-------------------------------------------------------------------
 // @Commons
 @import "./comm.base";
-@import "./comm.layout";
-@import "./comm.utils";
+// @import "./comm.layout";
+// @import "./comm.utils";
 @import "./comm.variables";
 
 // @Components
-@import "./comp.buttons";
-@import "./comp.forms";
-@import "./comp.icons";
-@import "./comp.modals";
+// @import "./comp.buttons";
+// @import "./comp.forms";
+// @import "./comp.icons";
+// @import "./comp.modals";
 
 // @Contents
 @import "./cont.common";
 
 // header
-header{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: space-between;
-    padding: $header-padding;
-    .logo-mo{
-    }
-    nav{
-        justify-self: end;
-        ul{
-            display: flex;
-            gap: 1.5rem;
-            color: #ccc;
-            li{
-                &:first-child{
-                    font-weight: 700;
-                    color: $color-primary;
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
+header {
+  // 임시
+  height: 88px;
+  background: #eee;
 }
-
+.cont {
+  display: flex;
+  // max-height: 60.625rem;
+  .cont-side {
+    height: 100vh;
+    flex: 0 0 20rem;
+    background: #eee;
+  }
+  .cont-inner {
+    display: flex;
+    flex-direction: column;
+    background: #ccc;
+    .inner-detail {
+      max-height: calc(100vh - 88px);
+      flex: 1 1 auto;
+      overflow-y: auto;
+      background: #ddd;
+      .detail-top {
+        display: grid;
+        grid-template-columns: 20rem 1fr;
+      }
+    }
+  }
+}
