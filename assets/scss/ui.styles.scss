@@ -20,17 +20,111 @@
 
 // header
 header {
-  // 임시
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 88px;
-  background: #eee;
+  padding: 1.25rem;
+  background: #fff;
+  nav {
+    align-self: flex-end;
+    ul.menu {
+      position: relative;
+      display: flex;
+      gap: 24px;
+      > li {
+        a.menu-tit {
+          @include body-01;
+          font-family: Wanted Sans;
+          font-weight: 700;
+          color: #ccc;
+          &:hover {
+            color: #111;
+          }
+        }
+        &:first-child {
+          a.menu-tit {
+            color: #111;
+            text-decoration: underline;
+          }
+        }
+        &:hover {
+          ul.menu-sub {
+            display: block;
+          }
+        }
+
+        ul.menu-sub {
+          display: none;
+          position: absolute;
+          right: -1.25rem;
+          top: 3rem;
+          width: 17.5rem;
+          min-width: 17.5rem;
+          max-width: 17.5rem;
+          border: 1px solid #111;
+          background: #fff;
+          .sub-tit {
+            @include body-02;
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            font-weight: 700;
+            color: #333;
+            cursor: pointer;
+            &::after {
+              content: "";
+              position: absolute;
+              right: 20px;
+              width: 1.5rem;
+              height: 1.5rem;
+              @include icon-bg(icon-passive);
+            }
+          }
+          .sub-menu {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 .cont {
   display: flex;
   // max-height: 60.625rem;
   .cont-side {
     height: 100vh;
+    padding: 2.5rem 0;
     flex: 0 0 20rem;
-    background: #eee;
+    background: #fff;
+    .side-wrap {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 0 1.25rem;
+      border-right: 1px solid #111;
+      .side-body {
+        flex: 1;
+      }
+      .side-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        button {
+          width: 100%;
+        }
+      }
+      p {
+        @include body-01;
+        margin-top: 2.5rem;
+        padding: 2.25rem 0 0;
+        border-top: 1px solid #111;
+        font-weight: 600;
+        text-decoration: underline;
+        letter-spacing: -0.02em;
+      }
+    }
   }
   .cont-inner {
     display: flex;

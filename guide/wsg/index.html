@@ -35,28 +35,79 @@
       <main role="main" class="g-main">
         <div>
           <!-- btn -->
-          <button type="button" class="p-btn">btn</button>
-          <button type="button" class="p-btn fill">btn</button>
+          <button type="button" class="p-btn"><span>btn</span></button>
+          <button type="button" class="p-btn" disabled>
+            <span>btn</span>
+          </button>
+          <button type="button" class="p-btn fill"><span>btn</span></button>
+          <button type="button" class="p-btn fill" disabled>
+            <span>btn</span>
+          </button>
           <button type="button" class="p-btn includeIcon">
-            btn<img src="#" alt="icon" />
+            <span>btn</span>
+          </button>
+          <button type="button" class="p-btn includeIcon" disabled>
+            <span>btn</span>
           </button>
           <!-- btn chips -->
+          <button type="button" class="p-btn-chips">chips1</button>
           <button type="button" class="p-btn-chips">
-            chips<img src="#" alt="icon" />
+            chips2<i class="icon check"></i>
+          </button>
+          <button type="button" class="p-btn-chips">
+            chips3<i class="icon cross"></i>
+          </button>
+          <!-- btn circle(fab) -->
+          <!-- id="scrollToTopBtn" -->
+          <button type="button" class="p-btn-cir top" onclick="scrollToTop()">
+            <img src="/assets/img/icon-arrowtop.png" alt="" />
+          </button>
+          <button type="button" class="p-btn-cir mail" onclick="scrollToTop()">
+            <img src="/assets/img/icon-w-mail.png" alt="" />
           </button>
         </div>
 
         <div>
           <!-- tag -->
-          <span class="tag">태그</span>
+          <span class="tag color0">태그1</span>
+          <span class="tag color1">태그2</span>
+          <span class="tag color2">태그3</span>
+          <span class="tag color3">태그4</span>
+          <span class="tag color4">태그5</span>
+          <span class="tag color5">태그6</span>
+          <span class="tag color6">태그7</span>
+          <span class="tag color7">태그8</span>
+          <span class="tag color8">태그9</span>
+          <span class="tag color9">태그10</span>
+          <span class="tag color10">태그11</span>
+          <span class="tag color11">태그12</span>
           <span class="tag year">2024</span>
         </div>
 
+        <!-- input -->
         <div>
           <label for="" class="essential">라벨</label>
           <input type="text" id="" name="" placeholder="placeholder" />
           <label for="" class="essential">라벨</label>
           <input type="text" id="" name="" disabled />
+        </div>
+
+        <!-- icon 24*24-->
+        <div>
+          <i class="icon arrow-top"></i>
+          <i class="icon arrow-right"></i>
+          <i class="icon check"></i>
+          <i class="icon search"></i>
+          <i class="icon cross"></i>
+          <i class="icon menu"></i>
+          <i class="icon mail"></i>
+          <i class="icon passive"></i>
+          <i class="icon active"></i>
+        </div>
+        <!-- img - logo -->
+        <div>
+          <img src="/assets/img/img-logoside.png" alt="side logo" />
+          <img src="/assets/img/img-logo.png" alt="logo" />
         </div>
       </main>
     </div>

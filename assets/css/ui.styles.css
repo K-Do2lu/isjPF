@@ -299,55 +299,43 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /*-------------------------------------------------------------------
-    @최상단 이동 버튼
+    @name
 /*-----------------------------------------------------------------*/
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  opacity: 70%;
-}
-
 /*-------------------------------------------------------------------
     @Icon
 /*-----------------------------------------------------------------*/
 .icon {
+  display: inline-block;
   width: 24px;
   height: 24px;
+  background-size: cover;
 }
-.icon .arrow-up {
-  background: url(/assets/img/name.png);
+.icon.arrow-top {
+  background: url("/assets/img/icon-arrowtop.png");
 }
-.icon .arrow-right {
-  background: url(/assets/img/name.png);
+.icon.arrow-right {
+  background: url("/assets/img/icon-w-arrowright.png");
 }
-.icon .check {
-  background: url(/assets/img/name.png);
+.icon.check {
+  background: url("/assets/img/icon-check.png");
 }
-.icon .search {
-  background: url(/assets/img/name.png);
+.icon.search {
+  background: url("/assets/img/icon-search.png");
 }
-.icon .cross {
-  background: url(/assets/img/name.png);
+.icon.cross {
+  background: url("/assets/img/icon-cross.png");
 }
-.icon .menu {
-  background: url(/assets/img/name.png);
+.icon.menu {
+  background: url("/assets/img/icon-menu.png");
 }
-.icon .checked {
-  background: url(/assets/img/name.png);
+.icon.mail {
+  background: url("/assets/img/icon-w-mail.png");
 }
-.icon .passive {
-  background: url(/assets/img/name.png);
+.icon.passive {
+  background: url("/assets/img/icon-passive.png");
 }
-.icon .active {
-  background: url(/assets/img/name.png);
+.icon.active {
+  background: url("/assets/img/icon-active.png");
 }
 
 /*-------------------------------------------------------------------
@@ -363,16 +351,17 @@ input::-webkit-calendar-picker-indicator {
   font-weight: 700;
   color: #111;
 }
+.p-btn:hover {
+  background: #111;
+  color: #fff;
+}
 .p-btn:disabled {
   border-color: #bbb;
   color: #bbb;
 }
-.p-btn:disabled > img {
-  filter: grayscale(100%);
-}
-.p-btn:hover {
-  background: #111;
-  color: #fff;
+.p-btn:disabled:hover {
+  background: none;
+  color: #bbb;
 }
 .p-btn.fill {
   border: none;
@@ -386,15 +375,47 @@ input::-webkit-calendar-picker-indicator {
   background: #bbb;
   color: #fff;
 }
-.p-btn.includeIcon > img {
+.p-btn.includeIcon > span {
   display: inline-block;
-  margin-left: 0.625rem;
+  position: relative;
+  padding-right: 34px;
+}
+.p-btn.includeIcon > span::after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: url("/assets/img/icon-cross.png");
+}
+.p-btn.includeIcon:hover > span::after {
+  filter: brightness(0) invert(1);
+}
+.p-btn.includeIcon:disabled {
+  border-color: #bbb;
+  color: #bbb;
+}
+.p-btn.includeIcon:disabled span:after {
+  filter: invert(75%);
+}
+
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 .p-btn-cir {
-  width: clamp(3.25rem, 2vw, 3.25rem);
-  height: clamp(3.25rem, 2vw, 3.25rem);
-  padding: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 8px;
   border-radius: 50%;
   border: 1px solid #111;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
@@ -408,25 +429,18 @@ input::-webkit-calendar-picker-indicator {
 }
 
 .p-btn-chips {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
   padding: 0.5rem clamp(0.875rem, 2vw, 1rem);
-  background: #fff;
+  background: #f5f5f5;
   border-radius: 6.25rem;
   color: #111;
-}
-.p-btn-chips > img {
-  display: none;
 }
 .p-btn-chips:hover {
   border: 1px solid #111;
   box-sizing: border-box;
-}
-.p-btn-chips.active {
-  display: inline-flex;
-  gap: 4px;
-  border: 1px solid #111;
-}
-.p-btn-chips.active img {
-  display: block;
 }
 
 /*-------------------------------------------------------------------
@@ -445,11 +459,46 @@ input::-webkit-calendar-picker-indicator {
   letter-spacing: -0.28px;
   text-align: center;
 }
-
 .tag.year {
   border-radius: 0;
   background: #111;
   color: #fff;
+}
+.tag.color0 {
+  background-color: #cef6d7;
+}
+.tag.color1 {
+  background-color: #fde4b4;
+}
+.tag.color2 {
+  background-color: #cad9ff;
+}
+.tag.color3 {
+  background-color: #fbceff;
+}
+.tag.color4 {
+  background-color: #c2f58f;
+}
+.tag.color5 {
+  background-color: #ddbbff;
+}
+.tag.color6 {
+  background-color: #b9f3ef;
+}
+.tag.color7 {
+  background-color: #fef497;
+}
+.tag.color8 {
+  background-color: #e9ff93;
+}
+.tag.color9 {
+  background-color: #b4e0ff;
+}
+.tag.color10 {
+  background-color: #ffd5d0;
+}
+.tag.color11 {
+  background-color: #e6e9f1;
 }
 
 /*-------------------------------------------------------------------
@@ -498,8 +547,70 @@ input[type=text]:disabled {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 88px;
-  background: #eee;
+  padding: 1.25rem;
+  background: #fff;
+}
+header nav {
+  align-self: flex-end;
+}
+header nav ul.menu {
+  position: relative;
+  display: flex;
+  gap: 24px;
+}
+header nav ul.menu > li a.menu-tit {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: Wanted Sans;
+  font-weight: 700;
+  color: #ccc;
+}
+header nav ul.menu > li a.menu-tit:hover {
+  color: #111;
+}
+header nav ul.menu > li:first-child a.menu-tit {
+  color: #111;
+  text-decoration: underline;
+}
+header nav ul.menu > li:hover ul.menu-sub {
+  display: block;
+}
+header nav ul.menu > li ul.menu-sub {
+  display: none;
+  position: absolute;
+  right: -1.25rem;
+  top: 3rem;
+  width: 17.5rem;
+  min-width: 17.5rem;
+  max-width: 17.5rem;
+  border: 1px solid #111;
+  background: #fff;
+}
+header nav ul.menu > li ul.menu-sub .sub-tit {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+}
+header nav ul.menu > li ul.menu-sub .sub-tit::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("/assets/img/icon-passive.png");
+}
+header nav ul.menu > li ul.menu-sub .sub-menu {
+  display: none;
 }
 
 .cont {
@@ -507,8 +618,37 @@ header {
 }
 .cont .cont-side {
   height: 100vh;
+  padding: 2.5rem 0;
   flex: 0 0 20rem;
-  background: #eee;
+  background: #fff;
+}
+.cont .cont-side .side-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 1.25rem;
+  border-right: 1px solid #111;
+}
+.cont .cont-side .side-wrap .side-body {
+  flex: 1;
+}
+.cont .cont-side .side-wrap .side-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cont .cont-side .side-wrap .side-bottom button {
+  width: 100%;
+}
+.cont .cont-side .side-wrap p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 2.5rem;
+  padding: 2.25rem 0 0;
+  border-top: 1px solid #111;
+  font-weight: 600;
+  text-decoration: underline;
+  letter-spacing: -0.02em;
 }
 .cont .cont-inner {
   display: flex;

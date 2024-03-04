@@ -69,57 +69,46 @@
   }
 }
 /*-------------------------------------------------------------------
-    @최상단 이동 버튼
+    @name
 /*-----------------------------------------------------------------*/
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  opacity: 70%;
-}
 
 /*-------------------------------------------------------------------
     @Icon
 /*-----------------------------------------------------------------*/
 @mixin icon-bg($name) {
-  background: url(/assets/img/#{name}.png);
+  background: url("/assets/img/#{$name}.png");
 }
 .icon {
+  display: inline-block;
   width: 24px;
   height: 24px;
-  .arrow-up {
-    @include icon-bg("이름");
+  background-size: cover;
+  &.arrow-top {
+    @include icon-bg(icon-arrowtop);
   }
-  .arrow-right {
-    @include icon-bg("이름");
+  &.arrow-right {
+    @include icon-bg(icon-w-arrowright);
   }
-  .check {
-    @include icon-bg("이름");
+  &.check {
+    @include icon-bg(icon-check);
   }
-  .search {
-    @include icon-bg("이름");
+  &.search {
+    @include icon-bg(icon-search);
   }
-  .cross {
-    @include icon-bg("이름");
+  &.cross {
+    @include icon-bg(icon-cross);
   }
-  .menu {
-    @include icon-bg("이름");
+  &.menu {
+    @include icon-bg(icon-menu);
   }
-  .checked {
-    @include icon-bg("이름");
+  &.mail {
+    @include icon-bg(icon-w-mail);
   }
-  .passive {
-    @include icon-bg("이름");
+  &.passive {
+    @include icon-bg(icon-passive);
   }
-  .active {
-    @include icon-bg("이름");
+  &.active {
+    @include icon-bg(icon-active);
   }
 }
 
@@ -138,17 +127,19 @@ $p-14-0: 0.875rem;
   font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 700;
   color: #111;
-  &:disabled {
-    border-color: #bbb;
-    color: #bbb;
-    > img {
-      filter: grayscale(100%);
-    }
-  }
   &:hover {
     background: #111;
     color: #fff;
   }
+  &:disabled {
+    border-color: #bbb;
+    color: #bbb;
+    &:hover {
+      background: none;
+      color: #bbb;
+    }
+  }
+
   // btn - fill
   &.fill {
     border: none;
@@ -162,19 +153,58 @@ $p-14-0: 0.875rem;
       color: #fff;
     }
   }
+
   // btn - include icon
   &.includeIcon {
-    > img {
+    > span {
       display: inline-block;
-      margin-left: 0.625rem;
+      position: relative;
+      padding-right: 34px;
+      &::after {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        @include icon-bg(icon-cross);
+      }
+    }
+    &:hover {
+      > span {
+        &::after {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+    &:disabled {
+      border-color: #bbb;
+      color: #bbb;
+      span {
+        &:after {
+          filter: invert(75%);
+        }
+      }
     }
   }
 }
-// btn - circle(Fab)
+
+// btn - circle(Fab) | 최상단 버튼, email
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
 .p-btn-cir {
-  width: clamp(3.25rem, 2vw, 3.25rem);
-  height: clamp(3.25rem, 2vw, 3.25rem);
-  padding: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 8px;
   border-radius: 50%;
   border: 1px solid #111;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
@@ -188,29 +218,26 @@ $p-14-0: 0.875rem;
 }
 // btn - chips
 .p-btn-chips {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
   padding: 0.5rem clamp(0.875rem, 2vw, 1rem);
-  background: #fff;
+  background: #f5f5f5;
   border-radius: 6.25rem;
   color: #111;
-  > img {
-    display: none;
-  }
   &:hover {
     border: 1px solid #111;
     box-sizing: border-box;
-  }
-  &.active {
-    display: inline-flex;
-    gap: 4px;
-    border: 1px solid #111;
-    img {
-      display: block;
-    }
   }
 }
 /*-------------------------------------------------------------------
     @Tag
 /*-----------------------------------------------------------------*/
+
+// 색상 배열 정의
+$colors: #cef6d7, #fde4b4, #cad9ff, #fbceff, #c2f58f, #ddbbff, #b9f3ef, #fef497,
+  #e9ff93, #b4e0ff, #ffd5d0, #e6e9f1;
 .tag {
   padding: 0.1875rem 0.5rem;
   display: inline-block;
@@ -223,15 +250,22 @@ $p-14-0: 0.875rem;
   line-height: 20px;
   letter-spacing: -0.28px;
   text-align: center;
-}
-.tag {
+
   // 년도
   &.year {
     border-radius: 0;
     background: #111;
     color: #fff;
   }
+
+  // color0부터 color11까지 각각 다른 색상 할당
+  @for $i from 0 through 11 {
+    &.color#{$i} {
+      background-color: nth($colors, $i + 1);
+    }
+  }
 }
+
 /*-------------------------------------------------------------------
     @Form | input, checkbox, radio ...
 /*-----------------------------------------------------------------*/
