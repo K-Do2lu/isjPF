@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------
     분류순서
     @Variables  : 전역변수
@@ -13,24 +12,24 @@
     @Variables
 --------------------------------------------------------------*/
 //현재 해상도 너비 반응형 test
-window.addEventListener('resize', () => {
-    const screenWidth = window.innerWidth;
-    const fontSize = calculateFontSize(screenWidth);
-    document.documentElement.style.fontSize = `${fontSize}px`; // HTML의 font-size 변경
-  });
+window.addEventListener("resize", () => {
+  const screenWidth = window.innerWidth;
+  const fontSize = calculateFontSize(screenWidth);
+  document.documentElement.style.fontSize = `${fontSize}px`; // HTML의 font-size 변경
+});
 
-  function calculateFontSize(screenWidth, screenHeight) {
-    // screenWidth와 screenHeight를 모두 고려하여 폰트 크기를 계산하는 로직을 작성합니다.
-    if (screenWidth >= 1025) {
-      return 16; // PC에서는 폰트 크기를 18px로 설정
-    } else if (screenWidth >= 768 && screenWidth <= 1024) {
-      return 15; // 태블릿에서는 폰트 크기를 16px로 설정
-    } else if (screenWidth >= 360 && screenWidth <= 767) {
-      return 14; // 모바일에서는 폰트 크기를 14px로 설정
-    } else {
-      return 14; // 그 외의 경우에는 폰트 크기를 14px로 설정 (기본값)
-    }
+function calculateFontSize(screenWidth, screenHeight) {
+  // screenWidth와 screenHeight를 모두 고려하여 폰트 크기를 계산하는 로직을 작성합니다.
+  if (screenWidth >= 1025) {
+    return 16; // PC에서는 폰트 크기를 18px로 설정
+  } else if (screenWidth >= 768 && screenWidth <= 1024) {
+    return 15; // 태블릿에서는 폰트 크기를 16px로 설정
+  } else if (screenWidth >= 360 && screenWidth <= 767) {
+    return 14; // 모바일에서는 폰트 크기를 14px로 설정
+  } else {
+    return 14; // 그 외의 경우에는 폰트 크기를 14px로 설정 (기본값)
   }
+}
 
 /*--------------------------------------------------------------
     @Settings
@@ -73,83 +72,88 @@ window.addEventListener('resize', () => {
 
 // 모달 - 열기
 function modalOn(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = "flex";
+  const modal = document.getElementById(modalId);
+  modal.style.display = "flex";
 }
 // 모달 - 닫기
 function modalOff(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = "none";
+  const modal = document.getElementById(modalId);
+  modal.style.display = "none";
 }
 // 모달 - 각 요소에 대해 클릭 이벤트 추가, 외부 클릭 시 닫기
-document.addEventListener("DOMContentLoaded", function() {
-    const modalButtons = document.querySelectorAll(".btn-modal");
+document.addEventListener("DOMContentLoaded", function () {
+  const modalButtons = document.querySelectorAll(".btn-modal");
 
-    modalButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const modalId = button.dataset.modal;
-            modalOn(modalId);
-        });
+  modalButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const modalId = button.dataset.modal;
+      modalOn(modalId);
     });
+  });
 
-    const modals = document.querySelectorAll(".modal-overlay");
+  const modals = document.querySelectorAll(".modal-overlay");
 
-    modals.forEach(function(modal) {
-        modal.addEventListener("click", function(event) {
-            if (event.target.classList.contains("modal-overlay")) {
-                const modalId = modal.id;
-                modalOff(modalId);
-            }
-        });
+  modals.forEach(function (modal) {
+    modal.addEventListener("click", function (event) {
+      if (event.target.classList.contains("modal-overlay")) {
+        const modalId = modal.id;
+        modalOff(modalId);
+      }
     });
-    // 모달 - esc로 닫기
-    window.addEventListener("keyup", function(event) {
-        if (event.key === "Escape") {
-            modals.forEach(function(modal) {
-                modal.style.display = "none";
-            });
-        }
-    });
+  });
+  // 모달 - esc로 닫기
+  window.addEventListener("keyup", function (event) {
+    if (event.key === "Escape") {
+      modals.forEach(function (modal) {
+        modal.style.display = "none";
+      });
+    }
+  });
 });
 
 //토글 메뉴
 const menuItems = document.querySelectorAll(".menu, .menu-tit");
 const toggleMenu = (event) => {
-    console.log('asd');
-    event.preventDefault(); // 기본 동작 중지
-    const clickedMenu = event.currentTarget.closest('.menu'); // 클릭된 요소의 부모 .menu 요소 가져오기
-    if(clickedMenu.classList.contains('menu')) {
-        clickedMenu.classList.toggle("active");
-    }
-}
-menuItems.forEach(menuItem => {
-    menuItem.addEventListener("click", toggleMenu);
+  event.preventDefault(); // 기본 동작 중지
+  const clickedMenu = event.currentTarget.closest(".menu"); // 클릭된 요소의 부모 .menu 요소 가져오기
+  if (clickedMenu.classList.contains("menu")) {
+    clickedMenu.classList.toggle("active");
+  }
+};
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener("click", toggleMenu);
 });
 
+// header
+const header = document.querySelector("header");
+const asd = () => {
+  console.log("asd");
+};
+header.addEventListener("mouseenter", asd);
 
 // GNB
-function guideGnbSet(_this, n1, n2){
-    // _this - .header
-    // n1 - depth1 n번째 메뉴
-    // n2 - depth2 n번째 메뉴
+function guideGnbSet(_this, n1, n2) {
+  // _this - .header
+  // n1 - depth1 n번째 메뉴
+  // n2 - depth2 n번째 메뉴
 }
 
 /*--------------------------------------------------------------
     @Components
 --------------------------------------------------------------*/
 // 최상단 이동 버튼
-window.onscroll = function() {
-    // 스크롤 시 버튼을 나타내거나 숨김
-    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    scrollToTopBtn.style.display = (window.scrollY > 20) ? "block" : "none";
-    };
+window.onscroll = function () {
+  // 스크롤 시 버튼을 나타내거나 숨김
+  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  scrollToTopBtn.style.display = window.scrollY > 20 ? "block" : "none";
+};
 
-    function scrollToTop() {
-    // 페이지의 최상단으로 스크롤
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+function scrollToTop() {
+  // 페이지의 최상단으로 스크롤
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
 /*--------------------------------------------------------------
     @Contents
@@ -159,13 +163,13 @@ window.onscroll = function() {
     @Inits
 --------------------------------------------------------------*/
 /* Setting */
-function set_init(){}
+function set_init() {}
 
 /* UI */
-function ui_init(){}
+function ui_init() {}
 
 /* Ready */
-$(function(){
-    set_init();
-    ui_init();
-});
+// $(function () {
+//   set_init();
+//   ui_init();
+// });

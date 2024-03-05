@@ -24,16 +24,19 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 88px;
-  padding: 1.25rem;
+  // padding: 1.25rem;
   background: #fff;
   nav {
-    align-self: flex-end;
+    height: 100%;
     ul.menu {
       position: relative;
       display: flex;
       gap: 24px;
+      height: 100%;
       > li {
+        display: grid;
         a.menu-tit {
+          align-self: flex-end;
           @include body-01;
           font-family: Wanted Sans;
           font-weight: 700;
@@ -48,6 +51,11 @@ header {
             text-decoration: underline;
           }
         }
+        &.active {
+          ul.menu-sub {
+            display: block;
+          }
+        }
         &:hover {
           ul.menu-sub {
             display: block;
@@ -57,8 +65,10 @@ header {
         ul.menu-sub {
           display: none;
           position: absolute;
-          right: -1.25rem;
-          top: 3rem;
+          // right: -1.25rem;
+          // top: 3rem;
+          right: 0;
+          top: 100%;
           width: 17.5rem;
           min-width: 17.5rem;
           max-width: 17.5rem;

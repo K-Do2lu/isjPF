@@ -128,8 +128,7 @@ $p-14-0: 0.875rem;
   font-weight: 700;
   color: #111;
   &:hover {
-    background: #111;
-    color: #fff;
+    background: #f5f5f5;
   }
   &:disabled {
     border-color: #bbb;
@@ -172,13 +171,13 @@ $p-14-0: 0.875rem;
         @include icon-bg(icon-cross);
       }
     }
-    &:hover {
-      > span {
-        &::after {
-          filter: brightness(0) invert(1);
-        }
-      }
-    }
+    // &:hover {
+    //   > span {
+    //     &::after {
+    //       filter: brightness(0) invert(1);
+    //     }
+    //   }
+    // }
     &:disabled {
       border-color: #bbb;
       color: #bbb;
