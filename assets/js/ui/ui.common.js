@@ -124,13 +124,6 @@ menuItems.forEach((menuItem) => {
   menuItem.addEventListener("click", toggleMenu);
 });
 
-// header
-const header = document.querySelector("header");
-const asd = () => {
-  console.log("asd");
-};
-header.addEventListener("mouseenter", asd);
-
 // GNB
 function guideGnbSet(_this, n1, n2) {
   // _this - .header

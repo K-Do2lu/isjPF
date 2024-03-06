@@ -24,79 +24,109 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 88px;
-  // padding: 1.25rem;
+  padding: 0 20px;
   background: #fff;
-  nav {
-    height: 100%;
-    ul.menu {
-      position: relative;
-      display: flex;
-      gap: 24px;
-      height: 100%;
-      > li {
-        display: grid;
-        a.menu-tit {
-          align-self: flex-end;
-          @include body-01;
-          font-family: Wanted Sans;
-          font-weight: 700;
-          color: #ccc;
-          &:hover {
-            color: #111;
-          }
-        }
-        &:first-child {
+  .gnb-wrap {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    align-self: flex-end;
+    nav {
+      ul.menu {
+        display: flex;
+        gap: 24px;
+        height: 100%;
+        > li {
+          display: grid;
+          padding-bottom: 20px;
           a.menu-tit {
-            color: #111;
-            text-decoration: underline;
-          }
-        }
-        &.active {
-          ul.menu-sub {
-            display: block;
-          }
-        }
-        &:hover {
-          ul.menu-sub {
-            display: block;
-          }
-        }
-
-        ul.menu-sub {
-          display: none;
-          position: absolute;
-          // right: -1.25rem;
-          // top: 3rem;
-          right: 0;
-          top: 100%;
-          width: 17.5rem;
-          min-width: 17.5rem;
-          max-width: 17.5rem;
-          border: 1px solid #111;
-          background: #fff;
-          .sub-tit {
+            // align-self: flex-end;
             @include body-02;
-            display: inline-block;
-            position: relative;
-            width: 100%;
-            padding: 0.75rem 1.25rem;
+            font-family: Wanted Sans;
             font-weight: 700;
-            color: #333;
-            cursor: pointer;
-            &::after {
-              content: "";
-              position: absolute;
-              right: 20px;
-              width: 1.5rem;
-              height: 1.5rem;
-              @include icon-bg(icon-passive);
+            color: #ccc;
+            &:hover {
+              color: #111;
             }
           }
-          .sub-menu {
+          &:first-child {
+            a.menu-tit {
+              color: #111;
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+          }
+          &:hover {
+            ul.menu-sub {
+              display: block;
+            }
+          }
+
+          ul.menu-sub {
             display: none;
+            position: absolute;
+            right: -20px;
+            top: 100%;
+            width: 17.5rem;
+            min-width: 17.5rem;
+            max-width: 17.5rem;
+            border: 1px solid #111;
+            background: #fff;
+            > li {
+              a {
+                display: inline-block;
+                width: 100%;
+              }
+              .sub-tit {
+                @include body-03;
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                padding: 0.75rem 1.25rem;
+                font-weight: 700;
+                color: #333;
+                cursor: pointer;
+                &::after {
+                  content: "";
+                  position: absolute;
+                  right: 20px;
+                  width: 1.5rem;
+                  height: 1.5rem;
+                  @include icon-bg(icon-passive);
+                }
+              }
+              .sub-menu {
+                display: none;
+                padding: 6px 20px;
+                background: #f5f5f5;
+                > li {
+                  @include caption-01;
+                  font-weight: 400;
+                  color: #333;
+                  padding: 10px 0;
+                  background: #f5f5f5;
+                }
+              }
+              &.active {
+                .sub-tit {
+                  &::after {
+                    @include icon-bg(icon-active);
+                  }
+                }
+                .sub-menu {
+                  display: block;
+                }
+              }
+            }
           }
         }
       }
+    }
+    .gnb {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
   }
 }
@@ -126,12 +156,13 @@ header {
         }
       }
       p {
-        @include body-01;
+        @include body-02;
         margin-top: 2.5rem;
         padding: 2.25rem 0 0;
         border-top: 1px solid #111;
         font-weight: 600;
         text-decoration: underline;
+        text-underline-position: under;
         letter-spacing: -0.02em;
       }
     }

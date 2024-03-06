@@ -39,15 +39,15 @@
           <button type="button" class="p-btn" disabled>
             <span>btn</span>
           </button>
-          <button type="button" class="p-btn fill"><span>btn</span></button>
-          <button type="button" class="p-btn fill" disabled>
-            <span>btn</span>
+          <button type="button" class="p-btn fill">btn</button>
+          <button type="button" class="p-btn fill" disabled>btn</button>
+          <button type="button" class="p-btn has-icon">
+            btn
+            <i class="icon arrow-right"></i>
           </button>
-          <button type="button" class="p-btn includeIcon">
-            <span>btn</span>
-          </button>
-          <button type="button" class="p-btn includeIcon" disabled>
-            <span>btn</span>
+          <button type="button" class="p-btn has-icon" disabled>
+            btn
+            <i class="icon arrow-right"></i>
           </button>
           <!-- btn chips -->
           <button type="button" class="p-btn-chips">chips1</button>
@@ -90,6 +90,19 @@
           <input type="text" id="" name="" placeholder="placeholder" />
           <label for="" class="essential">라벨</label>
           <input type="text" id="" name="" disabled />
+
+          <div class="input-search">
+            <input
+              type="text"
+              id=""
+              name=""
+              class="search"
+              placeholder="검색어를 입력해주세요"
+            />
+            <div class="input-icon">
+              <i class="icon-svg search"></i>
+            </div>
+          </div>
         </div>
 
         <!-- icon 24*24-->
@@ -103,11 +116,59 @@
           <i class="icon mail"></i>
           <i class="icon passive"></i>
           <i class="icon active"></i>
+          <i class="icon download"></i>
+          <i class="icon link"></i>
+          <i class="icon arrow-double-left"></i>
+          <i class="icon arrow-double-right"></i>
+          <i class="icon prev"></i>
+          <i class="icon next"></i>
         </div>
+
         <!-- img - logo -->
         <div>
           <img src="/assets/img/img-logoside.png" alt="side logo" />
           <img src="/assets/img/img-logo.png" alt="logo" />
+        </div>
+
+        <!-- layout - list -->
+        <div>
+          <div class="list">
+            <div class="list-img"><img src=" " alt="" /></div>
+
+            <div class="list-info">
+              <div class="info-top">
+                <div class="tags">
+                  <span class="tag color0">태그1</span>
+                  <span class="tag color1">태그2</span>
+                  <span class="tag color2">태그3</span>
+                  <span class="tag color3">태그4</span>
+                </div>
+                <h2 class="tit">
+                  <span class="year">2023</span>
+                  <span>
+                    <em>FLLAB</em>
+                    다용도 음식 트레이
+                  </span>
+                </h2>
+              </div>
+
+              <div class="info-middle">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur. Ut non nisl hendrerit
+                  ultrices vitae elementum magna odio. Id posuere sapien
+                  hendrerit suspendisse sagittis tortor amet convallis. In
+                  viverra auctor est leo porttitor nisl diam integer.
+                </p>
+              </div>
+
+              <div class="info-bottom">
+                <button type="button" class="p-btn has-icon">
+                  View
+                  <i class="icon arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>

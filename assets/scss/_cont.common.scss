@@ -77,16 +77,19 @@
 /*-----------------------------------------------------------------*/
 @mixin icon-bg($name) {
   background: url("/assets/img/#{$name}.png");
+  background-size: cover;
 }
 .icon {
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-size: cover;
   &.arrow-top {
     @include icon-bg(icon-arrowtop);
   }
   &.arrow-right {
+    @include icon-bg(icon-arrowright);
+  }
+  &.arrow-right-w {
     @include icon-bg(icon-w-arrowright);
   }
   &.check {
@@ -101,7 +104,7 @@
   &.menu {
     @include icon-bg(icon-menu);
   }
-  &.mail {
+  &.mail-w {
     @include icon-bg(icon-w-mail);
   }
   &.passive {
@@ -110,15 +113,36 @@
   &.active {
     @include icon-bg(icon-active);
   }
+  &.download {
+    @include icon-bg(icon-download);
+  }
+  &.link {
+    @include icon-bg(icon-link);
+  }
+  &.arrow-double-left {
+    @include icon-bg(icon-arrowDoubleLeft);
+  }
+  &.arrow-double-right {
+    @include icon-bg(icon-arrowDoubleRight);
+  }
+  &.prev {
+    @include icon-bg(icon-prev);
+  }
+  &.next {
+    @include icon-bg(icon-next);
+  }
 }
-
 /*-------------------------------------------------------------------
-    @common - Button | border(default)/fill/include icon
+    @common - Button | border(default)/fill/has icon
 /*-----------------------------------------------------------------*/
 $p-12-0: 0.75rem;
 $p-14-0: 0.875rem;
 // btn - border(default)
 .p-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
   width: auto;
   padding: clamp(0.75rem, 2vw, 0.875rem) 1.25rem;
   border: 1px solid #111;
@@ -137,6 +161,9 @@ $p-14-0: 0.875rem;
       background: none;
       color: #bbb;
     }
+    .icon {
+      filter: invert(75%);
+    }
   }
 
   // btn - fill
@@ -153,38 +180,24 @@ $p-14-0: 0.875rem;
     }
   }
 
-  // btn - include icon
-  &.includeIcon {
-    > span {
-      display: inline-block;
-      position: relative;
-      padding-right: 34px;
-      &::after {
-        content: "";
-        width: 1.5rem;
-        height: 1.5rem;
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        @include icon-bg(icon-cross);
+  // btn - has icon
+  &.has-icon {
+    &:hover {
+      background: #111;
+      color: #fff;
+      .icon {
+        filter: invert(100%);
       }
     }
-    // &:hover {
-    //   > span {
-    //     &::after {
-    //       filter: brightness(0) invert(1);
-    //     }
-    //   }
-    // }
     &:disabled {
       border-color: #bbb;
       color: #bbb;
-      span {
-        &:after {
-          filter: invert(75%);
-        }
+      &:hover {
+        background: none;
+        color: #bbb;
+      }
+      .icon {
+        filter: invert(75%);
       }
     }
   }
@@ -224,9 +237,10 @@ $p-14-0: 0.875rem;
   padding: 0.5rem clamp(0.875rem, 2vw, 1rem);
   background: #f5f5f5;
   border-radius: 6.25rem;
+  border: 1px solid transparent;
   color: #111;
   &:hover {
-    border: 1px solid #111;
+    border-color: #111;
     box-sizing: border-box;
   }
 }
@@ -235,18 +249,17 @@ $p-14-0: 0.875rem;
 /*-----------------------------------------------------------------*/
 
 // 색상 배열 정의
-$colors: #cef6d7, #fde4b4, #cad9ff, #fbceff, #c2f58f, #ddbbff, #b9f3ef, #fef497,
-  #e9ff93, #b4e0ff, #ffd5d0, #e6e9f1;
+$colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
+  #f1f8c6, #dfecf6, #ffe5e5, #e6e9f1;
 .tag {
   padding: 0.1875rem 0.5rem;
   display: inline-block;
   border-radius: 2.5rem;
   background: #fff;
   color: #111;
+  @include caption-01;
   font-family: Pretendard;
-  font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
   letter-spacing: -0.28px;
   text-align: center;
 
@@ -290,11 +303,10 @@ label {
 }
 input[type="text"] {
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 8px 0;
   border-bottom: 1px solid #bbb;
-  font-size: 1rem;
-  line-height: 24px; /* 150% */
-  letter-spacing: -0.32px;
+  @include body-03;
+  font-weight: 400;
   color: #111;
   outline: none;
   &::placeholder {
@@ -307,5 +319,92 @@ input[type="text"] {
     background: #fff;
     border-bottom-color: #dedede;
     color: #ccc;
+  }
+}
+
+// input - search
+.input-search {
+  display: grid;
+  padding: 0.875rem 0;
+  grid-template-columns: 1fr minmax(28px, 38px);
+  grid-template-rows: minmax(28px, 38px);
+  align-items: center;
+  border-bottom: 4px solid #111;
+  overflow: hidden;
+  input[type="text"] {
+    border-bottom: none;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    letter-spacing: -0.02em;
+  }
+  .input-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+// icon svg test
+.icon-svg {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  &.search {
+    background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M27.4256 25.1864C29.0929 23.0415 30.0858 20.3462 30.0858 17.4191C30.0858 10.4235 24.4147 4.75244 17.4191 4.75244C10.4235 4.75244 4.75244 10.4235 4.75244 17.4191C4.75244 24.4147 10.4235 30.0858 17.4191 30.0858C20.3462 30.0858 23.0415 29.0929 25.1864 27.4256L31.0083 33.2475L33.2475 31.0083L27.4256 25.1864ZM26.9191 17.4191C26.9191 22.6658 22.6658 26.9191 17.4191 26.9191C12.1724 26.9191 7.91911 22.6658 7.91911 17.4191C7.91911 12.1724 12.1724 7.91911 17.4191 7.91911C22.6658 7.91911 26.9191 12.1724 26.9191 17.4191Z' fill='%23111111'/%3E%3C/svg%3E%0A");
+  }
+}
+
+// list
+h2.tit {
+  @include head-03;
+  font-weight: 700;
+  .year {
+    display: inline-block;
+    font-weight: 500;
+  }
+  em {
+    font-family: Wanted Sans;
+  }
+}
+.list {
+  h2.tit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+  }
+  display: flex;
+  // flex-wrap: wrap;
+  gap: clamp(20px, 2vw, 40px);
+  .list-img {
+    flex: 0 0 320px;
+    background: #eee;
+  }
+  .list-info {
+    max-width: 822px;
+    .info-top {
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding-bottom: clamp(10px, 2vw, 12px);
+      }
+    }
+    .info-middle {
+      p {
+        padding-top: clamp(12px, 2vw, 24px);
+        @include body-02;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .info-bottom {
+      padding-top: clamp(40px, 2vw, 80px);
+    }
   }
 }

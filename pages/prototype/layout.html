@@ -41,7 +41,23 @@
                 <!-- header -->
                 <header class="header">
                     <script>
-                        $('.header').load('../_include/_header.html');
+                        $('.header').load('../_include/_header.html', function() {
+                            const sub_menu = document.querySelectorAll("header .menu-sub li");
+
+                            const slideDown = (e) => {
+                                const clicked = e.currentTarget;
+                                sub_menu.forEach((item) => {
+                                    if(item !== clicked){
+                                        item.classList.remove('active');
+                                    }
+                                });
+                                clicked.classList.toggle('active');
+                            };
+
+                            sub_menu.forEach((item) => {
+                                item.addEventListener("click", slideDown);
+                            });
+                        });
                     </script>
                 </header>
                 <!-- //header -->
@@ -50,18 +66,18 @@
                     <div class="detail-top">
                         <h1 class="tit">Keyword.</h1>
                         <div class="keword">
-                            <button type="button" class="p-btn-chips active">국가 ∙ 도시 디자인</button>
-                            <button type="button" class="p-btn-chips">디자인 정책 ∙ 전략</button>
-                            <button type="button" class="p-btn-chips">산업 ∙ 기술</button>
-                            <button type="button" class="p-btn-chips">아이덴티티</button>
-                            <button type="button" class="p-btn-chips">조형 ∙ 미학</button>
-                            <button type="button" class="p-btn-chips">창조성 ∙ 디자인 기획</button>
-                            <button type="button" class="p-btn-chips">혁신 ∙ Good Design</button>
-                            <button type="button" class="p-btn-chips">문화 ∙ 한국성</button>
-                            <button type="button" class="p-btn-chips">모빌리티</button>
-                            <button type="button" class="p-btn-chips">디자인 미래 ∙ 예측</button>
-                            <button type="button" class="p-btn-chips">지역 ∙ 사회 ∙ 환경 ∙ 지속가능</button>
-                            <button type="button" class="p-btn-chips">예술 ∙ 디자인 일반</button>
+                            <span class="tag color0">국가 ∙ 도시 디자인</span>
+                            <span class="tag color1">디자인 정책 ∙ 전략</span>
+                            <span class="tag color2">산업 ∙ 기술</span>
+                            <span class="tag color3">아이덴티티</span>
+                            <span class="tag color4">조형 ∙ 미학</span>
+                            <span class="tag color5">창조성 ∙ 디자인 기획</span>
+                            <span class="tag color6">혁신 ∙ Good Design</span>
+                            <span class="tag color7">문화 ∙ 한국성</span>
+                            <span class="tag color8">모빌리티</span>
+                            <span class="tag color9">디자인 미래 ∙ 예측</span>
+                            <span class="tag color10">지역 ∙ 사회 ∙ 환경 ∙ 지속가능</span>
+                            <span class="tag color11">예술 ∙ 디자인 일반</span>
                         </div>
                     </div>
                     <!-- bottom -->

@@ -28,27 +28,27 @@ $c-gr-scale600: #666666;
 $c-gr-scale500: #999999;
 // Label color
 // 국가 ∙ 도시 디자인
-$c-label00: #cef6d7;
+$c-label00: #e3f5e7;
 // 디자인 정책 ∙ 전략
-$c-label01: #fde4b4;
+$c-label01: #f9e4cb;
 // 산업 ∙ 기술
-$c-label02: #cad9ff;
+$c-label02: #e2e6fd;
 // 아이덴티티
-$c-label03: #fbceff;
+$c-label03: #f9e9fb;
 // 조형 ∙ 미학
-$c-label04: #c2f58f;
+$c-label04: #e5fad0;
 // 창조성 ∙ 디자인 기획
-$c-label05: #ddbbff;
+$c-label05: #f2e7fe;
 // 혁신 ∙ Good Design
-$c-label06: #b9f3ef;
+$c-label06: #d6f5f3;
 // 문화 ∙ 한국성
-$c-label07: #fef497;
+$c-label07: #fcf2d1;
 // 모빌리티
-$c-label08: #e9ff93;
+$c-label08: #f1f8c6;
 // 디자인 미래 ∙ 예측
-$c-label09: #b4e0ff;
+$c-label09: #dfecf6;
 // 지역 ∙ 사회 ∙ 환경 ∙ 지속가능
-$c-label10: #ffd5d0;
+$c-label10: #ffe5e5;
 // 예술 ∙ 디자인 일반
 $c-label11: #e6e9f1;
 
@@ -65,69 +65,40 @@ $header-padding: clamp(1.25rem, 2vw, 2.5rem);
 -------------------------------------------------------------------*/
 
 // pc
-@mixin head01 {
-  font-size: 2.875rem;
-  font-weight: 500;
-  line-height: 3.5rem;
+@mixin head-01 {
+  font-size: 4rem;
+  line-height: 4.5rem;
 }
-@mixin head02 {
-  font-size: 2.25rem;
-  font-weight: bold;
-  line-height: 2.75rem;
+@mixin head-02 {
+  font-size: 2.625rem;
+  line-height: 3.125rem;
 }
-@mixin head-sub01 {
+@mixin head-03 {
+  font-size: 2.125rem;
+  line-height: 2.625rem;
+}
+@mixin sub-title-01 {
   font-size: 2rem;
-  font-weight: 500;
   line-height: 2.5rem;
 }
-@mixin head-sub02 {
+@mixin sub-title-02 {
   font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 2.375rem;
+  line-height: 2.25rem;
 }
 @mixin body-01 {
-  font-size: 1.125rem;
-  // font-weight: 직접 지정;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2.125rem;
 }
 @mixin body-02 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+@mixin body-03 {
   font-size: 1rem;
-  // font-weight: 직접 지정;
   line-height: 1.5rem;
 }
 @mixin caption-01 {
   font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-// mo
-@mixin head01-m {
-  font-size: 2.125rem;
-  font-weight: 500;
-  line-height: 2.625rem;
-}
-@mixin head02-m {
-  font-size: 1.625rem;
-  font-weight: bold;
-  line-height: 2.125rem;
-}
-@mixin head-sub01-m {
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 2rem;
-}
-@mixin head-sub02-m {
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.75rem;
-}
-@mixin body-01-m {
-  font-size: 1rem;
-  // font-weight: 직접 지정;
-  line-height: 1.5rem;
-}
-@mixin body-02-m {
-  font-size: 0.875rem;
-  // font-weight: 직접 지정;
   line-height: 1.25rem;
 }
 // Fonts
