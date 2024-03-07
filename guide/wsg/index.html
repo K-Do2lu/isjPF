@@ -22,6 +22,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="../../assets/js/guide/guide.common.js"></script>
+    <script src="../../assets/js/ui/ui.common.js"></script>
   </head>
   <body>
     <div class="g-wrapper">
@@ -33,8 +34,59 @@
         </script>
       </header>
       <main role="main" class="g-main">
+        <!-- 토글 메뉴 -->
+        <div class="menus">
+          <ul>
+            <li class="menu" onclick="toggleMenu(event)">
+              <a href="#" class="menu-tit">메뉴 타이틀1</a>
+              <ul class="menu-inner">
+                <li><a href="#">서브메뉴 1-1</a></li>
+                <li><a href="#">서브메뉴 1-2</a></li>
+              </ul>
+            </li>
+
+            <li class="menu" onclick="toggleMenu(event)">
+              <a href="#" class="menu-tit">메뉴 타이틀2</a>
+
+              <ul class="menu-inner">
+                <li><a href="#">서브메뉴 2-1</a></li>
+                <li><a href="#">서브메뉴 2-2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- // 토글 메뉴 -->
         <div>
+          <!-- modal -->
+          <div id="modal1" class="modal-overlay">
+            <div class="modal-window">
+              <div class="title">
+                <h1>모달 1</h1>
+              </div>
+              <button class="close-area" onclick="modalOff('modal1')">X</button>
+              <div class="content">
+                <p>모달 1 내용</p>
+              </div>
+            </div>
+          </div>
           <!-- btn -->
+          <div class="scroll-btns">
+            <button
+              type="button"
+              class="p-btn-cir mail btn-modal"
+              data-modal="modal1"
+            >
+              <img src="/assets/img/icon-w-mail.png" alt="" />
+            </button>
+            <button
+              type="button"
+              class="p-btn-cir top"
+              onclick="scrollToTop()"
+              id="scrollToTopBtn"
+            >
+              <img src="/assets/img/icon-arrowtop.png" alt="" />
+            </button>
+          </div>
           <button type="button" class="p-btn"><span>btn</span></button>
           <button type="button" class="p-btn" disabled>
             <span>btn</span>
@@ -51,10 +103,10 @@
           </button>
           <!-- btn chips -->
           <button type="button" class="p-btn-chips">chips1</button>
-          <button type="button" class="p-btn-chips">
+          <button type="button" class="p-btn-chips active">
             chips2<i class="icon check"></i>
           </button>
-          <button type="button" class="p-btn-chips">
+          <button type="button" class="p-btn-chips active">
             chips3<i class="icon cross"></i>
           </button>
           <!-- btn circle(fab) -->
@@ -62,7 +114,7 @@
           <button type="button" class="p-btn-cir top" onclick="scrollToTop()">
             <img src="/assets/img/icon-arrowtop.png" alt="" />
           </button>
-          <button type="button" class="p-btn-cir mail" onclick="scrollToTop()">
+          <button type="button" class="p-btn-cir mail">
             <img src="/assets/img/icon-w-mail.png" alt="" />
           </button>
         </div>
@@ -133,7 +185,9 @@
         <!-- layout - list -->
         <div>
           <div class="list">
-            <div class="list-img"><img src=" " alt="" /></div>
+            <div class="list-img">
+              <img src="/assets/img/test3.jfif" alt="" />
+            </div>
 
             <div class="list-info">
               <div class="info-top">
@@ -143,13 +197,13 @@
                   <span class="tag color2">태그3</span>
                   <span class="tag color3">태그4</span>
                 </div>
-                <h2 class="tit">
+                <h3 class="tit">
                   <span class="year">2023</span>
                   <span>
                     <em>FLLAB</em>
                     다용도 음식 트레이
                   </span>
-                </h2>
+                </h3>
               </div>
 
               <div class="info-middle">

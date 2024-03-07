@@ -28,9 +28,34 @@
     <div class="wrap">
       <header class="header">
         <script>
-          $(".header").load("./_include/_header.html", function () {
-            guideGnbSet(this, 0, 0);
+          $(".header").load("/pages/_include/_header.html", function () {
+            const sub_menu = document.querySelectorAll("header .menu-sub li");
+
+            const slideDown = (e) => {
+              const clicked = e.currentTarget;
+              sub_menu.forEach((item) => {
+                if (item !== clicked) {
+                  item.classList.remove("active");
+                }
+              });
+              clicked.classList.toggle("active");
+            };
+
+            sub_menu.forEach((item) => {
+              item.addEventListener("click", slideDown);
+            });
           });
+
+          // window.addEventListener('scroll', function() {
+          //     var header = document.getElementById('header');
+          //     var scrollPosition = window.scrollY;
+
+          //     if (scrollPosition > 0) {
+          //         header.classList.add('fixed');
+          //     } else {
+          //         header.classList.remove('fixed');
+          //     }
+          // });
         </script>
       </header>
       <main role="main">
