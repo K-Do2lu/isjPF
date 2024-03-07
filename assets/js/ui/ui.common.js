@@ -9,67 +9,8 @@
     @Init       : 초기실행
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-    @Variables
+    @modal
 --------------------------------------------------------------*/
-//현재 해상도 너비 반응형 test
-window.addEventListener("resize", () => {
-  const screenWidth = window.innerWidth;
-  const fontSize = calculateFontSize(screenWidth);
-  document.documentElement.style.fontSize = `${fontSize}px`; // HTML의 font-size 변경
-});
-
-// function calculateFontSize(screenWidth, screenHeight) {
-//   // screenWidth와 screenHeight를 모두 고려하여 폰트 크기를 계산하는 로직을 작성합니다.
-//   if (screenWidth >= 1025) {
-//     return 16; // PC에서는 폰트 크기를 18px로 설정
-//   } else if (screenWidth >= 768 && screenWidth <= 1024) {
-//     return 15; // 태블릿에서는 폰트 크기를 16px로 설정
-//   } else if (screenWidth >= 360 && screenWidth <= 767) {
-//     return 14; // 모바일에서는 폰트 크기를 14px로 설정
-//   } else {
-//     return 14; // 그 외의 경우에는 폰트 크기를 14px로 설정 (기본값)
-//   }
-// }
-
-/*--------------------------------------------------------------
-    @Settings
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-    @Utilites
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-    @Layouts
---------------------------------------------------------------*/
-// swiper
-// var swiper = new Swiper('.swiper-container', {
-//     // 옵션 설정
-//     slidesPerView: 'auto', // 화면에 보이는 슬라이드 개수를 자동으로 설정
-//     spaceBetween: 10, // 슬라이드 간의 간격 설정
-//     scrollbar: {
-//       // 수직 스크롤바 활성화
-//       el: '.swiper-scrollbar',
-//       draggable: true // 스크롤바를 드래그하여 스와이프할 수 있도록 설정
-//     }
-//   });
-// swiper html
-// <!-- Swiper 컨테이너 -->
-// <div class="swiper-container">
-//     <!-- 슬라이드를 담는 wrapper 요소 -->
-//     <div class="swiper-wrapper">
-//     <!-- 각 탭 버튼 및 탭 콘텐츠 -->
-//     <div class="swiper-slide">Tab 1 Content</div>
-//     <div class="swiper-slide">Tab 2 Content</div>
-//     <div class="swiper-slide">Tab 3 Content</div>
-//     <div class="swiper-slide">Tab 4 Content</div>
-//     <div class="swiper-slide">Tab 5 Content</div>
-//     <div class="swiper-slide">Tab 6 Content</div>
-//     <div class="swiper-slide">Tab 7 Content</div>
-//     <!-- 필요한 만큼 탭 콘텐츠를 추가 -->
-//     </div>
-// </div>
-
 // 모달 - 열기
 function modalOn(modalId) {
   const modal = document.getElementById(modalId);
@@ -110,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
+/*--------------------------------------------------------------
+    @toggle menu
+--------------------------------------------------------------*/
 //토글 메뉴
 const menuItems = document.querySelectorAll(".menu, .menu-tit");
 const toggleMenu = (event) => {
@@ -123,16 +66,27 @@ const toggleMenu = (event) => {
 menuItems.forEach((menuItem) => {
   menuItem.addEventListener("click", toggleMenu);
 });
+/*--------------------------------------------------------------
+    @header
+--------------------------------------------------------------*/
+const sub_menu = document.querySelectorAll("header .menu-sub li");
 
-// GNB
-function guideGnbSet(_this, n1, n2) {
-  // _this - .header
-  // n1 - depth1 n번째 메뉴
-  // n2 - depth2 n번째 메뉴
-}
+const slideDown = (e) => {
+  const clicked = e.currentTarget;
+  sub_menu.forEach((item) => {
+    if (item !== clicked) {
+      item.classList.remove("active");
+    }
+  });
+  clicked.classList.toggle("active");
+};
+
+sub_menu.forEach((item) => {
+  item.addEventListener("click", slideDown);
+});
 
 /*--------------------------------------------------------------
-    @Components
+    @최상단 버튼
 --------------------------------------------------------------*/
 // 최상단 이동 버튼
 window.addEventListener("scroll", function () {
@@ -156,21 +110,3 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
-/*--------------------------------------------------------------
-    @Contents
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-    @Inits
---------------------------------------------------------------*/
-/* Setting */
-function set_init() {}
-
-/* UI */
-function ui_init() {}
-
-/* Ready */
-// $(function () {
-//   set_init();
-//   ui_init();
-// });

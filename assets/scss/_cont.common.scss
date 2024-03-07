@@ -57,7 +57,7 @@
       align-items: center;
       padding-bottom: 24px;
       .tit {
-        @include sub-title-01;
+        @include fs-32-40;
         font-weight: 400;
         flex: 1;
       }
@@ -65,7 +65,7 @@
   }
   &#contact {
     .modal-window {
-      @include mobile() {
+      @include mo360-760() {
         max-width: 320px;
       }
       width: 100%;
@@ -83,10 +83,10 @@
 
   &#search {
     .modal-window {
-      @include pc() {
+      @include pc1025-inf() {
         max-width: clamp(20rem, 2vw, 43.75rem);
       }
-      @include tablet() {
+      @include tbl768-1024() {
         max-width: clamp(43.75rem, 2vw, 50rem);
       }
       width: 100%;
@@ -118,7 +118,7 @@
 /*-----------------------------------------------------------------*/
 h2 {
   &.tit {
-    @include head-02;
+    @include fs-42-50;
     font-weight: 400;
     color: #111;
   }
@@ -126,10 +126,6 @@ h2 {
 /*-------------------------------------------------------------------
     @Icon
 /*-----------------------------------------------------------------*/
-@mixin icon-bg($name) {
-  background: url("/assets/img/#{$name}.png");
-  background-size: cover;
-}
 .icon {
   display: inline-block;
   width: 24px;
@@ -274,10 +270,6 @@ $p-14-0: 0.875rem;
     box-shadow: 0px 4px 4px 0px #0000001f;
   }
   &.mail {
-    @include mobile() {
-      display: block;
-    }
-    display: none;
     background: rgba(17, 17, 17, 0.6);
     box-shadow: 0px 4px 4px 0px #00000024;
   }
@@ -292,6 +284,12 @@ $p-14-0: 0.875rem;
   .p-btn-cir {
     &.top {
       display: none;
+    }
+    &.mail {
+      display: none;
+      @include mo360-760() {
+        display: block;
+      }
     }
   }
 }
@@ -332,7 +330,7 @@ $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
   border-radius: 2.5rem;
   background: #fff;
   color: #111;
-  @include caption-01;
+  @include fs-14-20;
   font-family: Pretendard;
   font-weight: 500;
   letter-spacing: -0.28px;
@@ -380,7 +378,7 @@ input[type="text"] {
   width: 100%;
   padding: 8px 0;
   border-bottom: 1px solid #bbb;
-  @include body-03;
+  @include fs-16-24;
   font-weight: 400;
   color: #111;
   outline: none;
@@ -407,8 +405,8 @@ input[type="text"] {
   border-bottom: 4px solid #111;
   overflow: hidden;
   input[type="text"] {
-    @include sub-title-02;
-    @include mobile() {
+    @include fs-28-36;
+    @include mo360-760() {
       font-size: 1.25rem;
     }
     border-bottom: none;
@@ -436,7 +434,7 @@ input[type="text"] {
 
 // list
 h3.tit {
-  @include head-03;
+  @include fs-34-42;
   font-weight: 700;
   .year {
     display: inline-block;
@@ -450,10 +448,10 @@ h3.tit {
   padding: clamp(1.25rem, 2vw, 2.5rem) 0;
   border-bottom: 1px solid #333;
   .tit {
-    @include mobile() {
+    @include mo360-760() {
       flex-wrap: wrap;
     }
-    @include head-03;
+    @include fs-34-42;
     font-weight: 700;
     display: flex;
     gap: 4px;
@@ -466,7 +464,7 @@ h3.tit {
   flex-wrap: wrap;
   gap: clamp(20px, 2vw, 40px);
   .list-img {
-    @include mobile() {
+    @include mo360-760() {
       width: 100%;
       max-width: 100%;
       flex: 1 0 100%;
@@ -514,7 +512,7 @@ h3.tit {
       flex: 1;
       p {
         padding-top: clamp(12px, 2vw, 24px);
-        @include body-02;
+        @include fs-18-28;
         font-weight: 400;
         display: -webkit-box;
         -webkit-line-clamp: 3;

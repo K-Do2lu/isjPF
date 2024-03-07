@@ -10,7 +10,6 @@
 /*-------------------------------------------------------------------
 	@Color (Brand, State, Items, Grayscale)
 -------------------------------------------------------------------*/
-// Brand
 $color-primary: none;
 $c-primary: #111;
 $c-system: #ff334b;
@@ -52,120 +51,83 @@ $c-label09: #dfecf6;
 $c-label10: #ffe5e5;
 // 예술 ∙ 디자인 일반
 $c-label11: #e6e9f1;
-
 /*-------------------------------------------------------------------
-	@Size (System, Layout, Components)
+	@align
 -------------------------------------------------------------------*/
-// Layout
-$body-width: 1200px;
-$body-gap: 20px;
-$appbar-height: 60px;
-$header-padding: clamp(1.25rem, 2vw, 2.5rem);
+@mixin d-flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin d-flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin d-flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin d-flex-end-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 /*-------------------------------------------------------------------
 	@Text (Fontset,
 -------------------------------------------------------------------*/
-
-// pc
-@mixin head-01 {
+@mixin fs-64-72 {
   font-size: 4rem;
   line-height: 4.5rem;
 }
-@mixin head-02 {
+@mixin fs-42-50 {
   font-size: 2.625rem;
   line-height: 3.125rem;
 }
-@mixin head-03 {
+@mixin fs-34-42 {
   font-size: 2.125rem;
   line-height: 2.625rem;
 }
-@mixin sub-title-01 {
+@mixin fs-32-40 {
   font-size: 2rem;
   line-height: 2.5rem;
 }
-@mixin sub-title-02 {
+@mixin fs-28-36 {
   font-size: 1.75rem;
   line-height: 2.25rem;
 }
-@mixin body-01 {
+@mixin fs-24-34 {
   font-size: 1.5rem;
   line-height: 2.125rem;
 }
-@mixin body-02 {
+@mixin fs-18-28 {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
-@mixin body-03 {
+@mixin fs-16-24 {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-@mixin caption-01 {
+@mixin fs-14-20 {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-// Fonts
-@mixin font-body-10 {
-  font-size: 10rem;
-  line-height: 16rem;
+@mixin fs-52-60 {
+  font-size: 3.25rem;
+  line-height: 3.75rem;
 }
-@mixin font-body-12 {
-  font-size: 12rem;
-  line-height: 18rem;
+@mixin fs-26-34 {
+  font-size: 1.625rem;
+  line-height: 2.125rem;
 }
-@mixin font-body-13 {
-  font-size: 13rem;
-  line-height: 19rem;
+@mixin fs-24-32 {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
-@mixin font-body-14 {
-  font-size: 14rem;
-  line-height: 22rem;
-}
-@mixin font-body-15 {
-  font-size: 15rem;
-  line-height: 23rem;
-}
-@mixin font-body-16 {
-  font-size: 16rem;
-  line-height: 24rem;
-}
-@mixin font-title-10 {
-  font-size: 10rem;
-  line-height: 16rem;
-  font-weight: 700;
-}
-@mixin font-title-13 {
-  font-size: 13rem;
-  line-height: 17rem;
-  font-weight: 700;
-}
-@mixin font-title-14 {
-  font-size: 14rem;
-  line-height: 18rem;
-  font-weight: 700;
-}
-@mixin font-title-15 {
-  font-size: 15rem;
-  line-height: 19rem;
-  font-weight: 700;
-}
-@mixin font-title-16 {
-  font-size: 16rem;
-  line-height: 20rem;
-  font-weight: 700;
-}
-@mixin font-title-18 {
-  font-size: 18rem;
-  line-height: 24rem;
-  font-weight: 700;
-}
-@mixin font-title-20 {
-  font-size: 20rem;
-  line-height: 26rem;
-  font-weight: 700;
-}
-@mixin font-title-22 {
-  font-size: 22rem;
-  line-height: 28rem;
-  font-weight: 700;
+@mixin fs-20-28 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 // Word
@@ -196,7 +158,6 @@ $header-padding: clamp(1.25rem, 2vw, 2.5rem);
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
-
 /*-------------------------------------------------------------------
 	@Font reponsive | html font-size: 16px인 전제하
 -------------------------------------------------------------------*/
@@ -205,12 +166,10 @@ $header-padding: clamp(1.25rem, 2vw, 2.5rem);
   #{$property}: ($value / 16) + rem;
 }
 // @include to_rem(font-size, 30) -> font-size: 1.5rem;
-
 @mixin to_vw($value, $target-width) {
   font-size: calc((#{$value} * 100vw) / #{$target-width});
 }
-// @include dynamic-font-size(1vw, 1200px);
-
+// @include to_vw(1vw, 1200px);
 /*-------------------------------------------------------------------
 	@Img reponsive | img ratio
 -------------------------------------------------------------------*/
@@ -231,7 +190,13 @@ $header-padding: clamp(1.25rem, 2vw, 2.5rem);
   width: 100%;
   height: 100%;
 }
-
+/*-------------------------------------------------------------------
+	@background bg
+-------------------------------------------------------------------*/
+@mixin icon-bg($name) {
+  background: url("/assets/img/#{$name}.png");
+  background-size: cover;
+}
 /*-------------------------------------------------------------------
 	@Responsive
 	- Device : Basic (Extra Large ~ Mini)
@@ -251,82 +216,20 @@ $header-padding: clamp(1.25rem, 2vw, 2.5rem);
     @content;
   }
 }
-
-// Basic Responsive
-// @mixin pc() {
-//   @media (min-width: 1280px) {
-//     @content;
-//   }
-// }
-// @mixin tablet() {
-//   @media (max-width: 1279px) {
-//     @content;
-//   }
-// }
-// @mixin mobile() {
-//   @media (max-width: 767px) {
-//     @content;
-//   }
-// }
-@mixin portrait() {
-  @media (orientation: Portrait) {
-    @content;
-  }
-}
-@mixin landscape() {
-  @media (orientation: Landscape) {
-    @content;
-  }
-}
-
-// Target Responsive
-@mixin pc_xl() {
-  @media (min-width: 1600px) {
-    @content;
-  }
-}
-@mixin pc_xs() {
-  @media (min-width: 1280px) and (max-width: 1599px) {
-    @content;
-  }
-}
-@mixin tablet_xl() {
-  @media (min-width: 1024px) and (max-width: 1279px) {
-    @content;
-  }
-}
-@mixin tablet_xs() {
-  @media (min-width: 768px) and (max-width: 1023px) {
-    @content;
-  }
-}
-@mixin mobile_xl() {
-  @media (min-width: 421px) and (max-width: 767px) {
-    @content;
-  }
-}
-@mixin mobile_xs() {
-  @media (max-width: 420px) {
-    @content;
-  }
-}
-
 // 360 ~ 767
-@mixin mobile() {
+@mixin mo360-760() {
   @media (min-width: 360px) and (max-width: 767px) {
     @content;
   }
 }
-
 // 768 ~ 1024
-@mixin tablet() {
+@mixin tbl768-1024() {
   @media (min-width: 768px) and (max-width: 1024px) {
     @content;
   }
 }
-
 // 1025 ~ infinite
-@mixin pc() {
+@mixin pc1025-inf() {
   @media (min-width: 1025px) {
     @content;
   }

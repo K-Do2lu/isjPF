@@ -25,38 +25,65 @@
   </head>
   <body>
     <div class="wrapper">
-      <main role="main" class="lyt">
-        <!-- side cont -->
+      <main role="main" class="main">
+        <!-- side -->
         <div class="side">
-          <div class="side-wrap">
+          <div class="side-logo">
             <img
               src="/assets/img/img-logoside.png"
-              alt="design for life logo"
+              alt="design for life side logo"
             />
-
-            <div class="side-body">
-              <p class="side-txt">
-                인간의 삶, 사회, 생태가 조화를<br />
-                이루는 미래, 통합, 생명의 디자인을<br />
-                연구하고 창조합니다.
-              </p>
-            </div>
-
-            <button
-              type="button"
-              class="p-btn fill btn-modal"
-              data-modal="contact"
-            >
-              Contact
-            </button>
           </div>
+          <div class="side-cont">
+            <p>
+              인간의 삶, 사회, 생태가 조화를<br />
+              이루는 미래, 통합, 생명의 디자인을<br />
+              연구하고 창조합니다.
+            </p>
+          </div>
+          <button type="button" class="p-btn fill">Contact</button>
         </div>
+        <!-- header -->
+        <header class="header">
+          <script>
+            $(".header").load("/pages/_include/_header.html", function () {
+              const sub_menu = document.querySelectorAll("header .menu-sub li");
 
-        <div class="cont">
+              const slideDown = (e) => {
+                const clicked = e.currentTarget;
+                sub_menu.forEach((item) => {
+                  if (item !== clicked) {
+                    item.classList.remove("active");
+                  }
+                });
+                clicked.classList.toggle("active");
+              };
+
+              sub_menu.forEach((item) => {
+                item.addEventListener("click", slideDown);
+              });
+
+              // scroll 감지 + borer bottom 추가
+              $(window).on("scroll", function () {
+                var scrollPosition = $(window).scrollTop();
+                var header = $(".header");
+
+                if (scrollPosition > 0) {
+                  header.addClass("scrolled");
+                } else {
+                  header.removeClass("scrolled");
+                }
+              });
+            });
+          </script>
+        </header>
+
+        <!-- main-content -->
+        <div class="main-cont">
           <!-- header -->
-          <header class="header">
+          <!-- <header class="header">
             <script>
-              $(".header").load("../_include/_header.html", function () {
+              $(".header").load("/pages/_include/_header.html", function () {
                 const sub_menu = document.querySelectorAll(
                   "header .menu-sub li"
                 );
@@ -76,133 +103,17 @@
                 });
               });
             </script>
-          </header>
-
-          <!-- contents -->
-          <div class="cont-wrap">
-            <!-- head -->
-            <div class="cont-head">
-              <h2 class="tit">Keyword.</h2>
-
-              <div class="chips">
-                <button type="button" class="p-btn-chips active">
-                  국가 ∙ 도시 디자인<i class="icon check"></i>
-                </button>
-                <button type="button" class="p-btn-chips">
-                  디자인 정책 ∙ 전략
-                </button>
-                <button type="button" class="p-btn-chips">산업 ∙ 기술</button>
-                <button type="button" class="p-btn-chips">아이덴티티</button>
-                <button type="button" class="p-btn-chips">
-                  디자인 미래 ∙ 예측
-                </button>
-                <button type="button" class="p-btn-chips">
-                  창조성 ∙ 디자인 기획
-                </button>
-                <button type="button" class="p-btn-chips">
-                  혁신 ∙ Good Design
-                </button>
-                <button type="button" class="p-btn-chips">문화 ∙ 한국성</button>
-                <button type="button" class="p-btn-chips">모빌리티</button>
-                <button type="button" class="p-btn-chips">
-                  지역 ∙ 사회 ∙ 환경 ∙ 지속가능
-                </button>
-                <button type="button" class="p-btn-chips">조형 ∙ 미학</button>
-                <button type="button" class="p-btn-chips">
-                  예술 ∙ 디자인 일반
-                </button>
-              </div>
-            </div>
-            <!-- body -->
-            <div class="cont-body">
-              <div class="list">
-                <div class="list-img">
-                  <img src="/assets/img/test3.jfif" alt="" />
-                </div>
-
-                <div class="list-info">
-                  <div class="info-top">
-                    <div class="tags">
-                      <span class="tag color10"
-                        >지역 ∙ 사회 ∙ 환경 ∙ 지속가능</span
-                      >
-                    </div>
-                    <h2 class="tit">
-                      <span class="year">2023</span>
-                      <span>
-                        <em>FLLAB</em>
-                        다용도 음식 트레이
-                      </span>
-                    </h2>
-                  </div>
-
-                  <div class="info-middle">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur. Ut non nisl
-                      hendrerit ultrices vitae elementum magna odio. Id posuere
-                      sapien hendrerit suspendisse sagittis tortor amet
-                      convallis. In viverra auctor est leo porttitor nisl diam
-                      integer.
-                    </p>
-                  </div>
-
-                  <div class="info-bottom">
-                    <button type="button" class="p-btn has-icon">
-                      View
-                      <i class="icon arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="list">
-                <div class="list-img">
-                  <img src="/assets/img/test3.jfif" alt="" />
-                </div>
-
-                <div class="list-info">
-                  <div class="info-top">
-                    <div class="tags">
-                      <span class="tag color6">혁신 ∙ Good Design</span>
-                      <span class="tag color7">문화 ∙ 한국성</span>
-                    </div>
-                    <h2 class="tit">
-                      <span class="year">2023</span>
-                      <span>
-                        <em>FLLAB</em>
-                        다용도 음식 트레이
-                      </span>
-                    </h2>
-                  </div>
-
-                  <div class="info-middle">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur. Ut non nisl
-                      hendrerit ultrices vitae elementum magna odio. Id posuere
-                      sapien hendrerit suspendisse sagittis tortor amet
-                      convallis. In viverra auctor est leo porttitor nisl diam
-                      integer.
-                    </p>
-                  </div>
-
-                  <div class="info-bottom">
-                    <button type="button" class="p-btn has-icon">
-                      View
-                      <i class="icon arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </header> -->
+          <!-- cont -->
+          <div class="cont">컨텐츠 내용 영역</div>
         </div>
 
-        <!-- scrollTopBtn -->
+        <!-- sroll btn -->
         <div class="scroll-btns">
           <button
             type="button"
             class="p-btn-cir mail btn-modal"
-            data-modal="contact"
-            onclick="modalOff('contact')"
+            data-modal="modal1"
           >
             <img src="/assets/img/icon-w-mail.png" alt="" />
           </button>
@@ -214,91 +125,6 @@
           >
             <img src="/assets/img/icon-arrowtop.png" alt="" />
           </button>
-        </div>
-
-        <!-- contact modal -->
-        <div id="contact" class="modal-overlay">
-          <div class="modal-window">
-            <div class="tit-wrap">
-              <div class="title">
-                <h1 class="tit">Contact.</h1>
-              </div>
-              <button class="close-area" onclick="modalOff('contact')">
-                <i class="icon cross-38"></i>
-              </button>
-            </div>
-
-            <div class="content">
-              <form action="">
-                <div>
-                  <label for="" class="essential">성함</label>
-                  <input
-                    type="text"
-                    id=""
-                    name="username"
-                    placeholder="성함을 입력해주세요"
-                  />
-                </div>
-                <div>
-                  <label for="" class="essential">이메일</label>
-                  <input
-                    type="text"
-                    id=""
-                    name="email"
-                    placeholder="이메일을 입력해주세요"
-                  />
-                </div>
-
-                <div>
-                  <label for="" class="">제목</label>
-                  <input
-                    type="text"
-                    id=""
-                    name=""
-                    placeholder=""
-                    value="인터뷰 문의 드립니다."
-                  />
-                </div>
-
-                <div>
-                  <label for="" class="essential">내용</label>
-                  <input
-                    type="text"
-                    id=""
-                    name="detail"
-                    placeholder="내용을 입력해주세요"
-                  />
-                </div>
-
-                <button type="button" class="p-btn fill">Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <!-- search modal -->
-        <div id="search" class="modal-overlay">
-          <div class="modal-window">
-            <div class="input-search">
-              <input
-                type="text"
-                id=""
-                name=""
-                class="search"
-                placeholder="검색어를 입력해주세요"
-              />
-              <div class="input-icon">
-                <i class="icon-svg search"></i>
-              </div>
-            </div>
-
-            <div class="content">
-              <button class="p-btn has-icon" onclick="modalOff('search')">
-                Close
-                <i class="icon cross-38"></i>
-              </button>
-            </div>
-          </div>
         </div>
       </main>
     </div>

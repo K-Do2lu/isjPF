@@ -13,7 +13,7 @@
 	@Color (Brand, State, Items, Grayscale)
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
-	@Size (System, Layout, Components)
+	@align
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
 	@Text (Fontset,
@@ -23,6 +23,9 @@
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
 	@Img reponsive | img ratio
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@background bg
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
 	@Responsive
@@ -46,10 +49,10 @@
   --gap-side: 20px;
   --color-primary: #d14;
   --color-secondary: navy;
-  --shadow-1: 0 2px 2px 0 rgba(0,0,0,0.15);
-  --shadow-2: 0 3px 4px 0 rgba(0,0,0,0.15);
-  --shadow-3: 0 4px 6px 0 rgba(0,0,0,0.15);
-  --shadow-4: 0 5px 8px 0 rgba(0,0,0,0.15);
+  --shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 3px 4px 0 rgba(0, 0, 0, 0.15);
+  --shadow-3: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+  --shadow-4: 0 5px 8px 0 rgba(0, 0, 0, 0.15);
   --header-width: 64px;
   --header-height: 0;
   line-height: 1.5;
@@ -138,7 +141,7 @@
   z-index: 10;
   display: flex;
   flex-direction: column;
-  background-color: #Fff;
+  background-color: #fff;
   border-left: 1px solid #ddd;
   visibility: visible;
   transition: all 0.2s ease;
@@ -291,20 +294,6 @@
   transform: scaleY(1);
 }
 
-@media (min-width: 360px) and (max-width: 767px) {
-  .g-h1 {
-    font-size: 22px;
-  }
-  .g-h2 {
-    font-size: 16px;
-  }
-  .g-h3 {
-    font-size: 15px;
-  }
-  .g-h4 {
-    font-size: 14px;
-  }
-}
 .g-ia-wrapper .g-section {
   min-width: 1024px;
 }
@@ -453,7 +442,8 @@
   margin: 0 -1px -1px;
 }
 
-.g-tbl-type1 table th, .g-tbl-type1 table td {
+.g-tbl-type1 table th,
+.g-tbl-type1 table td {
   height: 40px;
   vertical-align: middle;
   text-align: left;
@@ -514,7 +504,8 @@
   margin: 0 -1px -1px;
 }
 
-.g-tbl-type2 table th, .g-tbl-type2 table td {
+.g-tbl-type2 table th,
+.g-tbl-type2 table td {
   height: 30px;
   vertical-align: middle;
   text-align: left;
