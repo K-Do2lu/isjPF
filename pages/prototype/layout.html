@@ -29,7 +29,10 @@
         <!-- side cont -->
         <div class="side">
           <div class="side-wrap">
-            <img src="/assets/img/img-logoside.png" alt="side logo" />
+            <img
+              src="/assets/img/img-logoside.png"
+              alt="design for life logo"
+            />
 
             <div class="side-body">
               <p class="side-txt">
@@ -198,7 +201,8 @@
           <button
             type="button"
             class="p-btn-cir mail btn-modal"
-            data-modal="modal1"
+            data-modal="contact"
+            onclick="modalOff('contact')"
           >
             <img src="/assets/img/icon-w-mail.png" alt="" />
           </button>
@@ -215,39 +219,84 @@
         <!-- contact modal -->
         <div id="contact" class="modal-overlay">
           <div class="modal-window">
-
             <div class="tit-wrap">
-                <div class="title">
-                    <h2 class="tit">Contact.</h1>
-                  </div>
-                  <button class="close-area" onclick="modalOff('contact')"><i class="icon cross"></i></button>
+              <div class="title">
+                <h1 class="tit">Contact.</h1>
+              </div>
+              <button class="close-area" onclick="modalOff('contact')">
+                <i class="icon cross-38"></i>
+              </button>
             </div>
 
             <div class="content">
               <form action="">
                 <div>
-                    <label for="" class="essential">성함</label>
-                    <input type="text" id="" name="" placeholder="성함을 입력해주세요">
+                  <label for="" class="essential">성함</label>
+                  <input
+                    type="text"
+                    id=""
+                    name="username"
+                    placeholder="성함을 입력해주세요"
+                  />
                 </div>
                 <div>
-                    <label for="" class="essential">이메일</label>
-                    <input type="text" id="" name="" placeholder="이메일을 입력해주세요">
+                  <label for="" class="essential">이메일</label>
+                  <input
+                    type="text"
+                    id=""
+                    name="email"
+                    placeholder="이메일을 입력해주세요"
+                  />
                 </div>
 
                 <div>
-                    <label for="" class="">제목</label>
-                    <input type="text" id="" name="" placeholder="" value="인터뷰 문의 드립니다.">
+                  <label for="" class="">제목</label>
+                  <input
+                    type="text"
+                    id=""
+                    name=""
+                    placeholder=""
+                    value="인터뷰 문의 드립니다."
+                  />
                 </div>
 
                 <div>
-                    <label for="" class="essential">내용</label>
-                    <input type="text" id="" name="" placeholder="내용을 입력해주세요">
+                  <label for="" class="essential">내용</label>
+                  <input
+                    type="text"
+                    id=""
+                    name="detail"
+                    placeholder="내용을 입력해주세요"
+                  />
                 </div>
-
-
 
                 <button type="button" class="p-btn fill">Send</button>
               </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- search modal -->
+        <div id="search" class="modal-overlay">
+          <div class="modal-window">
+            <div class="input-search">
+              <input
+                type="text"
+                id=""
+                name=""
+                class="search"
+                placeholder="검색어를 입력해주세요"
+              />
+              <div class="input-icon">
+                <i class="icon-svg search"></i>
+              </div>
+            </div>
+
+            <div class="content">
+              <button class="p-btn has-icon" onclick="modalOff('search')">
+                Close
+                <i class="icon cross-38"></i>
+              </button>
             </div>
           </div>
         </div>

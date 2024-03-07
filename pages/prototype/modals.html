@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>이순종 포트폴리오 - modal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- https://fonts.google.com/icons -->
-        <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
-        <!-- 공통 js -->
-        <script src="/assets/js/ui/ui.common.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-         <!-- 공통 css -->
-        <link rel="stylesheet" type="text/css" href="/assets/css/ui.styles.css" />
-        <!-- all style css -->
-        <link rel="stylesheet" type="text/css" href="/assets/css/pages.css">
-    </head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>이순종 포트폴리오 - modal</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- https://fonts.google.com/icons -->
+    <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
+    <!-- 공통 js -->
+    <script src="/assets/js/ui/ui.common.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 공통 css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/ui.styles.css" />
+    <!-- all style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/pages.css" />
+  </head>
+  <body>
     <div id="container">
-        <button class="btn-modal" data-modal="modal1">모달 1 열기 버튼</button>
-        <button class="btn-modal" data-modal="modal2">모달 2 열기 버튼</button>
-        <div id="lorem-ipsum"></div>
+      <button class="btn-modal" data-modal="modal1">모달 1 열기 버튼</button>
+      <button class="btn-modal" data-modal="modal2">모달 2 열기 버튼</button>
+      <div id="lorem-ipsum"></div>
     </div>
 
     <!-- 모달 1 -->
     <div id="modal1" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h1>모달 1</h1>
-            </div>
-            <button class="close-area" onclick="modalOff('modal1')">X</button>
-            <div class="content">
-                <p>모달 1 내용</p>
-            </div>
+      <div class="modal-window">
+        <div class="title">
+          <h1 class="tit">모달 1</h1>
         </div>
+        <button class="close-area" onclick="modalOff('modal1')">X</button>
+        <div class="content">
+          <p>모달 1 내용</p>
+        </div>
+      </div>
     </div>
 
     <!-- 모달 2 -->
     <div id="modal2" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h1>모달 2</h1>
-            </div>
-            <button class="close-area" onclick="modalOff('modal2')">X</button>
-            <div class="content">
-                <p>모달 2 내용</p>
-            </div>
+      <div class="modal-window">
+        <div class="tit-wrap">
+          <div class="title">
+            <h1 class="tit">Contact.</h1>
+          </div>
+          <button class="close-area" onclick="modalOff('modal2')">
+            <i class="icon cross-38"></i>
+          </button>
         </div>
+
+        <div class="content"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

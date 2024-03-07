@@ -18,18 +18,18 @@ window.addEventListener("resize", () => {
   document.documentElement.style.fontSize = `${fontSize}px`; // HTML의 font-size 변경
 });
 
-function calculateFontSize(screenWidth, screenHeight) {
-  // screenWidth와 screenHeight를 모두 고려하여 폰트 크기를 계산하는 로직을 작성합니다.
-  if (screenWidth >= 1025) {
-    return 16; // PC에서는 폰트 크기를 18px로 설정
-  } else if (screenWidth >= 768 && screenWidth <= 1024) {
-    return 15; // 태블릿에서는 폰트 크기를 16px로 설정
-  } else if (screenWidth >= 360 && screenWidth <= 767) {
-    return 14; // 모바일에서는 폰트 크기를 14px로 설정
-  } else {
-    return 14; // 그 외의 경우에는 폰트 크기를 14px로 설정 (기본값)
-  }
-}
+// function calculateFontSize(screenWidth, screenHeight) {
+//   // screenWidth와 screenHeight를 모두 고려하여 폰트 크기를 계산하는 로직을 작성합니다.
+//   if (screenWidth >= 1025) {
+//     return 16; // PC에서는 폰트 크기를 18px로 설정
+//   } else if (screenWidth >= 768 && screenWidth <= 1024) {
+//     return 15; // 태블릿에서는 폰트 크기를 16px로 설정
+//   } else if (screenWidth >= 360 && screenWidth <= 767) {
+//     return 14; // 모바일에서는 폰트 크기를 14px로 설정
+//   } else {
+//     return 14; // 그 외의 경우에는 폰트 크기를 14px로 설정 (기본값)
+//   }
+// }
 
 /*--------------------------------------------------------------
     @Settings

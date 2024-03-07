@@ -13,6 +13,7 @@
 // Brand
 $color-primary: none;
 $c-primary: #111;
+$c-system: #ff334b;
 // Gray scale
 $c-gr-scalefff: #ffffff;
 $c-gr-scale50: #f5f5f5;
@@ -252,21 +253,21 @@ $header-padding: clamp(1.25rem, 2vw, 2.5rem);
 }
 
 // Basic Responsive
-@mixin pc() {
-  @media (min-width: 1280px) {
-    @content;
-  }
-}
-@mixin tablet() {
-  @media (max-width: 1279px) {
-    @content;
-  }
-}
-@mixin mobile() {
-  @media (max-width: 767px) {
-    @content;
-  }
-}
+// @mixin pc() {
+//   @media (min-width: 1280px) {
+//     @content;
+//   }
+// }
+// @mixin tablet() {
+//   @media (max-width: 1279px) {
+//     @content;
+//   }
+// }
+// @mixin mobile() {
+//   @media (max-width: 767px) {
+//     @content;
+//   }
+// }
 @mixin portrait() {
   @media (orientation: Portrait) {
     @content;
@@ -310,9 +311,30 @@ $header-padding: clamp(1.25rem, 2vw, 2.5rem);
   }
 }
 
+// 360 ~ 767
+@mixin mobile() {
+  @media (min-width: 360px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+// 768 ~ 1024
+@mixin tablet() {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+// 1025 ~ infinite
+@mixin pc() {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
 /* iPhone X 이상의 모바일 기기에 대한 Safe Area 고려 */
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   /* 여기에 해당하는 CSS 추가 */
+  // 변수 만들 필요
   body {
     padding-top: constant(safe-area-inset-top); /* iOS 11.2+ */
     padding-top: env(safe-area-inset-top); /* iOS 11.2+ */

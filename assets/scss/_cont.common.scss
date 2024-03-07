@@ -56,10 +56,18 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 24px;
+      .tit {
+        @include sub-title-01;
+        font-weight: 400;
+        flex: 1;
+      }
     }
   }
   &#contact {
     .modal-window {
+      @include mobile() {
+        max-width: 320px;
+      }
       width: 100%;
       min-width: 320px;
       max-width: 480px;
@@ -70,6 +78,20 @@
           gap: 20px;
         }
       }
+    }
+  }
+
+  &#search {
+    .modal-window {
+      @include pc() {
+        max-width: clamp(20rem, 2vw, 43.75rem);
+      }
+      @include tablet() {
+        max-width: clamp(43.75rem, 2vw, 50rem);
+      }
+      width: 100%;
+      // min-width: 320px;
+      // max-width: 1240px;
     }
   }
 }
@@ -129,6 +151,9 @@ h2 {
   }
   &.cross {
     @include icon-bg(icon-cross);
+  }
+  &.cross-38 {
+    @include icon-bg(icon-cross-38);
   }
   &.menu {
     @include icon-bg(icon-menu);
@@ -245,10 +270,16 @@ $p-14-0: 0.875rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(1px);
   &.top {
-    background: #fff;
+    background: #ffffff99;
+    box-shadow: 0px 4px 4px 0px #0000001f;
   }
   &.mail {
+    @include mobile() {
+      display: block;
+    }
+    display: none;
     background: rgba(17, 17, 17, 0.6);
+    box-shadow: 0px 4px 4px 0px #00000024;
   }
 }
 .scroll-btns {
@@ -376,6 +407,10 @@ input[type="text"] {
   border-bottom: 4px solid #111;
   overflow: hidden;
   input[type="text"] {
+    @include sub-title-02;
+    @include mobile() {
+      font-size: 1.25rem;
+    }
     border-bottom: none;
     font-size: clamp(1.25rem, 2vw, 1.75rem);
     letter-spacing: -0.02em;
@@ -414,19 +449,27 @@ h3.tit {
 .list {
   padding: clamp(1.25rem, 2vw, 2.5rem) 0;
   border-bottom: 1px solid #333;
-  h2.tit {
+  .tit {
+    @include mobile() {
+      flex-wrap: wrap;
+    }
+    @include head-03;
+    font-weight: 700;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     gap: 4px;
+    .year {
+      display: inline-block;
+      font-weight: 500;
+    }
   }
   display: flex;
   flex-wrap: wrap;
   gap: clamp(20px, 2vw, 40px);
   .list-img {
-    @media (max-width: 360px) {
+    @include mobile() {
       width: 100%;
       max-width: 100%;
+      flex: 1 0 100%;
     }
     position: relative;
     width: 320px;

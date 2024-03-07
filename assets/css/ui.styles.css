@@ -6,8 +6,6 @@
 /*-------------------------------------------------------------------
     @웹폰트
 -------------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 @import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
 @font-face {
@@ -19,16 +17,70 @@
 /*-------------------------------------------------------------------
     @태그
 -------------------------------------------------------------------*/
-html, body {
+html,
+body {
   height: 100%;
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
 }
 
-::before, ::after,
-html, body, div, ul, ol, dl, li, dt, dd, p, h1, h2, h3, h4, h5, h6, table, thead, tbody, tr, th, td, caption, address, article, aside,
-canvas, details, figure, figcaption, main, footer, header, menu, nav, section,
-button, select, textarea, input, form, fieldset, legend, label, a, span, strong, em, address, pre, code, dfn, small, i, b {
+::before,
+::after,
+html,
+body,
+div,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+caption,
+address,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+main,
+footer,
+header,
+menu,
+nav,
+section,
+button,
+select,
+textarea,
+input,
+form,
+fieldset,
+legend,
+label,
+a,
+span,
+strong,
+em,
+address,
+pre,
+code,
+dfn,
+small,
+i,
+b {
   margin: 0;
   padding: 0;
   border: 0;
@@ -45,7 +97,18 @@ button, select, textarea, input, form, fieldset, legend, label, a, span, strong,
   -webkit-print-color-adjust: exact;
 }
 
-main, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {
+main,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -74,11 +137,16 @@ button {
   cursor: pointer;
 }
 
-fieldset, iframe {
+fieldset,
+iframe {
   width: 100%;
 }
 
-img, a, frame, iframe, fieldset {
+img,
+a,
+frame,
+iframe,
+fieldset {
   border: 0;
 }
 
@@ -120,7 +188,9 @@ button::-moz-focus-inner {
   padding: 0px;
 }
 
-input[type=checkbox], input[type=radio], select {
+input[type=checkbox],
+input[type=radio],
+select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -156,7 +226,8 @@ input::-webkit-search-results-decoration {
   display: none;
 }
 
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -291,15 +362,39 @@ input::-webkit-calendar-picker-indicator {
   align-items: center;
   padding-bottom: 24px;
 }
+.modal-overlay .modal-window .tit-wrap .tit {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  flex: 1;
+}
 .modal-overlay#contact .modal-window {
   width: 100%;
   min-width: 320px;
   max-width: 480px;
 }
+@media (min-width: 360px) and (max-width: 767px) {
+  .modal-overlay#contact .modal-window {
+    max-width: 320px;
+  }
+}
 .modal-overlay#contact .modal-window .content form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.modal-overlay#search .modal-window {
+  width: 100%;
+}
+@media (min-width: 1025px) {
+  .modal-overlay#search .modal-window {
+    max-width: clamp(20rem, 2vw, 43.75rem);
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal-overlay#search .modal-window {
+    max-width: clamp(43.75rem, 2vw, 50rem);
+  }
 }
 
 /*-------------------------------------------------------------------
@@ -352,6 +447,10 @@ h2.tit {
 }
 .icon.cross {
   background: url("/assets/img/icon-cross.png");
+  background-size: cover;
+}
+.icon.cross-38 {
+  background: url("/assets/img/icon-cross-38.png");
   background-size: cover;
 }
 .icon.menu {
@@ -470,10 +569,18 @@ h2.tit {
   backdrop-filter: blur(1px);
 }
 .p-btn-cir.top {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1215686275);
 }
 .p-btn-cir.mail {
+  display: none;
   background: rgba(17, 17, 17, 0.6);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1411764706);
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .p-btn-cir.mail {
+    display: block;
+  }
 }
 
 .scroll-btns {
@@ -625,9 +732,16 @@ input[type=text]:disabled {
   overflow: hidden;
 }
 .input-search input[type=text] {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
   border-bottom: none;
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   letter-spacing: -0.02em;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .input-search input[type=text] {
+    font-size: 1.25rem;
+  }
 }
 .input-search .input-icon {
   display: flex;
@@ -666,11 +780,21 @@ h3.tit em {
   flex-wrap: wrap;
   gap: clamp(20px, 2vw, 40px);
 }
-.list h2.tit {
+.list .tit {
+  font-size: 2.125rem;
+  line-height: 2.625rem;
+  font-weight: 700;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   gap: 4px;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .list .tit {
+    flex-wrap: wrap;
+  }
+}
+.list .tit .year {
+  display: inline-block;
+  font-weight: 500;
 }
 .list .list-img {
   position: relative;
@@ -681,10 +805,11 @@ h3.tit em {
   flex: 0 0 320px;
   overflow: hidden;
 }
-@media (max-width: 360px) {
+@media (min-width: 360px) and (max-width: 767px) {
   .list .list-img {
     width: 100%;
     max-width: 100%;
+    flex: 1 0 100%;
   }
 }
 .list .list-img:before {
@@ -746,6 +871,11 @@ main.lyt .side {
   padding: 20px 0;
   background: #fff;
 }
+@media (max-width: 1279px) {
+  main.lyt .side {
+    display: none;
+  }
+}
 main.lyt .side .side-wrap {
   display: flex;
   flex-direction: column;
@@ -782,6 +912,11 @@ main.lyt header {
   padding: 0 20px;
   background: #fff;
   z-index: 10;
+}
+@media (max-width: 1279px) {
+  main.lyt header {
+    width: 100%;
+  }
 }
 main.lyt header .fixed {
   position: fixed; /* 고정 헤더 클래스 */
@@ -908,4 +1043,14 @@ main.lyt .cont .cont-wrap .chips {
   flex-wrap: wrap;
   gap: 8px;
   max-width: 822px;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  main.lyt .cont .cont-wrap .chips {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  main.lyt .cont .cont-wrap .chips .p-btn-chips {
+    flex: 1 0 auto;
+  }
 }/*# sourceMappingURL=ui.styles.css.map */

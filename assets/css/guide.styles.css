@@ -291,7 +291,7 @@
   transform: scaleY(1);
 }
 
-@media (max-width: 767px) {
+@media (min-width: 360px) and (max-width: 767px) {
   .g-h1 {
     font-size: 22px;
   }
