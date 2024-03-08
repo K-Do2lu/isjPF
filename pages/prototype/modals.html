@@ -32,29 +32,28 @@
     <!-- 모달 1 -->
     <div id="modal1" class="modal-overlay">
       <div class="modal-window">
-        <div class="title">
-          <h1 class="tit">모달 1</h1>
+        <div class="window-top">
+          <h1 class="tit">타이틀</h1>
+          <button class="close-area" onclick="modalOff('modal1')">
+            <i class="icon cross-38"></i>
+          </button>
         </div>
-        <button class="close-area" onclick="modalOff('modal1')">X</button>
-        <div class="content">
-          <p>모달 1 내용</p>
-        </div>
+
+        <div class="window-content">모달1 컨텐츠</div>
       </div>
     </div>
 
     <!-- 모달 2 -->
     <div id="modal2" class="modal-overlay">
       <div class="modal-window">
-        <div class="tit-wrap">
-          <div class="title">
-            <h1 class="tit">Contact.</h1>
-          </div>
+        <div class="window-top">
+          <h1 class="tit">타이틀</h1>
           <button class="close-area" onclick="modalOff('modal2')">
             <i class="icon cross-38"></i>
           </button>
         </div>
 
-        <div class="content"></div>
+        <div class="window-content">모달2 컨텐츠</div>
       </div>
     </div>
   </body>

@@ -67,23 +67,8 @@ menuItems.forEach((menuItem) => {
   menuItem.addEventListener("click", toggleMenu);
 });
 /*--------------------------------------------------------------
-    @header
+    @header | scroll시 borer-bottom style 추가
 --------------------------------------------------------------*/
-const sub_menu = document.querySelectorAll("header .menu-sub li");
-
-const slideDown = (e) => {
-  const clicked = e.currentTarget;
-  sub_menu.forEach((item) => {
-    if (item !== clicked) {
-      item.classList.remove("active");
-    }
-  });
-  clicked.classList.toggle("active");
-};
-
-sub_menu.forEach((item) => {
-  item.addEventListener("click", slideDown);
-});
 
 /*--------------------------------------------------------------
     @최상단 버튼
@@ -93,14 +78,6 @@ window.addEventListener("scroll", function () {
   // 스크롤 시 버튼을 나타내거나 숨김
   var scrollToTopBtn = document.getElementById("scrollToTopBtn");
   scrollToTopBtn.style.display = window.scrollY > 20 ? "block" : "none";
-
-  // 헤더를 고정시킴
-  var header = document.getElementById("header");
-  if (window.scrollY > 0) {
-    header.classList.add("fixed");
-  } else {
-    header.classList.remove("fixed");
-  }
 });
 
 function scrollToTop() {
