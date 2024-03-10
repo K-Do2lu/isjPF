@@ -98,7 +98,7 @@
                 color: #111;
               }
             }
-            &:first-child {
+            &.clicked {
               a.menu-tit {
                 color: #111;
                 text-decoration: underline;
@@ -192,75 +192,240 @@
     margin-left: 20rem;
     padding-top: 5.5rem;
     .cont {
-      padding: clamp(3rem, 2vw, 3.125rem) 1.25rem 0;
+      padding: clamp(3rem, 2vw, 3.125rem) 1.25rem clamp(4rem, 2vw, 7.5rem);
       .chips-wrap {
         padding-bottom: clamp(1.25rem, 2vw, 2.25rem);
         border-bottom: 1px solid $c-primary;
+        .chips {
+          @include mo360-767() {
+            .p-btn-chips {
+              @include fs-14-20;
+              flex: 1 0 auto;
+            }
+            max-width: 100%;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+          }
+        }
       }
 
-      .list {
-        @include mo360-760() {
-          flex-wrap: wrap;
-          padding: clamp(1.25rem, 2vw, 2.5rem) 0;
+      .cont-list {
+        @include mo360-767() {
+          grid-template-rows: minmax(12.5rem, auto);
         }
-        display: flex;
-        gap: clamp(1.25rem, 2vw, 2.5rem);
-        padding: clamp(1.25rem, 2vw, 2.5rem) 1.25rem;
-        border-bottom: 1px solid $c-primary;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(25rem, auto);
+        .list-wrap {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(2.5rem, 2vw, 3.75rem);
+          .list {
+            @include mo360-767() {
+              flex-wrap: wrap;
+              justify-content: center;
+              padding: clamp(1.25rem, 2vw, 2.5rem) 0;
+            }
+            display: flex;
+            gap: clamp(1.25rem, 2vw, 2.5rem);
+            padding: clamp(1.25rem, 2vw, 2.5rem) 1.25rem;
+            border-bottom: 1px solid $c-primary;
 
-        .list-img {
-          max-width: 100%;
-          height: 20rem;
-          max-height: 20rem;
-          flex: 0 0 20rem;
-          position: relative;
-          overflow: hidden;
-          > img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
-          .img-blur {
-            position: absolute;
-            filter: blur(10px);
-            z-index: -1;
+            .list-img {
+              max-width: 100%;
+              height: 20rem;
+              max-height: 20rem;
+              flex: 0 0 20rem;
+              position: relative;
+              overflow: hidden;
+              > img {
+                @include img-contain;
+              }
+              .img-blur {
+                position: absolute;
+                filter: blur(10px);
+                z-index: -1;
 
-            > img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
+                > img {
+                  @include img-cover;
+                }
+              }
+            }
+            .list-detail {
+              max-width: 51.375rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .detail-top {
+                h2.tit {
+                  @include fs-34-42;
+                  font-weight: 500;
+                  @include mo360-767() {
+                    flex-wrap: wrap;
+                  }
+                  display: flex;
+                  padding-top: clamp(0.625rem, 2vw, 0.75rem);
+                  font-weight: 700;
+                  gap: 0.125rem;
+                  em {
+                    @include mo360-767() {
+                      @include fs-26-34;
+                    }
+                  }
+                }
+              }
+              .detail-mid {
+                padding-top: clamp(0.75rem, 2vw, 1.5rem);
+                padding-bottom: 2.5rem;
+                flex: 1;
+                p {
+                  font-weight: 400;
+                  @include fs-18-28;
+                  @include mo360-767() {
+                    @include fs-16-24;
+                  }
+                }
+              }
+              .detial-bttm {
+                @include mo360-767() {
+                  text-align: right;
+                }
+              }
             }
           }
         }
+        .list-nodata {
+          @include mo360-767() {
+            @include fs-16-24;
+          }
+          @include fs-18-28;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: clamp(0.625rem, 2vw, 1rem);
+          font-weight: 400;
+          color: $c-gr-scale400;
+        }
+      }
+    }
+  }
 
-        .list-detail {
-          max-width: 51.375rem;
+  // about
+  .cont-about {
+    max-width: 44.25rem;
+    margin: 0 auto;
+    color: $c-primary;
+    .about-top {
+      @include mo360-767() {
+        flex-wrap: wrap;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: clamp(1.25rem, 2vw, 3.25rem);
+      border-bottom: 1px solid $c-primary;
+      h2.tit {
+        @include mo360-767() {
+          @include fs-52-60;
+        }
+        @include fs-64-72;
+        font-weight: 400;
+      }
+    }
+    .about-bttm {
+      @include mo360-767() {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(26.25rem, 26.25rem) auto;
+      }
+      display: grid;
+      grid-template-columns: minmax(20rem, 20rem) 1fr;
+      gap: clamp(1.25rem, 2vw, 1.875rem);
+      padding-top: clamp(1.25rem, 2vw, 3.5rem);
+      .about-img {
+        @include mo360-767() {
+          justify-self: center;
+        }
+        > img {
+          @include img-cover;
+        }
+      }
+      .bttm-detail {
+        display: flex;
+        flex-direction: column;
+        .detail-top {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(0.75rem, 2vw, 1rem);
+          padding-bottom: clamp(1.25rem, 2vw, 1.5rem);
+          border-bottom: 1px solid $c-primary;
+          p {
+            @include mo360-767() {
+              @include fs-14-20;
+            }
+            @include fs-16-24;
+            br {
+              display: block;
+              content: "";
+              margin-bottom: 0.25rem;
+            }
+          }
+          .top-tit {
+            @include mo360-767() {
+              @include fs-18-28;
+            }
+            @include fs-24-32;
+          }
+          em {
+            @include mo360-767() {
+              @include fs-20-28;
+            }
+            @include fs-28-36;
+            padding-bottom: 0.125rem;
+          }
+        }
+        .detail-bttm {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          .detail-top {
-            .tit {
-              padding-top: clamp(0.625rem, 2vw, 0.75rem);
-              font-weight: 700;
-              em {
-                @include mo360-760(I) {
-                  @include fs-26-34;
+          flex: 1;
+          gap: 2.5rem;
+          address {
+            padding: 0 clamp(1rem, 2vw, 1.25rem);
+            .about-info {
+              @include mo360-767() {
+                @include fs-14-20;
+              }
+              @include fs-16-24;
+              position: relative;
+              padding: 0.625rem 0 0.625rem clamp(1.75rem, 2vw, 2rem);
+              text-decoration: underline;
+              text-decoration-color: $c-gr-scale600;
+              color: $c-gr-scale600;
+              &::before {
+                position: absolute;
+                left: 0;
+                content: "";
+                display: inline-block;
+                width: clamp(1.125rem, 2vw, 1.25rem);
+                height: clamp(1.125rem, 2vw, 1.25rem);
+                filter: grayscale(100%) brightness(0.6);
+              }
+              &.email {
+                &::before {
+                  @include icon-bg(icon-w-mail);
                 }
-                @include fs-34-42;
-                font-weight: 500;
+              }
+              &.link {
+                &::before {
+                  @include icon-bg(icon-link);
+                  filter: grayscale(100%) brightness(8.6);
+                }
               }
             }
           }
-          .detail-mid {
-            padding-top: clamp(0.75rem, 2vw, 1.5rem);
-            flex: 1;
-            p {
-              font-weight: 400;
-              @include fs-18-28;
-              @include mo360-760() {
-                @include fs-16-24;
-              }
-            }
+          button {
+            align-self: flex-end;
           }
         }
       }
@@ -288,7 +453,7 @@
       }
     }
     &.search {
-      @include mo360-760() {
+      @include mo360-767() {
         .tit {
           display: none;
         }

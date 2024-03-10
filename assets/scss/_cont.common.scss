@@ -62,7 +62,7 @@
   }
   // &#contact {
   //   .modal-window {
-  //     @include mo360-760() {
+  //     @include mo360-767() {
   //       max-width: 320px;
   //     }
   //     width: 100%;
@@ -113,15 +113,15 @@
 /*-------------------------------------------------------------------
     @공통 class
 /*-----------------------------------------------------------------*/
-h2.tit {
-  @include fs-42-50;
-  @include mo360-760() {
-    @include fs-26-34;
-  }
-}
+// h2.tit {
+//   @include fs-42-50;
+//   @include mo360-767() {
+//     @include fs-26-34;
+//   }
+// }
 .txt-under {
   @include fs-18-28;
-  @include mo360-760() {
+  @include mo360-767() {
     @include fs-16-24;
   }
   font-family: "Pretendard-Regular";
@@ -191,6 +191,11 @@ h2.tit {
   }
   &.next {
     @include icon-bg(icon-next);
+  }
+  &.nodata {
+    width: 5rem;
+    height: 5rem;
+    @include icon-bg(icon-nodata);
   }
 }
 /*-------------------------------------------------------------------
@@ -298,7 +303,7 @@ $p-14-0: 0.875rem;
     }
     &.mail {
       display: none;
-      @include mo360-760() {
+      @include mo360-767() {
         display: block;
       }
     }
@@ -306,18 +311,21 @@ $p-14-0: 0.875rem;
 }
 // btn - chips
 .chips-wrap {
+  @include mo360-767() {
+    flex-wrap: wrap;
+  }
   display: flex;
-  flex-wrap: wrap;
   gap: clamp(0.75rem, 2vw, 2.5rem);
   .tit {
-    @include mo360-760() {
+    @include fs-42-50;
+    @include mo360-767() {
       @include fs-34-42;
     }
     font-weight: 400;
     flex: 1;
   }
   .chips {
-    @include mo360-760() {
+    @include mo360-767() {
       .p-btn-chips {
         @include fs-14-20;
       }
@@ -365,7 +373,7 @@ $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
   background: #fff;
   color: #111;
   @include fs-14-20;
-  font-family: Pretendard;
+  font-family: "Pretendard-Regular";
   font-weight: 500;
   letter-spacing: -0.28px;
   text-align: center;
@@ -394,10 +402,10 @@ $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
 // Form - input
 label {
   @include fs-16-24;
-  @include mo360-760() {
+  @include mo360-767() {
     @include fs-14-20;
   }
-  font-family: Pretendard;
+  font-family: "Pretendard-Regular";
   font-weight: 500;
   color: $c-primary;
   letter-spacing: -0.02rem;
@@ -415,7 +423,7 @@ label {
 }
 input[type="text"] {
   @include fs-18-28;
-  @include mo360-760() {
+  @include mo360-767() {
     @include fs-16-24;
   }
   font-weight: 400;
@@ -438,6 +446,27 @@ input[type="text"] {
 }
 
 // input - search
+.search-wrap {
+  display: grid;
+  grid-template-columns: minmax(20rem, 52.75rem);
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 1.25rem);
+  padding-bottom: clamp(2.5rem, 2vw, 3.75rem);
+  font-family: "Pretendard-Regular";
+  color: $c-primary;
+  .searct-noti {
+    @include mo360-767() {
+      @include fs-16-24;
+    }
+    @include fs-18-28;
+    font-weight: 400;
+    text-align: center;
+    span {
+      display: inline-block;
+      font-weight: 700;
+    }
+  }
+}
 .input-search {
   display: grid;
   height: auto;
@@ -450,7 +479,7 @@ input[type="text"] {
   overflow: hidden;
   input[type="text"] {
     @include fs-28-36;
-    @include mo360-760() {
+    @include mo360-767() {
       @include fs-20-28;
     }
     padding: 0;
@@ -474,100 +503,3 @@ input[type="text"] {
     background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M27.4256 25.1864C29.0929 23.0415 30.0858 20.3462 30.0858 17.4191C30.0858 10.4235 24.4147 4.75244 17.4191 4.75244C10.4235 4.75244 4.75244 10.4235 4.75244 17.4191C4.75244 24.4147 10.4235 30.0858 17.4191 30.0858C20.3462 30.0858 23.0415 29.0929 25.1864 27.4256L31.0083 33.2475L33.2475 31.0083L27.4256 25.1864ZM26.9191 17.4191C26.9191 22.6658 22.6658 26.9191 17.4191 26.9191C12.1724 26.9191 7.91911 22.6658 7.91911 17.4191C7.91911 12.1724 12.1724 7.91911 17.4191 7.91911C22.6658 7.91911 26.9191 12.1724 26.9191 17.4191Z' fill='%23111111'/%3E%3C/svg%3E%0A");
   }
 }
-
-// list
-// h3.tit {
-//   @include fs-34-42;
-//   font-weight: 700;
-//   .year {
-//     display: inline-block;
-//     font-weight: 500;
-//   }
-//   em {
-//     font-family: Wanted Sans;
-//   }
-// }
-// .list {
-//   padding: clamp(1.25rem, 2vw, 2.5rem) 0;
-//   border-bottom: 1px solid #333;
-//   .tit {
-//     @include mo360-760() {
-//       flex-wrap: wrap;
-//     }
-//     @include fs-34-42;
-//     font-weight: 700;
-//     display: flex;
-//     gap: 4px;
-//     .year {
-//       display: inline-block;
-//       font-weight: 500;
-//     }
-//   }
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: clamp(20px, 2vw, 40px);
-//   .list-img {
-//     @include mo360-760() {
-//       width: 100%;
-//       max-width: 100%;
-//       flex: 1 0 100%;
-//     }
-//     position: relative;
-//     width: 320px;
-//     max-width: 320px;
-//     height: 320px;
-//     max-height: 320px;
-//     flex: 0 0 320px;
-//     overflow: hidden;
-//     &:before {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       height: 100%;
-//       background: url("/assets/img/test3.jfif") no-repeat center center;
-//       filter: blur(10px);
-//       z-index: -1;
-//     }
-//     img {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: contain;
-//     }
-//   }
-
-//   .list-info {
-//     display: flex;
-//     flex-direction: column;
-//     flex: 1;
-//     max-width: 822px;
-//     min-height: 320px;
-//     .info-top {
-//       .tags {
-//         display: flex;
-//         flex-wrap: wrap;
-//         gap: 4px;
-//         padding-bottom: clamp(10px, 2vw, 12px);
-//       }
-//     }
-//     .info-middle {
-//       flex: 1;
-//       p {
-//         padding-top: clamp(12px, 2vw, 24px);
-//         @include fs-18-28;
-//         font-weight: 400;
-//         display: -webkit-box;
-//         -webkit-line-clamp: 3;
-//         -webkit-box-orient: vertical;
-//         overflow: hidden;
-//         text-overflow: ellipsis;
-//       }
-//     }
-//     .info-bottom {
-//       @media (max-width: 360px) {
-//         align-self: flex-end;
-//       }
-//     }
-//   }
-// }
