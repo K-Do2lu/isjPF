@@ -67,7 +67,7 @@ menuItems.forEach((menuItem) => {
   menuItem.addEventListener("click", toggleMenu);
 });
 /*--------------------------------------------------------------
-    @header | scroll시 borer-bottom style 추가
+    @header | mo header
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
