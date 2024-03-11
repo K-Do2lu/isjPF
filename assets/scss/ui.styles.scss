@@ -13,12 +13,13 @@
   .gnb-wrap.mo {
     display: none;
     position: absolute;
+    z-index: 999;
     top: 4.75rem;
     left: 0;
     width: 100%;
-    height: calc(100% - 4.75rem);
+    height: auto;
     padding: 1.25rem;
-    background: #ccc;
+    background: $c-gr-scalefff;
     &.active {
       display: block;
     }
@@ -75,6 +76,7 @@
                   display: block;
                 }
               }
+
               .sub-tit {
                 @include fs-16-24;
                 display: inline-block;
@@ -111,6 +113,7 @@
       }
     }
   }
+
   //
   .side {
     @include media-max(1279px) {
@@ -405,15 +408,22 @@
         .list-nodata {
           @include mo360-767() {
             @include fs-16-24;
+            grid-template-rows: 3.75rem auto;
           }
           @include fs-18-28;
-          display: flex;
-          flex-direction: column;
+          display: grid;
+          grid-template-columns: minmax(3.75rem, auto);
+          grid-template-rows: 5rem auto;
           justify-content: center;
           align-items: center;
           gap: clamp(0.625rem, 2vw, 1rem);
           font-weight: 400;
           color: $c-gr-scale400;
+          .icon {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+          }
         }
       }
     }

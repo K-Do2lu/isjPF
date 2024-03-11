@@ -157,12 +157,6 @@
           </div>
         </header>
 
-        <!-- main-content -->
-        <div class="main-cont">
-          <!-- cont -->
-          <div class="cont">123</div>
-        </div>
-
         <!-- mo header menu click 시 menu block -->
         <div class="gnb-wrap mo">
           <p class="txt-under">
@@ -258,6 +252,12 @@
               </li>
             </ul>
           </nav>
+        </div>
+
+        <!-- main-content -->
+        <div class="main-cont">
+          <!-- cont -->
+          <div class="cont">123</div>
         </div>
 
         <!-- sroll btn -->
@@ -404,94 +404,5 @@
       </div>
       <!-- // modal - contact  -->
     </div>
-    <script>
-      const subMenuItems = document.querySelectorAll("header .menu-sub li");
-
-      const slideDown = (e) => {
-        const clicked = e.currentTarget;
-        subMenuItems.forEach((item) => {
-          if (item !== clicked) {
-            item.classList.remove("active");
-          }
-        });
-        clicked.classList.toggle("active");
-      };
-
-      subMenuItems.forEach((item) => {
-        item.addEventListener("click", slideDown);
-      });
-
-      //   dddddddddddddddddddddddddddddddddddddddddddddddddddd
-      //   mo header menu toggle
-      const gnb_menu = document.querySelector(".gnb button.menu");
-
-      const showMenu = () => {
-        const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
-        gnb_wrap_mo.classList.toggle("active");
-      };
-
-      gnb_menu.addEventListener("click", showMenu);
-
-      //  여기여기 mo header menu block
-      const gnb_wrap_mo_menu = document.querySelectorAll(
-        ".gnb-wrap.mo .menu li"
-      );
-
-      const showMenuItem = (event) => {
-        if (event.currentTarget.querySelector(".menu-sub")) {
-          event.preventDefault();
-        }
-        const clickedItem = event.currentTarget;
-
-        gnb_wrap_mo_menu.forEach((item) => {
-          if (item !== clickedItem) {
-            item.classList.remove("active");
-          }
-        });
-        clickedItem.classList.toggle("active");
-      };
-
-      gnb_wrap_mo_menu.forEach((item) => {
-        item.addEventListener("click", showMenuItem);
-      });
-
-      // 서브메뉴
-
-      const gnb_wrap_mo_menu_sub = document.querySelectorAll(
-        ".gnb-wrap.mo .menu-sub li .sub-tit"
-      );
-
-      const showSubMenu = (event) => {
-        const clickedSubMenu = event.currentTarget;
-
-        // .sub-tit 요소의 부모인 li에 .active 클래스를 추가 또는 제거합니다.
-        clickedSubMenu.closest("li").classList.toggle("active");
-
-        // 다른 .sub-tit 요소의 부모인 li에서 .active 클래스를 제거합니다.
-        gnb_wrap_mo_menu_sub.forEach((item) => {
-          if (item !== clickedSubMenu) {
-            item.closest("li").classList.remove("active");
-          }
-        });
-      };
-
-      gnb_wrap_mo_menu_sub.forEach((item) => {
-        item.addEventListener("click", showSubMenu);
-      });
-
-      // ddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-
-      // scroll 감지 + borer bottom 추가
-      $(window).on("scroll", function () {
-        var scrollPosition = $(window).scrollTop();
-        var header = $(".header");
-
-        if (scrollPosition > 0) {
-          header.addClass("scrolled");
-        } else {
-          header.removeClass("scrolled");
-        }
-      });
-    </script>
   </body>
 </html>

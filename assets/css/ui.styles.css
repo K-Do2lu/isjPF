@@ -828,12 +828,13 @@ input[type=text]:disabled {
 .main .gnb-wrap.mo {
   display: none;
   position: absolute;
+  z-index: 999;
   top: 4.75rem;
   left: 0;
   width: 100%;
-  height: calc(100% - 4.75rem);
+  height: auto;
   padding: 1.25rem;
-  background: #ccc;
+  background: #ffffff;
 }
 .main .gnb-wrap.mo.active {
   display: block;
@@ -1242,8 +1243,9 @@ input[type=text]:disabled {
 .main .main-cont .cont .cont-list .list-nodata {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(3.75rem, auto);
+  grid-template-rows: 5rem auto;
   justify-content: center;
   align-items: center;
   gap: clamp(0.625rem, 2vw, 1rem);
@@ -1254,7 +1256,13 @@ input[type=text]:disabled {
   .main .main-cont .cont .cont-list .list-nodata {
     font-size: 1rem;
     line-height: 1.5rem;
+    grid-template-rows: 3.75rem auto;
   }
+}
+.main .main-cont .cont .cont-list .list-nodata .icon {
+  width: 100%;
+  height: 100%;
+  background-position: center;
 }
 .main .cont-about {
   max-width: 44.25rem;
