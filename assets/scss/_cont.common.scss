@@ -173,7 +173,7 @@
               &::after {
                 content: "";
                 position: absolute;
-                right: 1.25rem;
+                right: 0;
                 width: 1.5rem;
                 height: 1.5rem;
                 @include icon-bg(icon-passive);
@@ -264,7 +264,7 @@
               &::after {
                 content: "";
                 position: absolute;
-                right: 1.25rem;
+                right: 0;
                 width: 1.5rem;
                 height: 1.5rem;
                 @include icon-bg(icon-passive);
@@ -329,7 +329,7 @@
 /*-------------------------------------------------------------------
     @Icon
 /*-----------------------------------------------------------------*/
-// icon svg test
+// icon svg
 .icon {
   display: inline-block;
   width: 1.5rem;
@@ -386,6 +386,9 @@
   }
   &.no-data {
     background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M38.5 49.0666V23.4666H41.5V49.0666H38.5Z' fill='%23CCCCCC'/%3E%3Cpath d='M41.6004 53.3333H38.4004V56.5333H41.6004V53.3333Z' fill='%23CCCCCC'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M40 72C57.6731 72 72 57.6731 72 40C72 22.3269 57.6731 8 40 8C22.3269 8 8 22.3269 8 40C8 57.6731 22.3269 72 40 72ZM40 69C56.0163 69 69 56.0163 69 40C69 23.9837 56.0163 11 40 11C23.9837 11 11 23.9837 11 40C11 56.0163 23.9837 69 40 69Z' fill='%23CCCCCC'/%3E%3C/svg%3E%0A");
+  }
+  &.recent {
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8333 3.5V4.76345C9.52267 5.31888 7 8.19817 7 11.6667V18.6667H5.25V21H22.75V18.6667H21V11.6667C21 8.19817 18.4773 5.31888 15.1667 4.76345V3.5H12.8333ZM14 7C11.4227 7 9.33333 9.08934 9.33333 11.6667V18.6667H18.6667V11.6667C18.6667 9.08934 16.5773 7 14 7Z' fill='%23333333'/%3E%3Cpath d='M11.0833 24.5V22.1667H16.9167V24.5H11.0833Z' fill='%23333333'/%3E%3C/svg%3E%0A");
   }
 }
 //
@@ -706,6 +709,7 @@ $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
 
   // 년도
   &.year {
+    width: 3.125rem;
     border-radius: 0;
     background: #111;
     color: #fff;
@@ -816,6 +820,75 @@ input[type="text"] {
     > .icon {
       width: 100%;
       height: 100%;
+    }
+  }
+}
+/*-------------------------------------------------------------------
+    @proj list
+/*-----------------------------------------------------------------*/
+.proj {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid $c-primary;
+  border-bottom: 1px solid $c-gr-scale200;
+  ul {
+    li.list {
+      @include mo360-767() {
+        @include fs-16-24;
+        grid-template-columns: 1fr;
+        button {
+          display: none;
+        }
+        .list-detail {
+          flex-direction: column;
+        }
+      }
+      @include fs-18-28;
+      font-weight: 500;
+      color: $c-primary;
+      display: grid;
+      grid-template-columns: minmax(5rem, 5rem) 1fr minmax(1.5rem, 1.75rem);
+      align-items: center;
+      gap: 2.5rem;
+      padding: 1.25rem clamp(1rem, 2vw, 1.25rem);
+      &:not(:last-child) {
+        border-bottom: 1px solid $c-gr-scale200;
+      }
+      &.fix {
+        background: $c-gr-scale50;
+        .list-mark {
+          .icon.recent {
+            display: block;
+          }
+          .list-num {
+            display: none;
+          }
+        }
+      }
+      .list-mark {
+        @include mo360-767() {
+          display: none;
+        }
+        @include d-flex-center-center;
+        flex-direction: column;
+        overflow: hidden;
+        flex: 0 1 5rem;
+        .icon.recent {
+          display: none;
+        }
+        .list-num {
+          display: block;
+        }
+      }
+
+      .list-detail {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(0.5rem, 2vw, 1.25rem);
+        p {
+          flex: 1;
+        }
+      }
     }
   }
 }
