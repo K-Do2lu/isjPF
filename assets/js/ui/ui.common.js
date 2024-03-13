@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //   menuItem.addEventListener("click", toggleMenu);
 // });
 /*--------------------------------------------------------------
-    @header | mo header
+    @header | mo toggle menu, side toggle menu
 --------------------------------------------------------------*/
 document.addEventListener("DOMContentLoaded", function () {
   // header menu hover, click event
@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
   subMenuItems.forEach((item) => {
     item.addEventListener("click", slideDown);
   });
+
   // mo headermenu
   const gnb_menu = document.querySelector(".gnb button.menu");
   const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
@@ -110,6 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
   gnb_menu.addEventListener("click", showMenu);
 
   // mo headermenu
+  let currentActiveItem = null;
+
   const handleMenuItemClick = (event) => {
     const clickedItem = event.currentTarget;
     const hasSubMenu = clickedItem.querySelector(".menu-sub");
@@ -118,24 +121,25 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
     }
 
-    // 모든 .menu > li의 활성 클래스 제거
-    if (!clickedItem.classList.contains("active")) {
-      const subMenuItems = document.querySelectorAll(
-        ".gnb-wrap.mo .menu-sub > li.active"
-      );
-      subMenuItems.forEach((subMenuItem) => {
-        subMenuItem.classList.remove("active");
-      });
+    // 현재 활성화된 요소를 해제
+    if (currentActiveItem && currentActiveItem !== clickedItem) {
+      currentActiveItem.classList.remove("active");
+      // 현재 활성화된 요소의 하위 .menu-sub > li의 활성 클래스 제거
+      currentActiveItem
+        .querySelectorAll(".menu-sub > li.active")
+        .forEach((subMenuItem) => {
+          subMenuItem.classList.remove("active");
+        });
     }
 
-    gnb_wrap_mo_menu.forEach((item) => {
-      if (item !== clickedItem) {
-        item.classList.remove("active");
-      }
-    });
+    // 클릭한 요소를 활성화하거나 해제
+    clickedItem.classList.toggle("active");
 
-    if (!hasSubMenu || !clickedItem.classList.contains("active")) {
-      clickedItem.classList.toggle("active");
+    // 클릭한 요소가 현재 활성화된 요소가 되도록 설정
+    if (clickedItem.classList.contains("active")) {
+      currentActiveItem = clickedItem;
+    } else {
+      currentActiveItem = null;
     }
   };
 
@@ -162,7 +166,71 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // side headermenu
+  const gnb_wrap_mo_menu = document.querySelectorAll(
+    ".gnb-wrap.side-toggle .menu > li"
+  );
+  const menuSubTit = document.querySelectorAll(
+    ".gnb-wrap.side-toggle .menu-sub > li"
+  );
 
+  // side headermenu
+  let currentActiveItem = null;
+
+  const handleMenuItemClick = (event) => {
+    const clickedItem = event.currentTarget;
+    const hasSubMenu = clickedItem.querySelector(".menu-sub");
+
+    if (hasSubMenu) {
+      event.preventDefault();
+    }
+
+    // 현재 활성화된 요소를 해제
+    if (currentActiveItem && currentActiveItem !== clickedItem) {
+      currentActiveItem.classList.remove("active");
+      // 현재 활성화된 요소의 하위 .menu-sub > li의 활성 클래스 제거
+      currentActiveItem
+        .querySelectorAll(".menu-sub > li.active")
+        .forEach((subMenuItem) => {
+          subMenuItem.classList.remove("active");
+        });
+    }
+
+    // 클릭한 요소를 활성화하거나 해제
+    clickedItem.classList.toggle("active");
+
+    // 클릭한 요소가 현재 활성화된 요소가 되도록 설정
+    if (clickedItem.classList.contains("active")) {
+      currentActiveItem = clickedItem;
+    } else {
+      currentActiveItem = null;
+    }
+  };
+
+  gnb_wrap_mo_menu.forEach((item) => {
+    item.addEventListener("click", handleMenuItemClick);
+  });
+
+  // 서브메뉴
+  menuSubTit.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.stopPropagation(); // 이벤트 버블링 중지
+
+      const clickedSubMenu = event.currentTarget;
+
+      // 모든 메뉴 항목의 활성 클래스 제거
+      menuSubTit.forEach((menuItem) => {
+        if (menuItem !== clickedSubMenu) {
+          menuItem.classList.remove("active");
+        }
+      });
+
+      // 클릭된 메뉴 항목에만 활성 클래스를 토글
+      clickedSubMenu.classList.toggle("active");
+    });
+  });
+});
 /*--------------------------------------------------------------
     @최상단 버튼 + header scroll 감지 border-bottom 추가
 --------------------------------------------------------------*/
@@ -189,3 +257,19 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+/*--------------------------------------------------------------
+    @pagination 페이징 갯 수
+--------------------------------------------------------------*/
+// 페이지네이션 갯수를 조절하는 JavaScript 코드
+// 페이지네이션 갯수를 조절하는 JavaScript 코드
+function updatePagination() {
+  var pages = document.querySelectorAll(".pages .page");
+  var displayCount = window.innerWidth <= 767 ? 3 : pages.length;
+  pages.forEach(function (page, index) {
+    page.style.display = index < displayCount ? "inline-block" : "none";
+  });
+}
+
+// 페이지 로드시와 윈도우 크기 변경시 페이지네이션 갯수 업데이트
+window.addEventListener("DOMContentLoaded", updatePagination);
+window.addEventListener("resize", updatePagination);
