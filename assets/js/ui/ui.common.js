@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 /*--------------------------------------------------------------
-    @toggle menu
---------------------------------------------------------------*/
+      @toggle menu
+  --------------------------------------------------------------*/
 //토글 메뉴
 // const menuItems = document.querySelectorAll(".menu, .menu-tit");
 // const toggleMenu = (event) => {
@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //   menuItem.addEventListener("click", toggleMenu);
 // });
 /*--------------------------------------------------------------
-    @header | mo toggle menu, side toggle menu
---------------------------------------------------------------*/
+      @header | mo toggle menu, side toggle menu
+  --------------------------------------------------------------*/
 document.addEventListener("DOMContentLoaded", function () {
   const subMenuItems = document.querySelectorAll("header .menu-sub li");
   const gnb_menu = document.querySelector(".gnb button.menu");
@@ -124,16 +124,23 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       currentActiveItem = null;
     }
-    if (clickedItem.querySelector(".menu-sub")) {
-      event.preventDefault();
+    //-----------------------------------------------
+    var parent_node = clickedItem.parentNode.parentNode.parentNode;
+    if (
+      parent_node.classList.contains("mo") &&
+      clickedItem.querySelector(".menu-sub")
+    ) {
+      event.preventDefault(); // 모바일 이벤트 prevent
     }
   };
 
   subMenuItems.forEach((item) => item.addEventListener("click", slideDown));
   gnb_menu.addEventListener("click", showMenu);
+
   document
     .querySelectorAll(".menu > li")
     .forEach((item) => item.addEventListener("click", handleClick));
+
   document.querySelectorAll(".menu-sub > li").forEach((item) => {
     item.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -150,8 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 /*--------------------------------------------------------------
-    @최상단 버튼 + header scroll 감지 border-bottom 추가
---------------------------------------------------------------*/
+      @최상단 버튼 + header scroll 감지 border-bottom 추가
+  --------------------------------------------------------------*/
 window.addEventListener("scroll", function () {
   // 스크롤 시 버튼을 나타내거나 숨김
   var scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -176,8 +183,8 @@ function scrollToTop() {
   });
 }
 /*--------------------------------------------------------------
-    @pagination 페이징 갯 수
---------------------------------------------------------------*/
+      @pagination 페이징 갯 수
+  --------------------------------------------------------------*/
 // 페이지네이션 갯수를 조절하는 JavaScript 코드
 // 페이지네이션 갯수를 조절하는 JavaScript 코드
 function updatePagination() {
