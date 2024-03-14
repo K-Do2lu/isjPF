@@ -382,7 +382,7 @@ input::-webkit-calendar-picker-indicator {
   position: absolute;
   z-index: 999;
   top: 4.75rem;
-  left: 0;
+  right: 0;
   width: 100%;
   height: calc(100% - 4.75rem);
   padding: 1.25rem;
@@ -436,7 +436,8 @@ input::-webkit-calendar-picker-indicator {
   background-size: cover;
 }
 .gnb-wrap.mo nav ul.menu > li ul.menu-sub > li.active .sub-menu {
-  display: block;
+  padding: 0.375rem 0;
+  max-height: 12.5rem;
 }
 .gnb-wrap.mo nav ul.menu > li ul.menu-sub > li .sub-tit {
   font-size: 1rem;
@@ -459,8 +460,9 @@ input::-webkit-calendar-picker-indicator {
   background-size: cover;
 }
 .gnb-wrap.mo nav ul.menu > li ul.menu-sub > li .sub-menu {
-  display: none;
-  padding: 0.375rem 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: padding 200ms ease-in, max-height 200ms ease-in;
   background: #f5f5f5;
 }
 .gnb-wrap.mo nav ul.menu > li ul.menu-sub > li .sub-menu > li {
@@ -521,7 +523,8 @@ input::-webkit-calendar-picker-indicator {
   background-size: cover;
 }
 .gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li.active .sub-menu {
-  display: block;
+  max-height: 12.5rem;
+  padding: 0.375rem 0;
 }
 .gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li .sub-tit {
   font-size: 1rem;
@@ -544,8 +547,9 @@ input::-webkit-calendar-picker-indicator {
   background-size: cover;
 }
 .gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li .sub-menu {
-  display: none;
-  padding: 0.375rem 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: padding 200ms ease-in, max-height 200ms ease-in;
   background: #f5f5f5;
 }
 .gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li .sub-menu > li {
@@ -1296,8 +1300,9 @@ input[type=text]:disabled {
   background-size: cover;
 }
 .main header .gnb-wrap nav ul.menu > li ul.menu-sub > li .sub-menu {
-  display: none;
-  padding: 0.375rem 1.25rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: padding 150ms ease-in, max-height 200ms ease-in;
   background: #f5f5f5;
 }
 .main header .gnb-wrap nav ul.menu > li ul.menu-sub > li .sub-menu > li {
@@ -1313,7 +1318,8 @@ input[type=text]:disabled {
   background-size: cover;
 }
 .main header .gnb-wrap nav ul.menu > li ul.menu-sub > li.active .sub-menu {
-  display: block;
+  max-height: 12.5rem;
+  padding: 0.375rem 1.25rem;
 }
 .main header .gnb-wrap .gnb {
   display: flex;

@@ -101,12 +101,13 @@
   position: absolute;
   z-index: 999;
   top: 4.75rem;
-  left: 0;
+  right: 0;
   width: 100%;
   height: calc(100% - 4.75rem);
   padding: 1.25rem;
   background: $c-gr-scalefff;
   overflow-y: auto;
+
   &.active {
     display: block;
   }
@@ -157,7 +158,8 @@
                 }
               }
               .sub-menu {
-                display: block;
+                padding: 0.375rem 0;
+                max-height: 12.5rem;
               }
             }
 
@@ -180,8 +182,9 @@
               }
             }
             .sub-menu {
-              display: none;
-              padding: 0.375rem 0;
+              max-height: 0;
+              overflow: hidden;
+              transition: padding 200ms ease-in, max-height 200ms ease-in;
               background: #f5f5f5;
               > li {
                 @include fs-14-20;
@@ -248,7 +251,8 @@
                 }
               }
               .sub-menu {
-                display: block;
+                max-height: 12.5rem;
+                padding: 0.375rem 0;
               }
             }
 
@@ -271,8 +275,10 @@
               }
             }
             .sub-menu {
-              display: none;
-              padding: 0.375rem 0;
+              max-height: 0;
+              overflow: hidden;
+              transition: padding 200ms ease-in, max-height 200ms ease-in;
+
               background: #f5f5f5;
               > li {
                 @include fs-14-20;

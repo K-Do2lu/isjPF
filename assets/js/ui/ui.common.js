@@ -69,93 +69,142 @@ document.addEventListener("DOMContentLoaded", function () {
 /*--------------------------------------------------------------
       @header | mo toggle menu, side toggle menu
   --------------------------------------------------------------*/
-document.addEventListener("DOMContentLoaded", function () {
-  const subMenuItems = document.querySelectorAll("header .menu-sub li");
-  const gnb_menu = document.querySelector(".gnb button.menu");
+
+document.addEventListener("click", function (e) {
+  let clickedElement = e.target;
+  const ACTIVE = "active";
+
+  // click시 active toggle
+  const clickedElement_parent = clickedElement.parentNode;
+  clickedElement_parent.classList.toggle(ACTIVE);
+
+  //확인용
+  console.log(clickedElement_parent);
+  //확인용
+
+  const menu_li_all = document.querySelectorAll(".menu li");
   const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
-  const gnb_wrap_mo_menu = document.querySelectorAll(".gnb-wrap.mo .menu > li");
-  const menuSubTit = document.querySelectorAll(".gnb-wrap.mo .menu-sub > li");
-  let currentActiveItem = null;
 
-  const slideDown = (e) => {
-    const clicked = e.currentTarget;
-    subMenuItems.forEach((item) => {
-      if (item !== clicked) {
-        item.classList.remove("active");
-      }
-    });
-    clicked.classList.toggle("active");
-  };
+  menu_li_all.forEach((item) => {
+    // 선택한 요소 외 다른 요소 active remove
+    if (item !== clickedElement_parent) {
+      item.classList.remove(ACTIVE);
+    }
 
-  const showMenu = () => {
-    gnb_wrap_mo.classList.toggle("active");
-    if (!gnb_wrap_mo.classList.contains("active")) {
-      gnb_wrap_mo_menu.forEach((menuItem) =>
-        menuItem.classList.remove("active")
-      );
-      menuSubTit.forEach((menuItem) => menuItem.classList.remove("active"));
-    }
-  };
+    // 선택한 요소의 상위 요소가 side-toggle 포함하면 .menu > li active add (toggle x)
+    const item_grand_parent = item.parentNode.parentNode.parentNode;
 
-  const handleClick = (event) => {
-    const clickedItem = event.currentTarget;
-    clickedItem.classList.toggle("active");
-    if (currentActiveItem && currentActiveItem !== clickedItem) {
-      currentActiveItem.classList.remove("active");
-      currentActiveItem
-        .querySelectorAll(".menu-sub > li.active")
-        .forEach((menuItem) => menuItem.classList.remove("active"));
+    if (item_grand_parent.classList.contains("side-toggle")) {
+      item.classList.add(ACTIVE);
     }
-    document.querySelectorAll(".menu > li").forEach((menuItem) => {
-      if (menuItem !== clickedItem) {
-        menuItem.classList.remove("active");
-        menuItem
-          .querySelectorAll(".menu-sub > li.active")
-          .forEach((subMenuItem) => subMenuItem.classList.remove("active"));
-      }
-    });
-    document.querySelectorAll(".menu > li").forEach((menuItem) => {
-      menuItem.style.color = clickedItem.classList.contains("active")
-        ? "#ccc"
-        : "";
-    });
-    if (clickedItem.classList.contains("active")) {
-      currentActiveItem = clickedItem;
-    } else {
-      currentActiveItem = null;
-    }
-    //-----------------------------------------------
-    var parent_node = clickedItem.parentNode.parentNode.parentNode;
+
+    // 선택한 요소의 상위 요소가 gnb-wrap.mo이면 gnb-wrap.mo .active add
+    // const 선택한 요소의 상위 요소
+    // const gnb-wrap.mo
+    // 선택한 요소의 상위 요소 == gnb-wrap.mo 이면 gnb-wrap.mo .active add
+    const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
+
     if (
-      parent_node.classList.contains("mo") &&
-      clickedItem.querySelector(".menu-sub")
+      item_grand_parent.classList.contains("gnb-wrap") &&
+      item_grand_parent.classList.contains("mo")
     ) {
-      event.preventDefault(); // 모바일 이벤트 prevent
+      item.classList.add(ACTIVE);
     }
-  };
-
-  subMenuItems.forEach((item) => item.addEventListener("click", slideDown));
-  gnb_menu.addEventListener("click", showMenu);
-
-  document
-    .querySelectorAll(".menu > li")
-    .forEach((item) => item.addEventListener("click", handleClick));
-
-  document.querySelectorAll(".menu-sub > li").forEach((item) => {
-    item.addEventListener("click", (event) => {
-      event.stopPropagation();
-      const clickedSubMenu = event.currentTarget;
-      document
-        .querySelectorAll(".menu > li .menu-sub > li.active")
-        .forEach((menuItem) => menuItem.classList.remove("active"));
-      clickedSubMenu.classList.toggle("active");
-      const parentMenuItem = clickedSubMenu.closest(".menu > li");
-      if (parentMenuItem && parentMenuItem.classList.contains("active")) {
-        parentMenuItem.style.color = "";
-      }
-    });
   });
+
+  const icon_menu = document.querySelector("header .icon.menu");
+
+  if (clickedElement == icon_menu) {
+    gnb_wrap_mo.classList.toggle(ACTIVE);
+  }
 });
+// document.addEventListener("DOMContentLoaded", function () {
+//   const subMenuItems = document.querySelectorAll("header .menu-sub li");
+//   const gnb_menu = document.querySelector(".gnb button.menu");
+//   const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
+//   const gnb_wrap_mo_menu = document.querySelectorAll(".gnb-wrap.mo .menu > li");
+//   const menuSubTit = document.querySelectorAll(".gnb-wrap.mo .menu-sub > li");
+//   let currentActiveItem = null;
+
+//   const slideDown = (e) => {
+//     const clicked = e.currentTarget;
+//     subMenuItems.forEach((item) => {
+//       if (item !== clicked) {
+//         item.classList.remove("active");
+//       }
+//     });
+//     clicked.classList.toggle("active");
+//   };
+
+//   const showMenu = () => {
+//     gnb_wrap_mo.classList.toggle("active");
+//     if (!gnb_wrap_mo.classList.contains("active")) {
+//       gnb_wrap_mo_menu.forEach((menuItem) =>
+//         menuItem.classList.remove("active")
+//       );
+//       menuSubTit.forEach((menuItem) => menuItem.classList.remove("active"));
+//     }
+//   };
+
+//   const handleClick = (event) => {
+//     const clickedItem = event.currentTarget;
+//     clickedItem.classList.toggle("active");
+//     if (currentActiveItem && currentActiveItem !== clickedItem) {
+//       currentActiveItem.classList.remove("active");
+//       currentActiveItem
+//         .querySelectorAll(".menu-sub > li.active")
+//         .forEach((menuItem) => menuItem.classList.remove("active"));
+//     }
+//     document.querySelectorAll(".menu > li").forEach((menuItem) => {
+//       if (menuItem !== clickedItem) {
+//         menuItem.classList.remove("active");
+//         menuItem
+//           .querySelectorAll(".menu-sub > li.active")
+//           .forEach((subMenuItem) => subMenuItem.classList.remove("active"));
+//       }
+//     });
+//     document.querySelectorAll(".menu > li").forEach((menuItem) => {
+//       menuItem.style.color = clickedItem.classList.contains("active")
+//         ? "#ccc"
+//         : "";
+//     });
+//     if (clickedItem.classList.contains("active")) {
+//       currentActiveItem = clickedItem;
+//     } else {
+//       currentActiveItem = null;
+//     }
+//     //-----------------------------------------------
+//     var parent_node = clickedItem.parentNode.parentNode.parentNode;
+//     if (
+//       parent_node.classList.contains("mo") &&
+//       clickedItem.querySelector(".menu-sub")
+//     ) {
+//       event.preventDefault(); // 모바일 이벤트 prevent
+//     }
+//   };
+
+//   subMenuItems.forEach((item) => item.addEventListener("click", slideDown));
+//   gnb_menu.addEventListener("click", showMenu);
+
+//   document
+//     .querySelectorAll(".menu > li")
+//     .forEach((item) => item.addEventListener("click", handleClick));
+
+//   document.querySelectorAll(".menu-sub > li").forEach((item) => {
+//     item.addEventListener("click", (event) => {
+//       event.stopPropagation();
+//       const clickedSubMenu = event.currentTarget;
+//       document
+//         .querySelectorAll(".menu > li .menu-sub > li.active")
+//         .forEach((menuItem) => menuItem.classList.remove("active"));
+//       clickedSubMenu.classList.toggle("active");
+//       const parentMenuItem = clickedSubMenu.closest(".menu > li");
+//       if (parentMenuItem && parentMenuItem.classList.contains("active")) {
+//         parentMenuItem.style.color = "";
+//       }
+//     });
+//   });
+// });
 /*--------------------------------------------------------------
       @최상단 버튼 + header scroll 감지 border-bottom 추가
   --------------------------------------------------------------*/

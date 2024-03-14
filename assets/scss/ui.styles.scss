@@ -149,8 +149,10 @@
                   }
                 }
                 .sub-menu {
-                  display: none;
-                  padding: 0.375rem 1.25rem;
+                  max-height: 0;
+                  overflow: hidden;
+                  transition: padding 150ms ease-in, max-height 200ms ease-in;
+
                   background: #f5f5f5;
                   > li {
                     @include fs-14-20;
@@ -167,7 +169,8 @@
                     }
                   }
                   .sub-menu {
-                    display: block;
+                    max-height: 12.5rem;
+                    padding: 0.375rem 1.25rem;
                   }
                 }
               }
