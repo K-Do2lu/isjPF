@@ -74,50 +74,51 @@ document.addEventListener("click", function (e) {
   let clickedElement = e.target;
   const ACTIVE = "active";
 
-  // click시 active toggle
+  // 클릭한 요소의 부모에 active 클래스 토글
   const clickedElement_parent = clickedElement.parentNode;
+  const clickedElement_childrens = clickedElement_parent.children;
+  const menu_li_all = document.querySelectorAll(".menu li");
+  const menu_sub_all = document.querySelectorAll(".menu-sub li");
+
+  console.log("menusuball", menu_sub_all);
   clickedElement_parent.classList.toggle(ACTIVE);
 
-  //확인용
-  console.log(clickedElement_parent);
-  //확인용
+  const target_value = clickedElement.innerHTML;
+  const target_1 = clickedElement_parent.parentNode.classList;
+  const target_2 = clickedElement_parent.parentNode.children;
 
-  const menu_li_all = document.querySelectorAll(".menu li");
-  const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
-
-  menu_li_all.forEach((item) => {
-    // 선택한 요소 외 다른 요소 active remove
-    if (item !== clickedElement_parent) {
-      item.classList.remove(ACTIVE);
-    }
-
-    // 선택한 요소의 상위 요소가 side-toggle 포함하면 .menu > li active add (toggle x)
-    const item_grand_parent = item.parentNode.parentNode.parentNode;
-
-    if (item_grand_parent.classList.contains("side-toggle")) {
-      item.classList.add(ACTIVE);
-    }
-
-    // 선택한 요소의 상위 요소가 gnb-wrap.mo이면 gnb-wrap.mo .active add
-    // const 선택한 요소의 상위 요소
-    // const gnb-wrap.mo
-    // 선택한 요소의 상위 요소 == gnb-wrap.mo 이면 gnb-wrap.mo .active add
-    const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
-
-    if (
-      item_grand_parent.classList.contains("gnb-wrap") &&
-      item_grand_parent.classList.contains("mo")
-    ) {
-      item.classList.add(ACTIVE);
+  //하위 sub-tit class active 제거
+  Array.from(target_2).forEach((e) => {
+    if (e.children[0].innerHTML != target_value) {
+      e.classList.remove(ACTIVE);
     }
   });
 
+  // 1depth check
+  menu_li_all.forEach((item) => {
+    // 선택한 요소 외 다른 요소의 active 클래스 제거
+
+    if (item !== clickedElement_parent && !clickedElement_childrens[1]) {
+      item.classList.remove(ACTIVE);
+    }
+  });
+
+  // 2depth check
+  menu_sub_all.forEach((item) => {
+    if (item.children[0].innerHTML !== target_value) {
+      item.classList.remove(ACTIVE);
+    }
+  });
+
+  // icon.menu 클릭 시 gnb-wrap.mo block
   const icon_menu = document.querySelector("header .icon.menu");
+  const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
 
   if (clickedElement == icon_menu) {
-    gnb_wrap_mo.classList.toggle(ACTIVE);
+    gnb_wrap_mo.classList.toggle("show");
   }
 });
+
 // document.addEventListener("DOMContentLoaded", function () {
 //   const subMenuItems = document.querySelectorAll("header .menu-sub li");
 //   const gnb_menu = document.querySelector(".gnb button.menu");
