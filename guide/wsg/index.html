@@ -34,28 +34,6 @@
         </script>
       </header>
       <main role="main" class="g-main">
-        <!-- 토글 메뉴 -->
-        <div class="menus">
-          <ul>
-            <li class="menu" onclick="toggleMenu(event)">
-              <a href="#" class="menu-tit">메뉴 타이틀1</a>
-              <ul class="menu-inner">
-                <li><a href="#">서브메뉴 1-1</a></li>
-                <li><a href="#">서브메뉴 1-2</a></li>
-              </ul>
-            </li>
-
-            <li class="menu" onclick="toggleMenu(event)">
-              <a href="#" class="menu-tit">메뉴 타이틀2</a>
-
-              <ul class="menu-inner">
-                <li><a href="#">서브메뉴 2-1</a></li>
-                <li><a href="#">서브메뉴 2-2</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!-- // 토글 메뉴 -->
         <!-- 페이징 -->
         <div class="pagination">
           <a href="#" class="first"><i class="icon arrow-first"></i></a>
@@ -108,19 +86,21 @@
             <span>btn</span>
           </button>
 
-          <button type="button" class="p-btn fill">btn</button>
-          <button type="button" class="p-btn fill" disabled>btn</button>
+          <button type="button" class="p-btn fill"><span>btn</span></button>
+          <button type="button" class="p-btn fill" disabled>
+            <span>btn</span>
+          </button>
 
           <button type="button" class="p-btn has-icon">
-            btn
+            <span>btn</span>
             <i class="icon arrow-right"></i>
           </button>
           <button type="button" class="p-btn has-icon">
-            btn
+            <span>btn</span>
             <i class="icon cross"></i>
           </button>
           <button type="button" class="p-btn has-icon" disabled>
-            btn
+            <span>btn</span>
             <i class="icon cross"></i>
           </button>
 

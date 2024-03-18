@@ -60,42 +60,21 @@
       padding-bottom: clamp(1.25rem, 2vw, 1.5rem);
     }
   }
-  // &#contact {
-  //   .modal-window {
-  //     @include mo360-767() {
-  //       max-width: 320px;
-  //     }
-  //     width: 100%;
-  //     min-width: 320px;
-  //     max-width: 480px;
-  //     .content {
-  //       form {
-  //         display: flex;
-  //         flex-direction: column;
-  //         gap: 20px;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // &#search {
-  //   .modal-window {
-  //     @include pc1025-inf() {
-  //       max-width: clamp(20rem, 2vw, 43.75rem);
-  //     }
-  //     @include tbl768-1024() {
-  //       max-width: clamp(43.75rem, 2vw, 50rem);
-  //     }
-  //     width: 100%;
-  //     // min-width: 320px;
-  //     // max-width: 1240px;
-  //   }
-  // }
 }
 
 /*-------------------------------------------------------------------
     @토글 메뉴 mo / side
 /*-----------------------------------------------------------------*/
+@mixin gnb_wrap_menu_tit {
+  @include fs-18-28;
+  font-family: Wanted Sans;
+  font-weight: 700;
+  color: $c-gr-scale300;
+  &:hover {
+    color: $c-primary;
+  }
+}
+
 .gnb-wrap.mo {
   display: none;
   position: absolute;
@@ -123,15 +102,9 @@
         font-weight: 700;
         padding: 0.625rem 0;
         .menu-tit {
-          // align-self: flex-end;
-          @include fs-18-28;
-          font-family: Wanted Sans;
-          font-weight: 700;
+          @include gnb_wrap_menu_tit;
           display: inline-block;
           width: 100%;
-          &:hover {
-            color: $c-primary;
-          }
         }
         &.active {
           .menu-tit {
@@ -215,28 +188,14 @@
         @include fs-24-32;
         font-weight: 700;
         padding: 0.625rem 0;
-        a.menu-tit {
-          // align-self: flex-end;
-          @include fs-18-28;
-          font-family: Wanted Sans;
-          font-weight: 700;
+        .menu-tit {
+          @include gnb_wrap_menu_tit;
           display: inline-block;
           width: 100%;
           text-decoration: underline;
           text-underline-position: under;
-          &:hover {
-            color: $c-primary;
-          }
+          color: $c-primary;
         }
-        // &.active {
-        //   a.menu-tit {
-        //     text-decoration: underline;
-        //     text-underline-position: under;
-        //   }
-        //   ul.menu-sub {
-        //     display: block;
-        //   }
-        // }
         ul.menu-sub {
           display: block;
           background: $c-gr-scalefff;
@@ -296,29 +255,10 @@
     }
   }
 }
-// .menus {
-//   ul {
-//     li {
-//       ul.menu-inner {
-//         display: none;
-//       }
-//       &.active {
-//         ul.menu-inner {
-//           display: block;
-//         }
-//       }
-//     }
-//   }
-// }
+
 /*-------------------------------------------------------------------
     @공통 class
 /*-----------------------------------------------------------------*/
-// h2.tit {
-//   @include fs-42-50;
-//   @include mo360-767() {
-//     @include fs-26-34;
-//   }
-// }
 .txt-under {
   @include fs-18-28;
   @include mo360-767() {
@@ -333,6 +273,10 @@
 }
 .txt-clamp3 {
   @include ellipsis-3;
+}
+h1.hidden {
+  position: absolute;
+  left: -9999px;
 }
 /*-------------------------------------------------------------------
     @Icon
@@ -467,19 +411,26 @@
 $p-12-0: 0.75rem;
 $p-14-0: 0.875rem;
 // btn - border(default)
+// p-btn default ptb-14
 .p-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
   width: auto;
-  padding: clamp(0.625rem, 2vw, 0.75rem) clamp(1rem, 2vw, 1.125rem);
+  min-width: 6.25rem;
+  max-height: 3.25rem;
+  padding: clamp(0.625rem, 2vw, 0.875rem);
   border: 1px solid #111;
   box-sizing: border-box;
   font-family: "Wanted Sans";
   font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 700;
   color: #111;
+  span {
+    display: inline-block;
+    line-height: clamp(1.25rem, 2vw, 1.5rem);
+  }
   &:hover {
     background: #f5f5f5;
   }

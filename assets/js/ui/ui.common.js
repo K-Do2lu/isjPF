@@ -52,21 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 /*--------------------------------------------------------------
-      @toggle menu
-  --------------------------------------------------------------*/
-//토글 메뉴
-// const menuItems = document.querySelectorAll(".menu, .menu-tit");
-// const toggleMenu = (event) => {
-//   event.preventDefault(); // 기본 동작 중지
-//   const clickedMenu = event.currentTarget.closest(".menu"); // 클릭된 요소의 부모 .menu 요소 가져오기
-//   if (clickedMenu.classList.contains("menu")) {
-//     clickedMenu.classList.toggle("active");
-//   }
-// };
-// menuItems.forEach((menuItem) => {
-//   menuItem.addEventListener("click", toggleMenu);
-// });
-/*--------------------------------------------------------------
       @header | mo toggle menu, side toggle menu
   --------------------------------------------------------------*/
 

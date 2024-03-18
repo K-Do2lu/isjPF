@@ -68,6 +68,7 @@
       }
       display: none;
     }
+
     .gnb-wrap {
       @include media-max(1279px) {
         align-items: none;
@@ -92,15 +93,8 @@
           > li {
             display: grid;
             padding-bottom: 1.25rem;
-            a.menu-tit {
-              // align-self: flex-end;
-              @include fs-18-28;
-              font-family: Wanted Sans;
-              font-weight: 700;
-              color: $c-gr-scale300;
-              &:hover {
-                color: $c-primary;
-              }
+            .menu-tit {
+              @include gnb_wrap_menu_tit;
             }
             &.clicked {
               a.menu-tit {
@@ -210,7 +204,6 @@
         .chips {
           @include mo360-767() {
             .p-btn-chips {
-              @include fs-14-20;
               flex: 1 0 auto;
             }
             max-width: 100%;
@@ -251,6 +244,7 @@
               overflow: hidden;
               > img {
                 @include img-contain;
+                background-color: rgba(0, 0, 0, 0.08);
               }
               .img-blur {
                 position: absolute;
