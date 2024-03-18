@@ -71,141 +71,44 @@ document.addEventListener("DOMContentLoaded", function () {
   --------------------------------------------------------------*/
 
 document.addEventListener("click", function (e) {
-  let clickedElement = e.target;
-  const ACTIVE = "active";
+  let 클릭한요소 = e.target;
+  let 클릭한요소부모li = 클릭한요소.parentNode;
 
-  // 클릭한 요소의 부모에 active 클래스 토글
-  const clickedElement_parent = clickedElement.parentNode;
-  const clickedElement_childrens = clickedElement_parent.children;
-  const menu_li_all = document.querySelectorAll(".menu li");
-  const menu_sub_all = document.querySelectorAll(".menu-sub li");
-
-  console.log("menusuball", menu_sub_all);
-  clickedElement_parent.classList.toggle(ACTIVE);
-
-  const target_value = clickedElement.innerHTML;
-  const target_1 = clickedElement_parent.parentNode.classList;
-  const target_2 = clickedElement_parent.parentNode.children;
-
-  //하위 sub-tit class active 제거
-  Array.from(target_2).forEach((e) => {
-    if (e.children[0].innerHTML != target_value) {
-      e.classList.remove(ACTIVE);
-    }
-  });
-
-  // 1depth check
-  menu_li_all.forEach((item) => {
-    // 선택한 요소 외 다른 요소의 active 클래스 제거
-
-    if (item !== clickedElement_parent && !clickedElement_childrens[1]) {
-      item.classList.remove(ACTIVE);
-    }
-  });
-
-  // 2depth check
-  menu_sub_all.forEach((item) => {
-    if (item.children[0].innerHTML !== target_value) {
-      item.classList.remove(ACTIVE);
-    }
-  });
-
-  // icon.menu 클릭 시 gnb-wrap.mo block
-  const icon_menu = document.querySelector("header .icon.menu");
-  const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
-
-  if (clickedElement == icon_menu) {
-    gnb_wrap_mo.classList.toggle("show");
+  // 아이콘 메뉴 클릭 시 모바일 메뉴 toggle 시키기
+  const 아이콘메뉴 = document.querySelector("header .icon.menu");
+  const 모바일메뉴 = document.querySelector(".gnb-wrap.mo");
+  if (클릭한요소 == 아이콘메뉴) {
+    모바일메뉴.classList.toggle("show");
   }
+
+  // 큰 메뉴 클릭 시 작은 메뉴 toggle로 나오게 하기
+  const 큰메뉴메뉴li들 = document.querySelectorAll(".menu > li");
+  const 작은메뉴li들 = document.querySelectorAll(".menu-sub > li");
+  let 큰메뉴토글 = false;
+
+  큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
+    // 1. 클릭한 요소 active toggle
+    // 2. li 안에 클릭한 요소 포함되어있으면 li active 활성화
+    // 3. 둘 다 아니라면 li active remove
+    if (큰메뉴메뉴li == 클릭한요소부모li) {
+      큰메뉴메뉴li.classList.toggle("active");
+    } else if (큰메뉴메뉴li.contains(클릭한요소)) {
+      큰메뉴메뉴li.classList.add("active");
+    } else {
+      큰메뉴메뉴li.classList.remove("active");
+    }
+  });
+
+  // 작은 메뉴 클릭 시 안에 작작메뉴 toggle로 나오게 하기
+  작은메뉴li들.forEach((작은메뉴li) => {
+    if (작은메뉴li == 클릭한요소부모li) {
+      작은메뉴li.classList.toggle("active");
+    } else {
+      작은메뉴li.classList.remove("active");
+    }
+  });
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const subMenuItems = document.querySelectorAll("header .menu-sub li");
-//   const gnb_menu = document.querySelector(".gnb button.menu");
-//   const gnb_wrap_mo = document.querySelector(".gnb-wrap.mo");
-//   const gnb_wrap_mo_menu = document.querySelectorAll(".gnb-wrap.mo .menu > li");
-//   const menuSubTit = document.querySelectorAll(".gnb-wrap.mo .menu-sub > li");
-//   let currentActiveItem = null;
-
-//   const slideDown = (e) => {
-//     const clicked = e.currentTarget;
-//     subMenuItems.forEach((item) => {
-//       if (item !== clicked) {
-//         item.classList.remove("active");
-//       }
-//     });
-//     clicked.classList.toggle("active");
-//   };
-
-//   const showMenu = () => {
-//     gnb_wrap_mo.classList.toggle("active");
-//     if (!gnb_wrap_mo.classList.contains("active")) {
-//       gnb_wrap_mo_menu.forEach((menuItem) =>
-//         menuItem.classList.remove("active")
-//       );
-//       menuSubTit.forEach((menuItem) => menuItem.classList.remove("active"));
-//     }
-//   };
-
-//   const handleClick = (event) => {
-//     const clickedItem = event.currentTarget;
-//     clickedItem.classList.toggle("active");
-//     if (currentActiveItem && currentActiveItem !== clickedItem) {
-//       currentActiveItem.classList.remove("active");
-//       currentActiveItem
-//         .querySelectorAll(".menu-sub > li.active")
-//         .forEach((menuItem) => menuItem.classList.remove("active"));
-//     }
-//     document.querySelectorAll(".menu > li").forEach((menuItem) => {
-//       if (menuItem !== clickedItem) {
-//         menuItem.classList.remove("active");
-//         menuItem
-//           .querySelectorAll(".menu-sub > li.active")
-//           .forEach((subMenuItem) => subMenuItem.classList.remove("active"));
-//       }
-//     });
-//     document.querySelectorAll(".menu > li").forEach((menuItem) => {
-//       menuItem.style.color = clickedItem.classList.contains("active")
-//         ? "#ccc"
-//         : "";
-//     });
-//     if (clickedItem.classList.contains("active")) {
-//       currentActiveItem = clickedItem;
-//     } else {
-//       currentActiveItem = null;
-//     }
-//     //-----------------------------------------------
-//     var parent_node = clickedItem.parentNode.parentNode.parentNode;
-//     if (
-//       parent_node.classList.contains("mo") &&
-//       clickedItem.querySelector(".menu-sub")
-//     ) {
-//       event.preventDefault(); // 모바일 이벤트 prevent
-//     }
-//   };
-
-//   subMenuItems.forEach((item) => item.addEventListener("click", slideDown));
-//   gnb_menu.addEventListener("click", showMenu);
-
-//   document
-//     .querySelectorAll(".menu > li")
-//     .forEach((item) => item.addEventListener("click", handleClick));
-
-//   document.querySelectorAll(".menu-sub > li").forEach((item) => {
-//     item.addEventListener("click", (event) => {
-//       event.stopPropagation();
-//       const clickedSubMenu = event.currentTarget;
-//       document
-//         .querySelectorAll(".menu > li .menu-sub > li.active")
-//         .forEach((menuItem) => menuItem.classList.remove("active"));
-//       clickedSubMenu.classList.toggle("active");
-//       const parentMenuItem = clickedSubMenu.closest(".menu > li");
-//       if (parentMenuItem && parentMenuItem.classList.contains("active")) {
-//         parentMenuItem.style.color = "";
-//       }
-//     });
-//   });
-// });
 /*--------------------------------------------------------------
       @최상단 버튼 + header scroll 감지 border-bottom 추가
   --------------------------------------------------------------*/
