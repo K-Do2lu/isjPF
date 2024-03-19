@@ -480,15 +480,15 @@
             menuItem.classList.add("active");
           });
 
-          // // 현재 페이지 URL 가져오기
-          // const currentPageUrl = window.location.href;
-          // // 메뉴의 링크 URL 가져오기
-          // const menuLink = menuItem.querySelector("a");
-          // const menuLinkUrl = menuLink.getAttribute("href");
-          // // 현재 페이지와 메뉴의 링크 URL 비교하여 active 클래스 추가
-          // if (currentPageUrl === menuLinkUrl) {
-          //   menuItem.classList.add("active");
-          // }
+          // 현재 페이지 URL 가져오기
+          const currentPageUrl = window.location.href;
+          // 메뉴의 링크 URL 가져오기
+          const menuLink = menuItem.querySelector("a");
+          const menuLinkUrl = menuLink.getAttribute("href");
+          // 현재 페이지와 메뉴의 링크 URL 비교하여 active 클래스 추가
+          if (currentPageUrl === menuLinkUrl) {
+            menuItem.classList.add("active");
+          }
         });
       });
     </script>
