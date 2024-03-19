@@ -96,17 +96,24 @@
             .menu-tit {
               @include gnb_wrap_menu_tit;
             }
-            &.clicked {
+            &.active {
               a.menu-tit {
-                color: #111;
+                color: $c-primary;
                 text-decoration: underline;
                 text-underline-position: under;
               }
             }
             &:hover {
+              a.menu-tit {
+                color: $c-primary;
+                text-decoration: underline;
+                text-underline-position: under;
+              }
               ul.menu-sub {
                 display: block;
               }
+
+              color: $c-primary;
             }
 
             ul.menu-sub {

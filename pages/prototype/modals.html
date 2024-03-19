@@ -26,6 +26,8 @@
     <div id="container">
       <button class="btn-modal" data-modal="modal1">모달 1 열기 버튼</button>
       <button class="btn-modal" data-modal="modal2">모달 2 열기 버튼</button>
+      <button class="btn-modal" data-modal="modal3">alert1</button>
+      <button class="btn-modal" data-modal="modal4">alert2</button>
       <div id="lorem-ipsum"></div>
     </div>
 
@@ -54,6 +56,46 @@
         </div>
 
         <div class="window-content">모달2 컨텐츠</div>
+      </div>
+    </div>
+
+    <!-- alert: 전송이 완료되었습니다. -->
+    <div id="modal3" class="modal-overlay alert">
+      <div class="modal-window">
+        <div class="window-top">
+          <button class="close-area" onclick="modalOff('modal3')">
+            <i class="icon cross"></i>
+          </button>
+        </div>
+
+        <div class="window-content">
+          <p class="alert-txt">전송이 완료되었습니다.</p>
+          <button type="butotn" class="p-btn fill" onclick="modalOff('modal3')">
+            확인
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert: 로그아웃 하시겠습니까? -->
+    <div id="modal4" class="modal-overlay alert">
+      <div class="modal-window">
+        <div class="window-top">
+          <button class="close-area" onclick="modalOff('modal4')">
+            <i class="icon cross"></i>
+          </button>
+        </div>
+
+        <div class="window-content">
+          <p class="alert-txt">로그아웃 하시겠습니까?</p>
+          <p class="alert-txt">기존 작성된 자료는 저장되지 않습니다.</p>
+          <button type="butotn" class="p-btn fill" onclick="modalOff('modal4')">
+            확인
+          </button>
+          <button type="butotn" class="p-btn" onclick="modalOff('modal4')">
+            취소
+          </button>
+        </div>
       </div>
     </div>
   </body>

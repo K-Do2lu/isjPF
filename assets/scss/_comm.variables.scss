@@ -27,27 +27,27 @@ $c-gr-scale700: #444444;
 $c-gr-scale600: #666666;
 $c-gr-scale500: #999999;
 // Label color
-// 국가 ∙ 도시 디자인
+// 국가 ∙ 공공디자인 ∙ 정책
 $c-label00: #e3f5e7;
-// 디자인 정책 ∙ 전략
+// 기업디자인정책 ∙ 전략
 $c-label01: #f9e4cb;
-// 산업 ∙ 기술
+// 생태 ∙ 지속가능
 $c-label02: #e2e6fd;
-// 아이덴티티
+// 문화 ∙ 아이덴티티
 $c-label03: #f9e9fb;
 // 조형 ∙ 미학
 $c-label04: #e5fad0;
-// 창조성 ∙ 디자인 기획
+// 창의 ∙ 융합디자인 ∙ 교육
 $c-label05: #f2e7fe;
 // 혁신 ∙ Good Design
 $c-label06: #d6f5f3;
-// 문화 ∙ 한국성
+// 아시아 ∙ 한국디자인
 $c-label07: #fcf2d1;
-// 모빌리티
+// 미래도시 ∙ 모빌리티
 $c-label08: #f1f8c6;
-// 디자인 미래 ∙ 예측
+// 미래예측 ∙ 라이프
 $c-label09: #dfecf6;
-// 지역 ∙ 사회 ∙ 환경 ∙ 지속가능
+// 지역사회디자인
 $c-label10: #ffe5e5;
 // 예술 ∙ 디자인 일반
 $c-label11: #e6e9f1;
@@ -73,6 +73,10 @@ $c-label11: #e6e9f1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+@mixin d-flex-end-none {
+  display: flex;
+  justify-content: flex-end;
 }
 /*-------------------------------------------------------------------
 	@Text (Fontset,

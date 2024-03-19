@@ -11,24 +11,22 @@
 /*--------------------------------------------------------------
     @modal
 --------------------------------------------------------------*/
-// 모달 - 열기
-function modalOn(modalId) {
+function toggleModal(modalId) {
   const modal = document.getElementById(modalId);
-  modal.style.display = "flex";
+  if (modal.style.display === "flex") {
+    modal.style.display = "none";
+  } else {
+    modal.style.display = "flex";
+  }
 }
-// 모달 - 닫기
-function modalOff(modalId) {
-  const modal = document.getElementById(modalId);
-  modal.style.display = "none";
-}
-// 모달 - 각 요소에 대해 클릭 이벤트 추가, 외부 클릭 시 닫기
+
 document.addEventListener("DOMContentLoaded", function () {
   const modalButtons = document.querySelectorAll(".btn-modal");
 
   modalButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       const modalId = button.dataset.modal;
-      modalOn(modalId);
+      toggleModal(modalId);
     });
   });
 
@@ -38,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.addEventListener("click", function (event) {
       if (event.target.classList.contains("modal-overlay")) {
         const modalId = modal.id;
-        modalOff(modalId);
+        toggleModal(modalId);
       }
     });
   });
-  // 모달 - esc로 닫기
+
   window.addEventListener("keyup", function (event) {
     if (event.key === "Escape") {
       modals.forEach(function (modal) {
@@ -51,9 +49,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 /*--------------------------------------------------------------
       @header | mo toggle menu, side toggle menu
   --------------------------------------------------------------*/
+window.onload = function () {
+  const headerLoad = document.getElementById("header-load");
+
+  // 헤더를 불러옴
+  fetch("/pages/_include/_header.html")
+    .then((response) => response.text())
+    .then((html) => {
+      headerLoad.innerHTML = html;
+
+      // 모달 버튼 이벤트 처리
+      const modalButtonsInHeader =
+        document.querySelectorAll(".btn-modal-header");
+
+      modalButtonsInHeader.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const modalId = button.dataset.modal;
+          toggleModal(modalId); // 모달 열고 닫는 함수 호출
+        });
+      });
+    });
+
+  // 모달 불러오기
+  // 이 부분은 수정이 필요할 수 있습니다. toggleModal 함수가 어떻게 구현되었는지에 따라 달라질 수 있습니다.
+  toggleModal();
+};
 
 document.addEventListener("click", function (e) {
   let 클릭한요소 = e.target;
@@ -62,19 +86,21 @@ document.addEventListener("click", function (e) {
   // 아이콘 메뉴 클릭 시 모바일 메뉴 toggle 시키기
   const 아이콘메뉴 = document.querySelector("header .icon.menu");
   const 모바일메뉴 = document.querySelector(".gnb-wrap.mo");
+
   if (클릭한요소 == 아이콘메뉴) {
     모바일메뉴.classList.toggle("show");
+  } else {
   }
 
   // 큰 메뉴 클릭 시 작은 메뉴 toggle로 나오게 하기
   const 큰메뉴메뉴li들 = document.querySelectorAll(".menu > li");
   const 작은메뉴li들 = document.querySelectorAll(".menu-sub > li");
-  let 큰메뉴토글 = false;
 
   큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
     // 1. 클릭한 요소 active toggle
     // 2. li 안에 클릭한 요소 포함되어있으면 li active 활성화
     // 3. 둘 다 아니라면 li active remove
+
     if (큰메뉴메뉴li == 클릭한요소부모li) {
       큰메뉴메뉴li.classList.toggle("active");
     } else if (큰메뉴메뉴li.contains(클릭한요소)) {
