@@ -853,157 +853,160 @@ input[type="text"] {
 /*-------------------------------------------------------------------
     @work,event detail
 /*-----------------------------------------------------------------*/
-.detail-top {
-  @include mo360-767() {
-    @include fs-26-34;
-  }
-  @include d-flex-between-center;
-  @include fs-34-42;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid $c-primary;
-  font-weight: 700;
-  gap: 1.5rem;
-  h2.top-tit {
-    text-align: center;
-    word-break: keep-all;
-  }
-
-  .prev-btn {
-    transform: rotate(-180deg);
-  }
-}
-
-.detail-mid {
-  @include d-flex-center-center;
-  padding: clamp(1.25rem, 2vw, 3.75rem) 0;
-  border-bottom: 1px solid $c-gr-scale200;
-
-  .mid-inner {
-    width: 100%;
-    max-width: 67.5rem;
-    // margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(1.5rem, 2vw, 2.5rem);
-
-    .detail-img {
-      flex: 1 1 20rem;
-      max-width: 22.5rem;
-      min-height: 18.375rem;
-      max-height: 24.125rem;
-      background: #eee;
+.detail-wrap {
+  .detail-top {
+    @include mo360-767() {
+      @include fs-26-34;
+    }
+    @include d-flex-between-center;
+    @include fs-34-42;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $c-primary;
+    font-weight: 700;
+    gap: 1.5rem;
+    h2.top-tit {
+      text-align: center;
+      word-break: keep-all;
     }
 
-    .detail-txt {
-      flex: 1;
+    .prev-btn {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .detail-mid {
+    @include d-flex-center-center;
+    padding: clamp(1.25rem, 2vw, 3.75rem) 0;
+    border-bottom: 1px solid $c-gr-scale200;
+
+    .mid-inner {
+      width: 100%;
+      max-width: 67.5rem;
+      // margin: 0 auto;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      .txt {
-        flex: 1;
-        color: $c-primary;
-        .about {
-          @include mo360-767() {
-            @include fs-16-24;
-          }
-          @include fs-18-28;
-          font-weight: 400;
-          padding: 1rem 0;
-          border-bottom: 1px solid $c-gr-scale200;
-          &:last-child {
-            border-bottom: none;
-          }
-          br {
-            display: block;
-            content: "";
-            margin-bottom: 0.5rem;
-          }
-        }
+      flex-wrap: wrap;
+      gap: clamp(1.5rem, 2vw, 2.5rem);
+
+      .detail-img {
+        flex: 1 1 20rem;
+        max-width: 22.5rem;
+        min-height: 18.375rem;
+        max-height: 24.125rem;
+        background: #eee;
       }
 
-      .invite-wrap {
-        border-top: 1px solid $c-gr-scale600;
-
-        .invite-top {
-          @include mo360-767() {
-            padding: 0.75rem 0;
-          }
-          @include d-flex-between-center;
-          flex-wrap: wrap;
-          padding: 0.625rem 0;
-          h3 {
+      .detail-txt {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .txt {
+          flex: 1;
+          color: $c-primary;
+          .about {
             @include mo360-767() {
               @include fs-16-24;
             }
             @include fs-18-28;
-            font-weight: 700;
+            font-weight: 400;
+            padding: 1rem 0;
+            border-bottom: 1px solid $c-gr-scale200;
+            &:last-child {
+              border-bottom: none;
+            }
+            br {
+              display: block;
+              content: "";
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+
+        .invite-wrap {
+          border-top: 1px solid $c-gr-scale600;
+
+          .invite-top {
+            @include mo360-767() {
+              padding: 0.75rem 0;
+            }
+            @include d-flex-between-center;
+            flex-wrap: wrap;
+            padding: 0.625rem 0;
+            h3 {
+              @include mo360-767() {
+                @include fs-16-24;
+              }
+              @include fs-18-28;
+              font-weight: 700;
+            }
+
+            .support {
+              span {
+                @include fs-14-20;
+                display: inline-block;
+                font-weight: 400;
+                color: $c-gr-scale500;
+                & + span {
+                  padding-left: 0.75rem;
+                }
+              }
+            }
           }
 
-          .support {
-            span {
-              @include fs-14-20;
-              display: inline-block;
+          .invite-mid {
+            p {
+              @include mo360-767() {
+                @include fs-14-20;
+              }
+              @include fs-16-24;
+              display: grid;
+              grid-template-columns: minmax(1.25rem, 1.5rem) 1fr;
+              align-items: center;
+              gap: 0.5rem;
               font-weight: 400;
-              color: $c-gr-scale500;
-              & + span {
-                padding-left: 0.75rem;
+              padding: 0.75rem 0;
+              border-top: 1px dashed $c-gr-scale200;
+              i.icon {
               }
             }
           }
         }
 
-        .invite-mid {
+        .info {
+          padding: clamp(1rem, 2vw, 1.25rem);
+          background: $c-gr-scale50;
+          border-top: 1px solid $c-gr-scale600;
+
           p {
-            @include mo360-767() {
-              @include fs-14-20;
-            }
-            @include fs-16-24;
-            display: grid;
-            grid-template-columns: minmax(1.25rem, 1.5rem) 1fr;
-            align-items: center;
-            gap: 0.5rem;
+            @include fs-14-20;
+            letter-spacing: -0.02rem;
             font-weight: 400;
-            padding: 0.75rem 0;
-            border-top: 1px dashed $c-gr-scale200;
-            i.icon {
+            color: $c-gr-scale600;
+          }
+
+          br {
+            &:first-child {
+              content: "";
+              display: block;
+              margin-bottom: 0.5rem;
             }
           }
         }
       }
+    }
+  }
 
-      .info {
-        padding: clamp(1rem, 2vw, 1.25rem);
-        background: $c-gr-scale50;
-        border-top: 1px solid $c-gr-scale600;
-
-        p {
-          @include fs-14-20;
-          letter-spacing: -0.02rem;
-          font-weight: 400;
-          color: $c-gr-scale600;
-        }
-
-        br {
-          &:first-child {
-            content: "";
-            display: block;
-            margin-bottom: 0.5rem;
-          }
-        }
+  .detail-bttm {
+    padding-top: clamp(2.5rem, 2vw, 3rem);
+    text-align: center;
+    button {
+      @include mo360-767() {
+        min-width: 100%;
+        height: 3rem;
       }
+      min-width: 10rem;
     }
   }
 }
 
-.detail-bttm {
-  padding-top: clamp(2.5rem, 2vw, 3rem);
-  text-align: center;
-  button {
-    @include mo360-767() {
-      min-width: 100%;
-      height: 3rem;
-    }
-    min-width: 10rem;
-  }
-}
 // swiper
