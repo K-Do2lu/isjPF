@@ -51,7 +51,112 @@
           </button>
         </div>
         <!-- header -->
-        <div id="header-load"></div>
+        <header class="header">
+          <div class="header-inner">
+            <a href="/pages/home.html" class="logo"
+              ><img src="/assets/img/img-logo.png" alt="logo"
+            /></a>
+
+            <div class="gnb-wrap">
+              <nav>
+                <ul class="menu">
+                  <li>
+                    <a href="/pages/home.html" class="menu-tit">HOME</a>
+                  </li>
+
+                  <li class="active">
+                    <a href="/pages/about.html" class="menu-tit">ABOUT</a>
+                  </li>
+
+                  <li>
+                    <a href="/pages/work.html" class="menu-tit">WORK</a>
+
+                    <ul class="menu-sub">
+                      <li>
+                        <span class="sub-tit">ART&DESIGN</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">제품 ∙ 시스템 디자인</a></li>
+                          <li><a href="#">환경 ∙ 공공 디자인</a></li>
+                          <li><a href="#">대학 디자인</a></li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <span class="sub-tit">RESEARCH</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">국가디자인 ∙ 교육정책</a></li>
+                          <li>
+                            <a href="#">미래 라이프스타일 ∙ 디자인전략</a>
+                          </li>
+                          <li>
+                            <a href="#">미래도시 ∙ 모빌리티 ∙ 모바일 디자인</a>
+                          </li>
+                          <li><a href="#">정체성 ∙ 혁신 ∙ 한국디자인</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="/pages/event.html" class="menu-tit">EVENT</a>
+                    <ul class="menu-sub">
+                      <li>
+                        <span class="sub-tit">EXHIBITION</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">개인전</a></li>
+                          <li><a href="#">참여전시</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="sub-tit">PROGRAM PLANNING</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">행사 참여작품</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="/pages/media.html" class="menu-tit">MEDIA</a>
+
+                    <ul class="menu-sub">
+                      <li>
+                        <span class="sub-tit">LECTURES</span>
+                        <ul class="sub-menu">
+                          <li>주제 특강</li>
+                          <li>강의</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="sub-tit">BOOKS</span>
+                        <ul class="sub-menu">
+                          <li>Books</li>
+                          <li>Article</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="sub-tit">PRESS</span>
+                        <ul class="sub-menu">
+                          <li>Interview</li>
+                          <li>News</li>
+                          <li>Video</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="gnb">
+                <button
+                  class="icon search btn-modal"
+                  data-modal="search"
+                ></button>
+                <button class="icon menu"></button>
+              </div>
+            </div>
+          </div>
+        </header>
 
         <!-- mo header menu click 시 menu block -->
         <div class="gnb-wrap mo">
@@ -254,46 +359,47 @@
                 <h1 class="tit">Search.</h1>
                 <div class="chips">
                   <button type="button" class="p-btn-chips active">
-                    <span>국가 ∙ 도시 디자인</span><i class="icon check"></i>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>디자인 정책 ∙ 전략</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>산업 ∙ 기술</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>아이덴티티</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>디자인 미래 ∙ 예측</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>창조성 ∙ 디자인 기획</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>혁신 ∙ Good Design</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>문화 ∙ 한국성</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>모빌리티</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>지역 ∙ 사회 ∙ 환경 ∙ 지속가능</span>
+                    <span>국가 ∙ 공공디자인 ∙ 정책</span
+                    ><i class="icon check"></i>
                   </button>
                   <button type="button" class="p-btn-chips">
                     <span>조형 ∙ 미학</span>
                   </button>
                   <button type="button" class="p-btn-chips">
-                    <span>예술 ∙ 디자인 일반</span>
+                    <span>기업디자인정책 ∙ 전략</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>문화 ∙ 아이덴티티</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>미래예측 ∙ 라이프</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>혁신 ∙ Good Design</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>창의 ∙ 융합디자인사고 ∙ 교육</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>아시아 ∙ 한국디자인</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>미래도시 ∙ 모빌리티</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>지역사회디자인</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>생태 ∙ 지속가능</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>예술 ∙ 디자인일반</span>
                   </button>
                 </div>
               </div>
 
               <button class="p-btn close-area" onclick="toggleModal('search')">
-                Close<i class="icon cross"></i>
+                <span>Close</span><i class="icon cross"></i>
               </button>
             </div>
           </div>
@@ -350,7 +456,11 @@
                 />
               </div>
 
-              <button type="button" class="p-btn fill">
+              <button
+                type="button"
+                class="p-btn fill btn-modal"
+                data-modal="alert1"
+              >
                 <span>Send</span>
               </button>
             </form>
@@ -358,6 +468,28 @@
         </div>
       </div>
       <!-- // modal - contact  -->
+      <!-- alert - 전송 완료되었습니다. -->
+      <div id="alert1" class="modal-overlay alert">
+        <div class="modal-window">
+          <div class="window-top">
+            <button class="close-area" onclick="toggleModal('alert1')">
+              <i class="icon cross"></i>
+            </button>
+          </div>
+
+          <div class="window-content">
+            <p class="alert-txt">전송이 완료되었습니다.</p>
+            <button
+              type="butotn"
+              class="p-btn fill"
+              onclick="toggleModal('alert1')"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- //alert - 전송 완료되었습니다. -->
     </div>
   </body>
 </html>

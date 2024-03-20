@@ -53,31 +53,31 @@ document.addEventListener("DOMContentLoaded", function () {
 /*--------------------------------------------------------------
       @header | mo toggle menu, side toggle menu
   --------------------------------------------------------------*/
-window.onload = function () {
-  const headerLoad = document.getElementById("header-load");
+// window.onload = function () {
+//   const headerLoad = document.getElementById("header-load");
 
-  // 헤더를 불러옴
-  fetch("/pages/_include/_header.html")
-    .then((response) => response.text())
-    .then((html) => {
-      headerLoad.innerHTML = html;
+//   // 헤더를 불러옴
+//   fetch("/pages/_include/_header.html")
+//     .then((response) => response.text())
+//     .then((html) => {
+//       headerLoad.innerHTML = html;
 
-      // 모달 버튼 이벤트 처리
-      const modalButtonsInHeader =
-        document.querySelectorAll(".btn-modal-header");
+//       // 모달 버튼 이벤트 처리
+//       const modalButtonsInHeader =
+//         document.querySelectorAll(".btn-modal-header");
 
-      modalButtonsInHeader.forEach(function (button) {
-        button.addEventListener("click", function () {
-          const modalId = button.dataset.modal;
-          toggleModal(modalId); // 모달 열고 닫는 함수 호출
-        });
-      });
-    });
+//       modalButtonsInHeader.forEach(function (button) {
+//         button.addEventListener("click", function () {
+//           const modalId = button.dataset.modal;
+//           toggleModal(modalId); // 모달 열고 닫는 함수 호출
+//         });
+//       });
+//     });
 
-  // 모달 불러오기
-  // 이 부분은 수정이 필요할 수 있습니다. toggleModal 함수가 어떻게 구현되었는지에 따라 달라질 수 있습니다.
-  toggleModal();
-};
+//   // 모달 불러오기
+//   // 이 부분은 수정이 필요할 수 있습니다. toggleModal 함수가 어떻게 구현되었는지에 따라 달라질 수 있습니다.
+//   toggleModal();
+// };
 
 document.addEventListener("click", function (e) {
   let 클릭한요소 = e.target;

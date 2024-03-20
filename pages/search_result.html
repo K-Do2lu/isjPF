@@ -453,38 +453,47 @@
                 <h1 class="tit">Search.</h1>
                 <div class="chips">
                   <button type="button" class="p-btn-chips active">
-                    국가 ∙ 도시 디자인<i class="icon check"></i>
+                    <span>국가 ∙ 공공디자인 ∙ 정책</span
+                    ><i class="icon check"></i>
                   </button>
                   <button type="button" class="p-btn-chips">
-                    디자인 정책 ∙ 전략
-                  </button>
-                  <button type="button" class="p-btn-chips">산업 ∙ 기술</button>
-                  <button type="button" class="p-btn-chips">아이덴티티</button>
-                  <button type="button" class="p-btn-chips">
-                    디자인 미래 ∙ 예측
+                    <span>조형 ∙ 미학</span>
                   </button>
                   <button type="button" class="p-btn-chips">
-                    창조성 ∙ 디자인 기획
+                    <span>기업디자인정책 ∙ 전략</span>
                   </button>
                   <button type="button" class="p-btn-chips">
-                    혁신 ∙ Good Design
+                    <span>문화 ∙ 아이덴티티</span>
                   </button>
                   <button type="button" class="p-btn-chips">
-                    문화 ∙ 한국성
+                    <span>미래예측 ∙ 라이프</span>
                   </button>
-                  <button type="button" class="p-btn-chips">모빌리티</button>
                   <button type="button" class="p-btn-chips">
-                    지역 ∙ 사회 ∙ 환경 ∙ 지속가능
+                    <span>혁신 ∙ Good Design</span>
                   </button>
-                  <button type="button" class="p-btn-chips">조형 ∙ 미학</button>
                   <button type="button" class="p-btn-chips">
-                    예술 ∙ 디자인 일반
+                    <span>창의 ∙ 융합디자인사고 ∙ 교육</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>아시아 ∙ 한국디자인</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>미래도시 ∙ 모빌리티</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>지역사회디자인</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>생태 ∙ 지속가능</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>예술 ∙ 디자인일반</span>
                   </button>
                 </div>
               </div>
 
-              <button class="p-btn close-area" onclick="modalOff('search')">
-                Close<i class="icon cross"></i>
+              <button class="p-btn close-area" onclick="toggleModal('search')">
+                <span>Close</span><i class="icon cross"></i>
               </button>
             </div>
           </div>
@@ -496,7 +505,7 @@
         <div class="modal-window contact">
           <div class="window-top">
             <h1 class="tit">Contact.</h1>
-            <button class="close-area" onclick="modalOff('contact')">
+            <button class="close-area" onclick="toggleModal('contact')">
               <i class="icon cross"></i>
             </button>
           </div>
@@ -541,12 +550,40 @@
                 />
               </div>
 
-              <button type="button" class="p-btn fill">Send</button>
+              <button
+                type="button"
+                class="p-btn fill btn-modal"
+                data-modal="alert1"
+              >
+                Send
+              </button>
             </form>
           </div>
         </div>
       </div>
       <!-- // modal - contact  -->
+      <!-- alert - 전송 완료되었습니다. -->
+      <div id="alert1" class="modal-overlay alert">
+        <div class="modal-window">
+          <div class="window-top">
+            <button class="close-area" onclick="toggleModal('alert1')">
+              <i class="icon cross"></i>
+            </button>
+          </div>
+
+          <div class="window-content">
+            <p class="alert-txt">전송이 완료되었습니다.</p>
+            <button
+              type="butotn"
+              class="p-btn fill"
+              onclick="toggleModal('alert1')"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- //alert - 전송 완료되었습니다. -->
     </div>
   </body>
 </html>

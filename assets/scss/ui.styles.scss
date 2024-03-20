@@ -204,7 +204,10 @@
     margin-left: 20rem;
     padding-top: 5.5rem;
     .cont {
-      padding: clamp(3rem, 2vw, 3.125rem) 1.25rem clamp(4rem, 2vw, 7.5rem);
+      @include mo360-767() {
+        padding: 2.5rem 1.25rem 4rem;
+      }
+      padding: 3rem 1.25rem 6.25rem;
       .chips-wrap {
         padding-bottom: clamp(1.25rem, 2vw, 2.25rem);
         border-bottom: 1px solid $c-primary;
