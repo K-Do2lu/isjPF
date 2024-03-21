@@ -162,3 +162,34 @@ function updatePagination() {
 // 페이지 로드시와 윈도우 크기 변경시 페이지네이션 갯수 업데이트
 window.addEventListener("DOMContentLoaded", updatePagination);
 window.addEventListener("resize", updatePagination);
+
+/*--------------------------------------------------------------
+    @slide
+--------------------------------------------------------------*/
+// slide-wrap -> transform: translateX(-100%);
+// 클릭 할 때마다 slide-wrap -> transform: translateX(-100%) ++100;
+// wrap의 slide 갯 수 만큼 +100해라
+document.addEventListener("DOMContentLoaded", function () {
+  const slideBtn = document.querySelectorAll(".slide-btn");
+  const slideWrap = document.querySelector(".slide-wrap");
+  let 바뀌는값 = 0;
+
+  slideBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (e.target.parentNode.classList.contains("next")) {
+        바뀌는값++;
+        if (바뀌는값 >= slideWrap.children.length) {
+          바뀌는값 = 0;
+        }
+      } else {
+        바뀌는값--;
+        if (바뀌는값 < 0) {
+          바뀌는값 = slideWrap.children.length - 1;
+        }
+      }
+
+      const 바뀌는식 = -100 * 바뀌는값 + "%";
+      slideWrap.style.transform = `translateX(${바뀌는식})`;
+    });
+  });
+});
