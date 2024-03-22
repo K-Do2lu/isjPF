@@ -891,6 +891,13 @@ input[type="text"] {
     border-bottom: 1px solid $c-gr-scale200;
 
     .mid-inner {
+      @include mo360-767() {
+        flex-wrap: wrap;
+        justify-content: center;
+        .detail-txt {
+          min-width: 100%;
+        }
+      }
       width: 100%;
       max-width: 67.5rem;
       // margin: 0 auto;
@@ -1023,7 +1030,6 @@ input[type="text"] {
 // swiper
 .slide-cont {
   position: relative;
-  height: 100%;
   overflow: hidden;
 
   .slide-btn {
@@ -1067,6 +1073,65 @@ input[type="text"] {
         color: $c-gr-scale600;
         letter-spacing: -0.02rem;
         text-align: center;
+      }
+    }
+  }
+
+  &.thumb {
+    position: static;
+    height: auto;
+    max-height: 4rem;
+    margin-top: clamp(1rem, 2vw, 1.25rem);
+    overflow: visible;
+
+    .slide-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+
+      .slide {
+        @include mo360-767() {
+          width: 0.5rem;
+          min-width: 0.5rem;
+          max-width: 0.5rem;
+          height: 0.5rem;
+          min-height: 0.5rem;
+          max-height: 0.5rem;
+          background: $c-gr-scalefff;
+          border: 1px solid $c-primary;
+          > img {
+            display: none;
+          }
+
+          &.active {
+            border: none;
+            background: $c-primary;
+          }
+        }
+        width: 3.9375rem;
+        min-width: 3.9375rem;
+        max-width: 3.9375rem;
+        height: 3.9375rem;
+        min-height: 3.9375rem;
+        max-height: 3.9375rem;
+        opacity: 50%;
+        overflow: hidden;
+        > img {
+          @include img-cover;
+        }
+        &.active {
+          border: 1px solid $c-primary;
+          opacity: 100%;
+        }
+
+        .slide-txt {
+          @include fs-14-20;
+          margin-top: 0.625rem;
+          font-weight: 400;
+          color: $c-gr-scale600;
+          letter-spacing: -0.02rem;
+          text-align: center;
+        }
       }
     }
   }

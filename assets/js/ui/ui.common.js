@@ -166,14 +166,18 @@ window.addEventListener("resize", updatePagination);
 /*--------------------------------------------------------------
     @slide
 --------------------------------------------------------------*/
-// slide-wrap -> transform: translateX(-100%);
-// 클릭 할 때마다 slide-wrap -> transform: translateX(-100%) ++100;
-// wrap의 slide 갯 수 만큼 +100해라
 document.addEventListener("DOMContentLoaded", function () {
   const slideBtn = document.querySelectorAll(".slide-btn");
   const slideWrap = document.querySelector(".slide-wrap");
+  const slideContThumb = document.querySelector(".slide-cont.thumb");
+
   let 바뀌는값 = 0;
 
+  //클릭 이벤트 전에 [0]에 actice add
+  const thumbSlides = slideContThumb.children[0].children;
+  thumbSlides[0].classList.add("active");
+
+  //prev, neext btn 클릭 시 이미지 슬라이드 이동
   slideBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       if (e.target.parentNode.classList.contains("next")) {
@@ -190,6 +194,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const 바뀌는식 = -100 * 바뀌는값 + "%";
       slideWrap.style.transform = `translateX(${바뀌는식})`;
+
+      //Thumb 슬라이드, 바뀌는값 기준으로 active add
+      Array.from(thumbSlides).forEach((slide, index) => {
+        if (index === 바뀌는값) {
+          slide.classList.add("active");
+        } else {
+          slide.classList.remove("active");
+        }
+      });
     });
   });
+
+  //mobile 터치
 });

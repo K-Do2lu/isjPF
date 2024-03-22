@@ -1259,6 +1259,15 @@ input[type=text]:disabled {
   flex-wrap: wrap;
   gap: clamp(1.5rem, 2vw, 2.5rem);
 }
+@media (min-width: 360px) and (max-width: 767px) {
+  .detail-wrap .detail-mid .mid-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .detail-wrap .detail-mid .mid-inner .detail-txt {
+    min-width: 100%;
+  }
+}
 .detail-wrap .detail-mid .mid-inner .detail-img {
   flex: 1 1 20rem;
   max-width: 22.5rem;
@@ -1383,7 +1392,6 @@ input[type=text]:disabled {
 
 .slide-cont {
   position: relative;
-  height: 100%;
   overflow: hidden;
 }
 .slide-cont .slide-btn {
@@ -1420,6 +1428,65 @@ input[type=text]:disabled {
   object-fit: cover;
 }
 .slide-cont .slide-wrap .slide .slide-txt {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.625rem;
+  font-weight: 400;
+  color: #666666;
+  letter-spacing: -0.02rem;
+  text-align: center;
+}
+.slide-cont.thumb {
+  position: static;
+  height: auto;
+  max-height: 4rem;
+  margin-top: clamp(1rem, 2vw, 1.25rem);
+  overflow: visible;
+}
+.slide-cont.thumb .slide-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.slide-cont.thumb .slide-wrap .slide {
+  width: 3.9375rem;
+  min-width: 3.9375rem;
+  max-width: 3.9375rem;
+  height: 3.9375rem;
+  min-height: 3.9375rem;
+  max-height: 3.9375rem;
+  opacity: 50%;
+  overflow: hidden;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .slide-cont.thumb .slide-wrap .slide {
+    width: 0.5rem;
+    min-width: 0.5rem;
+    max-width: 0.5rem;
+    height: 0.5rem;
+    min-height: 0.5rem;
+    max-height: 0.5rem;
+    background: #ffffff;
+    border: 1px solid #111;
+  }
+  .slide-cont.thumb .slide-wrap .slide > img {
+    display: none;
+  }
+  .slide-cont.thumb .slide-wrap .slide.active {
+    border: none;
+    background: #111;
+  }
+}
+.slide-cont.thumb .slide-wrap .slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide-cont.thumb .slide-wrap .slide.active {
+  border: 1px solid #111;
+  opacity: 100%;
+}
+.slide-cont.thumb .slide-wrap .slide .slide-txt {
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-top: 0.625rem;
