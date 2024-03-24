@@ -850,6 +850,8 @@ h1.hidden {
 }
 
 .p-btn-chips {
+  font-size: 1rem;
+  line-height: 1.5rem;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -864,6 +866,10 @@ h1.hidden {
   color: #111;
 }
 @media (min-width: 360px) and (max-width: 767px) {
+  .p-btn-chips {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
   .p-btn-chips .icon {
     width: 1.25rem;
     height: 1.25rem;
@@ -1095,35 +1101,58 @@ input[type=text]:disabled {
 }
 
 .input-search {
-  display: grid;
+  display: flex;
   height: auto;
   min-height: 3.75rem;
   max-height: 5rem;
   padding: clamp(1rem, 2vw, 1.375rem) 0;
-  grid-template-columns: 1fr minmax(1.75rem, 2.375rem);
   align-items: center;
   border-bottom: 4px solid #111;
   overflow: hidden;
 }
-.input-search input[type=text] {
+.input-search #inputField {
   font-size: 1.75rem;
   line-height: 2.25rem;
+  display: flex;
+  align-items: center;
   padding: 0;
   font-weight: 500;
   border-bottom: none;
+  outline: none;
   letter-spacing: -0.02em;
+  flex: 1;
+  overflow-x: auto;
+  white-space: nowrap; /* 추가 */
 }
 @media (min-width: 360px) and (max-width: 767px) {
-  .input-search input[type=text] {
+  .input-search #inputField {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+}
+.input-search #inputField .chip-container {
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+  scroll-behavior: smooth; /* for smooth scrolling on other browsers */
+}
+.input-search #inputField #inputArea {
+  flex: 1;
+  outline: none;
+  min-height: inherit;
 }
 .input-search .input-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  width: 2.375rem;
+  height: 2.375rem;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .input-search .input-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
 }
 .input-search .input-icon > .icon {
   width: 100%;
@@ -2046,6 +2075,7 @@ input[type=text]:disabled {
 .modal-overlay .modal-window.search {
   min-width: 20rem;
   max-width: 77.5rem;
+  max-height: 28.875rem;
   padding: 0 clamp(1.25rem, 2vw, 2.5rem) 1.375rem;
 }
 @media (min-width: 360px) and (max-width: 767px) {
