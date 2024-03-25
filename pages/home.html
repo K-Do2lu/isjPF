@@ -30,10 +30,12 @@
         <!-- side -->
         <div class="side">
           <div class="side-logo">
-            <img
-              src="/assets/img/img-logoside.png"
-              alt="design for life side logo"
-            />
+            <a href="/pages/home.html">
+              <img
+                src="/assets/img/img-logoside.png"
+                alt="design for life side logo"
+              />
+            </a>
           </div>
           <div class="side-cont">
             <p class="txt-under">
@@ -421,21 +423,27 @@
       <div id="search" class="modal-overlay">
         <div class="modal-window search">
           <!-- <div class="window-top">
-            <h1 class="tit">타이틀</h1>
-            <button class="close-area" onclick="toggleModal('search')">
-              <i class="icon cross-38"></i>
-            </button>
-          </div> -->
+          <h1 class="tit">타이틀</h1>
+          <button class="close-area" onclick="toggleModal('search')">
+            <i class="icon cross-38"></i>
+          </button>
+        </div> -->
 
           <div class="window-content">
             <div class="input-search">
-              <input
-                type="text"
-                id=""
-                name=""
-                class="search"
-                placeholder="검색어를 입력해주세요"
-              />
+              <div id="inputField">
+                <div class="chip-container">
+                  <button
+                    type="button"
+                    class="p-btn-chips active"
+                    contenteditable="false"
+                  >
+                    <span>국가 ∙ 공공디자인 ∙ 정책</span
+                    ><i class="icon cross"></i>
+                  </button>
+                </div>
+                <div id="inputArea" contenteditable="true"></div>
+              </div>
               <div class="input-icon">
                 <i class="icon search"></i>
               </div>

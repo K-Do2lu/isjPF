@@ -342,13 +342,19 @@
 
           <div class="window-content">
             <div class="input-search">
-              <input
-                type="text"
-                id=""
-                name=""
-                class="search"
-                placeholder="검색어를 입력해주세요"
-              />
+              <div id="inputField">
+                <div class="chip-container">
+                  <button
+                    type="button"
+                    class="p-btn-chips active"
+                    contenteditable="false"
+                  >
+                    <span>국가 ∙ 공공디자인 ∙ 정책</span
+                    ><i class="icon cross"></i>
+                  </button>
+                </div>
+                <div id="inputArea" contenteditable="true"></div>
+              </div>
               <div class="input-icon">
                 <i class="icon search"></i>
               </div>

@@ -27,6 +27,9 @@
     border-right: 1px solid $c-primary;
     .side-cont {
       flex: 1;
+      margin-top: 3rem;
+      padding-top: 2.125rem;
+      border-top: 1px solid $c-primary;
       overflow-y: auto;
     }
   }
@@ -207,9 +210,9 @@
       @include mo360-767() {
         padding: 2.5rem 1.25rem 4rem;
       }
-      padding: 3rem 1.25rem 6.25rem;
+      padding: 3.25rem 1.25rem 6.25rem;
       .chips-wrap {
-        padding-bottom: clamp(1.25rem, 2vw, 2.25rem);
+        padding-bottom: clamp(0.75rem, 2vw, 2.5rem);
         border-bottom: 1px solid $c-primary;
         .chips {
           @include mo360-767() {

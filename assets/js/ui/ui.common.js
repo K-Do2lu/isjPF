@@ -167,44 +167,76 @@ window.addEventListener("resize", updatePagination);
     @slide
 --------------------------------------------------------------*/
 document.addEventListener("DOMContentLoaded", function () {
+  // 요소 선택
   const slideBtn = document.querySelectorAll(".slide-btn");
   const slideWrap = document.querySelector(".slide-wrap");
   const slideContThumb = document.querySelector(".slide-cont.thumb");
+  let currentIndex = 0; // 현재 슬라이드 인덱스
+  const thumbSlides = slideContThumb.children[0].children; // 썸네일 슬라이드 요소들
+  thumbSlides[0].classList.add("active"); // 초기 썸네일 슬라이드에 active 클래스 추가
 
-  let 바뀌는값 = 0;
-
-  //클릭 이벤트 전에 [0]에 actice add
-  const thumbSlides = slideContThumb.children[0].children;
-  thumbSlides[0].classList.add("active");
-
-  //prev, neext btn 클릭 시 이미지 슬라이드 이동
+  // PC 클릭 이벤트
   slideBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       if (e.target.parentNode.classList.contains("next")) {
-        바뀌는값++;
-        if (바뀌는값 >= slideWrap.children.length) {
-          바뀌는값 = 0;
+        // 다음 버튼 클릭
+        currentIndex++;
+        if (currentIndex >= slideWrap.children.length) {
+          // 마지막 슬라이드일 경우
+          currentIndex = 0; // 처음으로 돌아가기
         }
       } else {
-        바뀌는값--;
-        if (바뀌는값 < 0) {
-          바뀌는값 = slideWrap.children.length - 1;
+        // 이전 버튼 클릭
+        currentIndex--;
+        if (currentIndex < 0) {
+          // 첫 번째 슬라이드일 경우
+          currentIndex = slideWrap.children.length - 1; // 마지막으로 이동
         }
       }
-
-      const 바뀌는식 = -100 * 바뀌는값 + "%";
-      slideWrap.style.transform = `translateX(${바뀌는식})`;
-
-      //Thumb 슬라이드, 바뀌는값 기준으로 active add
-      Array.from(thumbSlides).forEach((slide, index) => {
-        if (index === 바뀌는값) {
-          slide.classList.add("active");
-        } else {
-          slide.classList.remove("active");
-        }
-      });
+      updateSlide(); // 슬라이드 업데이트
     });
   });
 
-  //mobile 터치
+  // 모바일 터치 이벤트
+  let startX, endX;
+
+  slideWrap.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX; // 터치 시작 좌표 저장
+  });
+
+  slideWrap.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX; // 터치 움직임 좌표 저장
+  });
+
+  slideWrap.addEventListener("touchend", (e) => {
+    const diff = endX - startX; // 터치 시작과 종료 좌표의 차이
+    if (diff > 0) {
+      // 오른쪽에서 왼쪽으로 스와이프
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = slideWrap.children.length - 1;
+      }
+    } else {
+      // 왼쪽에서 오른쪽으로 스와이프
+      currentIndex++;
+      if (currentIndex >= slideWrap.children.length) {
+        currentIndex = 0;
+      }
+    }
+    updateSlide(); // 슬라이드 업데이트
+  });
+
+  function updateSlide() {
+    const translateX = -100 * currentIndex + "%"; // 슬라이드 이동 거리 계산
+    slideWrap.style.transform = `translateX(${translateX})`; // 슬라이드 이동
+
+    // 썸네일 슬라이드 active 클래스 업데이트
+    Array.from(thumbSlides).forEach((slide, index) => {
+      if (index === currentIndex) {
+        slide.classList.add("active");
+      } else {
+        slide.classList.remove("active");
+      }
+    });
+  }
 });

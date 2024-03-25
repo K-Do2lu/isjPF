@@ -515,14 +515,17 @@ $p-14-0: 0.875rem;
     flex-wrap: wrap;
   }
   display: flex;
-  gap: clamp(0.75rem, 2vw, 2.5rem);
+  gap: clamp(0.75rem, 2vw, 1rem);
   .tit {
     @include fs-42-50;
     @include mo360-767() {
       @include fs-34-42;
     }
+    @include media-max(1279px) {
+      flex: 1 1 auto;
+    }
     font-weight: 400;
-    flex: 1;
+    flex: 1 0 20rem;
   }
   .chips {
     @include mo360-767() {
@@ -532,8 +535,6 @@ $p-14-0: 0.875rem;
     }
     display: flex;
     flex-wrap: wrap;
-    max-width: 55.875rem;
-    // max-width: 52.75rem;
     gap: 0.5rem;
   }
 }
@@ -570,6 +571,28 @@ $p-14-0: 0.875rem;
     border: 1px solid #111;
     background: #fff;
     box-shadow: 2px 2px 8px 0px #0000001a;
+  }
+}
+
+//리스트 내 btn
+.p-btn-list {
+  @include d-flex-center-center;
+  width: clamp(2.5rem, 2vw, 2.75rem);
+  height: clamp(2.5rem, 2vw, 2.75rem);
+  padding: 0.625rem;
+  border: 1px solid $c-gr-scale200;
+  > .icon {
+    @include bgIcon-contain;
+  }
+  &.prev {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+  &:disabled {
+    .icon {
+      filter: invert(75%);
+    }
   }
 }
 /*-------------------------------------------------------------------
@@ -938,7 +961,6 @@ input[type="text"] {
         max-width: 22.5rem;
         min-height: 18.375rem;
         max-height: 24.125rem;
-        background: #eee;
       }
 
       .detail-txt {
@@ -1061,8 +1083,12 @@ input[type="text"] {
   overflow: hidden;
 
   .slide-btn {
+    @include mo360-767() {
+      display: none;
+    }
     position: absolute;
-    top: 25%;
+    top: 50%;
+    transform: translateY(-50%);
     width: 3rem;
     height: 3rem;
     z-index: 1;
@@ -1085,9 +1111,14 @@ input[type="text"] {
     .slide {
       position: relative;
       min-width: 100%;
+      height: 100%;
 
       .slide-img {
-        max-height: 17rem;
+        @include mo360-767() {
+          height: 15rem;
+        }
+        height: 100%;
+        height: 17rem;
 
         img {
           @include img-cover;
