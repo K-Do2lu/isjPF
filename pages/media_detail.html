@@ -2,7 +2,7 @@
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
-    <title>이순종 포트폴리오 - media detail</title>
+    <title>이순종 포트폴리오 - Media detail</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -11,25 +11,540 @@
     <!-- https://fonts.google.com/icons -->
     <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
     <!-- 공통 css -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../assets/css/ui.styles.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/ui.styles.css" />
+    <!-- 공통 js -->
+    <script src="/assets/js/ui/ui.common.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <!-- Swiper.js 라이브러리 포함 -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
   </head>
   <body>
-    <div class="wrap">
-      <header>header</header>
-      <main role="main">
-        <button onclick="scrollToTop()" id="scrollToTopBtn">
-          최상단으로 이동
-        </button>
+    <div class="wrapper">
+      <main role="main" class="main">
+        <h1 class="hidden">이순종 교수님 포트폴리오</h1>
+        <!-- side -->
+        <div class="side">
+          <div class="side-logo">
+            <img
+              src="/assets/img/img-logoside.png"
+              alt="design for life side logo"
+            />
+          </div>
+          <div class="side-cont">
+            <div class="gnb-wrap side-toggle">
+              <div class="include-tags">
+                <h3 class="route-tit">LECTURES</h3>
+
+                <div class="work-tit">
+                  <em>2022</em>
+                  <p>한국의 혁신 디자인 45선</p>
+                </div>
+
+                <div class="tag-wrap">
+                  <div>
+                    <span class="tag color0">국가 ∙ 공공디자인 ∙ 정책</span>
+                  </div>
+                  <div>
+                    <span class="tag color3">문화 ∙ 아이덴티티</span>
+                  </div>
+                  <div>
+                    <span class="tag color2">생태 ∙ 지속가능</span>
+                  </div>
+                  <div>
+                    <span class="tag color1">기업디자인정책 ∙ 전략</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="p-btn fill btn-modal"
+            data-modal="contact"
+          >
+            Contact
+          </button>
+        </div>
+        <!-- header -->
+        <header class="header">
+          <div class="header-inner">
+            <a href="/pages/home.html" class="logo"
+              ><img src="/assets/img/img-logo.png" alt="logo"
+            /></a>
+
+            <div class="gnb-wrap">
+              <nav>
+                <ul class="menu">
+                  <li>
+                    <a href="/pages/home.html" class="menu-tit">HOME</a>
+                  </li>
+
+                  <li>
+                    <a href="/pages/about.html" class="menu-tit">ABOUT</a>
+                  </li>
+
+                  <li>
+                    <a href="/pages/work.html" class="menu-tit">WORK</a>
+
+                    <ul class="menu-sub">
+                      <li>
+                        <span class="sub-tit">ART&DESIGN</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">제품 ∙ 시스템 디자인</a></li>
+                          <li><a href="#">환경 ∙ 공공 디자인</a></li>
+                          <li><a href="#">대학 디자인</a></li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <span class="sub-tit">RESEARCH</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">국가디자인 ∙ 교육정책</a></li>
+                          <li>
+                            <a href="#">미래 라이프스타일 ∙ 디자인전략</a>
+                          </li>
+                          <li>
+                            <a href="#">미래도시 ∙ 모빌리티 ∙ 모바일 디자인</a>
+                          </li>
+                          <li><a href="#">정체성 ∙ 혁신 ∙ 한국디자인</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="/pages/event.html" class="menu-tit">EVENT</a>
+                    <ul class="menu-sub">
+                      <li>
+                        <span class="sub-tit">EXHIBITION</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">개인전</a></li>
+                          <li><a href="#">참여전시</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="sub-tit">PROGRAM PLANNING</span>
+                        <ul class="sub-menu">
+                          <li><a href="#">행사 참여작품</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="active">
+                    <a href="/pages/media.html" class="menu-tit">MEDIA</a>
+
+                    <ul class="menu-sub">
+                      <li>
+                        <span class="sub-tit">LECTURES</span>
+                        <ul class="sub-menu">
+                          <li>주제 특강</li>
+                          <li>강의</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="sub-tit">BOOKS</span>
+                        <ul class="sub-menu">
+                          <li>Books</li>
+                          <li>Article</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="sub-tit">PRESS</span>
+                        <ul class="sub-menu">
+                          <li>Interview</li>
+                          <li>News</li>
+                          <li>Video</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="gnb">
+                <button
+                  class="icon search btn-modal"
+                  data-modal="search"
+                ></button>
+                <button class="icon menu"></button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- mo header menu click 시 menu block -->
+        <div class="gnb-wrap mo">
+          <p class="txt-under">
+            인간의 삶, 사회, 생태가 조화를 이루는<br />
+            미래, 통합, 생명의 디자인을 연구하고 창조합니다.
+          </p>
+
+          <nav>
+            <ul class="menu">
+              <li>
+                <a href="/pages/home.html" class="menu-tit">HOME</a>
+              </li>
+
+              <li>
+                <a href="/pages/about.html" class="menu-tit">ABOUT</a>
+              </li>
+
+              <li>
+                <span class="menu-tit">WORK</span>
+                <ul class="menu-sub">
+                  <li>
+                    <span class="sub-tit">ART&DESIGN</span>
+                    <ul class="sub-menu">
+                      <li><a href="#">제품 ∙ 시스템 디자인</a></li>
+                      <li><a href="#">환경 ∙ 공공 디자인</a></li>
+                      <li><a href="#">대학 디자인</a></li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <span class="sub-tit">RESEARCH</span>
+                    <ul class="sub-menu">
+                      <li><a href="#">국가디자인 ∙ 교육정책</a></li>
+                      <li>
+                        <a href="#">미래 라이프스타일 ∙ 디자인전략</a>
+                      </li>
+                      <li>
+                        <a href="#">미래도시 ∙ 모빌리티 ∙ 모바일 디자인</a>
+                      </li>
+                      <li><a href="#">정체성 ∙ 혁신 ∙ 한국디자인</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="menu-tit">EVENT</span>
+                <ul class="menu-sub">
+                  <li>
+                    <span class="sub-tit">EXHIBITION</span>
+                    <ul class="sub-menu">
+                      <li><a href="#">개인전</a></li>
+                      <li><a href="#">참여전시</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="sub-tit">PROGRAM PLANNING</span>
+                    <ul class="sub-menu">
+                      <li><a href="#">행사 참여작품</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <span class="menu-tit">MEDIA</span>
+                <ul class="menu-sub">
+                  <li>
+                    <span class="sub-tit">LECTURES</span>
+                    <ul class="sub-menu">
+                      <li>주제 특강</li>
+                      <li>강의</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="sub-tit">BOOKS</span>
+                    <ul class="sub-menu">
+                      <li>Books</li>
+                      <li>Article</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="sub-tit">PRESS</span>
+                    <ul class="sub-menu">
+                      <li>Interview</li>
+                      <li>News</li>
+                      <li>Video</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- main-content -->
+        <div class="main-cont">
+          <!-- cont -->
+          <div class="cont">
+            <!-- work deatil cont -->
+            <div class="detail-wrap">
+              <div class="detail-top">
+                <button type="button" class="p-btn-list prev" disabled>
+                  <i class="icon arrow-right"></i>
+                </button>
+                <h2 class="top-tit">한국의 혁신 디자인 45선</h2>
+                <button type="button" class="p-btn-list next">
+                  <i class="icon arrow-right"></i>
+                </button>
+              </div>
+
+              <div class="detail-mid media">
+                <div class="mid-inner">
+                  <!-- 이미지 영역: 이미지 없을 시 display none-->
+                  <div class="detail-img">
+                    <img src="/assets/img/img-work-02.jpg" alt="design img" />
+                  </div>
+                  <!-- // 이미지 영역: 이미지 없을 시 display none -->
+
+                  <div class="detail-txt">
+                    <div class="txt">
+                      <p class="about">
+                        한국의 디자인은 수출 한국의 기치 아래 익명성에 의존하여
+                        제조업을 지원하는데 집중하던 1970년대의 초기 디자인의
+                        소극적인 역할에서 벗어나 21세기 제품의 총체적인 가치를
+                        혁신하는 중심역할을 맡고 있다. 필자는 『한국의
+                        디자인혁신 45선』 저술 (이순 종 외 6인)을 통하여
+                        디자이너인 동시에 혁신가(Innovator)로서 한국인의
+                        창조성과 문화적 특성을 융합하며 세계를 놀란 한국
+                        디자인의 발전과 우수성, 그리고 디자인 혁신의 차별적인
+                        개념과 특징들을 아우르는, 한국 디자인의 원형과 DNA를
+                        규명하여 각계각층과 공유하려 하였다.
+                        <br />
+                        디자인의 선정 영역은 광의적인 디자인 개념을 바탕으로
+                        제품·그래픽·공예를 비롯해 건축·공간·환경·패션·서비스 등
+                        삶의 영역 전반에 걸친 혁신과 문제 해결을 포괄했다.
+                        기준은 기능과 기술, 콘텐츠와 서비스, 사용과 조형의
+                        측면에서 새로운 혁신성, 지역의 문화와 라이프스타일을
+                        반영하는 한국성, 시대적으로 1988 서울올림픽 이후 현대
+                        디자인 가치의 흐름을 창조하는 현대성, 그리고 디자인과
+                        시장 등에 미치는 파급력과 관련한 세계성을 고려하였다.
+                        <br />
+                        선정된 결과물 등 대표작 일부는 ‘2017 광주디자인비엔날레’
+                        특별전에서 선보이며 전문가와 시민에게 검증받기도 했다.
+                        본 연구는 2018년 이후 좀 더 현대적인 디자인을 보완하며
+                        최종적으로 45가지 디자인을 선정했다. 더불어 45개 대상에
+                        내재한 공통적인 디자인 혁신의 뿌리, 즉 원형이 무엇인지
+                        찾기 위한 연구원들의 장기간 숙의 끝에 우리, 상보,
+                        신조형, 속도, 배려, 온고지신 등 6가지 한국 디자인 혁신의
+                        원형을 발굴하는 성과를 거두었다.
+                      </p>
+                    </div>
+
+                    <div>
+                      <a class="p-btn has-icon" href="" download="">
+                        <span>PDF</span><i class="icon download"></i
+                      ></a>
+                      <a class="p-btn has-icon" href="">
+                        <span>Link</span><i class="icon link"></i
+                      ></a>
+                    </div>
+
+                    <div class="info">
+                      <p>
+                        이순종, 김종균, 김현수, 박인석, 이덕찬, 전종현, 정성모
+                        <em>홍디자인</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-bttm">
+                <button type="button" class="p-btn fill">
+                  <span><a href="/pages/media.html">목록보기</a></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sroll btn -->
+        <div class="scroll-btns">
+          <button
+            type="button"
+            class="p-btn-cir mail btn-modal"
+            data-modal="contact"
+          >
+            <i class="icon mail-w"></i>
+          </button>
+          <button
+            type="button"
+            class="p-btn-cir top"
+            onclick="scrollToTop()"
+            id="scrollToTopBtn"
+          >
+            <i class="icon arrow-top"></i>
+          </button>
+        </div>
       </main>
+
+      <!-- modal - search -->
+      <div id="search" class="modal-overlay">
+        <div class="modal-window search">
+          <!-- <div class="window-top">
+            <h1 class="tit">타이틀</h1>
+            <button class="close-area" onclick="toggleModal('search')">
+              <i class="icon cross-38"></i>
+            </button>
+          </div> -->
+
+          <div class="window-content">
+            <div class="input-search">
+              <div id="inputField">
+                <div class="chip-container">
+                  <button
+                    type="button"
+                    class="p-btn-chips active"
+                    contenteditable="false"
+                  >
+                    <span>국가 ∙ 공공디자인 ∙ 정책</span
+                    ><i class="icon cross"></i>
+                  </button>
+                </div>
+                <div id="inputArea" contenteditable="true"></div>
+              </div>
+              <div class="input-icon">
+                <i class="icon search"></i>
+              </div>
+            </div>
+
+            <div class="content-search">
+              <div class="chips-wrap">
+                <h1 class="tit">Search.</h1>
+                <div class="chips">
+                  <button type="button" class="p-btn-chips active">
+                    <span>국가 ∙ 공공디자인 ∙ 정책</span
+                    ><i class="icon check"></i>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>조형 ∙ 미학</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>기업디자인정책 ∙ 전략</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>문화 ∙ 아이덴티티</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>미래예측 ∙ 라이프</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>혁신 ∙ Good Design</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>창의 ∙ 융합디자인사고 ∙ 교육</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>아시아 ∙ 한국디자인</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>미래도시 ∙ 모빌리티</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>지역사회디자인</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>생태 ∙ 지속가능</span>
+                  </button>
+                  <button type="button" class="p-btn-chips">
+                    <span>예술 ∙ 디자인일반</span>
+                  </button>
+                </div>
+              </div>
+
+              <button class="p-btn close-area" onclick="toggleModal('search')">
+                <span>Close</span><i class="icon cross"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // modal - search  -->
+      <!-- modal - contact -->
+      <div id="contact" class="modal-overlay">
+        <div class="modal-window contact">
+          <div class="window-top">
+            <h1 class="tit">Contact.</h1>
+            <button class="close-area" onclick="toggleModal('contact')">
+              <i class="icon cross"></i>
+            </button>
+          </div>
+
+          <div class="window-content">
+            <form action="">
+              <div class="input-wrap">
+                <label for="" class="essential">성함</label>
+                <input
+                  type="text"
+                  id=""
+                  name="username"
+                  placeholder="성함을 입력해주세요"
+                />
+              </div>
+              <div class="input-wrap">
+                <label for="" class="essential">이메일</label>
+                <input
+                  type="text"
+                  id=""
+                  name="email"
+                  placeholder="이메일을 입력해주세요"
+                />
+              </div>
+              <div class="input-wrap">
+                <label for="" class="">제목</label>
+                <input
+                  type="text"
+                  id=""
+                  name=""
+                  placeholder=""
+                  value="인터뷰 문의 드립니다."
+                />
+              </div>
+              <div class="input-wrap">
+                <label for="" class="">내용</label>
+                <input
+                  type="text"
+                  id=""
+                  name=""
+                  placeholder="내용을 입력해주세요"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="p-btn fill btn-modal"
+                data-modal="alert1"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- // modal - contact  -->
+      <!-- alert - 전송 완료되었습니다. -->
+      <div id="alert1" class="modal-overlay alert">
+        <div class="modal-window">
+          <div class="window-top">
+            <button class="close-area" onclick="toggleModal('alert1')">
+              <i class="icon cross"></i>
+            </button>
+          </div>
+
+          <div class="window-content">
+            <p class="alert-txt">전송이 완료되었습니다.</p>
+            <button
+              type="butotn"
+              class="p-btn fill"
+              onclick="toggleModal('alert1')"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- //alert - 전송 완료되었습니다. -->
     </div>
   </body>
 </html>

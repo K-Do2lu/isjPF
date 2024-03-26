@@ -55,6 +55,14 @@
       font-weight: 400;
       flex: 1;
     }
+    .chips-wrap {
+      .tit {
+        flex: none;
+      }
+      .chips {
+        max-width: 100%;
+      }
+    }
     .window-top {
       @include d-flex-between-center;
       padding-bottom: clamp(1.25rem, 2vw, 1.5rem);
@@ -209,9 +217,6 @@
   width: 100%;
   height: 100%;
   background: $c-gr-scalefff;
-  p {
-    padding-bottom: 1.5rem;
-  }
   nav {
     flex: 1;
     color: $c-primary;
@@ -283,6 +288,29 @@
             }
           }
         }
+      }
+    }
+  }
+
+  // include-tags Type
+  .include-tags {
+    .route-tit {
+      @include fs-16-24;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+
+    .work-tit {
+      @include fs-18-28;
+      letter-spacing: -0.02rem;
+      padding: 1.5rem 0 0.75rem;
+      p {
+        font-weight: 500;
+      }
+      em {
+        font-weight: 400;
+        color: $c-gr-scale700;
       }
     }
   }
@@ -385,6 +413,15 @@ h1.hidden {
   }
   &.calendar {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1594 15.879L15.7071 11.3312L14.2929 9.91699L11.1594 13.0505L9.70712 11.5983L8.29291 13.0125L11.1594 15.879Z' fill='%23111111'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 6V4H9V6H15V4H17V6H20V20H4V6H7ZM6 8H18V18H6V8Z' fill='%23111111'/%3E%3C/svg%3E%0A");
+  }
+  &.file {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.1716 9L9.17157 7H6V17H18V9H11.1716ZM10 5L12 7H20V19H4V5H10Z' fill='%23333333'/%3E%3C/svg%3E%0A");
+  }
+  &.logout {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.9982 21V3L10 3V5L17.9982 5V19H10V21L19.9982 21Z' fill='%23333333'/%3E%3Cpath d='M10 15.1706L7.8294 13L15.4152 13V11L7.8294 11L10 8.82944L8.58579 7.41522L4.00098 12L8.58579 16.5848L10 15.1706Z' fill='%23333333'/%3E%3C/svg%3E%0A");
+  }
+  &.align {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 11V4H4V11H11ZM6 6H9V9H6V6Z' fill='%23333333'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 11V4H13V11H20ZM15 6H18V9H15V6Z' fill='%23333333'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 13V20H13V13H20ZM18 15H15V18H18V15Z' fill='%23333333'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 20V13H4V20H11ZM6 15H9V18H6V15Z' fill='%23333333'/%3E%3C/svg%3E%0A");
   }
 }
 
@@ -515,7 +552,7 @@ $p-14-0: 0.875rem;
     flex-wrap: wrap;
   }
   display: flex;
-  gap: clamp(0.75rem, 2vw, 1rem);
+  gap: clamp(0.75rem, 2vw, 2.5rem);
   .tit {
     @include fs-42-50;
     @include mo360-767() {
@@ -525,7 +562,7 @@ $p-14-0: 0.875rem;
       flex: 1 1 auto;
     }
     font-weight: 400;
-    flex: 1 0 20rem;
+    flex: 0 1 18.625rem;
   }
   .chips {
     @include mo360-767() {
@@ -533,9 +570,13 @@ $p-14-0: 0.875rem;
         @include fs-14-20;
       }
     }
+    @include media-max(1279px) {
+      max-width: 100%;
+    }
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    max-width: calc(100% - 23.75rem);
   }
 }
 .p-btn-chips {
@@ -577,7 +618,8 @@ $p-14-0: 0.875rem;
 //리스트 내 btn
 .p-btn-list {
   @include d-flex-center-center;
-  width: clamp(2.5rem, 2vw, 2.75rem);
+  min-width: 2.5rem;
+  max-width: 2.5rem;
   height: clamp(2.5rem, 2vw, 2.75rem);
   padding: 0.625rem;
   border: 1px solid $c-gr-scale200;
@@ -629,8 +671,8 @@ $p-14-0: 0.875rem;
     }
   }
   .first,
-  .prev,
-  .next,
+  a.prev,
+  a.next,
   .last {
     &:hover {
       background: none;
@@ -659,7 +701,11 @@ $p-14-0: 0.875rem;
 /*-------------------------------------------------------------------
     @Tag
 /*-----------------------------------------------------------------*/
-
+.tag-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
 // 색상 배열 정의
 $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
   #f1f8c6, #dfecf6, #ffe5e5, #e6e9f1;
@@ -684,6 +730,11 @@ $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
     border-radius: 0;
     background: #111;
     color: #fff;
+
+    // 임시저장 년도 일 때
+    &.temp {
+      background: $c-gr-scale500;
+    }
   }
 
   // color0부터 color11까지 각각 다른 색상 할당
@@ -843,8 +894,7 @@ input[type="text"] {
       @include fs-18-28;
       font-weight: 500;
       color: $c-primary;
-      display: grid;
-      grid-template-columns: minmax(5rem, 5rem) 1fr minmax(1.5rem, 1.75rem);
+      display: flex;
       align-items: center;
       gap: 2.5rem;
       padding: 1.25rem clamp(1rem, 2vw, 1.25rem);
@@ -867,6 +917,7 @@ input[type="text"] {
           display: none;
         }
         @include d-flex-center-center;
+        width: 5rem;
         flex-direction: column;
         overflow: hidden;
         flex: 0 1 5rem;
@@ -882,12 +933,19 @@ input[type="text"] {
         display: flex;
         flex-wrap: wrap;
         gap: clamp(0.5rem, 2vw, 1.25rem);
+        flex: 1;
         p {
           flex: 1;
         }
       }
 
       a {
+        width: 100%;
+        min-width: 1.5rem;
+        max-width: 1.75rem;
+        height: 100%;
+        min-height: 1.5rem;
+        max-height: 1.75rem;
         .icon.arrow-right {
           display: inline-block;
           opacity: 0;
@@ -965,9 +1023,10 @@ input[type="text"] {
 
       .detail-txt {
         flex: 1;
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: flex-end;
         .txt {
           flex: 1;
           color: $c-primary;
@@ -991,11 +1050,15 @@ input[type="text"] {
         }
 
         .invite-wrap {
+          width: 100%;
           border-top: 1px solid $c-gr-scale600;
 
           .invite-top {
             @include mo360-767() {
               padding: 0.75rem 0;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.25rem;
             }
             @include d-flex-between-center;
             flex-wrap: wrap;
@@ -1035,12 +1098,14 @@ input[type="text"] {
               padding: 0.75rem 0;
               border-top: 1px dashed $c-gr-scale200;
               i.icon {
+                filter: invert(0.6);
               }
             }
           }
         }
 
         .info {
+          width: 100%;
           padding: clamp(1rem, 2vw, 1.25rem);
           background: $c-gr-scale50;
           border-top: 1px solid $c-gr-scale600;
@@ -1050,6 +1115,22 @@ input[type="text"] {
             letter-spacing: -0.02rem;
             font-weight: 400;
             color: $c-gr-scale600;
+            em {
+              position: relative;
+              padding-left: 0.5625rem;
+              margin-left: 0.5rem;
+              &::before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                content: "";
+                display: inline-block;
+                width: 1px;
+                height: 0.5rem;
+                background: $c-gr-scale300;
+              }
+            }
           }
 
           br {
@@ -1060,6 +1141,33 @@ input[type="text"] {
             }
           }
         }
+      }
+    }
+    // media
+    &.media {
+      .detail-img {
+        @include mo360-767() {
+          @include d-flex-center-center;
+          padding: 1.875rem;
+          box-shadow: none;
+          > img {
+            @include img-contain;
+            box-shadow: 6px 8px 16px 0px rgba(0, 0, 0, 0.1);
+          }
+        }
+        width: clamp(20rem, 2vw, 22.5rem);
+        height: 100%;
+        min-height: 20rem;
+        max-height: 32.5rem;
+        background: $c-gr-scale100;
+        box-shadow: 6px 8px 16px 0px rgba(0, 0, 0, 0.1);
+
+        > img {
+          @include img-cover;
+        }
+      }
+      .info {
+        margin-top: clamp(1.5rem, 2vw, 2.5rem);
       }
     }
   }
@@ -1147,6 +1255,8 @@ input[type="text"] {
       display: flex;
       justify-content: center;
       gap: 0.25rem;
+      max-width: 100%;
+      overflow-x: auto;
 
       .slide {
         @include mo360-767() {
