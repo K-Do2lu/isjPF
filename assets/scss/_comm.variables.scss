@@ -1,31 +1,22 @@
 /*-------------------------------------------------------------------
-	파일이름 : Variables
-	분류순서 : @Colors, @Sizes
-
-	파일이름 : Nixin
-	분류순서 : @Texts, @Responsives
-
-	변수규칙 : 반복-구분-단위 (상세규칙은 작업자가 판단)
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
 	@Color (Brand, State, Items, Grayscale)
 -------------------------------------------------------------------*/
 $color-primary: none;
 $c-primary: #111;
 $c-system: #ff334b;
 // Gray scale
-$c-gr-scalefff: #ffffff;
-$c-gr-scale50: #f5f5f5;
-$c-gr-scale100: #eeeeee;
-$c-gr-scale200: #dedede;
-$c-gr-scale300: #cccccc;
-$c-gr-scale400: #bbbbbb;
-$c-gr-scale000: #000000;
-$c-gr-scale900: #111111;
-$c-gr-scale800: #333333;
-$c-gr-scale700: #444444;
-$c-gr-scale600: #666666;
-$c-gr-scale500: #999999;
+$c-fff: #ffffff;
+$c-f5f5f5: #f5f5f5;
+$c-eee: #eeeeee;
+$c-dedede: #dedede;
+$c-ccc: #cccccc;
+$c-bbb: #bbbbbb;
+$c-000: #000000;
+$c-111: #111111;
+$c-333: #333333;
+$c-444: #444444;
+$c-666: #666666;
+$c-999: #999999;
 // Label color
 // 국가 ∙ 공공디자인 ∙ 정책
 $c-label00: #e3f5e7;
@@ -54,6 +45,11 @@ $c-label11: #e6e9f1;
 /*-------------------------------------------------------------------
 	@align
 -------------------------------------------------------------------*/
+@mixin d-inflex-center-center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 @mixin d-flex-center-center {
   display: flex;
   justify-content: center;
@@ -135,6 +131,10 @@ $c-label11: #e6e9f1;
 }
 
 // Word
+@mixin txt-under {
+  text-decoration: underline;
+  text-underline-position: under;
+}
 @mixin ellipsis-1 {
   display: block;
   overflow: hidden;
@@ -211,7 +211,12 @@ $c-label11: #e6e9f1;
   background: url("/assets/img/#{$name}.png");
   background-size: cover;
 }
-@mixin bgIcon-contain {
+@mixin bg-cover {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+@mixin bg-contain {
   width: 100%;
   height: 100%;
   background-size: contain;

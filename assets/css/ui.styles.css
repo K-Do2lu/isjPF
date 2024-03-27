@@ -255,15 +255,6 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /*-------------------------------------------------------------------
-	파일이름 : Variables
-	분류순서 : @Colors, @Sizes
-
-	파일이름 : Nixin
-	분류순서 : @Texts, @Responsives
-
-	변수규칙 : 반복-구분-단위 (상세규칙은 작업자가 판단)
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
 	@Color (Brand, State, Items, Grayscale)
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
@@ -1051,7 +1042,7 @@ h1.hidden {
   color: #fff;
 }
 .tag.year.temp {
-  background: #999999;
+  background: #f5f5f5;
 }
 .tag.color0 {
   background-color: #e3f5e7;
@@ -1136,7 +1127,7 @@ input[type=text] {
   }
 }
 input[type=text]::placeholder {
-  color: #999999;
+  color: #f5f5f5;
 }
 input[type=text]:focus {
   border-bottom-color: #111;
@@ -1452,7 +1443,7 @@ input[type=text]:disabled {
   line-height: 1.25rem;
   display: inline-block;
   font-weight: 400;
-  color: #999999;
+  color: #f5f5f5;
 }
 .detail-wrap .detail-mid .mid-inner .detail-txt .invite-wrap .invite-top .support span + span {
   padding-left: 0.75rem;
@@ -1786,7 +1777,7 @@ input[type=text]:disabled {
   line-height: 1.75rem;
   font-family: Wanted Sans;
   font-weight: 700;
-  color: #999999;
+  color: #cccccc;
 }
 .main header .gnb-wrap nav ul.menu > li.clicked a.menu-tit {
   color: #111;
