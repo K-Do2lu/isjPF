@@ -1788,7 +1788,7 @@ input[type=text]:disabled {
   font-weight: 700;
   color: #999999;
 }
-.main header .gnb-wrap nav ul.menu > li.active a.menu-tit {
+.main header .gnb-wrap nav ul.menu > li.clicked a.menu-tit {
   color: #111;
   text-decoration: underline;
   text-underline-position: under;

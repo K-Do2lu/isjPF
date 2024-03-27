@@ -98,7 +98,7 @@
               @include gnb_wrap_menu_tit;
               color: $c-gr-scale500;
             }
-            &.active {
+            &.clicked {
               a.menu-tit {
                 color: $c-primary;
                 text-decoration: underline;
