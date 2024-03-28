@@ -53,35 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
 /*--------------------------------------------------------------
       @header | mo toggle menu, side toggle menu
   --------------------------------------------------------------*/
-// window.onload = function () {
-//   const headerLoad = document.getElementById("header-load");
-
-//   // 헤더를 불러옴
-//   fetch("/pages/_include/_header.html")
-//     .then((response) => response.text())
-//     .then((html) => {
-//       headerLoad.innerHTML = html;
-
-//       // 모달 버튼 이벤트 처리
-//       const modalButtonsInHeader =
-//         document.querySelectorAll(".btn-modal-header");
-
-//       modalButtonsInHeader.forEach(function (button) {
-//         button.addEventListener("click", function () {
-//           const modalId = button.dataset.modal;
-//           toggleModal(modalId); // 모달 열고 닫는 함수 호출
-//         });
-//       });
-//     });
-
-//   // 모달 불러오기
-//   // 이 부분은 수정이 필요할 수 있습니다. toggleModal 함수가 어떻게 구현되었는지에 따라 달라질 수 있습니다.
-//   toggleModal();
-// };
-
 document.addEventListener("click", function (e) {
   let 클릭한요소 = e.target;
-  let 클릭한요소부모li = 클릭한요소.parentNode;
+  let 클릭한요소부모li = 클릭한요소.closest("li");
 
   // 아이콘 메뉴 클릭 시 모바일 메뉴 toggle 시키기
   const 아이콘메뉴 = document.querySelector("header .icon.menu");
@@ -89,30 +63,37 @@ document.addEventListener("click", function (e) {
 
   if (클릭한요소 == 아이콘메뉴) {
     모바일메뉴.classList.toggle("show");
-  } else {
   }
 
   // 큰 메뉴 클릭 시 작은 메뉴 toggle로 나오게 하기
   const 큰메뉴메뉴li들 = document.querySelectorAll(".menu > li");
   const 작은메뉴li들 = document.querySelectorAll(".menu-sub > li");
 
-  큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
-    // 1. 클릭한 요소 active toggle
-    // 2. li 안에 클릭한 요소 포함되어있으면 li active 활성화
-    // 3. 둘 다 아니라면 li active remove
+  let 메뉴활성화됐나 = false;
 
-    if (큰메뉴메뉴li == 클릭한요소부모li) {
-      큰메뉴메뉴li.classList.toggle("active");
+  큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
+    if (큰메뉴메뉴li === 클릭한요소부모li) {
+      큰메뉴메뉴li.classList.add("active");
+      메뉴활성화됐나 = true;
     } else if (큰메뉴메뉴li.contains(클릭한요소)) {
       큰메뉴메뉴li.classList.add("active");
+      메뉴활성화됐나 = true;
     } else {
       큰메뉴메뉴li.classList.remove("active");
     }
   });
 
+  큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
+    if (메뉴활성화됐나) {
+      큰메뉴메뉴li.style.color = "#ccc";
+    } else {
+      큰메뉴메뉴li.style.color = "";
+    }
+  });
+
   // 작은 메뉴 클릭 시 안에 작작메뉴 toggle로 나오게 하기
   작은메뉴li들.forEach((작은메뉴li) => {
-    if (작은메뉴li == 클릭한요소부모li) {
+    if (작은메뉴li === 클릭한요소부모li) {
       작은메뉴li.classList.toggle("active");
     } else {
       작은메뉴li.classList.remove("active");

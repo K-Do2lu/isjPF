@@ -131,15 +131,44 @@
   }
 
   .cont-area {
+    @include mo360-767() {
+      padding-left: 0;
+    }
     flex: 1 1 0%;
     padding-left: 20rem;
 
     header {
-      width: 100%;
+      @include mo360-767() {
+        width: 100%;
+        max-height: 4.75rem;
+      }
+      width: calc(100% - 20rem);
+      height: 100%;
       max-height: 5.5rem;
       position: fixed;
-      padding: clamp(0.875rem, 2vw, 1.25rem);
-      background: #ccc;
+      padding: 0 1.25rem;
+      background: $c-fff;
+
+      .head-wrap {
+        @include mo360-767() {
+          padding: 0.875rem 0;
+          grid-template-columns: minmax(120px, auto) 1fr;
+        }
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        height: 100%;
+        padding: 1.25rem 0;
+        box-sizing: border-box;
+        border-bottom: 1px solid;
+
+        .head-logo {
+          @include mo360-767() {
+            display: block;
+          }
+          display: none;
+        }
+      }
     }
 
     .cont-wrap {
@@ -163,9 +192,51 @@
   text-decoration: underline;
   text-underline-position: under;
 }
-
 // header menu
+.menu-wrap {
+  display: flex;
+  justify-self: flex-end;
+  gap: 1.5rem;
+
+  // header gnb
+  .menu-gnb {
+    @include mo360-767() {
+      grid-template-columns: repeat(2, minmax(1.75rem, 1.75rem));
+    }
+    display: grid;
+    grid-template-columns: 1.75rem;
+    .icon {
+      @include bg-contain;
+      &.menu {
+        @include mo360-767() {
+          display: block;
+        }
+        display: none;
+      }
+    }
+  }
+}
+// menu common
 .menu {
+  display: flex;
+  gap: 1.5rem;
+
+  li {
+    font-family: "wanted-sans";
+    @include fs-18-28;
+    font-weight: 700;
+    color: $c-ccc;
+    cursor: pointer;
+
+    &:hover {
+      color: $c-111;
+    }
+
+    &.active {
+      color: $c-111;
+      @include txt-under;
+    }
+  }
   .menu-sub {
     display: none;
 
