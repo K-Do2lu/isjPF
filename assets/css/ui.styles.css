@@ -295,7 +295,7 @@ input::-webkit-calendar-picker-indicator {
 /*-----------------------------------------------------------------*/
 .radio,
 .switch,
-.checkbox {
+.check-wrapbox {
   position: relative;
   display: inline-flex;
   font-size: inherit;
@@ -303,7 +303,7 @@ input::-webkit-calendar-picker-indicator {
 }
 .radio > input,
 .switch > input,
-.checkbox > input {
+.check-wrapbox > input {
   cursor: pointer;
   position: absolute;
   top: 0px;
@@ -313,7 +313,7 @@ input::-webkit-calendar-picker-indicator {
 }
 .radio > label,
 .switch > label,
-.checkbox > label {
+.check-wrapbox > label {
   position: relative;
   display: block;
 }
@@ -321,8 +321,8 @@ input::-webkit-calendar-picker-indicator {
 .radio > label::after,
 .switch > label::before,
 .switch > label::after,
-.checkbox > label::before,
-.checkbox > label::after {
+.check-wrapbox > label::before,
+.check-wrapbox > label::after {
   content: "";
   display: block;
   position: absolute;
@@ -664,7 +664,7 @@ h1.hidden {
 .icon.arrow-right-w {
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5858 11L11.293 5.70718L12.7072 4.29297L20.4143 12.0001L12.7072 19.7072L11.293 18.293L16.5859 13H5V11H16.5858Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-.icon.check {
+.icon.check-wrap {
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.5822 7.98648L10.1408 17.4278L4.41797 11.705L5.83218 10.2908L10.1408 14.5994L18.168 6.57227L19.5822 7.98648Z' fill='%23111111'/%3E%3C/svg%3E%0A");
 }
 .icon.search {
@@ -1101,35 +1101,9 @@ h1.hidden {
 }
 
 /*-------------------------------------------------------------------
-    @Form | input, checkbox, radio ...
+    @Form | input, checkbox, radio, toggle switch ...
 /*-----------------------------------------------------------------*/
-label {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-family: "Pretendard-Regular";
-  font-weight: 500;
-  color: #111;
-  letter-spacing: -0.02rem;
-}
-@media (min-width: 360px) and (max-width: 767px) {
-  label {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-}
-label.essential {
-  position: relative;
-  padding-right: 0.625rem;
-}
-label.essential::after {
-  content: "*";
-  position: absolute;
-  right: 0;
-  display: inline-block;
-  color: #ff334b;
-}
-
-input[type=text] {
+.input-wrap input {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 400;
@@ -1140,21 +1114,145 @@ input[type=text] {
   outline: none;
 }
 @media (min-width: 360px) and (max-width: 767px) {
-  input[type=text] {
+  .input-wrap input {
     font-size: 1rem;
     line-height: 1.5rem;
   }
 }
-input[type=text]::placeholder {
+.input-wrap input::placeholder {
   color: #999999;
 }
-input[type=text]:focus {
+.input-wrap input:focus {
   border-bottom-color: #111;
 }
-input[type=text]:disabled {
+.input-wrap input:disabled {
   background: #ffffff;
   border-bottom-color: #dedede;
   color: #cccccc;
+}
+.input-wrap label {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.02rem;
+  cursor: pointer;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .input-wrap label {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+.input-wrap label.essential {
+  position: relative;
+  padding-right: 0.625rem;
+}
+.input-wrap label.essential::after {
+  content: "*";
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  color: #ff334b;
+}
+
+.check-wrap label {
+  cursor: pointer;
+}
+.check-wrap input[type=checkbox] {
+  box-sizing: border-box;
+  position: relative;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  cursor: pointer;
+  outline: none !important;
+  border: 1px solid #dedede;
+  vertical-align: middle;
+}
+.check-wrap input[type=checkbox]:hover {
+  border: 1px solid #111111;
+}
+.check-wrap input[type=checkbox]::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 0.5rem;
+  height: 0.375rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.23224 1.63728L3.90074 6.96914L0.768555 3.83753L1.74074 2.86517L3.90062 5.02465L8.25994 0.665039L9.23224 1.63728Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  transform: scale(0) translate(-50%, -50%);
+  line-height: 1;
+}
+.check-wrap input[type=checkbox]:checked {
+  background-color: #111111;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+.check-wrap input[type=checkbox]:checked::before {
+  transform: scale(1) translate(-50%, -50%);
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+fieldset [type=checkbox] {
+  appearance: none;
+  position: relative;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 1.25em;
+  width: 2.25em;
+  height: 1.25em;
+}
+fieldset [type=checkbox]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+}
+fieldset [type=checkbox]:checked {
+  background-color: tomato;
+  border-color: tomato;
+}
+fieldset [type=checkbox]:checked::before {
+  background-color: white;
+  left: 1em;
+}
+fieldset [type=checkbox]:disabled {
+  border-color: lightgray;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+fieldset [type=checkbox]:disabled:before {
+  background-color: lightgray;
+}
+fieldset [type=checkbox]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+fieldset [type=checkbox]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) solid tomato;
+}
+fieldset [type=checkbox]:enabled:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
 }
 
 .search-wrap {
@@ -2258,4 +2356,29 @@ input[type=text]:disabled {
   flex-wrap: nowrap;
   gap: 2.5rem;
   justify-content: center;
+}
+
+.login-cont {
+  display: grid;
+  grid-template-columns: minmax(25rem, 25rem);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-cont #loginForm {
+  display: flex;
+  flex-direction: column;
+}
+.login-cont #loginForm h1 {
+  padding-bottom: 1.25rem;
+  border-bottom: 0.25rem solid #111111;
+}
+.login-cont #loginForm .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2.5rem 0 3.75rem;
+}
+.login-cont #loginForm .login-form input {
+  max-height: 3rem;
 }/*# sourceMappingURL=ui.styles.css.map */

@@ -34,6 +34,26 @@
         </script>
       </header>
       <main role="main" class="g-main">
+        <!-- toggle switch -->
+        <fieldset>
+          <label>
+            <input role="switch" type="checkbox" />
+            <span>알람</span>
+          </label>
+          <label>
+            <input role="switch" type="checkbox" disabled />
+            <span>알람 (비활성화)</span>
+          </label>
+        </fieldset>
+        <!-- checkbox -->
+        <div class="check-wrap">
+          <input type="checkbox" name="checkbox" id="check1" />
+          <label for="check1">체크박스1</label>
+        </div>
+        <div class="check-wrap">
+          <input type="checkbox" name="checkbox" id="check2" />
+          <label for="check2">체크박스2</label>
+        </div>
         <!-- 페이징 -->
         <div class="pagination">
           <a href="#" class="first"><i class="icon arrow-first"></i></a>
@@ -136,10 +156,14 @@
 
         <!-- input -->
         <div>
-          <label for="" class="essential">라벨</label>
-          <input type="text" id="" name="" placeholder="placeholder" />
-          <label for="" class="essential">라벨</label>
-          <input type="text" id="" name="" disabled />
+          <div class="input-wrap">
+            <label for="" class="essential">라벨</label>
+            <input type="text" id="" name="" placeholder="placeholder" />
+          </div>
+          <div class="input-wrap">
+            <label for="" class="essential">라벨</label>
+            <input type="text" id="" name="" disabled />
+          </div>
 
           <div class="input-search">
             <input

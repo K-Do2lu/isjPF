@@ -532,3 +532,33 @@
     }
   }
 }
+
+//login
+.login-cont {
+  display: grid;
+  grid-template-columns: minmax(25rem, 25rem);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  #loginForm {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      padding-bottom: 1.25rem;
+      border-bottom: 0.25rem solid $c-111;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 2.5rem 0 3.75rem;
+
+      input {
+        max-height: 3rem;
+      }
+    }
+  }
+}
