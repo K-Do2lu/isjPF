@@ -28,6 +28,7 @@
       <button class="btn-modal" data-modal="modal2">모달 2 열기 버튼</button>
       <button class="btn-modal" data-modal="modal3">alert1</button>
       <button class="btn-modal" data-modal="modal4">alert2</button>
+      <button class="btn-modal" data-modal="modal5">alert3</button>
       <div id="lorem-ipsum"></div>
     </div>
 
@@ -36,7 +37,7 @@
       <div class="modal-window">
         <div class="window-top">
           <h1 class="tit">타이틀</h1>
-          <button class="close-area" onclick="modalOff('modal1')">
+          <button class="close-area" onclick="toggleModal('modal1')">
             <i class="icon cross"></i>
           </button>
         </div>
@@ -50,7 +51,7 @@
       <div class="modal-window">
         <div class="window-top">
           <h1 class="tit">타이틀</h1>
-          <button class="close-area" onclick="modalOff('modal2')">
+          <button class="close-area" onclick="toggleModal('modal2')">
             <i class="icon cross"></i>
           </button>
         </div>
@@ -63,14 +64,41 @@
     <div id="modal3" class="modal-overlay alert">
       <div class="modal-window">
         <div class="window-top">
-          <button class="close-area" onclick="modalOff('modal3')">
+          <button class="close-area" onclick="toggleModal('modal3')">
             <i class="icon cross"></i>
           </button>
         </div>
 
         <div class="window-content">
           <p class="alert-txt">전송이 완료되었습니다.</p>
-          <button type="butotn" class="p-btn fill" onclick="modalOff('modal3')">
+          <button
+            type="butotn"
+            class="p-btn fill"
+            onclick="toggleModal('modal3')"
+          >
+            확인
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert:  입력값이 없습니다. 다시 입력해주세요. -->
+    <div id="modal4" class="modal-overlay alert">
+      <div class="modal-window">
+        <div class="window-top">
+          <button class="close-area" onclick="toggleModal('modal4')">
+            <i class="icon cross"></i>
+          </button>
+        </div>
+
+        <div class="window-content">
+          <p class="alert-txt">입력값이 없습니다.</p>
+          <p class="alert-txt">다시 입력해주세요.</p>
+          <button
+            type="butotn"
+            class="p-btn fill"
+            onclick="toggleModal('modal4')"
+          >
             확인
           </button>
         </div>
@@ -78,10 +106,10 @@
     </div>
 
     <!-- alert: 로그아웃 하시겠습니까? -->
-    <div id="modal4" class="modal-overlay alert">
+    <div id="modal5" class="modal-overlay alert">
       <div class="modal-window">
         <div class="window-top">
-          <button class="close-area" onclick="modalOff('modal4')">
+          <button class="close-area" onclick="toggleModal('modal5')">
             <i class="icon cross"></i>
           </button>
         </div>
@@ -89,10 +117,14 @@
         <div class="window-content">
           <p class="alert-txt">로그아웃 하시겠습니까?</p>
           <p class="alert-txt">기존 작성된 자료는 저장되지 않습니다.</p>
-          <button type="butotn" class="p-btn fill" onclick="modalOff('modal4')">
+          <button
+            type="butotn"
+            class="p-btn fill"
+            onclick="toggleModal('modal5')"
+          >
             확인
           </button>
-          <button type="butotn" class="p-btn" onclick="modalOff('modal4')">
+          <button type="butotn" class="p-btn" onclick="toggleModal('modal5')">
             취소
           </button>
         </div>

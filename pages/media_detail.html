@@ -2,7 +2,7 @@
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
-    <title>이순종 포트폴리오 - Media detail</title>
+    <title>이순종 포트폴리오</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -30,7 +30,7 @@
         <!-- side -->
         <div class="side">
           <div class="side-logo">
-            <a href="/assets/index.html">
+            <a href="/index.html">
               <img
                 src="/assets/img/img-logoside.png"
                 alt="design for life side logo"
@@ -78,7 +78,7 @@
         <!-- header -->
         <header class="header">
           <div class="header-inner">
-            <a href="/assets/index.html" class="logo"
+            <a href="/index.html" class="logo"
               ><img src="/assets/img/img-logo.png" alt="logo"
             /></a>
 
@@ -86,7 +86,7 @@
               <nav>
                 <ul class="menu">
                   <li>
-                    <a href="/assets/index.html" class="menu-tit">HOME</a>
+                    <a href="/index.html" class="menu-tit">HOME</a>
                   </li>
 
                   <li>
@@ -193,7 +193,7 @@
           <nav>
             <ul class="menu">
               <li>
-                <a href="/assets/index.html" class="menu-tit">HOME</a>
+                <a href="/index.html" class="menu-tit">HOME</a>
               </li>
 
               <li>
@@ -550,6 +550,29 @@
         </div>
       </div>
       <!-- //alert - 전송 완료되었습니다. -->
+      <!-- alert:  입력값이 없습니다. 다시 입력해주세요. -->
+      <div id="modal4" class="modal-overlay alert">
+        <div class="modal-window">
+          <div class="window-top">
+            <button class="close-area" onclick="toggleModal('modal4')">
+              <i class="icon cross"></i>
+            </button>
+          </div>
+
+          <div class="window-content">
+            <p class="alert-txt">입력값이 없습니다.</p>
+            <p class="alert-txt">다시 입력해주세요.</p>
+            <button
+              type="butotn"
+              class="p-btn fill"
+              onclick="toggleModal('modal4')"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- // alert:  입력값이 없습니다. 다시 입력해주세요. -->
     </div>
   </body>
 </html>
