@@ -2,130 +2,37 @@
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
-    <title>이순종 포트폴리오 - guide re</title>
+    <title>이순종 포트폴리오</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
-    <!-- common css -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/css/ui.styles_test.css"
+      href="../../assets/css/ui.styles.css"
     />
-    <!-- common js -->
-    <script src="/assets/js/ui/ui.common.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="../../assets/js/ui/ui.librarys.js"></script>
+    <script src="../../assets/js/ui/ui.common.js"></script>
   </head>
   <body>
     <div class="wrapper">
-      <main role="main" class="">
-        <div class="gd-cont">
-        <!-- Btn -->
-        <button type="button" class="t-btn"><span>btn</span></button>
-        <button type="button" class="t-btn" disabled><span>btn</span></button>
-
-        <button type="button" class="t-btn inc"><span>btn</span><i class="icon cross"></i></button>
-        <button type="button" class="t-btn inc" disabled><span>btn</span><i class="icon cross"></i></button>
-
-        <button type="button" class="t-btn fill"><span>btn</span></button>
-        <button type="button" class="t-btn fill" disabled><span>btn</span></button>
-
-        <!-- Btn FAB -->
-        <button type="button" class="t-btn-fab top"><i class="icon arrow-top"></i></button>
-        <button type="button" class="t-btn-fab mail"><i class="icon mail"></i></button>
-        </div>
-
-        <div class="gd-cont">
-          <!-- Tag keyword -->
-          <span class="tag keyword color0">국가 ∙ 공공디자인 ∙ 정책</span>
-          <span class="tag keyword color1">조형 ∙ 미학</span>
-          <span class="tag keyword color2">기업디자인정책 ∙ 전략</span>
-          <span class="tag keyword color3">문화 ∙ 아이덴티티</span>
-          <span class="tag keyword color4">미래예측 ∙ 라이프</span>
-          <span class="tag keyword color5">혁신 ∙ Good Design</span>
-          <span class="tag keyword color6">창의 ∙ 융합디자인 ∙ 교육</span>
-          <span class="tag keyword color7">아시아 ∙ 한국디자인</span>
-          <span class="tag keyword color8">미래도시 ∙ 모빌리티</span>
-          <span class="tag keyword color9">지역사회디자인</span>
-          <span class="tag keyword color10">생태 ∙ 지속가능</span>
-          <span class="tag keyword color11">예술 ∙ 디자인 일반</span>
-
-          <!-- Tag year -->
-          <span class="tag year">2024</span>
-          <span class="tag year hold">2024</span>
-        </div>
-
-      <div class="gd-cont">
-        <!-- Chips -->
-        <button type="button" class="t-chip">
-          <span>keyword</span>
-          <i class="icon check"></i>
-        </button>
-        <button type="button" class="t-chip focused">
-          <span>keyword</span>
-          <i class="icon check"></i>
-        </button>
-        <button type="button" class="t-chip focused">
-          <span>keyword</span>
-          <i class="icon cross"></i>
-        </button>
-      </div>
-
-      <div class="gd-cont">
-        <!-- Input -->
-        <div class="t-input">
-          <label for="input" class="essential">라벨</label>
-          <input type="text" id="" name="" placeholder="placeholder" />
-        </div>
-
-        <div class="t-input">
-          <label for="input" class="">라벨</label>
-          <input type="text" id="input" name="" placeholder="placeholder" disabled/>
-        </div>
-
-        <!-- Input search pop -->
-        <div class="t-input-inc">
-          <div class="input-inc">
-            <button type="button" class="t-chip focused">
-              <span>keyword</span>
-              <i class="icon cross"></i>
-            </button>
-            <button type="button" class="t-chip focused">
-              <span>keyword</span>
-              <i class="icon cross"></i>
-            </button>
-
-            <input type="text" id="" name="" placeholder="검색어를 입력해주세요" value="산업 디자인">
-          </div>
-
-          <button type="button"><i class="icon search"></i></button>
-        </div>
-      </div>
-
-      <div class="gd-cont">
-        <!-- pagination -->
-        <div class="pagination">
-          <a href="#" class="first"><i class="icon arrow-first"></i></a>
-          <a href="#" class="prev"><i class="icon prev"></i></a>
-          <div class="pages">
-            <a href="#" class="page active" style="display: inline-block;">1</a>
-            <a href="#" class="page" style="display: inline-block;">2</a>
-            <a href="#" class="page" style="display: inline-block;">3</a>
-            <a href="#" class="page" style="display: inline-block;">4</a>
-            <a href="#" class="page" style="display: inline-block;">5</a>
-          </div>
-          <a href="#" class="next"><i class="icon next"></i></a>
-          <a href="#" class="last"><i class="icon arrow-last"></i></a>
-        </div>
-      </div>
-
-      </main>
+      <header class="header">
+        <script>
+          $(".header").load("../_include/_header.html", function () {
+            gnbSet(this, 0, 0);
+          });
+        </script>
+      </header>
+      <main role="main" class="container">container area</main>
+      <footer class="footer">footer area</footer>
+    </div>
   </body>
 </html>
