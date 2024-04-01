@@ -125,23 +125,23 @@
                       <li>
                         <span class="sub-tit">LECTURES</span>
                         <ul class="sub-menu">
-                          <li>주제 특강</li>
-                          <li>강의</li>
+                          <li><a href="#">주제 특강</a></li>
+                          <li><a href="#">강의</a></li>
                         </ul>
                       </li>
                       <li>
                         <span class="sub-tit">BOOKS</span>
                         <ul class="sub-menu">
-                          <li>Books</li>
-                          <li>Article</li>
+                          <li><a href="#">Books</a></li>
+                          <li><a href="#">Article</a></li>
                         </ul>
                       </li>
                       <li>
                         <span class="sub-tit">PRESS</span>
                         <ul class="sub-menu">
-                          <li>Interview</li>
-                          <li>News</li>
-                          <li>Video</li>
+                          <li><a href="#">Interview</a></li>
+                          <li><a href="#">News</a></li>
+                          <li><a href="#">Video</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -319,7 +319,12 @@
                       <span class="tag color10"
                         >지역 ∙ 사회 ∙ 환경 ∙ 지속가능</span
                       >
-                      <h2 class="tit"><em>2023</em>FLLAB 다용도 음식 트레이</h2>
+                      <h2
+                        class="tit"
+                        onclick="window.location.href='/pages/work_detail.html'"
+                      >
+                        <em>2023</em>FLLAB 다용도 음식 트레이
+                      </h2>
                     </div>
 
                     <div class="detail-mid">
@@ -333,7 +338,11 @@
                     </div>
 
                     <div class="detial-bttm">
-                      <button type="button" class="p-btn has-icon">
+                      <button
+                        type="button"
+                        class="p-btn has-icon"
+                        onclick="window.location.href='/pages/work_detail.html'"
+                      >
                         <span>View</span><i class="icon arrow-right"></i>
                       </button>
                     </div>
@@ -352,7 +361,12 @@
                     <div class="detail-top">
                       <span class="tag color6">혁신 ∙ Good Design</span>
                       <span class="tag color7">문화 ∙ 한국성</span>
-                      <h2 class="tit"><em>2023</em>한국의 혁신 디자인 45선</h2>
+                      <h2
+                        class="tit"
+                        onclick="window.location.href='/pages/work_detail.html'"
+                      >
+                        <em>2023</em>한국의 혁신 디자인 45선
+                      </h2>
                     </div>
 
                     <div class="detail-mid">
@@ -366,7 +380,11 @@
                     </div>
 
                     <div class="detial-bttm">
-                      <button type="button" class="p-btn has-icon">
+                      <button
+                        type="button"
+                        class="p-btn has-icon"
+                        onclick="window.location.href='/pages/work_detail.html'"
+                      >
                         <span>View</span><i class="icon arrow-right"></i>
                       </button>
                     </div>
@@ -442,9 +460,9 @@
                 </div>
                 <div id="inputArea" contenteditable="true"></div>
               </div>
-              <div class="input-icon">
+              <button type="button" class="input-icon">
                 <i class="icon search"></i>
-              </div>
+              </button>
             </div>
 
             <div class="content-search">
@@ -518,6 +536,7 @@
                   id=""
                   name="username"
                   placeholder="성함을 입력해주세요"
+                  required
                 />
               </div>
               <div class="input-wrap">
@@ -527,6 +546,7 @@
                   id=""
                   name="email"
                   placeholder="이메일을 입력해주세요"
+                  required
                 />
               </div>
               <div class="input-wrap">

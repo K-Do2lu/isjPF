@@ -280,6 +280,7 @@
                   padding-top: clamp(0.625rem, 2vw, 0.75rem);
                   font-weight: 700;
                   gap: 0.125rem;
+                  cursor: pointer;
                   em {
                     @include mo360-767() {
                       @include fs-26-34;
@@ -455,6 +456,7 @@
                 &::before {
                   @include icon-bg(icon-w-mail);
                 }
+                cursor: pointer;
               }
               &.link {
                 &::before {

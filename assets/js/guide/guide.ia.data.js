@@ -45,8 +45,8 @@ const ia = [
     cateItems: [
       {
         state: "default", // default, done, hold, issue
-        menu: "home",
-        url: "home.html",
+        menu: "main",
+        url: "index.html",
         type: "",
         memos: ["김도연 : YYYY-MM-DD 예정"],
       },

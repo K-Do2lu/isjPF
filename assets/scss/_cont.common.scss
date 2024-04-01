@@ -361,7 +361,7 @@ h1.hidden {
   &.arrow-right-w {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5858 11L11.293 5.70718L12.7072 4.29297L20.4143 12.0001L12.7072 19.7072L11.293 18.293L16.5859 13H5V11H16.5858Z' fill='white'/%3E%3C/svg%3E%0A");
   }
-  &.check-wrap {
+  &.check {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.5822 7.98648L10.1408 17.4278L4.41797 11.705L5.83218 10.2908L10.1408 14.5994L18.168 6.57227L19.5822 7.98648Z' fill='%23111111'/%3E%3C/svg%3E%0A");
   }
   &.search {
@@ -879,16 +879,16 @@ fieldset {
     position: relative;
     border: max(2px, 0.1em) solid gray;
     border-radius: 1.25em;
-    width: 2.25em;
-    height: 1.25em;
+    width: 4rem;
+    height: 2.25rem;
   }
 
   [type="checkbox"]::before {
     content: "";
     position: absolute;
     left: 0;
-    width: 1em;
-    height: 1em;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     transform: scale(0.8);
     background-color: gray;
@@ -923,10 +923,6 @@ fieldset {
   [type="checkbox"]:focus-visible {
     outline-offset: max(2px, 0.1em);
     outline: max(2px, 0.1em) solid tomato;
-  }
-
-  [type="checkbox"]:enabled:hover {
-    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
   }
 }
 
@@ -1212,7 +1208,7 @@ fieldset {
                 @include fs-14-20;
                 display: inline-block;
                 font-weight: 400;
-                color: $c-f5f5f5;
+                color: $c-999;
                 & + span {
                   padding-left: 0.75rem;
                 }
