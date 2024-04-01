@@ -1409,7 +1409,7 @@ fieldset [type=checkbox]:disabled:before {
 .proj ul li.list .list-detail p {
   flex: 1;
 }
-.proj ul li.list a {
+.proj ul li.list button {
   width: 100%;
   min-width: 1.5rem;
   max-width: 1.75rem;
@@ -1417,14 +1417,14 @@ fieldset [type=checkbox]:disabled:before {
   min-height: 1.5rem;
   max-height: 1.75rem;
 }
-.proj ul li.list a .icon.arrow-right {
+.proj ul li.list button .icon.arrow-right {
   display: inline-block;
   opacity: 0;
 }
 .proj ul li.list:hover {
   cursor: pointer;
 }
-.proj ul li.list:hover a .icon.arrow-right {
+.proj ul li.list:hover button .icon.arrow-right {
   opacity: 1;
 }
 .proj ul li.list:hover .list-detail p {
@@ -1505,6 +1505,7 @@ fieldset [type=checkbox]:disabled:before {
   font-size: 1.125rem;
   line-height: 1.75rem;
   max-height: 32.5rem;
+  padding-bottom: 1rem;
   overflow-y: auto;
   font-weight: 400;
   border-bottom: 1px solid #dedede;
@@ -1517,6 +1518,8 @@ fieldset [type=checkbox]:disabled:before {
   }
 }
 .detail-wrap .detail-mid .mid-inner .detail-txt .txt .about:last-child {
+  padding-top: 1rem;
+  padding-bottom: 0;
   border-bottom: none;
 }
 .detail-wrap .detail-mid .mid-inner .detail-txt .txt .about br {
@@ -1648,6 +1651,10 @@ fieldset [type=checkbox]:disabled:before {
 }
 .detail-wrap .detail-mid.media .info {
   margin-top: clamp(1.5rem, 2vw, 2.5rem);
+}
+.detail-wrap .detail-mid.media .mid-inner .detail-txt .txt .about {
+  padding: 0;
+  margin: 0;
 }
 .detail-wrap .detail-bttm {
   padding-top: clamp(2.5rem, 2vw, 3rem);

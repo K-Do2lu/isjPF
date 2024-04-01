@@ -1072,7 +1072,7 @@ fieldset {
         }
       }
 
-      a {
+      button {
         width: 100%;
         min-width: 1.5rem;
         max-width: 1.75rem;
@@ -1086,7 +1086,7 @@ fieldset {
       }
       &:hover {
         cursor: pointer;
-        a {
+        button {
           .icon.arrow-right {
             opacity: 1;
           }
@@ -1171,10 +1171,13 @@ fieldset {
             }
             @include fs-18-28;
             max-height: 32.5rem;
+            padding-bottom: 1rem;
             overflow-y: auto;
             font-weight: 400;
             border-bottom: 1px solid $c-dedede;
             &:last-child {
+              padding-top: 1rem;
+              padding-bottom: 0;
               border-bottom: none;
             }
             br {
@@ -1304,6 +1307,16 @@ fieldset {
       }
       .info {
         margin-top: clamp(1.5rem, 2vw, 2.5rem);
+      }
+      .mid-inner {
+        .detail-txt {
+          .txt {
+            .about {
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
       }
     }
   }
