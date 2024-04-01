@@ -1968,6 +1968,9 @@ fieldset [type=checkbox]:disabled:before {
   padding: 0.625rem 0;
   background: #f5f5f5;
 }
+.main header .gnb-wrap nav ul.menu > li ul.menu-sub > li .sub-menu > li:hover {
+  font-weight: 600;
+}
 .main header .gnb-wrap nav ul.menu > li ul.menu-sub > li.active .sub-tit::after {
   background: url("/assets/img/icon-active.png");
   background-size: cover;
