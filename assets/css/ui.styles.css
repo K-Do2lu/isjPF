@@ -2037,8 +2037,7 @@ fieldset [type=checkbox]:disabled:before {
   }
 }
 .main .main-cont .cont .cont-list .list-wrap {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 .main .main-cont .cont .cont-list .list-wrap .list {
   display: flex;

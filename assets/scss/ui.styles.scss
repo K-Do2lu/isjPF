@@ -229,8 +229,7 @@
         grid-template-rows: minmax(25rem, auto);
         align-items: center;
         .list-wrap {
-          display: flex;
-          flex-direction: column;
+          display: block;
           .list {
             @include mo360-767() {
               flex-wrap: wrap;
