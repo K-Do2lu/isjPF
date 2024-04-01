@@ -1742,6 +1742,7 @@ fieldset [type=checkbox]:disabled:before {
   max-height: 3.9375rem;
   opacity: 50%;
   overflow: hidden;
+  cursor: pointer;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .slide-cont.thumb .slide-wrap .slide {
@@ -2079,7 +2080,7 @@ fieldset [type=checkbox]:disabled:before {
   display: flex;
   padding-top: clamp(0.625rem, 2vw, 0.75rem);
   font-weight: 700;
-  gap: 0.125rem;
+  gap: 0.5rem;
   cursor: pointer;
 }
 @media (min-width: 360px) and (max-width: 767px) {
@@ -2088,6 +2089,9 @@ fieldset [type=checkbox]:disabled:before {
     line-height: 2.125rem;
     flex-wrap: wrap;
   }
+}
+.main .main-cont .cont .cont-list .list-wrap .list .list-detail .detail-top h2.tit em {
+  font-weight: 500;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .main .main-cont .cont .cont-list .list-wrap .list .list-detail .detail-top h2.tit em {

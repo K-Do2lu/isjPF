@@ -180,15 +180,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 모바일 터치 이벤트
   let startX, endX;
-
   slideWrap.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX; // 터치 시작 좌표 저장
   });
-
   slideWrap.addEventListener("touchmove", (e) => {
     endX = e.touches[0].clientX; // 터치 움직임 좌표 저장
   });
-
   slideWrap.addEventListener("touchend", (e) => {
     const diff = endX - startX; // 터치 시작과 종료 좌표의 차이
     if (diff > 0) {
@@ -207,10 +204,17 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSlide(); // 슬라이드 업데이트
   });
 
+  // 썸네일 클릭 이벤트 추가
+  Array.from(thumbSlides).forEach((slide, index) => {
+    slide.addEventListener("click", () => {
+      currentIndex = index;
+      updateSlide();
+    });
+  });
+
   function updateSlide() {
     const translateX = -100 * currentIndex + "%"; // 슬라이드 이동 거리 계산
     slideWrap.style.transform = `translateX(${translateX})`; // 슬라이드 이동
-
     // 썸네일 슬라이드 active 클래스 업데이트
     Array.from(thumbSlides).forEach((slide, index) => {
       if (index === currentIndex) {

@@ -1418,6 +1418,7 @@ fieldset {
         max-height: 3.9375rem;
         opacity: 50%;
         overflow: hidden;
+        cursor: pointer;
         > img {
           @include img-cover;
         }
