@@ -131,7 +131,6 @@ function scrollToTop() {
       @pagination 페이징 갯 수
   --------------------------------------------------------------*/
 // 페이지네이션 갯수를 조절하는 JavaScript 코드
-// 페이지네이션 갯수를 조절하는 JavaScript 코드
 function updatePagination() {
   var pages = document.querySelectorAll(".pages .page");
   var displayCount = window.innerWidth <= 767 ? 3 : pages.length;

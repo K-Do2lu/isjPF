@@ -1497,20 +1497,23 @@ fieldset [type=checkbox]:disabled:before {
   align-items: flex-end;
 }
 .detail-wrap .detail-mid .mid-inner .detail-txt .txt {
+  margin-bottom: 1.25rem;
   flex: 1;
   color: #111;
 }
 .detail-wrap .detail-mid .mid-inner .detail-txt .txt .about {
   font-size: 1.125rem;
   line-height: 1.75rem;
+  max-height: 32.5rem;
+  overflow-y: auto;
   font-weight: 400;
-  padding: 1rem 0;
   border-bottom: 1px solid #dedede;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .detail-wrap .detail-mid .mid-inner .detail-txt .txt .about {
     font-size: 1rem;
     line-height: 1.5rem;
+    max-height: 100%;
   }
 }
 .detail-wrap .detail-mid .mid-inner .detail-txt .txt .about:last-child {
