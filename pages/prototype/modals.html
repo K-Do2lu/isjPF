@@ -29,7 +29,9 @@
       <button class="btn-modal" data-modal="modal3">alert1</button>
       <button class="btn-modal" data-modal="modal4">alert2</button>
       <button class="btn-modal" data-modal="modal5">alert3</button>
-      <div id="lorem-ipsum"></div>
+      <button type="button" class="p-btn fill btn-modal" data-modal="fail">
+        <span>Login</span>
+      </button>
     </div>
 
     <!-- 모달 1 -->
@@ -76,7 +78,7 @@
             class="p-btn fill"
             onclick="toggleModal('modal3')"
           >
-            확인
+            <span>확인</span>
           </button>
         </div>
       </div>
@@ -99,7 +101,7 @@
             class="p-btn fill"
             onclick="toggleModal('modal4')"
           >
-            확인
+            <span>확인</span>
           </button>
         </div>
       </div>
@@ -122,10 +124,33 @@
             class="p-btn fill"
             onclick="toggleModal('modal5')"
           >
-            확인
+            <span>확인</span>
           </button>
           <button type="butotn" class="p-btn" onclick="toggleModal('modal5')">
-            취소
+            <span>취소</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert:  로그인에 실패하였습니다. 다시 입력해주세요. -->
+    <div id="fail" class="modal-overlay alert">
+      <div class="modal-window">
+        <div class="window-top">
+          <button class="close-area" onclick="toggleModal('fail')">
+            <i class="icon cross"></i>
+          </button>
+        </div>
+
+        <div class="window-content">
+          <p class="alert-txt">입력값이 없습니다.</p>
+          <p class="alert-txt">다시 입력해주세요.</p>
+          <button
+            type="butotn"
+            class="p-btn fill"
+            onclick="toggleModal('fail')"
+          >
+            <span>확인</span>
           </button>
         </div>
       </div>
