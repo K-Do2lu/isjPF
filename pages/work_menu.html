@@ -19,7 +19,7 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
     <!-- Swiper.js 라이브러리 포함 -->
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
   </head>
@@ -39,32 +39,50 @@
           </div>
           <div class="side-cont">
             <div class="gnb-wrap side-toggle">
-              <div class="include-tags">
-                <h2 class="route">
-                  <span class="route-menu">MEDIA</span><i class="icon slash"></i
-                  ><span class="route-menu sub">LECTURES</span>
-                </h2>
+              <nav>
+                <ul class="menu">
+                  <li>
+                    <a href="" class="menu-tit">WORK</a>
 
-                <div class="work-tit">
-                  <em>2022</em>
-                  <p>한국의 혁신 디자인 45선</p>
-                </div>
+                    <ul class="menu-sub">
+                      <li class="active">
+                        <span class="sub-tit">ART&amp;DESIGN</span>
+                        <ul class="sub-menu">
+                          <li class="focus">
+                            <a href="/pages/work_menu.html"
+                              >제품 ∙ 시스템 디자인</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#">환경 ∙ 공공 디자인</a>
+                          </li>
+                          <li>
+                            <a href="#">대학 디자인</a>
+                          </li>
+                        </ul>
+                      </li>
 
-                <div class="tag-wrap">
-                  <div>
-                    <span class="tag color0">국가 ∙ 공공디자인 ∙ 정책</span>
-                  </div>
-                  <div>
-                    <span class="tag color3">문화 ∙ 아이덴티티</span>
-                  </div>
-                  <div>
-                    <span class="tag color2">생태 ∙ 지속가능</span>
-                  </div>
-                  <div>
-                    <span class="tag color1">기업디자인정책 ∙ 전략</span>
-                  </div>
-                </div>
-              </div>
+                      <li>
+                        <span class="sub-tit">RESEARCH</span>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="#">국가디자인 ∙ 교육정책</a>
+                          </li>
+                          <li>
+                            <a href="#">미래 라이프스타일 ∙ 디자인전략</a>
+                          </li>
+                          <li>
+                            <a href="#">미래도시 ∙ 모빌리티 ∙ 모바일 디자인</a>
+                          </li>
+                          <li>
+                            <a href="#">정체성 ∙ 혁신 ∙ 한국디자인</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
           <button
@@ -93,7 +111,7 @@
                     <a href="/pages/about.html" class="menu-tit">ABOUT</a>
                   </li>
 
-                  <li>
+                  <li class="clicked">
                     <a href="/pages/work.html" class="menu-tit">WORK</a>
 
                     <ul class="menu-sub">
@@ -140,7 +158,7 @@
                       <li>
                         <span class="sub-tit">EXHIBITION</span>
                         <ul class="sub-menu">
-                          <li><a href="/pages/event_menu.html">개인전</a></li>
+                          <li><a href="#">개인전</a></li>
                           <li>
                             <a href="#">참여전시</a>
                           </li>
@@ -157,7 +175,7 @@
                     </ul>
                   </li>
 
-                  <li class="clicked">
+                  <li>
                     <a href="/pages/media.html" class="menu-tit">MEDIA</a>
 
                     <ul class="menu-sub">
@@ -165,7 +183,7 @@
                         <span class="sub-tit">LECTURES</span>
                         <ul class="sub-menu">
                           <li>
-                            <a href="/pages/media_menu.html">주제 특강</a>
+                            <a href="#">주제 특강</a>
                           </li>
                           <li><a href="#">강의</a></li>
                         </ul>
@@ -314,84 +332,247 @@
         <div class="main-cont">
           <!-- cont -->
           <div class="cont">
-            <!-- work deatil cont -->
-            <div class="detail-wrap">
-              <div class="detail-top">
-                <button type="button" class="p-btn-list prev" disabled>
-                  <i class="icon arrow-right"></i>
+            <!-- keyword -->
+            <div class="chips-wrap">
+              <h2 class="tit">Art&Design.</h2>
+              <div class="chips">
+                <button type="button" class="p-btn-chips active">
+                  <span>국가 ∙ 공공디자인 ∙ 정책</span
+                  ><i class="icon check"></i>
                 </button>
-                <h3 class="top-tit">한국의 혁신 디자인 45선</h3>
-                <button type="button" class="p-btn-list next">
-                  <i class="icon arrow-right"></i>
+                <button type="button" class="p-btn-chips">
+                  <span>조형 ∙ 미학</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>기업디자인정책 ∙ 전략</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>문화 ∙ 아이덴티티</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>미래예측 ∙ 라이프</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>혁신 ∙ Good Design</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>창의 ∙ 융합디자인사고 ∙ 교육</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>아시아 ∙ 한국디자인</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>미래도시 ∙ 모빌리티</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>지역사회디자인</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>생태 ∙ 지속가능</span>
+                </button>
+                <button type="button" class="p-btn-chips">
+                  <span>예술 ∙ 디자인일반</span>
                 </button>
               </div>
-
-              <div class="detail-mid media">
-                <div class="mid-inner">
-                  <!-- 이미지 영역: 이미지 없을 시 display none-->
-                  <div class="detail-img">
-                    <img src="/assets/img/img-work-02.jpg" alt="design img" />
+            </div>
+            <!-- 컨텐츠 본문 -->
+            <div class="proj">
+              <ul>
+                <li
+                  class="list fix"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
                   </div>
-                  <!-- // 이미지 영역: 이미지 없을 시 display none -->
 
-                  <div class="detail-txt">
-                    <div class="txt">
-                      <p class="about">
-                        한국의 디자인은 수출 한국의 기치 아래 익명성에 의존하여
-                        제조업을 지원하는데 집중하던 1970년대의 초기 디자인의
-                        소극적인 역할에서 벗어나 21세기 제품의 총체적인 가치를
-                        혁신하는 중심역할을 맡고 있다. 필자는 『한국의
-                        디자인혁신 45선』 저술 (이순 종 외 6인)을 통하여
-                        디자이너인 동시에 혁신가(Innovator)로서 한국인의
-                        창조성과 문화적 특성을 융합하며 세계를 놀란 한국
-                        디자인의 발전과 우수성, 그리고 디자인 혁신의 차별적인
-                        개념과 특징들을 아우르는, 한국 디자인의 원형과 DNA를
-                        규명하여 각계각층과 공유하려 하였다.
-                        <br />
-                        디자인의 선정 영역은 광의적인 디자인 개념을 바탕으로
-                        제품·그래픽·공예를 비롯해 건축·공간·환경·패션·서비스 등
-                        삶의 영역 전반에 걸친 혁신과 문제 해결을 포괄했다.
-                        기준은 기능과 기술, 콘텐츠와 서비스, 사용과 조형의
-                        측면에서 새로운 혁신성, 지역의 문화와 라이프스타일을
-                        반영하는 한국성, 시대적으로 1988 서울올림픽 이후 현대
-                        디자인 가치의 흐름을 창조하는 현대성, 그리고 디자인과
-                        시장 등에 미치는 파급력과 관련한 세계성을 고려하였다.
-                        <br />
-                        선정된 결과물 등 대표작 일부는 ‘2017 광주디자인비엔날레’
-                        특별전에서 선보이며 전문가와 시민에게 검증받기도 했다.
-                        본 연구는 2018년 이후 좀 더 현대적인 디자인을 보완하며
-                        최종적으로 45가지 디자인을 선정했다. 더불어 45개 대상에
-                        내재한 공통적인 디자인 혁신의 뿌리, 즉 원형이 무엇인지
-                        찾기 위한 연구원들의 장기간 숙의 끝에 우리, 상보,
-                        신조형, 속도, 배려, 온고지신 등 6가지 한국 디자인 혁신의
-                        원형을 발굴하는 성과를 거두었다.
-                      </p>
-                    </div>
-
-                    <div>
-                      <a class="p-btn has-icon" href="" download="">
-                        <span>PDF</span><i class="icon download"></i
-                      ></a>
-                      <a class="p-btn has-icon" href="">
-                        <span>Link</span><i class="icon link"></i
-                      ></a>
-                    </div>
-
-                    <div class="info">
-                      <p>
-                        이순종, 김종균, 김현수, 박인석, 이덕찬, 전종현, 정성모
-                        <em>홍디자인</em>
-                      </p>
-                    </div>
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
                   </div>
-                </div>
-              </div>
 
-              <div class="detail-bttm">
-                <button type="button" class="p-btn fill">
-                  <span><a href="/pages/media.html">목록보기</a></span>
-                </button>
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list fix"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/work_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- paging -->
+            <div class="pagination">
+              <a href="#" class="first"><i class="icon arrow-first"></i></a>
+              <a href="#" class="prev"><i class="icon prev"></i></a>
+              <div class="pages">
+                <a href="#" class="page active">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+                <a href="#" class="page">4</a>
+                <a href="#" class="page">5</a>
               </div>
+              <a href="#" class="next"><i class="icon next"></i></a>
+              <a href="#" class="last"><i class="icon arrow-last"></i></a>
             </div>
           </div>
         </div>
