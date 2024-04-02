@@ -12,7 +12,7 @@
 /*--------------------------------------------------------------
     @modal
 --------------------------------------------------------------*/
-function toggleModal(modalId) {
+const toggleModal = (modalId) => {
   const modal = document.getElementById(modalId);
   if (modal.style.display === "flex") {
     modal.style.display = "none";
@@ -21,29 +21,32 @@ function toggleModal(modalId) {
     modal.style.display = "flex";
     addEventListeners(modal); // 모달이 열릴 때 이벤트 리스너 추가
   }
-}
+};
 
-function addEventListeners(modal) {
+const addEventListeners = (modal) => {
   const inputArea = modal.querySelector("#inputArea");
   inputArea.addEventListener("keydown", handleKeyDown);
-}
+};
 
-function removeEventListeners(modal) {
+const removeEventListeners = (modal) => {
   const inputArea = modal.querySelector("#inputArea");
   inputArea.removeEventListener("keydown", handleKeyDown);
-}
+};
 
-function handleKeyDown(event) {
+const handleKeyDown = (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
+    // 상대 경로로 이동
+    const relativePath = "/pages/search_result.html"; // 이동할 상대 경로를 지정
+    window.location.href = relativePath; // 상대 경로로 이동
   }
-}
+};
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const modalButtons = document.querySelectorAll(".btn-modal");
 
-  modalButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
+  modalButtons.forEach((button) => {
+    button.addEventListener("click", () => {
       const modalId = button.dataset.modal;
       toggleModal(modalId);
     });
@@ -51,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const modals = document.querySelectorAll(".modal-overlay");
 
-  modals.forEach(function (modal) {
-    modal.addEventListener("click", function (event) {
+  modals.forEach((modal) => {
+    modal.addEventListener("click", (event) => {
       if (event.target.classList.contains("modal-overlay")) {
         const modalId = modal.id;
         toggleModal(modalId);
@@ -60,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  window.addEventListener("keyup", function (event) {
+  window.addEventListener("keyup", (event) => {
     if (event.key === "Escape") {
-      modals.forEach(function (modal) {
+      modals.forEach((modal) => {
         modal.style.display = "none";
       });
     }
