@@ -450,7 +450,7 @@ input::-webkit-calendar-picker-indicator {
 .gnb-wrap.mo nav ul.menu > li .menu-tit {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-family: Wanted Sans;
+  font-family: "Wanted Sans", sans-serif;
   font-weight: 700;
   display: inline-block;
   width: 100%;
@@ -541,7 +541,7 @@ input::-webkit-calendar-picker-indicator {
 .gnb-wrap.side-toggle nav ul.menu > li .menu-tit {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-family: Wanted Sans;
+  font-family: "Wanted Sans", sans-serif;
   font-weight: 700;
   display: inline-block;
   width: 100%;
@@ -797,6 +797,7 @@ h1.hidden {
 }
 .p-btn span {
   display: inline-block;
+  font-family: "Wanted Sans", sans-serif;
   line-height: clamp(1.25rem, 2vw, 1.5rem);
 }
 .p-btn:hover {
@@ -1924,7 +1925,7 @@ fieldset [type=checkbox]:disabled:before {
 .main header .gnb-wrap nav ul.menu > li .menu-tit {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-family: Wanted Sans;
+  font-family: "Wanted Sans", sans-serif;
   font-weight: 700;
   color: #cccccc;
 }

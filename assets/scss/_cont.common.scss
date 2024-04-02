@@ -113,7 +113,7 @@
 /*-----------------------------------------------------------------*/
 @mixin gnb_wrap_menu_tit {
   @include fs-18-28;
-  font-family: Wanted Sans;
+  font-family: "Wanted Sans", sans-serif;
   font-weight: 700;
 }
 
@@ -500,6 +500,7 @@ $p-14-0: 0.875rem;
   color: #111;
   span {
     display: inline-block;
+    font-family: "Wanted Sans", sans-serif;
     line-height: clamp(1.25rem, 2vw, 1.5rem);
   }
   &:hover {
