@@ -116,6 +116,96 @@
   font-family: "Wanted Sans", sans-serif;
   font-weight: 700;
 }
+// test
+.gnb-wrap.manager {
+  ul.menu {
+    > li {
+      @include fs-24-32;
+      font-weight: 700;
+      padding: 0.625rem 0;
+      color: $c-ccc;
+      .menu-tit {
+        @include gnb_wrap_menu_tit;
+        display: inline-block;
+        width: 100%;
+      }
+      &.active {
+        color: $c-primary !important;
+        .menu-tit {
+          text-decoration: underline;
+          text-underline-position: under;
+        }
+        ul.menu-sub {
+          display: block;
+        }
+      }
+      ul.menu-sub {
+        display: none;
+        background: $c-fff;
+
+        > li {
+          a {
+            display: inline-block;
+            width: 100%;
+          }
+          &.active {
+            .sub-tit {
+              &::after {
+                @include icon-bg(icon-active);
+              }
+            }
+            .sub-menu {
+              padding: 0.375rem 0;
+              max-height: 12.5rem;
+            }
+          }
+
+          .sub-tit {
+            @include fs-16-24;
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding: 0.625rem 0;
+            font-weight: 700;
+            color: #333;
+            cursor: pointer;
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              width: 1.5rem;
+              height: 1.5rem;
+              @include icon-bg(icon-passive);
+            }
+          }
+          .sub-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: padding 200ms ease-in, max-height 200ms ease-in;
+            background: #f5f5f5;
+            > li {
+              @include fs-14-20;
+              font-weight: 400;
+              color: #333;
+              padding: 0.625rem 1rem;
+              background: #f5f5f5;
+
+              &:hover {
+                font-weight: 600;
+                a {
+                  display: inline;
+                  text-decoration: underline;
+                  text-underline-position: under;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// test
 
 .gnb-wrap.mo {
   display: none;
@@ -245,6 +335,7 @@
           text-underline-position: under;
           color: $c-primary;
         }
+
         ul.menu-sub {
           display: block;
           background: $c-fff;
@@ -460,6 +551,9 @@ h1.hidden {
   }
   &.slash {
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0.816406H6L2 8.81641H0L4 0.816406Z' fill='%23DEDEDE'/%3E%3Cpath d='M10 0.816406H12L8 8.81641H6L10 0.816406Z' fill='%23DEDEDE'/%3E%3C/svg%3E%0A");
+  }
+  &.slashone {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0H6L2 8H0L4 0Z' fill='%23DEDEDE'/%3E%3C/svg%3E%0A");
   }
   &.down {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.0001 14.0485L6.70718 8.75563L5.29297 10.1698L12.0001 16.877L18.7072 10.1698L17.293 8.75563L12.0001 14.0485Z' fill='%23333333'/%3E%3C/svg%3E%0A");

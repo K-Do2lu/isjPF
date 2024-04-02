@@ -418,6 +418,90 @@ input::-webkit-calendar-picker-indicator {
 /*-------------------------------------------------------------------
     @토글 메뉴 mo / side
 /*-----------------------------------------------------------------*/
+.gnb-wrap.manager ul.menu > li {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding: 0.625rem 0;
+  color: #cccccc;
+}
+.gnb-wrap.manager ul.menu > li .menu-tit {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: "Wanted Sans", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  width: 100%;
+}
+.gnb-wrap.manager ul.menu > li.active {
+  color: #111 !important;
+}
+.gnb-wrap.manager ul.menu > li.active .menu-tit {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.gnb-wrap.manager ul.menu > li.active ul.menu-sub {
+  display: block;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub {
+  display: none;
+  background: #ffffff;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li a {
+  display: inline-block;
+  width: 100%;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li.active .sub-tit::after {
+  background: url("/assets/img/icon-active.png");
+  background-size: cover;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li.active .sub-menu {
+  padding: 0.375rem 0;
+  max-height: 12.5rem;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li .sub-tit {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding: 0.625rem 0;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li .sub-tit::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("/assets/img/icon-passive.png");
+  background-size: cover;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li .sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: padding 200ms ease-in, max-height 200ms ease-in;
+  background: #f5f5f5;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li .sub-menu > li {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #333;
+  padding: 0.625rem 1rem;
+  background: #f5f5f5;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li .sub-menu > li:hover {
+  font-weight: 600;
+}
+.gnb-wrap.manager ul.menu > li ul.menu-sub > li .sub-menu > li:hover a {
+  display: inline;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 .gnb-wrap.mo {
   display: none;
   position: fixed;
@@ -761,6 +845,9 @@ h1.hidden {
 }
 .icon.slash {
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0.816406H6L2 8.81641H0L4 0.816406Z' fill='%23DEDEDE'/%3E%3Cpath d='M10 0.816406H12L8 8.81641H6L10 0.816406Z' fill='%23DEDEDE'/%3E%3C/svg%3E%0A");
+}
+.icon.slashone {
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='8' viewBox='0 0 6 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 0H6L2 8H0L4 0Z' fill='%23DEDEDE'/%3E%3C/svg%3E%0A");
 }
 .icon.down {
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.0001 14.0485L6.70718 8.75563L5.29297 10.1698L12.0001 16.877L18.7072 10.1698L17.293 8.75563L12.0001 14.0485Z' fill='%23333333'/%3E%3C/svg%3E%0A");
@@ -1882,6 +1969,24 @@ fieldset [type=checkbox]:disabled:before {
     justify-content: space-between;
   }
 }
+.main header .header-inner .logout-area {
+  display: grid;
+  grid-template-columns: auto minmax(1.5rem, 1.5rem);
+  align-items: center;
+  gap: 0.125rem;
+}
+.main header .header-inner .logout-area .logout-txt {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Wanted Sans";
+  font-weight: 700;
+  color: #111111;
+}
+.main header .header-inner .logout-area .icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .main header .logo {
   display: none;
   max-width: 7.5rem;
@@ -2201,6 +2306,22 @@ fieldset [type=checkbox]:disabled:before {
   width: 100%;
   height: 100%;
   background-position: center;
+}
+.main .main-cont .cont .manager-tit-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.main .main-cont .cont .manager-tit-wrap .tit {
+  font-size: 2.625rem;
+  line-height: 3.125rem;
+  font-family: "Wanted Sans";
+  font-weight: 400;
+}
+.main .main-cont .cont .manager-tit-wrap .manager-route {
+  max-height: 1.25rem;
+  align-self: flex-end;
+  margin-bottom: 0.625rem;
 }
 .main .cont-about {
   max-width: 44.25rem;

@@ -1,4 +1,5 @@
 const url_base = "../../pages/";
+const url_index = "../..";
 const ia = [
   {
     cateTitle: "Prototype",
@@ -229,8 +230,8 @@ for (let i = 0; i < ia.length; i++) {
       '" target="_blank">' +
       ia[i].cateItems[j].menu +
       "</a>" +
-      "			</td>" +
-      '			<td class="g-ia-type">' +
+      "</td>" +
+      '<td class="g-ia-type">' +
       "				<p>" +
       ia[i].cateItems[j].type +
       "</p>" +
@@ -257,5 +258,6 @@ for (let i = 0; i < ia.length; i++) {
     }
     ia_html = ia_html + "" + "			</td>" + "		</tr>";
   }
+
   ia_html = ia_html + "" + "		<!-- //Sample -->" + "	</table>" + "</div>";
 }
