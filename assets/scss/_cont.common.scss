@@ -812,6 +812,7 @@ $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
     border-bottom: 1px solid $c-bbb;
     color: $c-primary;
     outline: none;
+    border-radius: 0;
     &::placeholder {
       color: $c-999;
     }
@@ -1144,7 +1145,7 @@ fieldset {
     border-bottom: 1px solid $c-primary;
     font-weight: 700;
     gap: 1.5rem;
-    h2.top-tit {
+    .top-tit {
       text-align: center;
       word-break: keep-all;
     }

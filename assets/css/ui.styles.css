@@ -1141,6 +1141,7 @@ h1.hidden {
   border-bottom: 1px solid #bbbbbb;
   color: #111;
   outline: none;
+  border-radius: 0;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .input-wrap input {
@@ -1477,7 +1478,7 @@ fieldset [type=checkbox]:disabled:before {
     line-height: 2.125rem;
   }
 }
-.detail-wrap .detail-top h2.top-tit {
+.detail-wrap .detail-top .top-tit {
   text-align: center;
   word-break: keep-all;
 }
