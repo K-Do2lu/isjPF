@@ -296,20 +296,21 @@
               <div class="input-search">
                 <div id="inputField">
                   <div class="chip-container">
-                    <!-- <button
+                    <button
                       type="button"
                       class="p-btn-chips active"
                       contenteditable="false"
                     >
                       <span>국가 ∙ 공공디자인 ∙ 정책</span
                       ><i class="icon cross"></i>
-                    </button> -->
+                    </button>
                   </div>
-                  <div id="inputArea" contenteditable="true"></div>
+                  <input type="text" id="inputArea" />
+                  <!-- <div id="inputArea" contenteditable="true"></div> -->
                 </div>
-                <div class="input-icon">
+                <button type="button" class="input-icon">
                   <i class="icon search"></i>
-                </div>
+                </button>
               </div>
               <p class="searct-noti">
                 <span>‘가나다’</span> 에 대한 검색결과는
@@ -318,7 +319,7 @@
             </div>
             <!-- keyword -->
             <div class="chips-wrap">
-              <h2 class="tit">Keyword.</h2>
+              <h2 class="tit">Search.</h2>
               <div class="chips">
                 <button type="button" class="p-btn-chips active">
                   <span>국가 ∙ 도시 디자인</span><i class="icon check"></i>
@@ -599,6 +600,7 @@
                   id=""
                   name="username"
                   placeholder="성함을 입력해주세요"
+                  required
                 />
               </div>
               <div class="input-wrap">
@@ -608,6 +610,7 @@
                   id=""
                   name="email"
                   placeholder="이메일을 입력해주세요"
+                  required
                 />
               </div>
               <div class="input-wrap">
@@ -616,8 +619,8 @@
                   type="text"
                   id=""
                   name=""
-                  placeholder=""
-                  value="인터뷰 문의 드립니다."
+                  placeholder="제목을 입력해주세요."
+                  value=""
                 />
               </div>
               <div class="input-wrap">
@@ -635,7 +638,7 @@
                 class="p-btn fill btn-modal"
                 data-modal="alert1"
               >
-                Send
+                <span>Send</span>
               </button>
             </form>
           </div>
@@ -689,6 +692,15 @@
       <!-- // alert:  입력값이 없습니다. 다시 입력해주세요. -->
     </div>
 
-    <script></script>
+    <script>
+      // const inputArea = document.getElementById("inputArea");
+
+      // inputArea.addEventListener("keydown", function (event) {
+      //   if (event.keyCode === 13) {
+      //     // 엔터 키 코드는 13
+      //     event.preventDefault(); // 기본 동작(새로운 줄 추가)을 막기
+      //   }
+      // });
+    </script>
   </body>
 </html>

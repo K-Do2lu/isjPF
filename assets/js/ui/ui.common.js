@@ -8,6 +8,7 @@
     @Content    : 컨텐츠
     @Init       : 초기실행
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
     @modal
 --------------------------------------------------------------*/
@@ -15,8 +16,26 @@ function toggleModal(modalId) {
   const modal = document.getElementById(modalId);
   if (modal.style.display === "flex") {
     modal.style.display = "none";
+    removeEventListeners(modal); // 모달이 닫힐 때 이벤트 리스너 제거
   } else {
     modal.style.display = "flex";
+    addEventListeners(modal); // 모달이 열릴 때 이벤트 리스너 추가
+  }
+}
+
+function addEventListeners(modal) {
+  const inputArea = modal.querySelector("#inputArea");
+  inputArea.addEventListener("keydown", handleKeyDown);
+}
+
+function removeEventListeners(modal) {
+  const inputArea = modal.querySelector("#inputArea");
+  inputArea.removeEventListener("keydown", handleKeyDown);
+}
+
+function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
   }
 }
 
@@ -224,3 +243,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+/*--------------------------------------------------------------
+    @search input enter 막기
+--------------------------------------------------------------*/
+// const inputArea = document.getElementById("inputArea");
+
+// inputArea.addEventListener("keydown", function (event) {
+//   if (event.keyCode === 13) {
+//     // 엔터 키 코드는 13
+//     event.preventDefault(); // 기본 동작(새로운 줄 추가)을 막기
+//   }
+// });
