@@ -515,6 +515,14 @@ input::-webkit-calendar-picker-indicator {
   padding: 0.625rem 1rem;
   background: #f5f5f5;
 }
+.gnb-wrap.mo nav ul.menu > li ul.menu-sub > li .sub-menu > li:hover {
+  font-weight: 600;
+}
+.gnb-wrap.mo nav ul.menu > li ul.menu-sub > li .sub-menu > li:hover a {
+  display: inline;
+  text-decoration: underline;
+  text-underline-position: under;
+}
 
 .gnb-wrap.side-toggle {
   width: 100%;
@@ -594,8 +602,18 @@ input::-webkit-calendar-picker-indicator {
 .gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li .sub-menu > li:hover {
   font-weight: 600;
 }
+.gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li .sub-menu > li:hover a {
+  display: inline;
+  text-decoration: underline;
+  text-underline-position: under;
+}
 .gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li .sub-menu > li.focus {
   font-weight: 600;
+}
+.gnb-wrap.side-toggle nav ul.menu > li ul.menu-sub > li .sub-menu > li.focus a {
+  display: inline;
+  text-decoration: underline;
+  text-underline-position: under;
 }
 .gnb-wrap.side-toggle .include-tags .route {
   display: flex;
@@ -1976,6 +1994,10 @@ fieldset [type=checkbox]:disabled:before {
 }
 .main header .gnb-wrap nav ul.menu > li ul.menu-sub > li .sub-menu > li:hover {
   font-weight: 600;
+}
+.main header .gnb-wrap nav ul.menu > li ul.menu-sub > li .sub-menu > li:hover a {
+  text-decoration: underline;
+  text-decoration-color: #666666;
 }
 .main header .gnb-wrap nav ul.menu > li ul.menu-sub > li.active .sub-tit::after {
   background: url("/assets/img/icon-active.png");
