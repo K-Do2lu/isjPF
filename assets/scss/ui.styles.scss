@@ -63,6 +63,10 @@
         display: block;
       }
       display: none;
+      max-width: 7.5rem;
+      > img {
+        @include bg-cover;
+      }
     }
 
     .gnb-wrap {
