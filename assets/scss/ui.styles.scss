@@ -319,25 +319,28 @@
             }
           }
         }
-        .list-nodata {
-          @include mo360-767() {
-            @include fs-16-24;
-            grid-template-rows: 3.75rem auto;
-          }
-          @include fs-18-28;
-          display: grid;
-          grid-template-columns: minmax(3.75rem, auto);
-          grid-template-rows: 5rem 1.875rem;
-          justify-content: center;
-          align-items: center;
+        .nodata-wrap {
+          display: none;
+          .list-nodata {
+            @include mo360-767() {
+              @include fs-16-24;
+              grid-template-rows: 3.75rem auto;
+            }
+            @include fs-18-28;
+            display: grid;
+            grid-template-columns: minmax(3.75rem, auto);
+            grid-template-rows: 5rem 1.875rem;
+            justify-content: center;
+            align-items: center;
 
-          gap: clamp(0.625rem, 2vw, 1rem);
-          font-weight: 400;
-          color: $c-bbb;
-          .icon {
-            width: 100%;
-            height: 100%;
-            background-position: center;
+            gap: clamp(0.625rem, 2vw, 1rem);
+            font-weight: 400;
+            color: $c-bbb;
+            .icon {
+              width: 100%;
+              height: 100%;
+              background-position: center;
+            }
           }
         }
       }

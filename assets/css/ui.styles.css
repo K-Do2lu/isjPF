@@ -2139,7 +2139,10 @@ fieldset [type=checkbox]:disabled:before {
     filter: invert(1);
   }
 }
-.main .main-cont .cont .cont-list .list-nodata {
+.main .main-cont .cont .cont-list .nodata-wrap {
+  display: none;
+}
+.main .main-cont .cont .cont-list .nodata-wrap .list-nodata {
   font-size: 1.125rem;
   line-height: 1.75rem;
   display: grid;
@@ -2152,13 +2155,13 @@ fieldset [type=checkbox]:disabled:before {
   color: #bbbbbb;
 }
 @media (min-width: 360px) and (max-width: 767px) {
-  .main .main-cont .cont .cont-list .list-nodata {
+  .main .main-cont .cont .cont-list .nodata-wrap .list-nodata {
     font-size: 1rem;
     line-height: 1.5rem;
     grid-template-rows: 3.75rem auto;
   }
 }
-.main .main-cont .cont .cont-list .list-nodata .icon {
+.main .main-cont .cont .cont-list .nodata-wrap .list-nodata .icon {
   width: 100%;
   height: 100%;
   background-position: center;
