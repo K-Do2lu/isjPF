@@ -1,0 +1,20 @@
+@charset "utf-8";
+// @Commons
+@import "./comm.base";
+@import "./comm.variables";
+// @import "./cont.common";
+
+main {
+  .cont {
+    display: flex;
+
+    .side-area {
+      flex: 0 0 20rem;
+      background: #eee;
+    }
+
+    .detail-area {
+      flex: 1 1 0%;
+    }
+  }
+}

@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/*-------------------------------------------------------------------
+    파일이름 : 초기화
+    속성순서 : 레이아웃, 사이징, 박스모양, 글자모양, 기타
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+    @웹폰트
+-------------------------------------------------------------------*/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/*-------------------------------------------------------------------
+    @태그
+-------------------------------------------------------------------*/
+html,
+body {
+  height: 100%;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+::before,
+::after,
+html,
+body,
+div,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+caption,
+address,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+main,
+footer,
+header,
+menu,
+nav,
+section,
+button,
+select,
+textarea,
+input,
+form,
+fieldset,
+legend,
+label,
+a,
+span,
+strong,
+em,
+address,
+pre,
+code,
+dfn,
+small,
+i,
+b {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  font-style: normal;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -o-box-sizing: inherit;
+  -webkit-print-color-adjust: exact;
+}
+
+main,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  font-family: "Pretendard-Regular", "Wanted Sans", "sans-serif";
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  word-break: normal;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+fieldset,
+iframe {
+  width: 100%;
+}
+
+img,
+a,
+frame,
+iframe,
+fieldset {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+caption {
+  height: 1px;
+  overflow: hidden;
+}
+
+legend {
+  position: fixed;
+  overflow: hidden;
+  border: 0;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+}
+
+button {
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  border: 0px;
+  padding: 0px;
+}
+
+input[type=checkbox],
+input[type=radio],
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+}
+
+textarea {
+  resize: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::search-decoration,
+input::search-cancel-button,
+input::search-results-button,
+input::search-results-decoration {
+  display: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+}
+
+.dv-android [tabindex="0"]:focus,
+.dv-android a:focus,
+.dv-android button:focus,
+.dv-android input:focus,
+.dv-android textarea:focus,
+.dv-android select:focus {
+  outline: 0;
+}
+
+.dv-ios [tabindex="0"],
+.dv-ios a,
+.dv-ios button,
+.dv-ios input,
+.dv-ios textarea,
+.dv-ios select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*-------------------------------------------------------------------
+	@Color (Brand, State, Items, Grayscale)
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@align
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Text (Fontset,
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Font reponsive | html font-size: 16px인 전제하
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Img reponsive | img ratio
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@background bg
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+	@Responsive
+	- Device : Basic (Extra Large ~ Mini)
+	- PC : 1920 ~ 1280 (1920 ~ 1601 / 1600 ~ 1280)
+	- TA : 1279 ~  768 (1279 ~ 1025 / 1024 ~  768)
+	- MO :  767 ~  320 ( 767 ~  421 /  420 ~  320)
+	- 기준디바이스 : iPad Mini (768/1024), iPadPro (1024/1366)
+-------------------------------------------------------------------*/
+/* iPhone X 이상의 모바일 기기에 대한 Safe Area 고려 */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  /* 여기에 해당하는 CSS 추가 */
+  body {
+    padding-top: constant(safe-area-inset-top); /* iOS 11.2+ */
+    padding-top: env(safe-area-inset-top); /* iOS 11.2+ */
+    padding-bottom: constant(safe-area-inset-bottom); /* iOS 11.2+ */
+    padding-bottom: env(safe-area-inset-bottom); /* iOS 11.2+ */
+  }
+}
+main .cont {
+  display: flex;
+}
+main .cont .side-area {
+  flex: 0 0 20rem;
+  background: #eee;
+}
+main .cont .detail-area {
+  flex: 1 1 0%;
+}/*# sourceMappingURL=ui.styles_re.css.map */
