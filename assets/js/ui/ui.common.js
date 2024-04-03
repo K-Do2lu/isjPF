@@ -1,16 +1,16 @@
 /*--------------------------------------------------------------
-    분류순서
-    @Variables  : 전역변수
-    @Settings   : 기본설정
-    @Utility    : 유틸리티
-    @Layout     : 레이아웃
-    @Components : 공통모듈
-    @Content    : 컨텐츠
-    @Init       : 초기실행
+  분류순서
+  @Variables  : 전역변수
+  @Settings   : 기본설정
+  @Utility    : 유틸리티
+  @Layout     : 레이아웃
+  @Components : 공통모듈
+  @Content    : 컨텐츠
+  @Init       : 초기실행
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-    @modal
+  @modal
 --------------------------------------------------------------*/
 const toggleModal = (modalId) => {
   const modal = document.getElementById(modalId);
@@ -73,59 +73,86 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*--------------------------------------------------------------
-      @header | mo toggle menu, side toggle menu
-  --------------------------------------------------------------*/
-document.addEventListener("click", function (e) {
-  let 클릭한요소 = e.target;
-  let 클릭한요소부모li = 클릭한요소.closest("li");
+    @header | mo toggle menu, side toggle menu
+--------------------------------------------------------------*/
+// 도연이가 해볼게요
+document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll(".menu li");
+  const iconMenu = document.querySelector("header .icon.menu");
+  const gnbMenuMobile = document.querySelector(".gnb-wrap.mo");
 
-  // 아이콘 메뉴 클릭 시 모바일 메뉴 toggle 시키기
-  const 아이콘메뉴 = document.querySelector("header .icon.menu");
-  const 모바일메뉴 = document.querySelector(".gnb-wrap.mo");
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener("click", (event) => {
+      const clickedMenuItem = event.currentTarget;
 
-  if (클릭한요소 == 아이콘메뉴) {
-    모바일메뉴.classList.toggle("show");
-  }
+      const isSubMenu =
+        clickedMenuItem.parentNode.classList.contains("menu-sub");
+      const isMenu = clickedMenuItem.parentNode.classList.contains("menu");
 
-  // 큰 메뉴 클릭 시 작은 메뉴 toggle로 나오게 하기
-  const 큰메뉴메뉴li들 = document.querySelectorAll(".menu > li");
-  const 작은메뉴li들 = document.querySelectorAll(".menu-sub > li");
+      event.stopPropagation();
 
-  let 메뉴활성화됐나 = false;
-
-  큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
-    if (큰메뉴메뉴li === 클릭한요소부모li) {
-      큰메뉴메뉴li.classList.add("active");
-      메뉴활성화됐나 = true;
-    } else if (큰메뉴메뉴li.contains(클릭한요소)) {
-      큰메뉴메뉴li.classList.add("active");
-      메뉴활성화됐나 = true;
-    } else {
-      큰메뉴메뉴li.classList.remove("active");
-    }
+      clickedMenuItem.classList.toggle("active");
+    });
   });
 
-  큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
-    if (메뉴활성화됐나) {
-      큰메뉴메뉴li.style.color = "#ccc";
-    } else {
-      큰메뉴메뉴li.style.color = "";
-    }
-  });
-
-  // 작은 메뉴 클릭 시 안에 작작메뉴 toggle로 나오게 하기
-  작은메뉴li들.forEach((작은메뉴li) => {
-    if (작은메뉴li === 클릭한요소부모li) {
-      작은메뉴li.classList.toggle("active");
-    } else {
-      작은메뉴li.classList.remove("active");
-    }
+  iconMenu.addEventListener("click", () => {
+    gnbMenuMobile.classList.toggle("show");
   });
 });
 
+// 더연이가 해볼게요
+
+// document.addEventListener("click", function (e) {
+//   let 클릭한요소 = e.target;
+//   let 클릭한요소부모li = 클릭한요소.closest("li");
+
+//   // 아이콘 메뉴 클릭 시 모바일 메뉴 toggle 시키기
+//   const 아이콘메뉴 = document.querySelector("header .icon.menu");
+//   const 모바일메뉴 = document.querySelector(".gnb-wrap.mo");
+
+//   if (클릭한요소 == 아이콘메뉴) {
+//     모바일메뉴.classList.toggle("show");
+//   }
+
+//   // 큰 메뉴 클릭 시 작은 메뉴 toggle로 나오게 하기
+//   const 큰메뉴메뉴li들 = document.querySelectorAll(".menu > li");
+//   const 작은메뉴li들 = document.querySelectorAll(".menu-sub > li");
+
+//   let 메뉴활성화됐나 = false;
+
+//   큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
+//     if (큰메뉴메뉴li === 클릭한요소부모li) {
+//       큰메뉴메뉴li.classList.add("active");
+//       메뉴활성화됐나 = true;
+//     } else if (큰메뉴메뉴li.contains(클릭한요소)) {
+//       큰메뉴메뉴li.classList.add("active");
+//       메뉴활성화됐나 = true;
+//     } else {
+//       큰메뉴메뉴li.classList.remove("active");
+//     }
+//   });
+
+//   큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
+//     if (메뉴활성화됐나) {
+//       큰메뉴메뉴li.style.color = "#ccc";
+//     } else {
+//       큰메뉴메뉴li.style.color = "";
+//     }
+//   });
+
+//   // 작은 메뉴 클릭 시 안에 작작메뉴 toggle로 나오게 하기
+//   작은메뉴li들.forEach((작은메뉴li) => {
+//     if (작은메뉴li === 클릭한요소부모li) {
+//       작은메뉴li.classList.toggle("active");
+//     } else {
+//       작은메뉴li.classList.remove("active");
+//     }
+//   });
+// });
+
 /*--------------------------------------------------------------
-      @최상단 버튼 + header scroll 감지 border-bottom 추가
-  --------------------------------------------------------------*/
+    @최상단 버튼 + header scroll 감지 border-bottom 추가
+--------------------------------------------------------------*/
 window.addEventListener("scroll", function () {
   // 스크롤 시 버튼을 나타내거나 숨김
   var scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -150,8 +177,8 @@ function scrollToTop() {
   });
 }
 /*--------------------------------------------------------------
-      @pagination 페이징 갯 수
-  --------------------------------------------------------------*/
+    @pagination 페이징 갯 수
+--------------------------------------------------------------*/
 // 페이지네이션 갯수를 조절하는 JavaScript 코드
 function updatePagination() {
   var pages = document.querySelectorAll(".pages .page");
@@ -166,7 +193,7 @@ window.addEventListener("DOMContentLoaded", updatePagination);
 window.addEventListener("resize", updatePagination);
 
 /*--------------------------------------------------------------
-    @slide
+  @slide
 --------------------------------------------------------------*/
 document.addEventListener("DOMContentLoaded", function () {
   // 요소 선택
@@ -247,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 /*--------------------------------------------------------------
-    @search input enter 막기
+  @search input enter 막기
 --------------------------------------------------------------*/
 // const inputArea = document.getElementById("inputArea");
 
