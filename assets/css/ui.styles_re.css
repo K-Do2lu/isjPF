@@ -294,9 +294,69 @@ main .cont {
   display: flex;
 }
 main .cont .side-area {
+  height: 100vh;
   flex: 0 0 20rem;
   background: #eee;
 }
 main .cont .detail-area {
   flex: 1 1 0%;
+}
+main .cont .detail-area header {
+  height: 5.5rem;
+  padding: 0 1.25rem;
+  background: #ffffff;
+}
+main .cont .detail-area header .header-area {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #111111;
+}
+main .cont .detail-area header .logo {
+  display: block;
+  flex: 0 0 7.5rem;
+}
+main .cont .detail-area header .logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .cont .detail-area header .gnb {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 0%;
+}
+main .cont .detail-area header .gnb nav {
+  display: flex;
+  align-items: flex-end;
+}
+main .cont .detail-area header .gnb nav .menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: "Wanted Sans";
+  font-weight: 700;
+  color: #cccccc;
+}
+main .cont .detail-area header .gnb nav .menu li {
+  cursor: pointer;
+}
+main .cont .detail-area header .gnb nav .menu li .menu-tit:hover {
+  font-weight: 700;
+  color: #111111;
+}
+main .cont .detail-area header .gnb nav .menu li.active {
+  font-weight: 700;
+  color: #111111;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+main .cont .detail-area header .gnb nav .menu .menu-2depth {
+  display: none;
+}
+main .cont .detail-area header .gnb nav .menu .menu-3depth {
+  display: none;
 }/*# sourceMappingURL=ui.styles_re.css.map */
