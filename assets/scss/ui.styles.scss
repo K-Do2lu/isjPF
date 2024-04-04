@@ -413,12 +413,15 @@
             .route-txt {
               display: inline-block;
               @include fs-14-20;
+              font-family: "Wanted Sans";
               font-weight: 400;
-              color: $c-bbb;
+              color: $c-111;
+              &.pre {
+                color: $c-bbb;
+              }
               & + .route-txt {
                 position: relative;
                 padding-left: 1.375rem;
-                color: $c-111;
                 &::before {
                   content: "";
                   position: absolute;

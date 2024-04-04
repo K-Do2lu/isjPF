@@ -36,7 +36,7 @@
         <!-- side -->
         <div class="side">
           <div class="side-logo">
-            <a href="/index.html">
+            <a href="/pages/login_list.html">
               <img
                 src="/assets/img/img-logoside.png"
                 alt="design for life side logo"
@@ -71,117 +71,16 @@
         <!-- header -->
         <header class="header">
           <div class="header-inner">
-            <button type="button" class="logout-area">
+            <button
+              type="button"
+              class="logout-area"
+              onclick="window.location.href='/pages/login.html'"
+            >
               <span class="logout-txt">LOGOUT</span>
               <i class="icon logout"></i>
             </button>
           </div>
         </header>
-
-        <!-- mo header menu click 시 menu block -->
-        <div class="gnb-wrap mo">
-          <p class="txt-under">
-            인간의 삶, 사회, 생태가 조화를 이루는<br />
-            미래, 통합, 생명의 디자인을 연구하고 창조합니다.
-          </p>
-
-          <nav>
-            <ul class="menu">
-              <li>
-                <a href="/index.html" class="menu-tit">HOME</a>
-              </li>
-
-              <li>
-                <a href="/pages/about.html" class="menu-tit">ABOUT</a>
-              </li>
-
-              <li>
-                <span class="menu-tit">WORK</span>
-                <ul class="menu-sub">
-                  <li>
-                    <span class="sub-tit">ART&DESIGN</span>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="/pages/work_menu.html">제품 ∙ 시스템 디자인</a>
-                      </li>
-                      <li>
-                        <a href="#">환경 ∙ 공공 디자인</a>
-                      </li>
-                      <li><a href="#">대학 디자인</a></li>
-                    </ul>
-                  </li>
-
-                  <li>
-                    <span class="sub-tit">RESEARCH</span>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="#">국가디자인 ∙ 교육정책</a>
-                      </li>
-                      <li>
-                        <a href="#">미래 라이프스타일 ∙ 디자인전략</a>
-                      </li>
-                      <li>
-                        <a href="#">미래도시 ∙ 모빌리티 ∙ 모바일 디자인</a>
-                      </li>
-                      <li>
-                        <a href="#">정체성 ∙ 혁신 ∙ 한국디자인</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <span class="menu-tit">EVENT</span>
-                <ul class="menu-sub">
-                  <li>
-                    <span class="sub-tit">EXHIBITION</span>
-                    <ul class="sub-menu">
-                      <li><a href="/pages/event_menu.html">개인전</a></li>
-                      <li><a href="#">참여전시</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="sub-tit">PROGRAM PLANNING</span>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="#">행사 참여작품</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <span class="menu-tit">MEDIA</span>
-                <ul class="menu-sub">
-                  <li>
-                    <span class="sub-tit">LECTURES</span>
-                    <ul class="sub-menu">
-                      <li><a href="/pages/media_menu.html">주제 특강</a></li>
-                      <li><a href="#">강의</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="sub-tit">BOOKS</span>
-                    <ul class="sub-menu">
-                      <li><a href="#">Books</a></li>
-                      <li><a href="#">Article</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="sub-tit">PRESS</span>
-                    <ul class="sub-menu">
-                      <li><a href="#">Interview</a></li>
-                      <li><a href="#">News</a></li>
-                      <li><a href="#">Video</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
         <!-- main-content -->
         <div class="main-cont">
           <!-- cont -->
@@ -192,6 +91,7 @@
                 <h3 class="top-tit">FLLAB 다용도 음식 트레이</h3>
                 <fieldset>
                   <label>
+                    <!-- 최상단 고정 시 checked 추가 -->
                     <input role="switch" type="checkbox" />
                   </label>
                 </fieldset>
@@ -327,8 +227,12 @@
               </div>
 
               <div class="detail-bttm">
-                <button type="button" class="p-btn">
-                  <span><a href="#">목록보기</a></span>
+                <button
+                  type="button"
+                  class="p-btn"
+                  onclick="window.location.href='/pages/login_list.html'"
+                >
+                  <span>목록보기</span>
                 </button>
 
                 <button
@@ -349,13 +253,6 @@
 
         <!-- sroll btn -->
         <div class="scroll-btns">
-          <button
-            type="button"
-            class="p-btn-cir mail btn-modal"
-            data-modal="contact"
-          >
-            <i class="icon mail-w"></i>
-          </button>
           <button
             type="button"
             class="p-btn-cir top"

@@ -1162,7 +1162,7 @@ fieldset {
       @include mo360-767() {
         @include fs-16-24;
         grid-template-columns: 1fr;
-        button {
+        button.arrow {
           display: none;
         }
         .list-detail {
@@ -1191,6 +1191,7 @@ fieldset {
         }
       }
       &.tempo {
+        padding: 0.875rem 1.25rem;
         .list-mark {
           .icon.fix {
             display: none;

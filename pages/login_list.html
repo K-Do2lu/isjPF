@@ -36,7 +36,7 @@
         <!-- side -->
         <div class="side">
           <div class="side-logo">
-            <a href="/index.html">
+            <a href="/pages/login_list.html">
               <img
                 src="/assets/img/img-logoside.png"
                 alt="design for life side logo"
@@ -53,7 +53,7 @@
                       <span class="sub-tit">ART&DESIGN</span>
                       <ul class="sub-menu">
                         <li>
-                          <a href="/pages/work_menu.html"
+                          <a href="/pages/login_list_sub.html"
                             >제품 ∙ 시스템 디자인</a
                           >
                         </li>
@@ -137,128 +137,20 @@
               </ul>
             </div>
           </div>
-          <button
-            type="button"
-            class="p-btn fill btn-modal"
-            data-modal="contact"
-          >
-            Contact
-          </button>
         </div>
         <!-- header -->
         <header class="header">
           <div class="header-inner">
-            <button type="button" class="logout-area">
+            <button
+              type="button"
+              class="logout-area"
+              onclick="window.location.href='/pages/login.html'"
+            >
               <span class="logout-txt">LOGOUT</span>
               <i class="icon logout"></i>
             </button>
           </div>
         </header>
-
-        <!-- mo header menu click 시 menu block -->
-        <div class="gnb-wrap mo">
-          <p class="txt-under">
-            인간의 삶, 사회, 생태가 조화를 이루는<br />
-            미래, 통합, 생명의 디자인을 연구하고 창조합니다.
-          </p>
-
-          <nav>
-            <ul class="menu">
-              <li>
-                <a href="/index.html" class="menu-tit">HOME</a>
-              </li>
-
-              <li>
-                <a href="/pages/about.html" class="menu-tit">ABOUT</a>
-              </li>
-
-              <li>
-                <span class="menu-tit">WORK</span>
-                <ul class="menu-sub">
-                  <li>
-                    <span class="sub-tit">ART&DESIGN</span>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="/pages/work_menu.html">제품 ∙ 시스템 디자인</a>
-                      </li>
-                      <li>
-                        <a href="#">환경 ∙ 공공 디자인</a>
-                      </li>
-                      <li><a href="#">대학 디자인</a></li>
-                    </ul>
-                  </li>
-
-                  <li>
-                    <span class="sub-tit">RESEARCH</span>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="#">국가디자인 ∙ 교육정책</a>
-                      </li>
-                      <li>
-                        <a href="#">미래 라이프스타일 ∙ 디자인전략</a>
-                      </li>
-                      <li>
-                        <a href="#">미래도시 ∙ 모빌리티 ∙ 모바일 디자인</a>
-                      </li>
-                      <li>
-                        <a href="#">정체성 ∙ 혁신 ∙ 한국디자인</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <span class="menu-tit">EVENT</span>
-                <ul class="menu-sub">
-                  <li>
-                    <span class="sub-tit">EXHIBITION</span>
-                    <ul class="sub-menu">
-                      <li><a href="/pages/event_menu.html">개인전</a></li>
-                      <li><a href="#">참여전시</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="sub-tit">PROGRAM PLANNING</span>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="#">행사 참여작품</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <span class="menu-tit">MEDIA</span>
-                <ul class="menu-sub">
-                  <li>
-                    <span class="sub-tit">LECTURES</span>
-                    <ul class="sub-menu">
-                      <li><a href="/pages/media_menu.html">주제 특강</a></li>
-                      <li><a href="#">강의</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="sub-tit">BOOKS</span>
-                    <ul class="sub-menu">
-                      <li><a href="#">Books</a></li>
-                      <li><a href="#">Article</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <span class="sub-tit">PRESS</span>
-                    <ul class="sub-menu">
-                      <li><a href="#">Interview</a></li>
-                      <li><a href="#">News</a></li>
-                      <li><a href="#">Video</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
 
         <!-- main-content -->
         <div class="main-cont">
@@ -328,7 +220,7 @@
               <ul>
                 <li
                   class="list fix"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -340,13 +232,13 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list fix"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -358,13 +250,106 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
+                    <i class="icon arrow-right"></i>
+                  </button>
+                </li>
+                <li
+                  class="list tempo"
+                  onclick="window.location.href='/pages/login_save_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <i class="icon file"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year temp">2024</span>
+                    <p>타이틀이 들어갑니다.</p>
+                  </div>
+
+                  <div
+                    class="list-temp"
+                    onclick="window.location.href='/pages/login_save_detail.html'"
+                  >
+                    <button type="button" class="arrow">
+                      <i class="icon arrow-right"></i>
+                    </button>
+                    <button type="button" class="p-btn">
+                      <span>임시저장글</span>
+                    </button>
+                  </div>
+                </li>
+                <li
+                  class="list tempo"
+                  onclick="window.location.href='/pages/login_save_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <i class="icon file"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year temp">2024</span>
+                    <p>타이틀이 들어갑니다.</p>
+                  </div>
+
+                  <div class="list-temp">
+                    <button type="button" class="arrow">
+                      <i class="icon arrow-right"></i>
+                    </button>
+                    <button type="button" class="p-btn">
+                      <span>임시저장글</span>
+                    </button>
+                  </div>
+                </li>
+                <li
+                  class="list tempo"
+                  onclick="window.location.href='/pages/login_save_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <i class="icon file"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year temp">2024</span>
+                    <p>타이틀이 들어갑니다.</p>
+                  </div>
+
+                  <div class="list-temp">
+                    <button type="button" class="arrow">
+                      <i class="icon arrow-right"></i>
+                    </button>
+                    <button type="button" class="p-btn">
+                      <span>임시저장글</span>
+                    </button>
+                  </div>
+                </li>
+                <li
+                  class="list"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
+                >
+                  <div class="list-mark">
+                    <i class="icon fix"></i>
+                    <span class="list-num">000</span>
+                  </div>
+
+                  <div class="list-detail">
+                    <span class="tag year">2024</span>
+                    <p>FLLAB 다용도 음식 트레이</p>
+                  </div>
+
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -376,13 +361,13 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -394,13 +379,13 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -412,13 +397,13 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -430,13 +415,13 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -448,13 +433,13 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -466,13 +451,13 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
                 <li
                   class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
+                  onclick="window.location.href='/pages/login_list_detail.html'"
                 >
                   <div class="list-mark">
                     <i class="icon fix"></i>
@@ -484,25 +469,7 @@
                     <p>FLLAB 다용도 음식 트레이</p>
                   </div>
 
-                  <button type="button">
-                    <i class="icon arrow-right"></i>
-                  </button>
-                </li>
-                <li
-                  class="list"
-                  onclick="window.location.href='/pages/work_detail.html'"
-                >
-                  <div class="list-mark">
-                    <i class="icon fix"></i>
-                    <span class="list-num">000</span>
-                  </div>
-
-                  <div class="list-detail">
-                    <span class="tag year">2024</span>
-                    <p>FLLAB 다용도 음식 트레이</p>
-                  </div>
-
-                  <button type="button">
+                  <button type="button" class="arrow">
                     <i class="icon arrow-right"></i>
                   </button>
                 </li>
@@ -529,13 +496,6 @@
         <div class="scroll-btns">
           <button
             type="button"
-            class="p-btn-cir mail btn-modal"
-            data-modal="contact"
-          >
-            <i class="icon mail-w"></i>
-          </button>
-          <button
-            type="button"
             class="p-btn-cir top"
             onclick="scrollToTop()"
             id="scrollToTopBtn"
@@ -544,202 +504,6 @@
           </button>
         </div>
       </main>
-
-      <!-- modal - search -->
-      <div id="search" class="modal-overlay">
-        <div class="modal-window search">
-          <!-- <div class="window-top">
-            <h1 class="tit">타이틀</h1>
-            <button class="close-area" onclick="toggleModal('search')">
-              <i class="icon cross-38"></i>
-            </button>
-          </div> -->
-
-          <div class="window-content">
-            <div class="input-search">
-              <div id="inputField">
-                <div class="chip-container">
-                  <button
-                    type="button"
-                    class="p-btn-chips active"
-                    contenteditable="false"
-                  >
-                    <span>국가 ∙ 공공디자인 ∙ 정책</span
-                    ><i class="icon cross"></i>
-                  </button>
-                </div>
-                <div id="inputArea" contenteditable="true"></div>
-              </div>
-              <button
-                type="button"
-                class="input-icon"
-                onclick="window.location.href='/pages/search_result.html'"
-              >
-                <i class="icon search"></i>
-              </button>
-            </div>
-
-            <div class="content-search">
-              <div class="chips-wrap">
-                <h1 class="tit">Search.</h1>
-                <div class="chips">
-                  <button type="button" class="p-btn-chips active">
-                    <span>국가 ∙ 공공디자인 ∙ 정책</span
-                    ><i class="icon check"></i>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>조형 ∙ 미학</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>기업디자인정책 ∙ 전략</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>문화 ∙ 아이덴티티</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>미래예측 ∙ 라이프</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>혁신 ∙ Good Design</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>창의 ∙ 융합디자인사고 ∙ 교육</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>아시아 ∙ 한국디자인</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>미래도시 ∙ 모빌리티</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>지역사회디자인</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>생태 ∙ 지속가능</span>
-                  </button>
-                  <button type="button" class="p-btn-chips">
-                    <span>예술 ∙ 디자인일반</span>
-                  </button>
-                </div>
-              </div>
-
-              <button class="p-btn close-area" onclick="toggleModal('search')">
-                <span>Close</span><i class="icon cross"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- // modal - search  -->
-      <!-- modal - contact -->
-      <div id="contact" class="modal-overlay">
-        <div class="modal-window contact">
-          <div class="window-top">
-            <h1 class="tit">Contact.</h1>
-            <button class="close-area" onclick="toggleModal('contact')">
-              <i class="icon cross"></i>
-            </button>
-          </div>
-
-          <div class="window-content">
-            <form action="">
-              <div class="input-wrap">
-                <label for="" class="essential">성함</label>
-                <input
-                  type="text"
-                  id=""
-                  name="username"
-                  placeholder="성함을 입력해주세요"
-                  required
-                />
-              </div>
-              <div class="input-wrap">
-                <label for="" class="essential">이메일</label>
-                <input
-                  type="text"
-                  id=""
-                  name="email"
-                  placeholder="이메일을 입력해주세요"
-                  required
-                />
-              </div>
-              <div class="input-wrap">
-                <label for="" class="">제목</label>
-                <input
-                  type="text"
-                  id=""
-                  name=""
-                  placeholder="제목을 입력해주세요."
-                  value=""
-                />
-              </div>
-              <div class="input-wrap">
-                <label for="" class="">내용</label>
-                <input
-                  type="text"
-                  id=""
-                  name=""
-                  placeholder="내용을 입력해주세요"
-                />
-              </div>
-
-              <button
-                type="button"
-                class="p-btn fill btn-modal"
-                data-modal="alert1"
-              >
-                <span>Send</span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- // modal - contact  -->
-      <!-- alert - 전송 완료되었습니다. -->
-      <div id="alert1" class="modal-overlay alert">
-        <div class="modal-window">
-          <div class="window-top">
-            <button class="close-area" onclick="toggleModal('alert1')">
-              <i class="icon cross"></i>
-            </button>
-          </div>
-
-          <div class="window-content">
-            <p class="alert-txt">전송이 완료되었습니다.</p>
-            <button
-              type="button"
-              class="p-btn fill"
-              onclick="toggleModal('alert1')"
-            >
-              확인
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- //alert - 전송 완료되었습니다. -->
-      <!-- alert:  입력값이 없습니다. 다시 입력해주세요. -->
-      <div id="modal4" class="modal-overlay alert">
-        <div class="modal-window">
-          <div class="window-top">
-            <button class="close-area" onclick="toggleModal('modal4')">
-              <i class="icon cross"></i>
-            </button>
-          </div>
-
-          <div class="window-content">
-            <p class="alert-txt">입력값이 없습니다.</p>
-            <p class="alert-txt">다시 입력해주세요.</p>
-            <button
-              type="button"
-              class="p-btn fill"
-              onclick="toggleModal('modal4')"
-            >
-              확인
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- // alert:  입력값이 없습니다. 다시 입력해주세요. -->
     </div>
   </body>
 </html>
