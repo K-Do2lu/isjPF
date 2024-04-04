@@ -77,21 +77,39 @@ document.addEventListener("DOMContentLoaded", () => {
 --------------------------------------------------------------*/
 // 도연이가 해볼게요
 document.addEventListener("DOMContentLoaded", () => {
-  const menuItems = document.querySelectorAll(".menu li");
   const iconMenu = document.querySelector("header .icon.menu");
   const gnbMenuMobile = document.querySelector(".gnb-wrap.mo");
+  const menuItems = document.querySelectorAll(".menu > li");
+  const subMenuItems = document.querySelectorAll(".menu-sub > li");
 
-  menuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", (event) => {
-      const clickedMenuItem = event.currentTarget;
+  menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      menuItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          subMenuItems.forEach((subItem) => {
+            subItem.classList.remove("active");
+          });
+          otherItem.classList.remove("active");
+          otherItem.style.color = "#ccc";
+        } else {
+          otherItem.style.color = "#111";
+        }
+      });
+      item.classList.toggle("active");
+    });
+  });
 
-      const isSubMenu =
-        clickedMenuItem.parentNode.classList.contains("menu-sub");
-      const isMenu = clickedMenuItem.parentNode.classList.contains("menu");
+  subMenuItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-      event.stopPropagation();
+      subMenuItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+        }
+      });
 
-      clickedMenuItem.classList.toggle("active");
+      item.classList.toggle("active");
     });
   });
 
