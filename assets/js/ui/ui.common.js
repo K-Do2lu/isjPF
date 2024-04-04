@@ -197,10 +197,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // 모바일 터치 이벤트
   let startX, endX;
   slideWrap.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX; // 터치 시작 좌표 저장
+    startX = e.changedTouches[0].clientX; // 터치 시작 좌표 저장 (변경)
   });
   slideWrap.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX; // 터치 움직임 좌표 저장
+    endX = e.changedTouches[0].clientX; // 터치 움직임 좌표 저장 (변경)
   });
   slideWrap.addEventListener("touchend", (e) => {
     const diff = endX - startX; // 터치 시작과 종료 좌표의 차이
@@ -241,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 /*--------------------------------------------------------------
   @search input enter 막기
 --------------------------------------------------------------*/
