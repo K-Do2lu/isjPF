@@ -14,10 +14,12 @@
 --------------------------------------------------------------*/
 const toggleModal = (modalId) => {
   const modal = document.getElementById(modalId);
+
   if (modal.style.display === "flex") {
     modal.style.display = "none";
     removeEventListeners(modal); // 모달이 닫힐 때 이벤트 리스너 제거
   } else {
+    closeAllModals(); // 모든 모달을 닫음
     modal.style.display = "flex";
     addEventListeners(modal); // 모달이 열릴 때 이벤트 리스너 추가
   }
@@ -40,6 +42,13 @@ const handleKeyDown = (event) => {
     const relativePath = "/pages/search_result.html"; // 이동할 상대 경로를 지정
     window.location.href = relativePath; // 상대 경로로 이동
   }
+};
+
+const closeAllModals = () => {
+  const modals = document.querySelectorAll(".modal-overlay");
+  modals.forEach((modal) => {
+    modal.style.display = "none";
+  });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,9 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("keyup", (event) => {
     if (event.key === "Escape") {
-      modals.forEach((modal) => {
-        modal.style.display = "none";
-      });
+      closeAllModals(); // 모든 모달을 닫음
     }
   });
 });
