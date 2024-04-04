@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /*--------------------------------------------------------------
     @header | mo toggle menu, side toggle menu
 --------------------------------------------------------------*/
-// 도연이가 해볼게요
+
 document.addEventListener("DOMContentLoaded", () => {
   const iconMenu = document.querySelector("header .icon.menu");
   const gnbMenuMobile = document.querySelector(".gnb-wrap.mo");
@@ -117,56 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gnbMenuMobile.classList.toggle("show");
   });
 });
-
-// 더연이가 해볼게요
-
-// document.addEventListener("click", function (e) {
-//   let 클릭한요소 = e.target;
-//   let 클릭한요소부모li = 클릭한요소.closest("li");
-
-//   // 아이콘 메뉴 클릭 시 모바일 메뉴 toggle 시키기
-//   const 아이콘메뉴 = document.querySelector("header .icon.menu");
-//   const 모바일메뉴 = document.querySelector(".gnb-wrap.mo");
-
-//   if (클릭한요소 == 아이콘메뉴) {
-//     모바일메뉴.classList.toggle("show");
-//   }
-
-//   // 큰 메뉴 클릭 시 작은 메뉴 toggle로 나오게 하기
-//   const 큰메뉴메뉴li들 = document.querySelectorAll(".menu > li");
-//   const 작은메뉴li들 = document.querySelectorAll(".menu-sub > li");
-
-//   let 메뉴활성화됐나 = false;
-
-//   큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
-//     if (큰메뉴메뉴li === 클릭한요소부모li) {
-//       큰메뉴메뉴li.classList.add("active");
-//       메뉴활성화됐나 = true;
-//     } else if (큰메뉴메뉴li.contains(클릭한요소)) {
-//       큰메뉴메뉴li.classList.add("active");
-//       메뉴활성화됐나 = true;
-//     } else {
-//       큰메뉴메뉴li.classList.remove("active");
-//     }
-//   });
-
-//   큰메뉴메뉴li들.forEach((큰메뉴메뉴li) => {
-//     if (메뉴활성화됐나) {
-//       큰메뉴메뉴li.style.color = "#ccc";
-//     } else {
-//       큰메뉴메뉴li.style.color = "";
-//     }
-//   });
-
-//   // 작은 메뉴 클릭 시 안에 작작메뉴 toggle로 나오게 하기
-//   작은메뉴li들.forEach((작은메뉴li) => {
-//     if (작은메뉴li === 클릭한요소부모li) {
-//       작은메뉴li.classList.toggle("active");
-//     } else {
-//       작은메뉴li.classList.remove("active");
-//     }
-//   });
-// });
 
 /*--------------------------------------------------------------
     @최상단 버튼 + header scroll 감지 border-bottom 추가
