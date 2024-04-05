@@ -34,13 +34,35 @@
         </script>
       </header>
       <main role="main" class="g-main">
+        <!-- select -->
+        <div class="select-wrap">
+          <span class="selected">카테고리를 선택해주세요</span>
+          <ul class="options">
+            <li data-value="1">
+              <span class="option-tit">Art&Design</span>
+              <ul class="sub-options">
+                <li>제품 ∙ 시스템 디자인</li>
+                <li>환경 ∙ 공공 디자인</li>
+                <li>대학 디자인</li>
+              </ul>
+            </li>
+            <li data-value="2">
+              <span class="option-tit">RESEARCH</span>
+              <ul class="sub-options">
+                <li>국가디자인 ∙ 교육정책</li>
+                <li>미래 라이프스타일 ∙ 디자인전략</li>
+                <li>미래도시 ∙ 모빌리티 ∙ 모바일 디자인</li>
+                <li>정체성 ∙ 혁신 ∙ 한국디자인</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <!-- toggle switch -->
         <fieldset>
           <label>
             <input role="switch" type="checkbox" />
-            <span>알람</span>
-          </label>
-          <label>
+            <span>알람</span> </label
+          ><label>
             <input role="switch" type="checkbox" disabled />
             <span>알람 (비활성화)</span>
           </label>
@@ -207,6 +229,55 @@
       </main>
     </div>
 
-    <script></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const customSelect = document.querySelector(".select-wrap");
+        const selectedOption = customSelect.querySelector(".selected");
+        const optionsList = customSelect.querySelector(".options");
+        const optionTit = customSelect.querySelectorAll(".option-tit");
+
+        selectedOption.addEventListener("click", function () {
+          optionsList.style.display =
+            optionsList.style.display === "block" ? "none" : "block";
+          if (optionsList.style.display === "block") {
+            selectedOption.classList.add("rotate");
+          } else {
+            selectedOption.classList.remove("rotate");
+          }
+        });
+
+        optionTit.forEach((item) => {
+          item.addEventListener("click", () => {
+            const subOptions = item.nextElementSibling;
+            subOptions.style.display =
+              subOptions.style.display === "block" ? "none" : "block";
+
+            // Hide other sub-options
+            optionTit.forEach((otherItem) => {
+              if (otherItem !== item) {
+                const otherSubOptions = otherItem.nextElementSibling;
+                otherSubOptions.style.display = "none";
+                otherItem.classList.remove("rotate");
+              }
+            });
+
+            // Rotate the clicked optionTit
+            if (subOptions.style.display === "block") {
+              item.classList.add("rotate");
+            } else {
+              item.classList.remove("rotate");
+            }
+          });
+        });
+
+        optionsList.addEventListener("click", function (event) {
+          const clickedOption = event.target;
+          if (clickedOption.tagName === "LI") {
+            selectedOption.textContent = clickedOption.textContent;
+            optionsList.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>

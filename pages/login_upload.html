@@ -30,9 +30,92 @@
     <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
   </head>
   <body>
-    <div class="wrap">
-      <main role="main">
+    <div class="wrapper">
+      <main role="main" class="main">
         <h1 class="hidden">Leesoonjong portfolio</h1>
+        <!-- side -->
+        <div class="side">
+          <div class="side-logo">
+            <a href="/pages/login_list.html">
+              <img
+                src="/assets/img/img-logoside.png"
+                alt="design for life side logo"
+              />
+            </a>
+          </div>
+          <div class="side-cont">
+            <p class="txt-under">
+              인간의 삶, 사회, 생태가 조화를<br />
+              이루는 미래, 통합, 생명의 디자인을<br />
+              연구하고 창조합니다.
+            </p>
+          </div>
+        </div>
+        <!-- header -->
+        <header class="header">
+          <div class="header-inner">
+            <button
+              type="button"
+              class="logout-area"
+              onclick="window.location.href='/pages/login.html'"
+            >
+              <span class="logout-txt">LOGOUT</span>
+              <i class="icon logout"></i>
+            </button>
+          </div>
+        </header>
+
+        <!-- main-content -->
+        <div class="main-cont">
+          <!-- cont -->
+          <div class="cont">
+            <!-- upload -->
+            <div class="upload">
+              <h2 class="tit">게시글 업로드</h2>
+
+              <div class="input-wrap">
+                <input
+                  type="text"
+                  id=""
+                  name=""
+                  placeholder="제목을 입력해주세요"
+                />
+              </div>
+
+              <div class="input-wrap">
+                <label for="" class="essential">카테고리</label>
+                <input
+                  type="text"
+                  id=""
+                  name=""
+                  placeholder="카테고리를 선택해주세요"
+                />
+              </div>
+
+              <div class="input-wrap">
+                <label for="" class="essential">카테고리</label>
+                <input
+                  type="text"
+                  id=""
+                  name=""
+                  placeholder="카테고리를 선택해주세요"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sroll btn -->
+        <div class="scroll-btns">
+          <button
+            type="button"
+            class="p-btn-cir top"
+            onclick="scrollToTop()"
+            id="scrollToTopBtn"
+          >
+            <i class="icon arrow-top"></i>
+          </button>
+        </div>
       </main>
     </div>
   </body>

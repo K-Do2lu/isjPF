@@ -116,7 +116,7 @@
   font-family: "Wanted Sans", sans-serif;
   font-weight: 700;
 }
-// test
+
 .gnb-wrap.manager {
   ul.menu {
     > li {
@@ -215,7 +215,6 @@
     }
   }
 }
-// test
 
 .gnb-wrap.mo {
   display: none;
@@ -577,6 +576,9 @@ h1.hidden {
   &.img {
     background-image: url("data:image/svg+xml,%3Csvg width='52' height='53' viewBox='0 0 52 53' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.0002 21.6167C15.0105 21.6167 16.6402 19.987 16.6402 17.9767C16.6402 15.9664 15.0105 14.3367 13.0002 14.3367C10.9898 14.3367 9.36016 15.9664 9.36016 17.9767C9.36016 19.987 10.9898 21.6167 13.0002 21.6167Z' fill='%23CCCCCC'/%3E%3Cpath d='M15.1707 26.1159L9.36016 31.9314V35.1365H38.4802V28.2794L29.3626 19.1526L18.7886 29.7375L15.1707 26.1159Z' fill='%23CCCCCC'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.16016 40.3367V9.13672H43.6802V40.3367H4.16016ZM6.24016 11.2167H41.6002V38.2567H6.24016V11.2167Z' fill='%23CCCCCC'/%3E%3Cpath d='M45.7602 14.3367V42.4167H9.36016V44.4967H47.8402V14.3367H45.7602Z' fill='%23CCCCCC'/%3E%3C/svg%3E%0A");
   }
+  &.select {
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.9998 15.4375L7.82472 9.26243L6.1748 10.9123L13.9998 18.7373L21.8247 10.9123L20.1748 9.26243L13.9998 15.4375Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+  }
 }
 
 /*-------------------------------------------------------------------
@@ -915,6 +917,104 @@ $colors: #e3f5e7, #f9e4cb, #e2e6fd, #f9e9fb, #e5fad0, #f2e7fe, #d6f5f3, #fcf2d1,
 /*-------------------------------------------------------------------
     @Form | input, checkbox, radio, toggle switch ...
 /*-----------------------------------------------------------------*/
+//Form - select
+.select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-height: 48px;
+  border-bottom: 1px solid $c-bbb;
+  border-radius: 0;
+  .selected {
+    @include fs-18-28;
+    color: $c-111;
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: $c-fff;
+    border-bottom: 1px solid $c-bbb;
+    cursor: pointer;
+    &.rotate {
+      border-bottom: 1px solid $c-111;
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      width: 1.75rem;
+      height: 1.75rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.9998 15.4375L7.82472 9.26243L6.1748 10.9123L13.9998 18.7373L21.8247 10.9123L20.1748 9.26243L13.9998 15.4375Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+    }
+  }
+  .options {
+    position: absolute;
+    max-height: 17.5rem;
+    overflow-y: auto;
+    top: 120%;
+    right: 0;
+    width: 100%;
+    max-width: 14.5rem;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #fff;
+    border: 1px solid $c-eee;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
+    display: none;
+    z-index: 10;
+    li {
+      margin: 0 1rem;
+      border-bottom: 1px solid $c-eee;
+      cursor: pointer;
+      .option-tit {
+        padding: 0.625rem 0;
+        display: block;
+        position: relative;
+        &.rotate {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        &:hover {
+          font-weight: 600;
+        }
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          width: 1.25rem;
+          height: 1.25rem;
+          background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.0004 11.0268L5.58964 6.61602L4.41113 7.79453L10.0004 13.3838L15.5896 7.79453L14.4111 6.61602L10.0004 11.0268Z' fill='%23BBBBBB'/%3E%3C/svg%3E%0A");
+        }
+      }
+      .sub-options {
+        display: none;
+
+        li {
+          padding: 0.5rem 0;
+          border-bottom: none;
+          &:first-child {
+            padding-top: 0;
+          }
+          &:hover {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
 // Form - input
 .input-wrap {
   input {
