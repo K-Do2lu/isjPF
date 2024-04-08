@@ -20,14 +20,20 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/ui.styles.css" />
     <!-- 공통 js -->
     <script src="/assets/js/ui/ui.common.js"></script>
-    <script
+    <!-- date picker -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- // date picker -->
+    <!-- <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
-    ></script>
-
-    <!-- Swiper.js 라이브러리 포함 -->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    ></script> -->
   </head>
   <body>
     <div class="wrapper">
@@ -82,25 +88,135 @@
                 />
               </div>
 
-              <div class="input-wrap">
-                <label for="" class="essential">카테고리</label>
-                <input
-                  type="text"
-                  id=""
-                  name=""
-                  placeholder="카테고리를 선택해주세요"
-                />
+              <label for="" class="essential">카테고리</label>
+              <div class="select-wrap">
+                <span class="selected">카테고리를 선택해주세요</span>
+                <ul class="options">
+                  <li data-value="1">
+                    <span class="option-tit">Art&amp;Design</span>
+                    <ul class="sub-options">
+                      <li>제품 ∙ 시스템 디자인</li>
+                      <li>환경 ∙ 공공 디자인</li>
+                      <li>대학 디자인</li>
+                    </ul>
+                  </li>
+                  <li data-value="2">
+                    <span class="option-tit">RESEARCH</span>
+                    <ul class="sub-options">
+                      <li>국가디자인 ∙ 교육정책</li>
+                      <li>미래 라이프스타일 ∙ 디자인전략</li>
+                      <li>미래도시 ∙ 모빌리티 ∙ 모바일 디자인</li>
+                      <li>정체성 ∙ 혁신 ∙ 한국디자인</li>
+                    </ul>
+                  </li>
+                  <li data-value="3">
+                    <span class="option-tit">EXHIBITION</span>
+                    <ul class="sub-options">
+                      <li>개인전</li>
+                      <li>참여전시</li>
+                    </ul>
+                  </li>
+                  <li data-value="4">
+                    <span class="option-tit">PROGRAM PLANNING</span>
+                    <ul class="sub-options">
+                      <li>행사 참여작품</li>
+                    </ul>
+                  </li>
+                  <li data-value="5">
+                    <span class="option-tit">LECTURES</span>
+                    <ul class="sub-options">
+                      <li>주제 특강</li>
+                      <li>강의</li>
+                    </ul>
+                  </li>
+                  <li data-value="6">
+                    <span class="option-tit">BOOKS</span>
+                    <ul class="sub-options">
+                      <li>Books</li>
+                      <li>Article</li>
+                    </ul>
+                  </li>
+                  <li data-value="6">
+                    <span class="option-tit">PRESS</span>
+                    <ul class="sub-options">
+                      <li>Interview</li>
+                      <li>News</li>
+                      <li>Video</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
 
-              <div class="input-wrap">
-                <label for="" class="essential">카테고리</label>
+              <label for="" class="essential">키워드</label>
+              <div class="select-wrap">
+                <div class="chips-container">
+                  <!-- 여기에 선택된 옵션 버튼이 직접 추가-->
+                  <button type="button" class="p-btn-chips active">
+                    국가 ∙ 공공디자인 ∙ 정책<i class="icon cross"></i>
+                  </button>
+                </div>
+                <span class="selected">키워드를 선택해주세요</span>
+
+                <ul class="options" style="display: none">
+                  <li data-value="1" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check1" />
+                    <label for="check1">국가 ∙ 공공디자인 ∙ 정책</label>
+                  </li>
+                  <li data-value="2" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check2" />
+                    <label for="check2">조형 ∙ 미학</label>
+                  </li>
+                  <li data-value="3" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check3" />
+                    <label for="check3">기업디자인정책 ∙ 전략</label>
+                  </li>
+                  <li data-value="4" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check4" />
+                    <label for="check4">문화 ∙ 아이덴티티</label>
+                  </li>
+                  <li data-value="5" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check5" />
+                    <label for="check5">미래예측 ∙ 라이프</label>
+                  </li>
+                  <li data-value="6" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check6" />
+                    <label for="check6">혁신 ∙ Good Design</label>
+                  </li>
+                  <li data-value="7" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check7" />
+                    <label for="check7">창의 ∙ 융합디자인사고 ∙ 교육</label>
+                  </li>
+                  <li data-value="8" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check8" />
+                    <label for="check8">아시아 ∙ 한국디자인</label>
+                  </li>
+                  <li data-value="9" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check9" />
+                    <label for="check9">미래도시 ∙ 모빌리티</label>
+                  </li>
+                  <li data-value="10" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check10" />
+                    <label for="check10">지역사회디자인</label>
+                  </li>
+                  <li data-value="11" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check11" />
+                    <label for="check11">생태 ∙ 지속가능</label>
+                  </li>
+                  <li data-value="12" class="check-wrap">
+                    <input type="checkbox" name="checkbox" id="check12" />
+                    <label for="check12">예술 ∙ 디자인일반</label>
+                  </li>
+                </ul>
+              </div>
+
+              <label for="datepicker" class="essential">등록일자</label>
+              <p class="date-wrap">
                 <input
                   type="text"
-                  id=""
-                  name=""
-                  placeholder="카테고리를 선택해주세요"
+                  id="datepicker"
+                  placeholder="작품 등록일자를 입력해주세요"
                 />
-              </div>
+              </p>
             </div>
           </div>
         </div>
@@ -118,5 +234,38 @@
         </div>
       </main>
     </div>
+
+    <script>
+      $(function () {
+        $("#datepicker").datepicker({
+          showOn: "button",
+          changeMonth: true,
+          changeYear: true,
+          buttonImage: "/assets/img/icon-calendar.png",
+          buttonImageOnly: true,
+          buttonText: "날짜 선택",
+          dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+          monthNamesShort: [
+            "1월",
+            "2월",
+            "3월",
+            "4월",
+            "5월",
+            "6월",
+            "7월",
+            "8월",
+            "9월",
+            "10월",
+            "11월",
+            "12월",
+          ],
+        });
+        // 이미지의 소스를 변경
+        $(".ui-datepicker-trigger").attr(
+          "src",
+          "/assets/img/icon-calendar.png"
+        );
+      });
+    </script>
   </body>
 </html>
