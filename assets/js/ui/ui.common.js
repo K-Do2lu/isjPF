@@ -250,13 +250,80 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*--------------------------------------------------------------
-  @search input enter 막기
+  @관리자 select
 --------------------------------------------------------------*/
-// const inputArea = document.getElementById("inputArea");
+document.addEventListener("DOMContentLoaded", () => {
+  const customSelects = document.querySelectorAll(".select-wrap");
 
-// inputArea.addEventListener("keydown", function (event) {
-//   if (event.keyCode === 13) {
-//     // 엔터 키 코드는 13
-//     event.preventDefault(); // 기본 동작(새로운 줄 추가)을 막기
-//   }
-// });
+  customSelects.forEach((customSelect) => {
+    const selectedOption = customSelect.querySelector(".selected");
+    const optionsList = customSelect.querySelector(".options");
+    const optionTit = customSelect.querySelectorAll(".option-tit");
+
+    // 각 .select-wrap 요소에 대한 선택된 옵션을 저장할 변수 추가
+    let currentSelectedOption = "";
+
+    const handleOptionClick = (event) => {
+      const clickedOption = event.target;
+      if (clickedOption.tagName === "LI") {
+        selectedOption.textContent = clickedOption.textContent;
+        optionsList.style.display = "none";
+        document.removeEventListener("click", handleOptionClick);
+        // 선택된 옵션을 현재 선택된 옵션 변수에 저장
+        currentSelectedOption = clickedOption.textContent;
+      }
+    };
+
+    selectedOption.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isDisplayed = optionsList.style.display === "block";
+      customSelects.forEach((select) => {
+        const otherSelectedOption = select.querySelector(".selected");
+        const otherOptionsList = select.querySelector(".options");
+        otherOptionsList.style.display = "none";
+        otherSelectedOption.classList.remove("rotate");
+        // .select-wrap 요소에 .focus 클래스를 토글
+        select.classList.remove("focus");
+      });
+      optionsList.style.display = isDisplayed ? "none" : "block";
+      selectedOption.classList.toggle("rotate", !isDisplayed);
+      customSelect.classList.toggle("focus", !isDisplayed);
+      if (!isDisplayed) {
+        document.addEventListener("click", handleOptionClick);
+      } else {
+        document.removeEventListener("click", handleOptionClick);
+      }
+    });
+
+    optionTit.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const subOptions = item.nextElementSibling;
+        subOptions.style.display =
+          subOptions.style.display === "block" ? "none" : "block";
+        optionTit.forEach((otherItem) => {
+          if (otherItem !== item) {
+            const otherSubOptions = otherItem.nextElementSibling;
+            otherSubOptions.style.display = "none";
+            otherItem.classList.remove("rotate");
+          }
+        });
+        item.classList.toggle("rotate", subOptions.style.display === "block");
+      });
+    });
+
+    optionsList.addEventListener("click", (event) => {
+      const clickedOption = event.target;
+      if (clickedOption.tagName === "LI") {
+        selectedOption.textContent = clickedOption.textContent;
+        optionsList.style.display = "none";
+        // 선택된 옵션을 현재 선택된 옵션 변수에 저장
+        currentSelectedOption = clickedOption.textContent;
+        // 선택된 옵션이 포함된 .selected 요소에서 .rotate 클래스 제거
+        selectedOption.classList.remove("rotate");
+        // .select-wrap 요소에 .focus 클래스를 토글
+        customSelect.classList.remove("focus");
+      }
+    });
+  });
+});
