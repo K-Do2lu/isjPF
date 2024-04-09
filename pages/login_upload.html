@@ -78,145 +78,314 @@
             <!-- upload -->
             <div class="upload">
               <h2 class="tit">게시글 업로드</h2>
-
-              <div class="input-wrap">
+              <!-- 제목을 입력해주세요 -->
+              <div class="input-wrap upload-tit">
                 <input
                   type="text"
                   id=""
                   name=""
                   placeholder="제목을 입력해주세요"
                 />
+                <span class="important-symbol">*</span>
               </div>
-
-              <label for="" class="essential">카테고리</label>
-              <div class="select-wrap">
-                <span class="selected">카테고리를 선택해주세요</span>
-                <ul class="options">
-                  <li data-value="1">
-                    <span class="option-tit">Art&amp;Design</span>
-                    <ul class="sub-options">
-                      <li>제품 ∙ 시스템 디자인</li>
-                      <li>환경 ∙ 공공 디자인</li>
-                      <li>대학 디자인</li>
-                    </ul>
-                  </li>
-                  <li data-value="2">
-                    <span class="option-tit">RESEARCH</span>
-                    <ul class="sub-options">
-                      <li>국가디자인 ∙ 교육정책</li>
-                      <li>미래 라이프스타일 ∙ 디자인전략</li>
-                      <li>미래도시 ∙ 모빌리티 ∙ 모바일 디자인</li>
-                      <li>정체성 ∙ 혁신 ∙ 한국디자인</li>
-                    </ul>
-                  </li>
-                  <li data-value="3">
-                    <span class="option-tit">EXHIBITION</span>
-                    <ul class="sub-options">
-                      <li>개인전</li>
-                      <li>참여전시</li>
-                    </ul>
-                  </li>
-                  <li data-value="4">
-                    <span class="option-tit">PROGRAM PLANNING</span>
-                    <ul class="sub-options">
-                      <li>행사 참여작품</li>
-                    </ul>
-                  </li>
-                  <li data-value="5">
-                    <span class="option-tit">LECTURES</span>
-                    <ul class="sub-options">
-                      <li>주제 특강</li>
-                      <li>강의</li>
-                    </ul>
-                  </li>
-                  <li data-value="6">
-                    <span class="option-tit">BOOKS</span>
-                    <ul class="sub-options">
-                      <li>Books</li>
-                      <li>Article</li>
-                    </ul>
-                  </li>
-                  <li data-value="6">
-                    <span class="option-tit">PRESS</span>
-                    <ul class="sub-options">
-                      <li>Interview</li>
-                      <li>News</li>
-                      <li>Video</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <label for="" class="essential">키워드</label>
-              <div class="select-wrap">
-                <div class="chips-container">
-                  <!-- 여기에 선택된 옵션 버튼이 직접 추가-->
-                  <button type="button" class="p-btn-chips active">
-                    국가 ∙ 공공디자인 ∙ 정책<i class="icon cross"></i>
-                  </button>
+              <!-- 카테고리 -->
+              <div>
+                <label for="" class="essential">카테고리</label>
+                <div class="select-wrap">
+                  <span class="selected">카테고리를 선택해주세요</span>
+                  <ul class="options">
+                    <li data-value="1">
+                      <span class="option-tit">Art&amp;Design</span>
+                      <ul class="sub-options">
+                        <li>제품 ∙ 시스템 디자인</li>
+                        <li>환경 ∙ 공공 디자인</li>
+                        <li>대학 디자인</li>
+                      </ul>
+                    </li>
+                    <li data-value="2">
+                      <span class="option-tit">RESEARCH</span>
+                      <ul class="sub-options">
+                        <li>국가디자인 ∙ 교육정책</li>
+                        <li>미래 라이프스타일 ∙ 디자인전략</li>
+                        <li>미래도시 ∙ 모빌리티 ∙ 모바일 디자인</li>
+                        <li>정체성 ∙ 혁신 ∙ 한국디자인</li>
+                      </ul>
+                    </li>
+                    <li data-value="3">
+                      <span class="option-tit">EXHIBITION</span>
+                      <ul class="sub-options">
+                        <li>개인전</li>
+                        <li>참여전시</li>
+                      </ul>
+                    </li>
+                    <li data-value="4">
+                      <span class="option-tit">PROGRAM PLANNING</span>
+                      <ul class="sub-options">
+                        <li>행사 참여작품</li>
+                      </ul>
+                    </li>
+                    <li data-value="5">
+                      <span class="option-tit">LECTURES</span>
+                      <ul class="sub-options">
+                        <li>주제 특강</li>
+                        <li>강의</li>
+                      </ul>
+                    </li>
+                    <li data-value="6">
+                      <span class="option-tit">BOOKS</span>
+                      <ul class="sub-options">
+                        <li>Books</li>
+                        <li>Article</li>
+                      </ul>
+                    </li>
+                    <li data-value="6">
+                      <span class="option-tit">PRESS</span>
+                      <ul class="sub-options">
+                        <li>Interview</li>
+                        <li>News</li>
+                        <li>Video</li>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
-                <span class="selected">키워드를 선택해주세요</span>
+              </div>
 
-                <ul class="options" style="display: none">
-                  <li data-value="1" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check1" />
-                    <label for="check1">국가 ∙ 공공디자인 ∙ 정책</label>
+              <!-- 키워드 -->
+              <div>
+                <label for="" class="essential">키워드</label>
+                <div class="select-wrap">
+                  <div class="chips-container">
+                    <!-- 여기에 선택된 옵션 버튼이 직접 추가-->
+                    <button type="button" class="p-btn-chips active">
+                      국가 ∙ 공공디자인 ∙ 정책<i class="icon cross"></i>
+                    </button>
+                  </div>
+                  <span class="selected">키워드를 선택해주세요</span>
+
+                  <ul class="options" style="display: none">
+                    <li data-value="1" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check1" />
+                      <label for="check1">국가 ∙ 공공디자인 ∙ 정책</label>
+                    </li>
+                    <li data-value="2" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check2" />
+                      <label for="check2">조형 ∙ 미학</label>
+                    </li>
+                    <li data-value="3" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check3" />
+                      <label for="check3">기업디자인정책 ∙ 전략</label>
+                    </li>
+                    <li data-value="4" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check4" />
+                      <label for="check4">문화 ∙ 아이덴티티</label>
+                    </li>
+                    <li data-value="5" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check5" />
+                      <label for="check5">미래예측 ∙ 라이프</label>
+                    </li>
+                    <li data-value="6" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check6" />
+                      <label for="check6">혁신 ∙ Good Design</label>
+                    </li>
+                    <li data-value="7" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check7" />
+                      <label for="check7">창의 ∙ 융합디자인사고 ∙ 교육</label>
+                    </li>
+                    <li data-value="8" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check8" />
+                      <label for="check8">아시아 ∙ 한국디자인</label>
+                    </li>
+                    <li data-value="9" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check9" />
+                      <label for="check9">미래도시 ∙ 모빌리티</label>
+                    </li>
+                    <li data-value="10" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check10" />
+                      <label for="check10">지역사회디자인</label>
+                    </li>
+                    <li data-value="11" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check11" />
+                      <label for="check11">생태 ∙ 지속가능</label>
+                    </li>
+                    <li data-value="12" class="check-wrap">
+                      <input type="checkbox" name="checkbox" id="check12" />
+                      <label for="check12">예술 ∙ 디자인일반</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 등록일자 -->
+              <div>
+                <label for="" class="essential">등록일자</label>
+                <div class="date-wrap">
+                  <input
+                    type="text"
+                    id="datepicker"
+                    placeholder="작품 등록일자를 입력해주세요"
+                  />
+                </div>
+              </div>
+
+              <!-- 내용 -->
+              <div>
+                <label for="" class="essential">내용</label>
+                <!-- drag -->
+                <ul id="drag-wrap" class="drag-wrap">
+                  <li class="drag-item">
+                    <button type="button" class="drag-icon">
+                      <i class="icon drag"></i>
+                    </button>
+                    <p class="drag-txt">
+                      FLLAB(Future Life Lab)은 지속가능한 지구를 위한 삶과
+                      라이프스타일을 모색하며, 최소의 인풋으로 최대의 다양성과
+                      미적 생활을 함께 탐색한다.
+                    </p>
+                    <button type="button" class="control-btn delete"></button>
                   </li>
-                  <li data-value="2" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check2" />
-                    <label for="check2">조형 ∙ 미학</label>
+                  <li class="drag-item">
+                    <button type="button" class="drag-icon">
+                      <i class="icon drag"></i>
+                    </button>
+                    <p class="drag-txt">
+                      FLLAB-Multi Purpose Food Tray는 그릇, 물, 공간의 사용을
+                      최소화하는 친환경 개념, 건강식단의 계획과 함께, 기능성과
+                      단순함 속에 변화의 미를 표현하였다.
+                    </p>
+                    <button type="button" class="control-btn delete"></button>
                   </li>
-                  <li data-value="3" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check3" />
-                    <label for="check3">기업디자인정책 ∙ 전략</label>
-                  </li>
-                  <li data-value="4" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check4" />
-                    <label for="check4">문화 ∙ 아이덴티티</label>
-                  </li>
-                  <li data-value="5" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check5" />
-                    <label for="check5">미래예측 ∙ 라이프</label>
-                  </li>
-                  <li data-value="6" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check6" />
-                    <label for="check6">혁신 ∙ Good Design</label>
-                  </li>
-                  <li data-value="7" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check7" />
-                    <label for="check7">창의 ∙ 융합디자인사고 ∙ 교육</label>
-                  </li>
-                  <li data-value="8" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check8" />
-                    <label for="check8">아시아 ∙ 한국디자인</label>
-                  </li>
-                  <li data-value="9" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check9" />
-                    <label for="check9">미래도시 ∙ 모빌리티</label>
-                  </li>
-                  <li data-value="10" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check10" />
-                    <label for="check10">지역사회디자인</label>
-                  </li>
-                  <li data-value="11" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check11" />
-                    <label for="check11">생태 ∙ 지속가능</label>
-                  </li>
-                  <li data-value="12" class="check-wrap">
-                    <input type="checkbox" name="checkbox" id="check12" />
-                    <label for="check12">예술 ∙ 디자인일반</label>
+                  <!-- 내용을 입력해주세요 -->
+                  <li class="drag-input-item">
+                    <button type="button" class="drag-icon">
+                      <i class="icon drag"></i>
+                    </button>
+                    <input
+                      type="text"
+                      class="drag-input"
+                      placeholder="내용을 입력해주세요"
+                    />
+                    <button type="button" class="control-btn add"></button>
                   </li>
                 </ul>
               </div>
 
-              <label for="datepicker" class="essential">등록일자</label>
-              <p class="date-wrap">
+              <!-- 파일 선택 -->
+              <div class="file-wrap">
+                <div class="file-add">
+                  <img
+                    src="/assets/img/icon-file-choice.png"
+                    alt="아이콘 파일"
+                  />
+                  <p>
+                    이미지 드레그 또는
+                    <span class="file-choice">파일 선택</span>
+                  </p>
+                </div>
+                <!-- 파일 업로드 된 거 -->
+                <div class="file-choice">
+                  <!-- Activated -->
+                  <div class="choice-wrap">
+                    <div class="choice-item">
+                      <div class="choice-img">
+                        <img
+                          src="/assets/img/img-work-01.jpg"
+                          alt="파일 이미지"
+                        />
+                      </div>
+                      <p class="choice-txt">
+                        FLLAB 다용도 음식 트레이 1.jpg
+                      </p>
+                      <button type="button"><i class="icon cross"></i></button>
+                    </div>
+                    <input
+                      type="text"
+                      value="FFLAB 다용도 트레이 전면"
+                      placeholder="사진 설명을 입력해주세요"
+                      disabled
+                    />
+                  </div>
+                  <!-- Focused -->
+                  <div class="choice-wrap">
+                    <div class="choice-item">
+                      <div class="choice-img">
+                        <img
+                          src="/assets/img/img-work-01.jpg"
+                          alt="파일 이미지"
+                        />
+                      </div>
+                      <p class="choice-txt">
+                        FLLAB 다용도 음식 트레이 1.jpg
+                      </p>
+                      <button type="button"><i class="icon cross"></i></button>
+                    </div>
+                    <input
+                      type="text"
+                      value=""
+                      placeholder="사진 설명을 입력해주세요"
+                    />
+                  </div>
+                  <!-- Inactive -->
+                  <div class="choice-wrap">
+                    <div class="choice-item">
+                      <div class="choice-img">
+                        <img
+                          src="/assets/img/img-work-01.jpg"
+                          alt="파일 이미지"
+                        />
+                      </div>
+                      <p class="choice-txt">
+                        FLLAB 다용도 음식 트레이 1.jpg
+                      </p>
+                      <button type="button"><i class="icon cross"></i></button>
+                    </div>
+                    <input
+                      type="text"
+                      value=""
+                      placeholder="사진 설명을 입력해주세요"
+                    />
+                  </div>
+                  <!-- Inactive -->
+                  <div class="choice-wrap">
+                    <div class="choice-item">
+                      <div class="choice-img">
+                        <img
+                          src="/assets/img/img-work-01.jpg"
+                          alt="파일 이미지"
+                        />
+                      </div>
+                      <p class="choice-txt">
+                        FLLAB 다용도 음식 트레이 1.jpg
+                      </p>
+                      <button type="button"><i class="icon cross"></i></button>
+                    </div>
+                    <input
+                      type="text"
+                      value=""
+                      placeholder="사진 설명을 입력해주세요"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- 첨부파일 -->
+              <div class="input-wrap">
+                <label for="" class="">첨부파일</label>
                 <input
                   type="text"
-                  id="datepicker"
-                  placeholder="작품 등록일자를 입력해주세요"
+                  id=""
+                  name=""
+                  placeholder="첨부파일을 선택해주세요"
                 />
-              </p>
+              </div>
+              <!-- 관련 URL -->
+              <div class="input-wrap">
+                <label for="" class="">관련 URL</label>
+                <input
+                  type="text"
+                  id=""
+                  name=""
+                  placeholder="URL을 입력해주세요"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -259,12 +428,14 @@
             "11월",
             "12월",
           ],
+          beforeShow: function (input, inst) {
+            // 원하는 위치를 설정합니다.
+            inst.dpDiv.css({
+              top: 0,
+              right: "14%",
+            });
+          },
         });
-        // 이미지의 소스를 변경
-        $(".ui-datepicker-trigger").attr(
-          "src",
-          "/assets/img/icon-calendar.png"
-        );
       });
     </script>
   </body>

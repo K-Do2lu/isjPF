@@ -327,3 +327,85 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+/*--------------------------------------------------------------
+  @drag
+--------------------------------------------------------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  var $recommend = {
+    /**
+     * 초기화
+     */
+    init: function () {
+      this.fnAddEventListener();
+    },
+
+    /**
+     * 이벤트 등록
+     */
+    fnAddEventListener: function () {
+      $(".drag-item").attr("draggable", "true");
+
+      $(".drag-item")
+        .off("dragstart")
+        .on("dragstart", function () {
+          $recommend.dragStart(event);
+        });
+      $(".drag-item")
+        .off("dragover")
+        .on("dragover", function () {
+          $recommend.dragOver(event);
+        });
+      $(".drag-item")
+        .off("dragend")
+        .on("dragend", function () {
+          $recommend.dragEnd();
+        });
+
+      // 삭제 버튼 클릭 이벤트 등록
+      $(".control-btn.delete")
+        .off("click")
+        .on("click", function (e) {
+          $(this).closest(".drag-item").remove(); // 가장 가까운 상위의 .drag-item 요소를 삭제
+        });
+    },
+
+    dragStart: function (e) {
+      e.dataTransfer.effectAllowed = "move";
+      e.dataTransfer.setData("text/plain", null);
+      selected = e.target;
+    },
+
+    dragOver: function (e) {
+      //위쪽으로 이동했을 때
+      if (this.isBefore(selected, e.target)) {
+        if (e.target.className == "drag-item") {
+          e.target.parentNode.insertBefore(selected, e.target); //부모노드의 e.target앞에 selected 넣는다.
+        }
+      } else {
+        if (e.target.className == "drag-item") {
+          e.target.parentNode.insertBefore(selected, e.target.nextSibling); //부모노드의 e.target 다음 형제 앞에 selected 넣는다.
+        }
+      }
+    },
+
+    dragEnd: function () {
+      selected = null;
+    },
+
+    isBefore: function (el1, el2) {
+      let cur;
+
+      if (el2.parentNode === el1.parentNode) {
+        console.log(el1.previousSibling);
+        for (cur = el1.previousSibling; cur; cur = cur.previousSibling) {
+          if (cur === el2) return true;
+        }
+      }
+      return false;
+    },
+  };
+
+  $(function () {
+    $recommend.init();
+  });
+});

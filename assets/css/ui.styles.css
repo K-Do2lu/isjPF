@@ -1312,8 +1312,9 @@ label.essential::after {
   overflow-y: auto;
   top: 120%;
   right: 0;
-  width: 100%;
-  max-width: 14.5rem;
+  width: auto;
+  min-width: 14.5rem;
+  max-width: auto;
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -1477,127 +1478,119 @@ label.essential::after {
 }
 
 .date-wrap {
-  display: grid;
-  grid-template-columns: auto minmax(28px, 28px);
-  align-items: center;
-  padding: 0.625rem 0;
+  width: 100%;
   border-bottom: 1px solid #bbbbbb;
 }
-.date-wrap .hasDatepicker {
-  height: 1.75rem;
+.date-wrap > input {
   font-size: 1.125rem;
   line-height: 1.75rem;
   color: #111111;
-  letter-spacing: -0.02rem;
+  width: calc(100% - 28px);
+  height: 48px;
   outline: none;
 }
-.date-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.date-wrap > input::placeholder {
+  color: #999999;
+  letter-spacing: -0.02rem;
+}
+.date-wrap img.ui-datepicker-trigger {
+  vertical-align: middle;
   cursor: pointer;
 }
 
-#ui-datepicker-div table {
-  margin: 0;
+#ui-datepicker-div.ui-widget.ui-widget-content {
+  min-width: 284px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #eeeeee;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
 }
-#ui-datepicker-div .ui-widget-header {
-  margin-bottom: 12px;
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header {
+  height: 44px;
+  border: none;
   background: #ffffff;
+  color: #111111;
+  font-weight: 500;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-icon {
+  background: none;
+  cursor: pointer;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-datepicker-prev {
+  width: 20px;
+  height: 20px;
+  background: url(/assets/img/icon-calendar-prev.png) no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-datepicker-prev:hover {
   border: none;
 }
-#ui-datepicker-div .ui-widget-header select {
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-datepicker-next {
+  width: 20px;
+  height: 20px;
+  background: url(/assets/img/icon-calendar-next.png) no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-datepicker-next:hover {
+  border: none;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-datepicker-title {
+  display: flex;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-datepicker-title select {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.02rem;
   width: 50%;
   height: 32px;
-  padding-right: 20px;
-  appearance: none;
-  outline: none;
-  border: 1px solid #dedede;
-  text-align: center;
   background-image: url("/assets/img/icon-calendar-dropdown.png");
-  background-position: 75% center;
+  background-position: 85% center;
   background-repeat: no-repeat;
   background-size: 20px;
-}
-#ui-datepicker-div .ui-widget-header select:focus {
-  border-color: #111111;
-}
-#ui-datepicker-div .ui-widget-header select option:hover {
-  background: red !important;
-}
-#ui-datepicker-div .ui-widget-header .ui-datepicker-title {
-  display: flex;
-  align-items: center;
-}
-#ui-datepicker-div .ui-widget-header .ui-datepicker-title .ui-datepicker-month {
-  order: 2;
-}
-#ui-datepicker-div .ui-datepicker-prev {
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-#ui-datepicker-div .ui-datepicker-prev span {
-  background: url("/assets/img/icon-calendar-prev.png");
-  background-position: -2px -2px;
-}
-#ui-datepicker-div .ui-datepicker-next {
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-#ui-datepicker-div .ui-datepicker-next span {
-  background: url("/assets/img/icon-calendar-next.png");
-  background-position: -2px -2px;
-}
-#ui-datepicker-div .ui-state-default,
-#ui-datepicker-div .ui-widget-content .ui-state-default {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-family: "Pretendard";
-  font-weight: 400;
-  width: 1.75rem;
-  height: 1.75rem;
-  margin: 0 auto;
-  background: #ffffff;
-  border: none;
-  border-radius: 4px;
+  border: 1px solid #dedede;
+  appearance: none;
   text-align: center;
 }
-#ui-datepicker-div .ui-state-active,
-#ui-datepicker-div .ui-widget-content .ui-state-active {
-  background: #111111;
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-widget-header .ui-datepicker-title select.ui-datepicker-month {
+  order: 2;
 }
-#ui-datepicker-div .ui-state-highlight,
-#ui-datepicker-div .ui-widget-content .ui-state-highligh {
-  background: #eeeeee;
-  color: #111111;
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-datepicker-calendar {
+  margin: 0;
 }
-#ui-datepicker-div.ui-datepicker {
-  min-width: 17.75rem;
-}
-#ui-datepicker-div.ui-datepicker th {
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-datepicker-calendar th {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  padding: 8px 10px;
   font-family: "Pretendard";
   font-weight: 500;
   color: #999999;
 }
-#ui-datepicker-div.ui-datepicker td {
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-datepicker-calendar td {
   width: 36px;
   height: 36px;
 }
-#ui-datepicker-div.ui-widget {
-  padding: 16px;
-  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-datepicker-calendar td a {
+  width: 28px;
+  height: 28px;
 }
-#ui-datepicker-div.ui-widget.ui-widget-content {
-  border-color: #eeeeee;
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-state-default {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  border: none;
+  border-radius: 4px;
+  background: #ffffff;
+  text-align: center;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-state-default.ui-state-highlight {
+  background: #eeeeee;
+}
+#ui-datepicker-div.ui-widget.ui-widget-content .ui-state-default.ui-state-active {
+  background: #111111;
+  color: #ffffff;
 }
 
 fieldset {
@@ -2470,6 +2463,220 @@ fieldset [type=checkbox]:disabled:before {
   width: 100%;
   max-width: 48rem;
   margin: 0 auto;
+}
+.main .main-cont .cont .upload .tit {
+  font-size: 2.125rem;
+  line-height: 2.625rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.main .main-cont .cont .upload .upload-tit {
+  position: relative;
+  margin-bottom: 20px;
+}
+.main .main-cont .cont .upload .upload-tit input {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+.main .main-cont .cont .upload .upload-tit input::placeholder {
+  position: relative;
+  color: #bbbbbb;
+}
+.main .main-cont .cont .upload .upload-tit input::placeholder::after {
+  content: "*";
+  position: absolute;
+  color: #ff334b;
+}
+.main .main-cont .cont .upload .upload-tit .important-symbol {
+  position: absolute;
+  top: 18%;
+  left: 29.5%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff334b; /* 중요 기호 색상 설정 */
+}
+.main .main-cont .cont .upload > div + div {
+  margin-bottom: 36px;
+}
+.main .main-cont .cont .upload > div + div:last-child {
+  margin-bottom: 0;
+}
+.main .main-cont .cont .upload .drag-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  color: #333333;
+  letter-spacing: -0.02rem;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  cursor: grab;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item .drag-icon {
+  width: 22px;
+  height: 22px;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item .drag-icon > .icon {
+  filter: invert(0.7);
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item .drag-txt {
+  flex: 1;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item .control-btn {
+  width: 28px;
+  height: 28px;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item .control-btn.delete {
+  background: url("/assets/img/icon-delete.png") no-repeat;
+  background-size: cover;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item .control-btn.add {
+  background: url("/assets/img/icon-add.png") no-repeat;
+  background-size: cover;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item.write input {
+  flex: 1;
+  outline: none;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-item.write input::placeholder {
+  color: #999999;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  color: #333333;
+  letter-spacing: -0.02rem;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item .drag-icon {
+  width: 22px;
+  height: 22px;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item .drag-icon > .icon {
+  filter: invert(0.7);
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item .drag-txt {
+  flex: 1;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item .control-btn {
+  width: 28px;
+  height: 28px;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item .control-btn.delete {
+  background: url("/assets/img/icon-delete.png") no-repeat;
+  background-size: cover;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item .control-btn.add {
+  background: url("/assets/img/icon-add.png") no-repeat;
+  background-size: cover;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item input {
+  flex: 1;
+  outline: none;
+}
+.main .main-cont .cont .upload .drag-wrap .drag-input-item input::placeholder {
+  color: #999999;
+}
+.main .main-cont .cont .upload .file-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.main .main-cont .cont .upload .file-wrap .file-add {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+.main .main-cont .cont .upload .file-wrap .file-add > img {
+  min-width: 52px;
+  width: auto;
+}
+.main .main-cont .cont .upload .file-wrap .file-add p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #999999;
+  letter-spacing: -0.02rem;
+}
+.main .main-cont .cont .upload .file-wrap .file-add p .file-choice {
+  display: inline-block;
+  text-decoration: underline;
+  color: #333333;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap {
+  width: 216px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap .choice-item {
+  display: grid;
+  grid-template-columns: minmax(64px, 64px) 1fr 18px;
+  grid-template-rows: minmax(64px, 64px);
+  gap: 6px;
+  align-items: center;
+  padding-right: 6px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap .choice-item .choice-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap .choice-item button {
+  width: 18px;
+  height: 18px;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap .choice-item button > .icon {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap input {
+  height: 28px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap input::placeholder {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #999999;
+}
+.main .main-cont .cont .upload .file-wrap .file-choice .choice-wrap input:disabled {
+  background: #f5f5f5;
+  color: #999999;
 }
 .main .cont-about {
   max-width: 44.25rem;

@@ -984,8 +984,9 @@ label {
     overflow-y: auto;
     top: 120%;
     right: 0;
-    width: 100%;
-    max-width: 14.5rem;
+    width: auto;
+    min-width: 14.5rem;
+    max-width: auto;
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -1152,134 +1153,127 @@ label {
     }
   }
 }
-// Fom -calender
+//Form - date picker
 .date-wrap {
-  display: grid;
-  grid-template-columns: auto minmax(28px, 28px);
-  align-items: center;
-  padding: 0.625rem 0;
+  width: 100%;
   border-bottom: 1px solid $c-bbb;
-
-  .hasDatepicker {
-    height: 1.75rem;
+  > input {
     @include fs-18-28;
     color: $c-111;
-    letter-spacing: -0.02rem;
+    width: calc(100% - 28px);
+    height: 48px;
     outline: none;
+    &::placeholder {
+      color: $c-999;
+      letter-spacing: -0.02rem;
+    }
   }
-
-  img {
-    @include img-cover;
+  img.ui-datepicker-trigger {
+    vertical-align: middle;
     cursor: pointer;
   }
 }
-// 캘린더 플러그인 스타일 수정
+// date picker calender
 #ui-datepicker-div {
-  table {
-    margin: 0;
-  }
-  .ui-widget-header {
-    margin-bottom: 12px;
-    background: $c-fff;
-    border: none;
-    select {
-      width: 50%;
-      height: 32px;
-      padding-right: 20px;
-      appearance: none;
-      outline: none;
-      border: 1px solid $c-dedede;
-      text-align: center;
-      background-image: url("/assets/img/icon-calendar-dropdown.png");
-      background-position: 75% center;
-      background-repeat: no-repeat;
-      background-size: 20px;
-      &:focus {
-        border-color: $c-111;
+  // left: auto !important;
+  &.ui-widget.ui-widget-content {
+    min-width: 284px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid $c-eee;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
+
+    // header
+    .ui-widget-header {
+      height: 44px;
+      border: none;
+      background: $c-fff;
+      color: $c-111;
+      font-weight: 500;
+
+      // pre next btn
+      .ui-icon {
+        background: none;
+        cursor: pointer;
+      }
+      .ui-datepicker-prev {
+        width: 20px;
+        height: 20px;
+        background: url(/assets/img/icon-calendar-prev.png) no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        &:hover {
+          border: none;
+        }
+      }
+      .ui-datepicker-next {
+        width: 20px;
+        height: 20px;
+        background: url(/assets/img/icon-calendar-next.png) no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        &:hover {
+          border: none;
+        }
       }
 
-      option {
-        &:hover {
-          background: red !important;
+      // select
+      .ui-datepicker-title {
+        display: flex;
+        select {
+          @include fs-16-24;
+          letter-spacing: -0.02rem;
+          width: 50%;
+          height: 32px;
+          background-image: url("/assets/img/icon-calendar-dropdown.png");
+          background-position: 85% center;
+          background-repeat: no-repeat;
+          background-size: 20px;
+          border: 1px solid $c-dedede;
+          appearance: none;
+          text-align: center;
+          &.ui-datepicker-month {
+            order: 2;
+          }
         }
       }
     }
-    .ui-datepicker-title {
-      display: flex;
-      align-items: center;
-      .ui-datepicker-month {
-        order: 2;
+
+    // table
+    .ui-datepicker-calendar {
+      margin: 0;
+      th {
+        @include fs-14-20;
+        font-family: "Pretendard";
+        font-weight: 500;
+        color: $c-999;
+      }
+      td {
+        width: 36px;
+        height: 36px;
+        a {
+          width: 28px;
+          height: 28px;
+        }
       }
     }
-  }
-  .ui-datepicker-prev {
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    span {
-      background: url("/assets/img/icon-calendar-prev.png");
-      background-position: -2px -2px;
-    }
-  }
-  .ui-datepicker-next {
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    span {
-      background: url("/assets/img/icon-calendar-next.png");
-      background-position: -2px -2px;
-    }
-  }
-  .ui-state-default,
-  .ui-widget-content .ui-state-default {
-    @include fs-14-20;
-    font-family: "Pretendard";
-    font-weight: 400;
-    width: 1.75rem;
-    height: 1.75rem;
-    margin: 0 auto;
-    background: $c-fff;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-  }
-  .ui-state-active,
-  .ui-widget-content .ui-state-active {
-    background: $c-111;
-  }
-  .ui-state-highlight,
-  .ui-widget-content .ui-state-highligh {
-    background: $c-eee;
-    color: $c-111;
-  }
-  &.ui-datepicker {
-    min-width: 17.75rem;
-
-    th {
-      @include fs-14-20;
-      padding: 8px 10px;
-      font-family: "Pretendard";
-      font-weight: 500;
-      color: $c-999;
-    }
-
-    td {
-      width: 36px;
-      height: 36px;
-    }
-  }
-  &.ui-widget {
-    padding: 16px;
-    // top: 80px !important;
-    // right: 0 !important;
-    // left: auto !important;
-    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
-    &.ui-widget-content {
-      border-color: $c-eee;
+    .ui-state-default {
+      font-size: 14px;
+      font-weight: 400;
+      color: $c-333;
+      border: none;
+      border-radius: 4px;
+      background: $c-fff;
+      text-align: center;
+      &.ui-state-highlight {
+        background: $c-eee;
+      }
+      &.ui-state-active {
+        background: $c-111;
+        color: $c-fff;
+      }
     }
   }
 }
