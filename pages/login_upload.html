@@ -430,6 +430,7 @@
           buttonImage: "/assets/img/icon-calendar.png",
           buttonImageOnly: true,
           buttonText: "날짜 선택",
+          dateFormat: "yy.mm.dd",
           dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
           monthNamesShort: [
             "1월",
@@ -445,11 +446,18 @@
             "11월",
             "12월",
           ],
-          beforeShow: function (input, inst) {
-            // 원하는 위치를 설정합니다.
-            inst.dpDiv.css({
-              top: 0,
-              right: "14%",
+
+          beforeShow: function (input) {
+            var i_offset = jQuery(input).offset();
+            setTimeout(function () {
+              jQuery("#ui-datepicker-div").css({
+                left: "auto", // left 속성을 auto로 설정하여 자동 정렬
+                right:
+                  window.innerWidth -
+                  i_offset.left -
+                  jQuery(input).outerWidth(), // input 요소의 오른쪽에 정렬
+                top: i_offset.top + jQuery(input).outerHeight() + 8, // input 요소의 아래에 정렬
+              });
             });
           },
         });

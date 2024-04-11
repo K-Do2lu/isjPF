@@ -148,7 +148,11 @@
         <!-- header -->
         <header class="header">
           <div class="header-inner">
-            <button type="button" class="logout-area">
+            <button
+              type="button"
+              class="logout-area btn-modal"
+              data-modal="logout"
+            >
               <span class="logout-txt">LOGOUT</span>
               <i class="icon logout"></i>
             </button>
@@ -769,6 +773,28 @@
         </div>
       </div>
       <!-- // alert:  입력값이 없습니다. 다시 입력해주세요. -->
+      <!-- alert:  로그아웃 -->
+      <div id="logout" class="modal-overlay alert">
+        <div class="modal-window">
+          <div class="window-top">
+            <button class="close-area" onclick="toggleModal('logout')">
+              <i class="icon cross"></i>
+            </button>
+          </div>
+
+          <div class="window-content">
+            <p class="alert-txt">로그아웃 하시겠습니까?</p>
+            <p class="alert-txt">기존 작성된 자료는 저장되지 않습니다.</p>
+            <button
+              type="button"
+              class="p-btn fill"
+              onclick="window.location.href='/pages/login.html'"
+            >
+              <span>확인</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
