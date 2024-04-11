@@ -546,46 +546,53 @@
                 }
               }
             }
-          }
-          .drag-input-item {
-            @include d-flex-between-center;
-            @include fs-18-28;
-            font-weight: 400;
-            color: $c-333;
-            letter-spacing: -0.02rem;
-            gap: 12px;
-            padding: 12px;
-            border-radius: 4px;
-            border: 1px solid $c-ccc;
-            .drag-icon {
-              width: 22px;
-              height: 22px;
-              > .icon {
-                filter: invert(0.7);
-              }
-            }
-            .drag-txt {
-              flex: 1;
-            }
-            .control-btn {
-              width: 28px;
-              height: 28px;
-              &.delete {
-                background: url("/assets/img/icon-delete.png") no-repeat;
-                background-size: cover;
-              }
-              &.add {
-                background: url("/assets/img/icon-add.png") no-repeat;
-                background-size: cover;
-              }
-            }
 
-            input {
-              flex: 1;
-              outline: none;
-              &::placeholder {
-                color: $c-999;
-              }
+            &:active {
+              border-color: $c-111;
+            }
+          }
+        }
+
+        // drag 입력 input
+        .drag-input-item {
+          @include d-flex-between-center;
+          @include fs-18-28;
+          margin-top: 8px;
+          font-weight: 400;
+          color: $c-333;
+          letter-spacing: -0.02rem;
+          gap: 12px;
+          padding: 12px;
+          border-radius: 4px;
+          border: 1px solid $c-ccc;
+          .drag-icon {
+            width: 22px;
+            height: 22px;
+            > .icon {
+              filter: invert(0.7);
+            }
+          }
+          .drag-txt {
+            flex: 1;
+          }
+          .control-btn {
+            width: 28px;
+            height: 28px;
+            &.delete {
+              background: url("/assets/img/icon-delete.png") no-repeat;
+              background-size: cover;
+            }
+            &.add {
+              background: url("/assets/img/icon-add.png") no-repeat;
+              background-size: cover;
+            }
+          }
+
+          input {
+            flex: 1;
+            outline: none;
+            &::placeholder {
+              color: $c-999;
             }
           }
         }
@@ -621,6 +628,7 @@
                 display: inline-block;
                 text-decoration: underline;
                 color: $c-333;
+                cursor: pointer;
               }
             }
           }

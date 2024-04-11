@@ -253,159 +253,277 @@ document.addEventListener("DOMContentLoaded", function () {
   @관리자 select
 --------------------------------------------------------------*/
 document.addEventListener("DOMContentLoaded", () => {
+  // DOMContentLoaded 이벤트가 발생하면 실행
+
+  // 모든 .select-wrap 클래스를 가진 요소를 선택
   const customSelects = document.querySelectorAll(".select-wrap");
 
+  // 각 .select-wrap 요소에 대해 반복
   customSelects.forEach((customSelect) => {
+    // .select-wrap 요소 내에서 선택된 옵션을 나타내는 요소를 선택
     const selectedOption = customSelect.querySelector(".selected");
+    // .select-wrap 요소 내에서 옵션 목록을 나타내는 요소를 선택
     const optionsList = customSelect.querySelector(".options");
+    // .select-wrap 요소 내에서 옵션 제목을 나타내는 모든 요소를 선택
     const optionTit = customSelect.querySelectorAll(".option-tit");
 
-    // 각 .select-wrap 요소에 대한 선택된 옵션을 저장할 변수 추가
+    // 현재 선택된 옵션을 저장할 변수를 선언
     let currentSelectedOption = "";
 
+    // 옵션을 클릭했을 때 처리할 함수를 정의
     const handleOptionClick = (event) => {
+      // 클릭된 요소를 가져옵니다.
       const clickedOption = event.target;
+      // 만약 클릭된 요소가 <li> 요소이면,
       if (clickedOption.tagName === "LI") {
+        // 선택된 옵션의 텍스트를 클릭된 옵션의 텍스트로 변경
         selectedOption.textContent = clickedOption.textContent;
+        // 선택된 옵션이면 텍스트 색상을 검정색으로 변경
+        selectedOption.style.color = "#000";
+        // 옵션 목록을 숨깁니다.
         optionsList.style.display = "none";
+        // document 전역 객체에서 이벤트 리스너를 제거
         document.removeEventListener("click", handleOptionClick);
         // 선택된 옵션을 현재 선택된 옵션 변수에 저장
         currentSelectedOption = clickedOption.textContent;
       }
     };
 
+    // 선택된 옵션을 클릭했을 때 처리할 함수를 정의
     selectedOption.addEventListener("click", (event) => {
+      // 이벤트 버블링을 막습니다.
       event.stopPropagation();
+      // 옵션 목록이 표시되는지 확인
       const isDisplayed = optionsList.style.display === "block";
+
+      // 모든 .select-wrap 요소에 대해 반복
       customSelects.forEach((select) => {
-        const otherSelectedOption = select.querySelector(".selected");
+        // 현재 .select-wrap 요소가 아닌 다른 요소의 옵션 목록을 숨김
         const otherOptionsList = select.querySelector(".options");
         otherOptionsList.style.display = "none";
+
+        // 다른 .select-wrap 요소 내에서 선택된 옵션을 나타내는 요소를 선택
+        const otherSelectedOption = select.querySelector(".selected");
+        // 다른 .select-wrap 요소 내에서 선택된 옵션의 회전 효과 클래스를 제거
         otherSelectedOption.classList.remove("rotate");
-        // .select-wrap 요소에 .focus 클래스를 토글
+
+        // 다른 .select-wrap 요소에 .focus 클래스를 제거
         select.classList.remove("focus");
       });
+
+      // 현재 .select-wrap 요소의 옵션 목록을 표시하거나 숨김
       optionsList.style.display = isDisplayed ? "none" : "block";
+
+      // 선택된 옵션의 화살표 아이콘에 회전 효과 클래스를 토글
       selectedOption.classList.toggle("rotate", !isDisplayed);
+
+      // 현재 .select-wrap 요소에 .focus 클래스를 토글
       customSelect.classList.toggle("focus", !isDisplayed);
+
+      // 옵션 목록이 표시되지 않는 경우, document 전역 객체에 이벤트 리스너를 추가
       if (!isDisplayed) {
         document.addEventListener("click", handleOptionClick);
       } else {
+        // 옵션 목록이 표시되는 경우, document 전역 객체에서 이벤트 리스너를 제거
         document.removeEventListener("click", handleOptionClick);
       }
     });
 
+    // 각 옵션 제목을 클릭했을 때 처리할 함수를 정의
     optionTit.forEach((item) => {
       item.addEventListener("click", (event) => {
+        // 이벤트 버블링을 막습니다.
         event.stopPropagation();
+
+        // 현재 클릭한 옵션 제목의 하위 옵션 목록을 가져옴
         const subOptions = item.nextElementSibling;
+        // 하위 옵션 목록을 표시하거나 숨깁니다.
         subOptions.style.display =
           subOptions.style.display === "block" ? "none" : "block";
+
+        // 다른 옵션 제목에 대해 반복
         optionTit.forEach((otherItem) => {
+          // 현재 클릭한 옵션 제목이 아닌 경우,
           if (otherItem !== item) {
+            // 해당 옵션 제목의 하위 옵션 목록을 숨깁니다.
             const otherSubOptions = otherItem.nextElementSibling;
             otherSubOptions.style.display = "none";
+            // 해당 옵션 제목의 회전 효과 클래스를 제거
             otherItem.classList.remove("rotate");
           }
         });
+
+        // 클릭된 옵션 제목에 회전 효과 클래스를 토글
         item.classList.toggle("rotate", subOptions.style.display === "block");
       });
     });
 
+    // 옵션 목록에서 옵션을 클릭했을 때 처리할 함수를 정의
     optionsList.addEventListener("click", (event) => {
+      // 클릭된 요소를 가져옵니다.
       const clickedOption = event.target;
+      // 만약 클릭된 요소가 <li> 요소이면,
       if (clickedOption.tagName === "LI") {
+        // 선택된 옵션의 텍스트를 클릭된 옵션의 텍스트로 변경
         selectedOption.textContent = clickedOption.textContent;
+        // 선택된 옵션이면 텍스트 색상을 검정색으로 변경
+        selectedOption.style.color = "#000";
+        // 옵션 목록을 숨깁니다.
         optionsList.style.display = "none";
         // 선택된 옵션을 현재 선택된 옵션 변수에 저장
         currentSelectedOption = clickedOption.textContent;
-        // 선택된 옵션이 포함된 .selected 요소에서 .rotate 클래스 제거
+        // 선택된 옵션이 포함된 .selected 요소에서 회전 효과 클래스를 제거
         selectedOption.classList.remove("rotate");
-        // .select-wrap 요소에 .focus 클래스를 토글
+        // .select-wrap 요소에 .focus 클래스를 제거
         customSelect.classList.remove("focus");
       }
     });
   });
 });
+
 /*--------------------------------------------------------------
   @drag
 --------------------------------------------------------------*/
 document.addEventListener("DOMContentLoaded", () => {
-  var $recommend = {
-    /**
-     * 초기화
-     */
-    init: function () {
-      this.fnAddEventListener();
-    },
+  // 할 일을 추가하는 함수
+  const addTodo = () => {
+    // 입력된 할 일과 할 일 목록 요소 가져오기
+    const todoInput = document.getElementById("todoInput");
+    const todoList = document.getElementById("drag-wrap");
+    const todoText = todoInput.value.trim(); // 입력된 텍스트에서 양 끝의 공백 제거
 
-    /**
-     * 이벤트 등록
-     */
-    fnAddEventListener: function () {
-      $(".drag-item").attr("draggable", "true");
+    // 입력된 텍스트가 비어있지 않을 경우에만 실행
+    if (todoText !== "") {
+      // 새로운 할 일을 위한 리스트 아이템 생성
+      const listItem = document.createElement("li");
+      listItem.setAttribute("class", "drag-item");
+      listItem.setAttribute("draggable", "true");
 
-      $(".drag-item")
-        .off("dragstart")
-        .on("dragstart", function () {
-          $recommend.dragStart(event);
-        });
-      $(".drag-item")
-        .off("dragover")
-        .on("dragover", function () {
-          $recommend.dragOver(event);
-        });
-      $(".drag-item")
-        .off("dragend")
-        .on("dragend", function () {
-          $recommend.dragEnd();
-        });
+      // 드래그 아이콘을 위한 버튼 요소 생성
+      const dragIconBtn = document.createElement("button");
+      dragIconBtn.setAttribute("type", "button");
+      dragIconBtn.setAttribute("class", "drag-icon");
+      dragIconBtn.innerHTML = '<i class="icon drag"></i>';
 
-      // 삭제 버튼 클릭 이벤트 등록
-      $(".control-btn.delete")
-        .off("click")
-        .on("click", function (e) {
-          $(this).closest(".drag-item").remove(); // 가장 가까운 상위의 .drag-item 요소를 삭제
-        });
-    },
+      // 할 일 텍스트를 담는 p 요소 생성
+      const dragTxt = document.createElement("p");
+      dragTxt.setAttribute("class", "drag-txt");
+      dragTxt.textContent = todoText; // 할 일 텍스트 설정
 
-    dragStart: function (e) {
-      e.dataTransfer.effectAllowed = "move";
-      e.dataTransfer.setData("text/plain", null);
-      selected = e.target;
-    },
+      // 삭제 버튼을 위한 버튼 요소 생성
+      const deleteBtn = document.createElement("button");
+      deleteBtn.setAttribute("type", "button");
+      deleteBtn.setAttribute("class", "control-btn delete");
+      // 삭제 버튼 클릭 시 리스트 아이템 제거
+      deleteBtn.addEventListener("click", function () {
+        listItem.remove();
+        updateMargin(); // 리스트 아이템이 제거될 때마다 마진 조정
+      });
 
-    dragOver: function (e) {
-      //위쪽으로 이동했을 때
-      if (this.isBefore(selected, e.target)) {
-        if (e.target.className == "drag-item") {
-          e.target.parentNode.insertBefore(selected, e.target); //부모노드의 e.target앞에 selected 넣는다.
-        }
-      } else {
-        if (e.target.className == "drag-item") {
-          e.target.parentNode.insertBefore(selected, e.target.nextSibling); //부모노드의 e.target 다음 형제 앞에 selected 넣는다.
-        }
-      }
-    },
+      // 생성한 요소들을 리스트 아이템에 추가
+      listItem.appendChild(dragIconBtn);
+      listItem.appendChild(dragTxt);
+      listItem.appendChild(deleteBtn);
 
-    dragEnd: function () {
-      selected = null;
-    },
+      // 할 일 목록에 리스트 아이템 추가
+      todoList.appendChild(listItem);
 
-    isBefore: function (el1, el2) {
-      let cur;
+      // 입력 필드 초기화
+      todoInput.value = "";
 
-      if (el2.parentNode === el1.parentNode) {
-        console.log(el1.previousSibling);
-        for (cur = el1.previousSibling; cur; cur = cur.previousSibling) {
-          if (cur === el2) return true;
-        }
-      }
-      return false;
-    },
+      updateMargin(); // 리스트 아이템이 추가될 때마다 마진 조정
+    }
   };
 
-  $(function () {
-    $recommend.init();
+  var selected; // 드래그된 아이템
+
+  // 드래그 시작 이벤트 핸들러
+  const dragStart = (e) => {
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", null);
+    selected = e.target;
+  };
+
+  // 드래그 오버 이벤트 핸들러
+  const dragOver = (e) => {
+    // 위쪽으로 이동했을 때
+    if (isBefore(selected, e.target)) {
+      if (e.target.className == "drag-item") {
+        e.target.parentNode.insertBefore(selected, e.target);
+      }
+    } else {
+      // 아래쪽으로 이동했을 때
+      if (e.target.className == "drag-item") {
+        e.target.parentNode.insertBefore(selected, e.target.nextSibling);
+      }
+    }
+  };
+
+  // 드래그 종료 이벤트 핸들러
+  const dragEnd = () => {
+    selected = null;
+  };
+
+  // 두 요소 사이에 위치하는지 확인하는 함수
+  const isBefore = (el1, el2) => {
+    let cur;
+
+    if (el2.parentNode === el1.parentNode) {
+      for (cur = el1.previousSibling; cur; cur = cur.previousSibling) {
+        if (cur === el2) return true;
+      }
+    }
+    return false;
+  };
+
+  // 마진을 조정하는 함수
+  const updateMargin = () => {
+    const todoList = document.getElementById("drag-wrap");
+    const itemCount = todoList.childElementCount;
+    // 리스트 아이템이 1개 이상일 때만 마진 적용
+    if (itemCount > 0) {
+      todoList.style.marginTop = "10px";
+    } else {
+      todoList.style.marginTop = "0";
+    }
+  };
+
+  // 할 일 입력 필드와 할 일 목록, 추가 버튼 요소 가져오기
+  const todoInput = document.getElementById("todoInput");
+  const todoList = document.getElementById("drag-wrap");
+  const addBtn = document.querySelector(".control-btn.add");
+
+  // 할 일 입력 필드에서 Enter 키 입력 시 할 일 추가
+  todoInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      addTodo();
+    }
+  });
+
+  // 추가 버튼 클릭 시 할 일 추가
+  addBtn.addEventListener("click", addTodo);
+
+  // 드래그 앤 드롭 이벤트 설정
+  todoList.addEventListener("dragstart", dragStart); // 드래그 시작
+  todoList.addEventListener("dragover", dragOver); // 드래그 오버
+  todoList.addEventListener("dragend", dragEnd); // 드래그 종료
+});
+
+/*--------------------------------------------------------------
+  @file upload
+--------------------------------------------------------------*/
+function openFileUploader() {
+  document.getElementById("fileUpload").click();
+}
+
+/*--------------------------------------------------------------
+  @인풋 안에 특수기호 입력 시 none 처리
+--------------------------------------------------------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  const uploadTitInput = document.getElementById("uploadTitInput");
+  const importantSymbol = document.querySelector(".important-symbol");
+
+  uploadTitInput.addEventListener("click", () => {
+    importantSymbol.style.display = "none";
   });
 });

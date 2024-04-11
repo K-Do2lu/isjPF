@@ -2545,12 +2545,16 @@ fieldset [type=checkbox]:disabled:before {
 .main .main-cont .cont .upload .drag-wrap .drag-item.write input::placeholder {
   color: #999999;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item {
+.main .main-cont .cont .upload .drag-wrap .drag-item:active {
+  border-color: #111111;
+}
+.main .main-cont .cont .upload .drag-input-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  margin-top: 8px;
   font-weight: 400;
   color: #333333;
   letter-spacing: -0.02rem;
@@ -2559,33 +2563,33 @@ fieldset [type=checkbox]:disabled:before {
   border-radius: 4px;
   border: 1px solid #cccccc;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item .drag-icon {
+.main .main-cont .cont .upload .drag-input-item .drag-icon {
   width: 22px;
   height: 22px;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item .drag-icon > .icon {
+.main .main-cont .cont .upload .drag-input-item .drag-icon > .icon {
   filter: invert(0.7);
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item .drag-txt {
+.main .main-cont .cont .upload .drag-input-item .drag-txt {
   flex: 1;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item .control-btn {
+.main .main-cont .cont .upload .drag-input-item .control-btn {
   width: 28px;
   height: 28px;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item .control-btn.delete {
+.main .main-cont .cont .upload .drag-input-item .control-btn.delete {
   background: url("/assets/img/icon-delete.png") no-repeat;
   background-size: cover;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item .control-btn.add {
+.main .main-cont .cont .upload .drag-input-item .control-btn.add {
   background: url("/assets/img/icon-add.png") no-repeat;
   background-size: cover;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item input {
+.main .main-cont .cont .upload .drag-input-item input {
   flex: 1;
   outline: none;
 }
-.main .main-cont .cont .upload .drag-wrap .drag-input-item input::placeholder {
+.main .main-cont .cont .upload .drag-input-item input::placeholder {
   color: #999999;
 }
 .main .main-cont .cont .upload .file-wrap {
@@ -2621,6 +2625,7 @@ fieldset [type=checkbox]:disabled:before {
   display: inline-block;
   text-decoration: underline;
   color: #333333;
+  cursor: pointer;
 }
 .main .main-cont .cont .upload .file-wrap .file-choice {
   display: flex;

@@ -82,7 +82,7 @@
               <div class="input-wrap upload-tit">
                 <input
                   type="text"
-                  id=""
+                  id="uploadTitInput"
                   name=""
                   placeholder="제목을 입력해주세요"
                 />
@@ -232,7 +232,7 @@
                 <label for="" class="essential">내용</label>
                 <!-- drag -->
                 <ul id="drag-wrap" class="drag-wrap">
-                  <li class="drag-item">
+                  <!-- <li class="drag-item">
                     <button type="button" class="drag-icon">
                       <i class="icon drag"></i>
                     </button>
@@ -242,31 +242,25 @@
                       미적 생활을 함께 탐색한다.
                     </p>
                     <button type="button" class="control-btn delete"></button>
-                  </li>
-                  <li class="drag-item">
-                    <button type="button" class="drag-icon">
-                      <i class="icon drag"></i>
-                    </button>
-                    <p class="drag-txt">
-                      FLLAB-Multi Purpose Food Tray는 그릇, 물, 공간의 사용을
-                      최소화하는 친환경 개념, 건강식단의 계획과 함께, 기능성과
-                      단순함 속에 변화의 미를 표현하였다.
-                    </p>
-                    <button type="button" class="control-btn delete"></button>
-                  </li>
-                  <!-- 내용을 입력해주세요 -->
-                  <li class="drag-input-item">
-                    <button type="button" class="drag-icon">
-                      <i class="icon drag"></i>
-                    </button>
-                    <input
-                      type="text"
-                      class="drag-input"
-                      placeholder="내용을 입력해주세요"
-                    />
-                    <button type="button" class="control-btn add"></button>
-                  </li>
+                  </li> -->
                 </ul>
+                <!-- 내용을 입력해주세요 -->
+                <div class="drag-input-item">
+                  <button type="button" class="drag-icon">
+                    <i class="icon drag"></i>
+                  </button>
+                  <input
+                    type="text"
+                    id="todoInput"
+                    class="drag-input"
+                    placeholder="내용을 입력해주세요"
+                  />
+                  <button
+                    type="button"
+                    class="control-btn add"
+                    onclick="addTodo()"
+                  ></button>
+                </div>
               </div>
 
               <!-- 파일 선택 -->
@@ -278,7 +272,9 @@
                   />
                   <p>
                     이미지 드레그 또는
-                    <span class="file-choice">파일 선택</span>
+                    <span class="file-choice" onclick="openFileUploader()"
+                      >파일 선택</span
+                    >
                   </p>
                 </div>
                 <!-- 파일 업로드 된 거 -->
@@ -374,6 +370,7 @@
                   id=""
                   name=""
                   placeholder="첨부파일을 선택해주세요"
+                  onclick="openFileUploader()"
                 />
               </div>
               <!-- 관련 URL -->
@@ -601,5 +598,7 @@
         </div>
       </div>
     </div>
+
+    <input type="file" id="fileUpload" style="display: none" />
   </body>
 </html>
