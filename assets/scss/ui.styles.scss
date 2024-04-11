@@ -437,7 +437,10 @@
           .chips-wrap {
             border-bottom: none;
             .chips {
-              max-width: 100%;
+              @include media-max(1600px) {
+                max-width: 95%;
+              }
+              max-width: 70%;
             }
           }
           button.p-btn {

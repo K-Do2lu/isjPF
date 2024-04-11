@@ -2460,7 +2460,12 @@ fieldset [type=checkbox]:disabled:before {
   border-bottom: none;
 }
 .main .main-cont .cont .manager .keyword-wrap .chips-wrap .chips {
-  max-width: 100%;
+  max-width: 70%;
+}
+@media (max-width: 1600px) {
+  .main .main-cont .cont .manager .keyword-wrap .chips-wrap .chips {
+    max-width: 95%;
+  }
 }
 .main .main-cont .cont .manager .keyword-wrap button.p-btn {
   font-size: 0.875rem;
