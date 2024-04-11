@@ -20,8 +20,8 @@
     border-right: 1px solid $c-primary;
     .side-cont {
       flex: 1;
-      margin-top: 3rem;
-      padding-top: 2.125rem;
+      margin-top: 2.9375rem;
+      padding-top: 2rem;
       border-top: 1px solid $c-primary;
       overflow-y: auto;
     }
@@ -236,7 +236,10 @@
       }
       padding: 3.25rem 1.25rem 6.25rem;
       .chips-wrap {
-        padding-bottom: clamp(0.75rem, 2vw, 2.5rem);
+        @include mo360-767() {
+          padding-bottom: 1.25rem;
+        }
+        padding-bottom: 2.5rem;
         border-bottom: 1px solid $c-primary;
         .chips {
           @include mo360-767() {
@@ -277,19 +280,10 @@
               max-height: 20rem;
               flex: 0 0 20rem;
               position: relative;
+              background: $c-f5f5f5;
               overflow: hidden;
               > img {
                 @include img-contain;
-                background-color: rgba(0, 0, 0, 0.08);
-              }
-              .img-blur {
-                position: absolute;
-                filter: blur(10px);
-                z-index: -1;
-
-                > img {
-                  @include img-cover;
-                }
               }
             }
             .list-detail {
@@ -690,12 +684,31 @@
             }
           }
         }
+
+        .upload-btns {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(120px, auto));
+          justify-content: center;
+          margin-top: 12px;
+        }
       }
     }
   }
 
   // about
   .cont-about {
+    @include mo360-767() {
+      .p-btn {
+        background: $c-primary;
+        color: $c-fff;
+        .icon {
+          filter: invert(1);
+        }
+      }
+    }
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 2vw, 3rem);
     max-width: 44.25rem;
     margin: 0 auto;
     color: $c-primary;
@@ -738,6 +751,7 @@
         display: flex;
         flex-direction: column;
         .detail-top {
+          flex: 1;
           display: flex;
           flex-direction: column;
           gap: clamp(0.75rem, 2vw, 1rem);
@@ -769,22 +783,8 @@
           }
         }
         .detail-bttm {
-          @include mo360-767() {
-            .p-btn {
-              background: $c-primary;
-              color: $c-fff;
-              .icon {
-                filter: invert(1);
-              }
-            }
-          }
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          flex: 1;
-          gap: 2.5rem;
           address {
-            padding: 0 clamp(1rem, 2vw, 1.25rem);
+            padding: 0.5rem clamp(1rem, 2vw, 1.25rem);
             background: $c-f5f5f5;
             .about-info {
               @include mo360-767() {
@@ -792,7 +792,7 @@
               }
               @include fs-16-24;
               position: relative;
-              padding: 0.625rem 0 0.625rem clamp(1.75rem, 2vw, 2rem);
+              padding: 0.5rem 0 0.5rem clamp(1.75rem, 2vw, 2rem);
               text-decoration: underline;
               text-decoration-color: $c-666;
               color: $c-666;
@@ -821,11 +821,11 @@
               }
             }
           }
-          .p-btn {
-            align-self: flex-end;
-          }
         }
       }
+    }
+    .p-btn {
+      align-self: flex-end;
     }
   }
 }
@@ -1132,7 +1132,7 @@
         height: 100%;
         min-height: 20rem;
         max-height: 32.5rem;
-        background: $c-eee;
+        background: $c-f5f5f5;
         box-shadow: 6px 8px 16px 0px rgba(0, 0, 0, 0.1);
 
         > img {
