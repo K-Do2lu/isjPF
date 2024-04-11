@@ -1036,13 +1036,18 @@ label {
         display: none;
 
         li {
+          margin: 0;
           padding: 0.5rem 0;
           border-bottom: none;
+          font-weight: 400;
+          color: $c-999;
           &:first-child {
             padding-top: 0;
           }
           &:hover {
             font-weight: 600;
+            color: $c-111;
+            text-decoration: underline;
           }
         }
       }

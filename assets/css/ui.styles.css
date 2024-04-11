@@ -1363,14 +1363,19 @@ label.essential::after {
   display: none;
 }
 .select-wrap .options li .sub-options li {
+  margin: 0;
   padding: 0.5rem 0;
   border-bottom: none;
+  font-weight: 400;
+  color: #999999;
 }
 .select-wrap .options li .sub-options li:first-child {
   padding-top: 0;
 }
 .select-wrap .options li .sub-options li:hover {
   font-weight: 600;
+  color: #111111;
+  text-decoration: underline;
 }
 .select-wrap .options li.check-wrap {
   padding: 0.625rem 0;
