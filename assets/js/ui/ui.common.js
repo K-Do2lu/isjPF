@@ -527,3 +527,18 @@ document.addEventListener("DOMContentLoaded", () => {
     importantSymbol.style.display = "none";
   });
 });
+/*--------------------------------------------------------------
+  @이미지 설명글 붙어있는거  close 클릭 시  삭제
+--------------------------------------------------------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  const crossButtons = document.querySelectorAll(".choice-item button");
+
+  crossButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const choiceWrap = button.closest(".choice-wrap");
+      if (choiceWrap) {
+        choiceWrap.remove();
+      }
+    });
+  });
+});
