@@ -2747,6 +2747,9 @@ fieldset [type=checkbox]:disabled:before {
     line-height: 3.75rem;
   }
 }
+.main .cont-about .about-top .txt-under {
+  text-align: right;
+}
 .main .cont-about .about-bttm {
   display: grid;
   grid-template-columns: minmax(20rem, 20rem) 1fr;

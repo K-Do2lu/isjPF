@@ -740,6 +740,9 @@
         @include fs-64-72;
         font-weight: 400;
       }
+      .txt-under {
+        text-align: right;
+      }
     }
     .about-bttm {
       @include mo360-767() {
