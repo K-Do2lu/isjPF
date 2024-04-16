@@ -8,7 +8,13 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="shortcut icon" href="../assets/images/app/favicon.ico" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/img/favicon.ico.png"
+      sizes="16x16"
+    />
     <!-- 공통 css -->
     <link
       rel="stylesheet"
@@ -26,138 +32,112 @@
   <body>
     <main role="main">
       <div class="cont">
-        <!-- side area -->
-        <div class="side-area"></div>
-
-        <!-- detail area -->
-        <div class="detail-area">
+        <!-- side -->
+        <div class="side-area">
+          <div class="side-logo">
+            <img src="/assets/img/img-logoside.png" alt="design for life" />
+          </div>
+          <div class="side-mid">
+            <p class="txt-under">
+              인간의 삶, 사회, 생태가 조화를<br />
+              이루는 미래, 통합, 생명의 디자인을<br />
+              연구하고 창조합니다.
+            </p>
+          </div>
+          <div class="side-bttm">
+            <button type="button" class="q-btn fill">
+              <span>Contact</span>
+            </button>
+          </div>
+        </div>
+        <!-- main -->
+        <div class="main-area">
           <!-- header -->
           <header>
-            <div class="header-area">
-              <div class="logo">
-                <img src="/assets/img/img-logo.png" alt="design for life" />
-              </div>
-              <div class="gnb">
-                <nav>
-                  <ul class="menu">
-                    <li class="active">
-                      <a href="#" class="menu-tit">HOME</a>
-                    </li>
-                    <li><a href="#" class="menu-tit">ABOUT</a></li>
-                    <li class="active">
-                      <span class="menu-tit">WORK</span>
+            <div class="header-logo">
+              <img src="/assets/img/img-logo.png" alt="design for life" />
+            </div>
 
-                      <ul class="menu-2depth">
-                        <li>
-                          ART&DESIGN
-                          <ul class="menu-3depth">
-                            <li>
-                              <a href="#" class="menu3">제품 ∙ 시스템 디자인</a>
-                            </li>
-                            <li>
-                              <a href="#" class="menu3">환경 ∙ 공공 디자인</a>
-                            </li>
-                            <li>
-                              <a href="#" class="menu3">대학 디자인</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          RESEARCH
-                          <ul class="menu-3depth">
-                            <li>
-                              <a href="#" class="menu3"
-                                >국가디자인 ∙ 교육정책</a
-                              >
-                            </li>
-                            <li>
-                              <a href="#" class="menu3"
-                                >미래 라이프스타일 ∙ 디자인전략</a
-                              >
-                            </li>
-                            <li>
-                              <a href="#" class="menu3"
-                                >미래도시 ∙ 모빌리티 ∙ 모바일 디자인</a
-                              >
-                            </li>
-                            <li>
-                              <a href="#" class="menu3"
-                                >정체성 ∙ 혁신 ∙ 한국디자인</a
-                              >
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <span class="menu-tit">EVENT</span>
+            <div class="gnb">
+              <!-- menu -->
+              <nav>
+                <ul class="m-1depth">
+                  <li class="active"><a href="#">HOME</a></li>
+                  <li><a href="#">ABOUT</a></li>
+                  <li>
+                    <a href="#">WORK</a>
+                    <ul class="m-2depth">
+                      <li>
+                        <span class="m-2depth-tit">ART&DESIGN</span>
+                        <ul class="m-3depth">
+                          <li>제품 ∙ 시스템 디자인</li>
+                          <li>환경 ∙ 공공 디자인</li>
+                          <li>대학 디자인</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="m-2depth-tit">RESEARCH</span>
+                        <ul class="m-3depth">
+                          <li>국가디자인 ∙ 교육정책</li>
+                          <li>미래 라이프스타일 ∙ 디자인전략</li>
+                          <li>미래도시 ∙ 모빌리티 ∙ 모바일 디자인</li>
+                          <li>정체성 ∙ 혁신 ∙ 한국디자인</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">EVENT</a>
+                    <ul class="m-2depth">
+                      <li>
+                        <span class="m-2depth-tit">EXHIBITION</span>
+                        <ul class="m-3depth">
+                          <li>개인전</li>
+                          <li>참여전시</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="m-2depth-tit">PROGRAM PLANNING</span>
+                        <ul class="m-3depth">
+                          <li>행사 참여작품</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">MEDIA</a>
+                    <ul class="m-2depth">
+                      <li>
+                        <span class="m-2depth-tit">LECTURES</span>
+                        <ul class="m-3depth">
+                          <li>주제 특강</li>
+                          <li>강의</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="m-2depth-tit">BOOKS</span>
+                        <ul class="m-3depth">
+                          <li>BOOKS</li>
+                          <li>Article</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="m-2depth-tit">PRESS</span>
+                        <ul class="m-3depth">
+                          <li>Interview</li>
+                          <li>News</li>
+                          <li>Video</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
 
-                      <ul class="menu-2depth">
-                        <li>
-                          EXHIBITION
-                          <ul class="menu-3depth">
-                            <li>
-                              <a href="#" class="menu3">개인전</a>
-                            </li>
-                            <li>
-                              <a href="#" class="menu3">참여전시</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          PROGRAM PLANNING
-                          <ul class="menu-3depth">
-                            <li>
-                              <a href="#" class="menu3">행사 참여작품</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <span class="menu-tit">MEDIA</span>
-
-                      <ul class="menu-2depth">
-                        <li>
-                          LECTURES
-                          <ul class="menu-3depth">
-                            <li>
-                              <a href="#" class="menu3">주제 특강</a>
-                            </li>
-                            <li>
-                              <a href="#" class="menu3">강의</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          BOOKS
-                          <ul class="menu-3depth">
-                            <li>
-                              <a href="#" class="menu3">Books</a>
-                            </li>
-                            <li>
-                              <a href="#" class="menu3">Article</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          PRESS
-                          <ul class="menu-3depth">
-                            <li>
-                              <a href="#" class="menu3">Interview</a>
-                            </li>
-                            <li>
-                              <a href="#" class="menu3">News</a>
-                            </li>
-                            <li>
-                              <a href="#" class="menu3">Video</a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </nav>
+              <!-- search, menu icon -->
+              <div class="gnb-icon">
+                <button type="button"><i class="icon search"></i></button>
+                <button type="button"><i class="icon menu"></i></button>
               </div>
             </div>
           </header>
