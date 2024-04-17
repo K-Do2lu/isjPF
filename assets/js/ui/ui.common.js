@@ -122,6 +122,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   iconMenu.addEventListener("click", () => {
     gnbMenuMobile.classList.toggle("show");
+
+    const iconClass = gnbMenuMobile.classList.contains("show")
+      ? "close"
+      : "menu";
+    const removeClass = gnbMenuMobile.classList.contains("show")
+      ? "menu"
+      : "close";
+
+    iconMenu.classList.remove(removeClass);
+    iconMenu.classList.add(iconClass);
   });
 });
 
@@ -130,12 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
 --------------------------------------------------------------*/
 window.addEventListener("scroll", function () {
   // 스크롤 시 버튼을 나타내거나 숨김
-  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  let scrollToTopBtn = document.getElementById("scrollToTopBtn");
   scrollToTopBtn.style.display = window.scrollY > 20 ? "block" : "none";
 
   //  header scroll 감지 border-bottom 추가
-  var scrollPosition = $(window).scrollTop();
-  var header = $(".header");
+  let scrollPosition = $(window).scrollTop();
+  let header = $(".header");
 
   if (scrollPosition > 0) {
     header.addClass("scrolled");
@@ -539,6 +549,37 @@ document.addEventListener("DOMContentLoaded", () => {
       if (choiceWrap) {
         choiceWrap.remove();
       }
+    });
+  });
+});
+/*--------------------------------------------------------------
+  @test
+--------------------------------------------------------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  const m_1depth = document.querySelectorAll(".m-1depth > li");
+  const m_2depth = document.querySelectorAll(".m-2depth > li");
+
+  m_1depth.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const li = e.currentTarget;
+
+      const ul = li.querySelector(".m-2depth");
+
+      if (ul) {
+        e.preventDefault();
+      }
+    });
+  });
+
+  m_2depth.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const li = e.currentTarget;
+      m_2depth.forEach((otherItem) => {
+        if (li !== otherItem) {
+          otherItem.classList.remove("active");
+        }
+      });
+      li.classList.toggle("active");
     });
   });
 });

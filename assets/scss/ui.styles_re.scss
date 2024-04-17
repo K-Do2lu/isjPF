@@ -121,6 +121,16 @@ body {
   text-decoration: underline;
   text-underline-position: under;
 }
+@mixin object-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@mixin object-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 // ----------------------------------------------------------------
 // 공통 - btn / outline
 @mixin btn-p10-g8-ic20 {
@@ -275,6 +285,7 @@ body {
         justify-content: space-between;
         width: 100%;
         height: 4.75rem;
+        padding: 0.875rem 1.25rem;
         left: 0;
       }
       position: fixed;
@@ -283,26 +294,35 @@ body {
       display: grid;
       width: calc(100% - 20rem);
       height: 5.5rem;
-      background: #eee;
+      padding: 0 1.25rem;
+
       .header-logo {
         @include mo360-767() {
           display: block;
         }
         display: none;
+        > img {
+          @include object-cover;
+        }
       }
       .gnb {
         display: flex;
         justify-self: flex-end;
+        gap: 1.5rem;
         .gnb-icon {
           @include mo360-767() {
             display: flex;
             align-items: center;
             gap: 1rem;
-            .icon.menu {
+            padding-bottom: 0;
+          }
+          display: flex;
+          align-items: flex-end;
+          padding-bottom: 1.25rem;
+          .icon.menu {
+            @include mo360-767() {
               display: block;
             }
-          }
-          .icon.menu {
             display: none;
           }
         }
@@ -332,7 +352,8 @@ nav {
       a {
         display: inline-block;
         height: 100%;
-        @include fs-16-14;
+        padding-bottom: 1.25rem;
+        @include fs-18-28;
         @include fw-700;
         color: $c-ccc;
       }
@@ -353,13 +374,40 @@ nav {
   }
   .m-2depth {
     position: absolute;
+    right: -4.25rem;
     display: none;
+    width: 20rem;
+    max-width: 20rem;
+    border: 1px solid $c-111;
     li {
+      padding: 0.75rem 1.25rem;
       @include fs-16-14;
       @include fw-700;
+      cursor: pointer;
+
+      .m-2depth-tit {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 1.5rem;
+          height: 1.5rem;
+          background: url("/assets/img/icon-passive.png") no-repeat;
+        }
+      }
+
+      &.active {
+        .m-3depth {
+          display: block;
+        }
+      }
     }
   }
   .m-3depth {
     display: none;
+    background: $c-f5f5f5;
   }
 }

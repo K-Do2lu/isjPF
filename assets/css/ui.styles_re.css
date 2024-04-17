@@ -872,6 +872,9 @@ h1.hidden {
 .icon.select {
   background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.9998 15.4375L7.82472 9.26243L6.1748 10.9123L13.9998 18.7373L21.8247 10.9123L20.1748 9.26243L13.9998 15.4375Z' fill='%23666666'/%3E%3C/svg%3E%0A");
 }
+.icon.close {
+  background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0005 12.3503L7.48292 5.83276L5.83301 7.48268L12.3506 14.0003L5.83366 20.5172L7.48358 22.1671L14.0005 15.6502L20.5173 22.1669L22.1672 20.517L15.6504 14.0003L22.1678 7.48286L20.5179 5.83294L14.0005 12.3503Z' fill='%23111111'/%3E%3C/svg%3E%0A");
+}
 
 /*-------------------------------------------------------------------
     @common - Button | border(default)/fill/has icon
@@ -2150,7 +2153,7 @@ body {
   display: grid;
   width: calc(100% - 20rem);
   height: 5.5rem;
-  background: #eee;
+  padding: 0 1.25rem;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .cont .main-area header {
@@ -2158,6 +2161,7 @@ body {
     justify-content: space-between;
     width: 100%;
     height: 4.75rem;
+    padding: 0.875rem 1.25rem;
     left: 0;
   }
 }
@@ -2169,22 +2173,36 @@ body {
     display: block;
   }
 }
+.cont .main-area header .header-logo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .cont .main-area header .gnb {
   display: flex;
   justify-self: flex-end;
+  gap: 1.5rem;
+}
+.cont .main-area header .gnb .gnb-icon {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1.25rem;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .cont .main-area header .gnb .gnb-icon {
     display: flex;
     align-items: center;
     gap: 1rem;
-  }
-  .cont .main-area header .gnb .gnb-icon .icon.menu {
-    display: block;
+    padding-bottom: 0;
   }
 }
 .cont .main-area header .gnb .gnb-icon .icon.menu {
   display: none;
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .cont .main-area header .gnb .gnb-icon .icon.menu {
+    display: block;
+  }
 }
 
 nav {
@@ -2208,15 +2226,16 @@ nav .m-1depth {
 nav .m-1depth > li a {
   display: inline-block;
   height: 100%;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  padding-bottom: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-weight: 700;
   color: #cccccc;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   nav .m-1depth > li a {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 nav .m-1depth > li:hover .m-2depth {
@@ -2229,12 +2248,18 @@ nav .m-1depth > li.active a {
 }
 nav .m-2depth {
   position: absolute;
+  right: -4.25rem;
   display: none;
+  width: 20rem;
+  max-width: 20rem;
+  border: 1px solid #111111;
 }
 nav .m-2depth li {
+  padding: 0.75rem 1.25rem;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 700;
+  cursor: pointer;
 }
 @media (min-width: 360px) and (max-width: 767px) {
   nav .m-2depth li {
@@ -2242,6 +2267,23 @@ nav .m-2depth li {
     line-height: 1.25rem;
   }
 }
+nav .m-2depth li .m-2depth-tit {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+nav .m-2depth li .m-2depth-tit::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("/assets/img/icon-passive.png") no-repeat;
+}
+nav .m-2depth li.active .m-3depth {
+  display: block;
+}
 nav .m-3depth {
   display: none;
+  background: #f5f5f5;
 }/*# sourceMappingURL=ui.styles_re.css.map */

@@ -872,6 +872,9 @@ h1.hidden {
 .icon.select {
   background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.9998 15.4375L7.82472 9.26243L6.1748 10.9123L13.9998 18.7373L21.8247 10.9123L20.1748 9.26243L13.9998 15.4375Z' fill='%23666666'/%3E%3C/svg%3E%0A");
 }
+.icon.close {
+  background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0005 12.3503L7.48292 5.83276L5.83301 7.48268L12.3506 14.0003L5.83366 20.5172L7.48358 22.1671L14.0005 15.6502L20.5173 22.1669L22.1672 20.517L15.6504 14.0003L22.1678 7.48286L20.5179 5.83294L14.0005 12.3503Z' fill='%23111111'/%3E%3C/svg%3E%0A");
+}
 
 /*-------------------------------------------------------------------
     @common - Button | border(default)/fill/has icon
