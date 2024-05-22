@@ -268,6 +268,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // 모든 .select-wrap 클래스를 가진 요소를 선택
   const customSelects = document.querySelectorAll(".select-wrap");
 
+  // 클릭 이벤트 핸들러 함수 정의
+  const handleClickOutside = (event) => {
+    // 클릭된 요소
+    const clickedElement = event.target;
+
+    // 클릭된 요소가 .select-wrap 내부의 요소인지 확인
+    const isInsideSelectWrap = clickedElement.closest(".select-wrap");
+
+    // 클릭된 요소가 .select-wrap 외부인 경우
+    if (!isInsideSelectWrap) {
+      // 모든 .options 요소 숨기기
+      customSelects.forEach((select) => {
+        const optionsList = select.querySelector(".options");
+        optionsList.style.display = "none";
+
+        // 선택된 옵션 텍스트 색상을 검정색으로 변경
+        const selectedOption = select.querySelector(".selected");
+        // selectedOption.style.color = "#000";
+
+        // 선택된 옵션에서 회전 효과 클래스 제거
+        selectedOption.classList.remove("rotate");
+
+        // .select-wrap 요소에 .focus 클래스 제거
+        select.classList.remove("focus");
+      });
+    }
+  };
+
+  // document 전역에서 클릭 이벤트 리스너 추가
+  document.addEventListener("click", handleClickOutside);
+
   // 각 .select-wrap 요소에 대해 반복
   customSelects.forEach((customSelect) => {
     // .select-wrap 요소 내에서 선택된 옵션을 나타내는 요소를 선택

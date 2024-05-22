@@ -2210,6 +2210,7 @@ fieldset [type=checkbox]:disabled:before {
 }
 .main header .gnb-wrap nav ul.menu > li ul.menu-sub > li.active .sub-menu {
   max-height: 12.5rem;
+  min-height: 5.75rem;
   padding: 0.375rem 1.25rem;
 }
 .main header .gnb-wrap .gnb {
